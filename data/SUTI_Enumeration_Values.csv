@@ -1,0 +1,657 @@
+﻿SUTI ValueNr;Language Nr;Language TextShort;SUTI_Attribute;SUTI_ValueText;SUTI_Object;SUTI_ValueDescription
+1001;1;ENG;contentType;traveller;content;The content of the node is any number of humans
+1001;2;DAN;;traveller;;rejsende
+1001;3;FIN;;traveller;;matkustaja
+1001;4;NOR;;traveller;;reisende
+1001;5;SWE;;traveller;;resenär
+1002;1;ENG;contentType;parcel;content;The content of the node is any number of parcel pieces
+1002;2;DAN;;parcel;;pakke
+1002;3;FIN;;parcel;;paketti
+1002;4;NOR;;parcel;;pakke
+1002;5;SWE;;parcel;;paket
+1003;1;ENG;contentType;action;content;The scope of the node is to do a specifically described activity
+1003;2;DAN;;action;;aktivitet
+1003;3;FIN;;action;;toiminta
+1003;4;NOR;;action;;aktivitet
+1003;5;SWE;;action;;aktivitet
+1004;1;ENG;contentType;navigation;content;The scope of the node is to position the vehicle
+1004;2;DAN;;navigation;;navigation
+1004;4;NOR;;navigation;;navigasjon
+1004;5;SWE;;navigation;;navigering
+1005;1;ENG;contentType;companion;content;This is a description of a companion
+1005;3;FIN;;companion;;saattaja
+1005;5;SWE;;companion;;ledsagare
+1006;1;ENG;contentType;cotraveller;content;This is a description of a cotraveller
+1006;5;SWE;;cotraveller;;medresenär
+1007;1;ENG;contentType;child;content;Notifies that this content is a child
+1007;2;DAN;;child;;barn
+1007;3;FIN;;child;;lapsi
+1007;4;NOR;;child;;barn
+1007;5;SWE;;child;;barn
+1008;1;ENG;contentType;animal;content;Notifies that this content is an animal
+1008;2;DAN;;animal;;dyr
+1008;3;FIN;;animal;;eläin
+1008;4;NOR;;animal;;dyr
+1008;5;SWE;;animal;;djur
+1101;1;ENG;connectionType;flight;connection;Indicates that the connection is a flight
+1101;2;DAN;;flight;;fly
+1101;3;FIN;;flight;;ilmailu
+1101;4;NOR;;flight;;fly
+1101;5;SWE;;flight;;flyg
+1102;1;ENG;connectionType;train;connection;Indicates that the connection is a trainno
+1102;2;DAN;;train;;tog
+1102;3;FIN;;train;;juna
+1102;4;NOR;;train;;tog
+1102;5;SWE;;train;;tåg
+1103;1;ENG;connectionType;boat;connection;Indicates that the connection is a boattrip
+1103;2;DAN;;boat;;båd
+1103;3;FIN;;boat;;vene
+1103;4;NOR;;boat;;båt
+1103;5;SWE;;boat;;båt
+1104;1;ENG;connectionType;meeting;connection;Indicates that the connection is a scheduled meeting
+1104;2;DAN;;meeting;;møde
+1104;3;FIN;;meeting;;kokous
+1104;4;NOR;;meeting;;møte
+1104;5;SWE;;meeting;;möte
+1201;1;ENG;direction;forward;vehicle/capacity/seats/position;The vehicle needs an empty forward position
+1201;5;SWE;;forward;;f
+1202;1;ENG;direction;backward;vehicle/capacity/seats/position;The vehicle needs an empty backward position
+1202;5;SWE;;backward;;b
+1211;1;ENG;legspace;comfort;vehicle/capacity/seats/position;The vehicle needs an empty position with much legspae
+1211;5;SWE;;comfort;;c
+1212;1;ENG;legspace;normal;vehicle/capacity/seats/position;The vehicle needs an empty position with normal legspae (default)
+1212;5;SWE;;normal;;n
+1213;1;ENG;legspace;poor;vehicle/capacity/seats/position;The empty position in the vehicle may have short legpace
+1213;5;SWE;;poor;;p
+1301;1;ENG;paymentType;cash;payment;Cash payment
+1301;2;DAN;;cash;;kontant
+1301;3;FIN;;cash;;käteinen
+1301;4;NOR;;cash;;kontant
+1301;5;SWE;;cash;;kontant
+1302;1;ENG;paymentType;card;payment;Payment by card
+1302;2;DAN;;card;;kort
+1302;3;FIN;;card;;kortti
+1302;4;NOR;;card;;kort
+1302;5;SWE;;card;;kort
+1303;1;ENG;paymentType;account;payment;Account or invoice
+1303;2;DAN;;account;;faktura
+1303;3;FIN;;account;;lasku
+1303;4;NOR;;account;;faktura
+1303;5;SWE;;account;;faktura
+1304;1;ENG;paymentType;ticket;payment;Ticket
+1304;2;DAN;;ticket;;billet
+1304;3;FIN;;ticket;;lippu
+1304;4;NOR;;ticket;;billett
+1304;5;SWE;;ticket;;biljett
+1305;1;ENG;paymentType;document;payment;Travelling document.
+1305;2;DAN;;document;;rejsedokument
+1305;3;FIN;;document;;matkustusasiakirja
+1305;4;NOR;;document;;reisebevis
+1305;5;SWE;;document;;resehandling
+1306;1;ENG;paymentType;socialservicefee;payment;Amount that the traveller pay of the total fare. The remaining fare are paid by account or invoice.
+1306;2;DAN;;socialservicefee;;egenandel
+1306;3;FIN;;socialservicefee;;omamaksu
+1306;4;NOR;;socialservicefee;;egenandel
+1306;5;SWE;;socialservicefee;;egenavgift
+1307;1;ENG;paymentType;prepaidsocialfee;payment;A card or document that indicates that traveller do notneed to pay socialservicefee.
+1307;2;DAN;;prepaidsocialfee;;frikort
+1307;3;FIN;;prepaidsocialfee;;vapaakortti
+1307;4;NOR;;prepaidsocialfee;;frikort
+1307;5;SWE;;prepaidsocialfee;;frikort
+1308;1;ENG;paymentType;claim;payment;Claim is a negative amount. Tis indicates that a part of the amount from an account payment will not be paid.
+1308;2;DAN;;claim;;fordring
+1308;3;FIN;;claim;;vaatimus
+1308;4;NOR;;claim;;krav
+1308;5;SWE;;claim;;fordran
+1309;1;ENG;paymentType;NoShow;payment;Initiated by driver specifiying a special accountpayment in case of noshow
+1310;1;ENG;paymentType;providerCompensation;payment;Initiated by driver specifiying a special accountpayment in case special compensation for external cost occured
+1311;1;ENG;paymentType;creditcardfee;payment;Initiated by driver specifiying an extra cost for payment by creditcard
+1401;1;ENG;formula;breakpoint;priceCalculation;Use breakpoint calculation
+1401;5;SWE;;breakpoint;;brytpunktstariff
+1402;1;ENG;formula;sumtariff;priceCalculation;Use sumtariff calculation
+1402;5;SWE;;sumtariff;;summatariff
+1411;1;ENG;priceResoncible;client;price;The Client are responcible for setting the price
+1411;5;SWE;;client;;beställare
+1412;1;ENG;priceResoncible;provider;price;The Provider are responcible for setting the price
+1412;5;SWE;;provider;;utförare
+1501;1;ENG;idAttribute;carrypass;attributesDriver;Driver can help carry a passenger
+1501;5;SWE;;carrypass;;bär passagerare
+1502;1;ENG;idAttribute;liftpass;attributesDriver;Driver can help lift a passenger
+1502;5;SWE;;liftpass;;lyfter passagerare
+1503;1;ENG;idAttribute;carrylugg;attributesDriver;Driver can help carry luggage
+1503;5;SWE;;carrylugg;;bär bagage
+1504;1;ENG;idAttribute;animal;attributesDriver;Driver can take animals in car. No allergy
+1504;5;SWE;;animal;;kör djur
+1505;1;ENG;idAttribute;guide;attributesDriver;Driver is qualified as Tour Guide
+1505;5;SWE;;guide;;guide
+1506;1;ENG;idAttribute;female;attributesDriver;Driver is female
+1506;5;SWE;;female;;kvinnlig
+1507;1;ENG;idAttribute;male;attributesDriver;Driver is male
+1507;5;SWE;;male;;manlig
+1508;1;ENG;idAttribute;badge swlfv;attributesDriver;Driver has been security screened to get luggage from retricted areas on Swedish airports.
+1508;5;SWE;;badge swlfv;;säkerhetskontrollerad lfv
+1509;1;ENG;idAttribute;no smoking;attributesDriver;Non smoking driver
+1509;5;SWE;;no smoking;;icke rökare
+1510;1;ENG;idAttribute;assisttraveller;attributesDriver;Driver is qualified to assist traveller to door
+1510;5;SWE;;assisttraveller;;assisterar resenär
+1511;1;ENG;idAttribute;C19Driver;attributesDriver;Driver trained for Covid19 transports
+1511;5;SWE;;C19Driver;;Förare för Covid19 transport
+1512;1;ENG;idAttribute;BVH;attributesDriver;Driver trained in basic care hygiene
+1512;5;SWE;;BVH;;Förare utbildad i basal vårdhygien
+1513;1;ENG;idAttribute;car belt lock;attributesDriver;Driver trained in use of Car Belt Lock
+1513;5;SWE;idAttribute;bilbälteslås;attributesDriver;Förare utbildad i användning av bilbälteslås
+1601;1;ENG;idAttribute;estate;attributesVehicle;Combi
+1601;5;SWE;;estate;;kombi
+1602;1;ENG;idAttribute;volvo;attributesVehicle;Volvo
+1602;5;SWE;;volvo;;volvo
+1603;1;ENG;idAttribute;mercedes;attributesVehicle;Mercedes
+1603;5;SWE;;mercedes;;mercedes
+1604;1;ENG;idAttribute;environmental;attributesVehicle;environmentally friendly vehicle
+1604;5;SWE;;environmental;;miljöfordon
+1605;1;ENG;idAttribute;child booster seat;attributesVehicle;Cushion specially made for children to big to use Child seat and to smal to use safety belt in an normal vay like an adult.
+1605;5;SWE;;child booster seat;;bilbarnkudde
+1606;1;ENG;idAttribute;child seat;attributesVehicle;Detachable seat used for smal children
+1606;5;SWE;;child seat;;bilbarnstol
+1607;1;ENG;idAttribute;limousin;attributesVehicle;Not a taxi marked vehicle
+1607;5;SWE;;limousin;;limosin
+1608;1;ENG;idAttribute;bike rack;attributesVehicle;Rack used to transport bikes.
+1608;5;SWE;;bike rack;;cykelställ
+1609;1;ENG;idAttribute;tow bar;attributesVehicle;Device to attach a trailer
+1609;5;SWE;;tow bar;;dragkrok
+1610;1;ENG;idAttribute;school sign;attributesVehicle;Sign placed on the roof of a vehicle used to indicate that the vehicle transports children to and from school
+1610;5;SWE;;school sign;;skolskylt
+1611;1;ENG;idAttribute;wheelchair;attributesVehicle;The vehicle can carry a wheelchair or can be easily converted to carry a wheelchair
+1611;5;SWE;;wheelchair;;rullstol
+1612;1;ENG;idAttribute;low rider;attributesVehicle;Low rider
+1612;5;SWE;;low rider;;låggolv
+1613;1;ENG;idAttribute;stretcher;attributesVehicle;The vehicle has a strecher or can be easily fitted with a stretcher
+1613;5;SWE;;stretcher;;bår
+1614;1;ENG;idAttribute;ramp;attributesVehicle;Ramp for wheelchairs
+1614;5;SWE;;ramp;;ramp
+1615;1;ENG;idAttribute;lift;attributesVehicle;Lift for wheelchairs
+1615;5;SWE;;lift;;lift
+1616;1;ENG;idAttribute;stair climber;attributesVehicle;Vehicle equipped with stair climber
+1616;5;SWE;;stair climber;;trappklättrare
+1617;1;ENG;idAttribute;allergy safe;attributesVehicle;Vehicle allergy decontaminated
+1617;5;SWE;;allergy safe;;allegisanerad
+1618;1;ENG;idAttribute;saloon;attributesVehicle;Sedan
+1618;5;SWE;;saloon;;sedan
+1619;1;ENG;idAttribute;bus;attributesVehicle;Bus
+1619;5;SWE;;bus;;buss
+1620;1;ENG;idAttribute;roof box;attributesVehicle;Roof box
+1620;5;SWE;;roof box;;takbox
+1621;1;ENG;idAttribute;no smoking;attributesVehicle;Non smoking vehicle
+1621;5;SWE;;no smoking;;rökfritt fordon
+1622;1;ENG;idAttribute;perambulator;attributesVehicle;Perambulator
+1622;5;SWE;;perambulator;;barnvagn
+1623;1;ENG;idAttribute;rollator;attributesVehicle;Rollator
+1623;5;SWE;;rollator;;rullator
+1624;1;ENG;idAttribute;walker;attributesVehicle;Walker or Walking frame
+1624;5;SWE;;walker;;gåstol
+1625;1;ENG;idAttribute;blind persons cane;attributesVehicle;Blind persons cane
+1625;5;SWE;;blind persons cane;;blindkäpp
+1626;1;ENG;idAttribute;commodechair;attributesVehicle;Commode Chair
+1626;5;SWE;;commodechair;;toalettstol
+1627;1;ENG;idAttribute;powered wheelchair;attributesVehicle;Big powered wheelchair
+1627;5;SWE;;powered wheelchair;;permobil
+1628;1;ENG;idAttribute;frontseat;attributesVehicle;Indicates that the vehicle shall have a front seat
+1628;4;NOR;;frontseat;;sitte foran
+1628;5;SWE;;frontseat;;framsäte
+1629;1;ENG;idAttribute;lay in backseat;attributesVehicle;Indicates that the vehicle shall be able to have a passenger laying in back seat
+1629;5;SWE;;lay in backseat;;ligga bak
+1630;1;ENG;idAttribute;lay in frontseat;attributesVehicle;Indicates that the vehicle shall be able to have a passenger laying in front seat
+1630;5;SWE;;lay in frontseat;;ligga fram
+1631;1;ENG;idAttribute;single vehicle;attributesVehicle;Indicates that the vehicle shall take only thios passenger
+1631;4;NOR;;single vehicle;;alene bil
+1631;5;SWE;;single vehicle;;egen bil
+1632;1;ENG;idAttribute;multiple wheelchairs;attributesVehicle;Indicates that the vehicle shall take multiple wheelchairs
+1632;5;SWE;;multiple wheelchairs;;flera rullstolar
+1633;1;ENG;idAttribute;child seat 0 – 9 month;attributesVehicle;Detachable seat used for smal children up to 9 month
+1633;5;SWE;;child seat 0 – 9 month;;bilbarnstol 0-9 månader
+1634;1;ENG;idAttribute;child seat 1-3 year;attributesVehicle;Detachable seat used for smal children between 10 months and 3 years
+1634;5;SWE;;child seat 1-3 year;;bilbarnstol 10 månader-3 år
+1635;1;ENG;idAttribute;child seat 4+ year;attributesVehicle;Detachable seat used for smal children from 4 years and up
+1635;5;SWE;;child seat 4+ year;;bilbarnstol 4+ år
+1636;1;ENG;idAttribute;folding wheelchair;attributesVehicle;Folded wheelchair
+1636;5;SWE;;folding wheelchair;;Vikbar rullstol
+1637;1;ENG;idAttribute;mobility scooter;attributesVehicle;Mobility scooter
+1638;1;ENG;idAttribute;standard car;attributesVehicle;Standard car used for commercial transportation of passengers
+1638;2;DAN;;standard car;;Standard bil anvendes til erhvervsmæssig transport af passagerer
+1638;4;NOR;;standard car;;Standard bilen brukes til kommersiell transport av passasjerer
+1638;5;SWE;;standard car;;Standard bil som används för kommersiell transport av passagerare
+1639;1;ENG;idAttribute;special vehicle;attributesVehicle;Special vehicles used for commercial carriage of passengers with special needs
+1639;2;DAN;;special vehicle;;Særlige køretøjer, der anvendes til erhvervsmæssig personbefordring med særlige behov
+1639;4;NOR;;special vehicle;;Spesielle kjøretøyer som brukes til kommersiell transport av passasjerer med spesielle behov
+1639;5;SWE;;special vehicle;;Specialfordon använt för yrkesmässig transport av resenär med speciella behov
+1640;1;ENG;idAttribute;foldableseat;attributesVehicle;Foldable seat
+1640;5;SWE;;foldableseat;;Fällbart säte
+1641;1;ENG;idAttribute;electrical car;attributesVehicle;electrical car
+1641;5;SWE;;electrical car;;Eldriven bil
+1642;1;ENG;idAttribute;cagedpet;attributesVehicle;Pet travveling in cage
+1642;5;SWE;;cagedpet;;Djur som reseri bur
+1643;1;ENG;idAttribute;standingshell;attributesVehicle;Standing shell
+1643;5;SWE;;standingshell;;Stående skal
+1644;1;ENG;idAttribute;highstep;attributesVehicle;High step
+1644;5;SWE;;highstep;;Högt insteg
+1645;1;ENG;idAttribute;stow big wheelchair;attributesVehicle;stowbigwheelchair
+1645;2;DAN;;stow big wheelchair;;stuvestorkørestol
+1645;3;FIN;;stow big wheelchair;;pysäköiisopyörätuoli
+1645;5;SWE;;stow big wheelchair;;stuvastorrullstol
+1646;1;ENG;idAttribute;four wheel drive;attributesVehicle;fourwheeldrive
+1646;2;DAN;;four wheel drive;;firehjulstræk
+1646;3;FIN;;four wheel drive;;neliveto
+1646;4;NOR;;four wheel drive;;firehjulstrekk
+1646;5;SWE;;four wheel drive;;fyrhjulsdrift
+1647;1;ENG;idAttribute;Separator;attributesVehicle;Plastic separator in vehicle for virus protection
+1647;5;SWE;;Separator;;Plastavskiljare för virusskydd
+1648;1;ENG;idAttribute;palanquin;attributesVehicle;Chair used to carry passenger into/from vehicle
+1648;5;SWE;idAttribute;bärstol;attributesVehicle;Stol för att lyfta resenär i och ur fordon
+1649;1;ENG;idAttribute;car belt lock;attributesVehicle;Vehicle is provided with Car Belt Lock
+1649;5;SWE;idAttribute;bilbälteslås;attributesVehicle;Bil har bilbälteslås
+1701;1;ENG;eventType;passengerinvehicle;pickupConfirmation;Passenger picked up. the value “pickup” was initially used.
+1701;5;SWE;;passengerinvehicle;;resenär hämtad
+1702;1;ENG;eventType;passengerdropped;pickupConfirmation;Passenger dropped of. the value “destination” was initially used.
+1702;5;SWE;;passengerdropped;;resenär avlämnad
+1703;1;ENG;eventType;noshow;pickupConfirmation;No show at pickup of passenger
+1703;5;SWE;;noshow;;bom
+1704;1;ENG;eventType;parcelinvehicle;pickupConfirmation;Parcel picked up
+1704;5;SWE;;parcelinvehicle;;paket hämtat
+1705;1;ENG;eventType;parceldropped;pickupConfirmation;Parcel dropped of
+1705;5;SWE;;parceldropped;;paket avlämnat
+1706;1;ENG;eventType;actiondone;pickupConfirmation;The demanded action has been done. the value “action” was initially used.
+1706;5;SWE;;actiondone;;aktivitet utförd
+1707;1;ENG;eventType;navigationdone;pickupConfirmation;The demanded navigation has been done. the value “navigation” was initially used.
+1707;5;SWE;;navigationdone;;navigering utförd
+1708;1;ENG;eventType;canceledatdoor;pickupConfirmation;The pickup has been canceled at the door
+1708;5;SWE;;canceledatdoor;;avbest vid dörren
+1709;1;ENG;eventType;vehicleatnode;pickupConfirmation;The vehicle har arrived at the node
+1709;5;SWE;;vehicleatnode;;på noden
+1710;1;ENG;eventType;infotocontent;pickupConfirmation;Information to content.
+1711;1;ENG;eventType;dispatchconfirmationsent;pickupConfirmation;Dispatch confirmation has been sent.
+1712;1;ENG;eventType;delayconfirmationsent;pickupConfirmation;Delay confirmation has been sent.
+1713;1;ENG;eventType;arrivalconfirmationsent;pickupConfirmation;Arrival confirmation has been sent.
+1714;1;ENG;eventType;start;pickupConfirmation;This indicates that the taximeter in vehicle is set in tarif mode.
+1714;5;SWE;;start;;start
+1715;1;ENG;eventType;stop;pickupConfirmation;This indicates that the taximeter in vehicle is set off tarif mode.
+1715;5;SWE;;stop;;stop
+1716;1;ENG;eventType;acceptOrder;pickupConfirmation;This acceptance of an order.
+1716;5;SWE;;acceptOrder;;accept
+1717;1;ENG;eventType;vehicleExitNode;pickupConfirmation;pls check Use Cases for definition
+1718;1;ENG;eventType;noContentAtNode;pickupConfirmation;pls check Use Cases for definition
+1719;1;ENG;eventType;contentAtNode;pickupConfirmation;pls check Use Cases for definition
+1720;1;ENG;eventType;contentNoShow;pickupConfirmation;pls check Use Cases for definition
+1801;1;ENG;nodeType;action;node;Take a specified action, see subNodeType
+1801;5;SWE;;action;;aktivitet
+1802;1;ENG;nodeType;navigation;node;Navigate through this point
+1802;2;DAN;;navigation;;navigation
+1802;4;NOR;;navigation;;navigasjon
+1802;5;SWE;;navigation;;navigering
+1803;1;ENG;nodeType;pickup;node;Pickup a passenger or a parcel
+1803;5;SWE;;pickup;;hämtning
+1804;1;ENG;nodeType;destination;node;Destination of travel
+1804;5;SWE;;destination;;destination
+1901;1;ENG;subnodeType;break;node;Driver expected to take a break. Not used to indicate a request for a break from the driver.
+1901;2;DAN;;break;;raste
+1901;3;FIN;;break;;tauko
+1901;4;NOR;;break;;frikvarter
+1901;5;SWE;;break;;rast
+1902;1;ENG;subnodeType;driverassist;node;Driver ordered to meet up with another driver to help loading a traveller. Both drivers should have attribute LiftPass.
+1902;5;SWE;;driverassist;;assistera förare
+1903;1;ENG;subnodeType;mobaidpickup;node;Pick up a mobility aid for further transportation
+1903;5;SWE;;mobaidpickup;;hämta hjälpmedel
+1904;1;ENG;subnodeType;mobaiddropoff;node;Drop off a mobility aid that has been picked up earlier.
+1904;5;SWE;;mobaiddropoff;;lämna hjälpmedel
+1905;1;ENG;subnodeType;ferrydeparture;node;Vehicle shall be in time to catch the ferry at ordered time and place.
+1905;5;SWE;;ferrydeparture;;färjeavgång
+1906;1;ENG;subnodeType;ferryarrival;node;Arrival of ferry with vehicle at ordered time and place
+1906;5;SWE;;ferryarrival;;färjeankomst
+1907;1;ENG;subnodeType;waitforinstructions;node;Used to order a vehicle to wait for further instructions or new node
+1907;5;SWE;;waitforinstructions;;vänta på instruktioner
+1908;1;ENG;subnodeType;flagstop;node;Indicates a Flagstop
+1908;5;SWE;;flagstop;;Instruktion om Flagstop
+1909;1;ENG;subnodeType;refuel;node;stop for refuelling
+1910;1;ENG;subnodeType;pullout;node;pullout is a startnode sent as first node requesting vehicle to start session
+1911;1;ENG;subnodeType;pullin;node;pullin is an endnode for the return of vehicle at end of a session
+2001;1;ENG;idAttribute;wheelchair;attributeAdress/attribute;Indicates that traveller at this point will be using wheeelchair
+2001;2;DAN;;wheelchair;;kørestol
+2001;3;FIN;;wheelchair;;pyörätuoli
+2001;4;NOR;;wheelchair;;rullestol
+2001;5;SWE;;wheelchair;;rullstol
+2002;1;ENG;idAttribute;oxygen;attributeAdress/attribute;Indicates that traveller at this point will be using oxygen
+2002;2;DAN;;oxygen;;oxygen
+2002;3;FIN;;oxygen;;happi
+2002;4;NOR;;oxygen;;oksygen
+2002;5;SWE;;oxygen;;syre
+2003;1;ENG;idAttribute;dog;attributeAdress/attribute;Indicates that traveller at this point will be accompanied by a dog
+2003;5;SWE;;dog;;ledarhund
+2004;1;ENG;idAttribute;respirator;attributeAdress/attribute;Indicates that traveller at this point will need a respirator
+2004;2;DAN;;respirator;;respirator
+2004;3;FIN;;respirator;;hengityslaite
+2004;4;NOR;;respirator;;respirator
+2004;5;SWE;;respirator;;respirator
+2005;1;ENG;idAttribute;lift;attributeAdress/attribute;Indicates that traveller at this point will need to go by lift
+2005;5;SWE;;lift;;lift
+2006;1;ENG;idAttribute;stair climber;attributeAdress/attribute;Indicates that traveller at this point will need cruthches
+2006;5;SWE;;stair climber;;trappklättrare
+2007;1;ENG;idAttribute;crutch;attributeAdress/attribute;Indicates that traveller at this point will need a stair climber
+2007;2;DAN;;crutch;;krykke
+2007;3;FIN;;crutch;;kainalosauva
+2007;4;NOR;;crutch;;krykke
+2007;5;SWE;;crutch;;krycka
+2008;1;ENG;idAttribute;perambulator;attributeAdress/attribute;Indicates that traveller at this point will have a perambulator
+2008;2;DAN;;perambulator;;barnevogn
+2008;3;FIN;;perambulator;;lastenvaunut
+2008;4;NOR;;perambulator;;barnevogn
+2008;5;SWE;;perambulator;;barnvagn
+2009;1;ENG;idAttribute;rollator;attributeAdress/attribute;Indicates that traveller at this point need a rollator
+2009;5;SWE;;rollator;;rullator
+2010;1;ENG;idAttribute;walker;attributeAdress/attribute;Indicates that traveller at this point need a Walker or Walking frame
+2010;5;SWE;;walker;;gåstol
+2011;1;ENG;idAttribute;blind persons cane;attributeAdress/attribute;Indicates that traveller at this point need a blind persons cane
+2011;5;SWE;;blind persons cane;;blindkäpp
+2012;1;ENG;idAttribute;commodechair;attributeAdress/attribute;Indicates that traveller at this point need a Commode Chair
+2012;5;SWE;;commodechair;;toalettstol
+2013;1;ENG;idAttribute;do not leave unattended;attributeAdress/attribute;Indicates that traveller may not be left unattended. Driver may not leave until responcible person arrives.
+2013;5;SWE;;do not leave unattended;;överlämning
+2014;1;ENG;idAttribute;compulsory companion;attributeAdress/attribute;Indicates that traveller always need a companion
+2014;5;SWE;;compulsory companion;;obligatorisk ledsagare
+2015;1;ENG;idAttribute;treatmentCentre;attributeAdress/attribute;indicates that this point is a institution of treatment
+2015;4;NOR;;treatmentCentre;;behandlingssted
+2015;5;SWE;;treatmentCentre;;behandlingsställe
+2101;1;ENG;timeType;scheduledtime;timesNode/time;Scheduled time
+2101;5;SWE;;scheduledtime;;planerad tid
+2102;1;ENG;timeType;estimatedtime;timesNode/time;Estimated time
+2102;5;SWE;;estimatedtime;;uppskattad tid
+2103;1;ENG;timeType;promisedtime;timesNode/time;Promised time
+2103;5;SWE;;promisedtime;;lovad tid
+2104;1;ENG;timeType;actual;timesNode/time;Actual time
+2104;5;SWE;;actual;;faktisk tid
+2105;1;ENG;timeType;scheduled;timesNode/time;Sceduled time (same as 2101)
+2105;5;SWE;;scheduled;;planerad tid
+2106;1;ENG;timeType;promised;timesNode/time;Promised time (same as 2103)
+2106;5;SWE;;promised;;lovad tid
+2107;1;ENG;timeType;estimated;timesNode/time;Estimated time (same as 2102)
+2107;5;SWE;;estimated;;uppskattad tid
+2108;1;ENG;timeType;asap;timesNode/time;As soon as possible
+2108;5;SWE;;asap;;så snart som möjligt
+2109;1;ENG;timeType;estimatedStarttime;timesNode/time;Estimated starttime for a session for the vehicle/driver
+2110;1;ENG;timeType;estimatedEndtime;timesNode/time;Estimated endtime for a session for the vehicle/driver
+2111;1;ENG;timeType;requestedlatetime;timesNode/time;requested  latest endtime for a dropoff-node for the vehicle/driver
+2201;1;ENG;contactType;mail;contactInfo;Way of comunication with provider of connecting transportation. Address/number are given in contactInfo.
+2201;5;SWE;;mail;;email
+2202;1;ENG;contactType;phone;contactInfo;Way of comunication with provider of connecting transportation. Address/number are given in contactInfo.
+2202;2;DAN;;phone;;telefon
+2202;3;FIN;;phone;;puhelin
+2202;4;NOR;;phone;;telefon
+2202;5;SWE;;phone;;telefon
+2203;1;ENG;contactType;fax;contactInfo;Way of comunication with provider of connecting transportation. Address/number are given in contactInfo.
+2203;2;DAN;;fax;;fax
+2203;3;FIN;;fax;;telekopiointi
+2203;4;NOR;;fax;;faks
+2203;5;SWE;;fax;;fax
+2204;1;ENG;contactType;otherinfo;contactInfo;Other contactinformation such as operator or place.
+2204;2;DAN;;otherinfo;;fax
+2204;5;SWE;;otherinfo;;annan kontaktinfo
+2205;1;ENG;contactType;sms;contactInfo;contact using sms
+2206;1;ENG;contactType;bookingagent;contactInfo;Contact holds the phonenumber to a bookingagent responsible for order
+2207;1;ENG;contactType;web;contactInfo;The contact element contains an web-address to be used
+2301;1;ENG;idAttribute;wheelchair;attributeContent/attribute;Indicates that traveller at this point will be using wheeelchair
+2301;2;DAN;;wheelchair;;kørestol
+2301;3;FIN;;wheelchair;;pyörätuoli
+2301;4;NOR;;wheelchair;;rullestol
+2301;5;SWE;;wheelchair;;rullstol
+2302;1;ENG;idAttribute;oxygen;attributeContent/attribute;Indicates that traveller at this point will be using oxygen
+2302;2;DAN;;oxygen;;oxygen
+2302;3;FIN;;oxygen;;happi
+2302;4;NOR;;oxygen;;oksygen
+2302;5;SWE;;oxygen;;syre
+2303;1;ENG;idAttribute;dog;attributeContent/attribute;Indicates that traveller at this point will be accompanied by a dog
+2303;5;SWE;;dog;;ledarhund
+2304;1;ENG;idAttribute;respirator;attributeContent/attribute;Indicates that traveller at this point will need a respirator
+2304;2;DAN;;respirator;;respirator
+2304;3;FIN;;respirator;;hengityslaite
+2304;4;NOR;;respirator;;respirator
+2304;5;SWE;;respirator;;respirator
+2305;1;ENG;idAttribute;lift;attributeContent/attribute;Indicates that traveller at this point will need to go by lift
+2305;5;SWE;;lift;;lift
+2306;1;ENG;idAttribute;stair climber;attributeContent/attribute;Indicates that traveller at this point will need a stair climber
+2306;5;SWE;;stair climber;;trappklättrare
+2307;1;ENG;idAttribute;crutch;attributeContent/attribute;Indicates that traveller at this point will need cruthches
+2307;2;DAN;;crutch;;krykke
+2307;3;FIN;;crutch;;kainalosauva
+2307;4;NOR;;crutch;;krykke
+2307;5;SWE;;crutch;;krycka
+2308;1;ENG;idAttribute;perambulator;attributeContent/attribute;Indicates that traveller at this point will have a perambulator
+2308;2;DAN;;perambulator;;barnevogn
+2308;3;FIN;;perambulator;;lastenvaunut
+2308;4;NOR;;perambulator;;barnevogn
+2308;5;SWE;;perambulator;;barnvagn
+2309;1;ENG;idAttribute;rollator;attributeContent/attribute;Indicates that traveller at this point need a rollator
+2309;5;SWE;;rollator;;rullator
+2310;1;ENG;idAttribute;walker;attributeContent/attribute;Indicates that traveller at this point need a Walker or Walking frame
+2310;5;SWE;;walker;;gåstol
+2311;1;ENG;idAttribute;blind persons cane;attributeContent/attribute;Indicates that traveller at this point need a blind persons cane
+2311;5;SWE;;blind persons cane;;blindkäpp
+2312;1;ENG;idAttribute;commodechair;attributeContent/attribute;Indicates that traveller at this point need a Commode Chair
+2312;5;SWE;;commodechair;;toalettstol
+2313;1;ENG;idAttribute;do not leave unattended;attributeContent/attribute;Indicates that traveller may not be left unattended. Driver may not leave until responcible person arrives.
+2313;5;SWE;;do not leave unattended;;överlämning
+2314;1;ENG;idAttribute;compulsory companion;attributeContent/attribute;Indicates that traveller always need a companion
+2314;5;SWE;;compulsory companion;;obligatorisk ledsagare
+2315;1;ENG;idAttribute;frontseat;attributeContent/attribute;Indicates that traveller always need to be placed in front seat
+2315;2;DAN;;frontseat;;forsæte
+2315;3;FIN;;frontseat;;etuistuin
+2315;4;NOR;;frontseat;;forsete
+2315;5;SWE;;frontseat;;framsäte
+2316;1;ENG;idAttribute;lay in backseat;attributeContent/attribute;Indicates that traveller always need to lay in back seat
+2316;5;SWE;;lay in backseat;;ligga bak
+2317;1;ENG;idAttribute;single vehicle;attributeContent/attribute;Indicates that traveller always need to have a single car
+2317;4;NOR;;single vehicle;;alene bil
+2317;5;SWE;;single vehicle;;egen bil
+2318;1;ENG;idAttribute;traveller female;attributeContent/attribute;Indicates that traveller gender is female
+2318;2;DAN;;traveller female;;kvinde
+2318;3;FIN;;traveller female;;nainen
+2318;4;NOR;;traveller female;;kvinne
+2318;5;SWE;;traveller female;;kvinna
+2319;1;ENG;idAttribute;traveller male;attributeContent/attribute;Indicates that traveller gender is male
+2319;2;DAN;;traveller male;;mand
+2319;3;FIN;;traveller male;;mies
+2319;4;NOR;;traveller male;;mann
+2319;5;SWE;;traveller male;;man
+2320;1;ENG;idAttribute;traveller unknown gender;attributeContent/attribute;Indicates that traveller gender is unknown
+2320;2;DAN;;traveller unknown gender;;ukendt
+2320;3;FIN;;traveller unknown gender;;tuntematon
+2320;4;NOR;;traveller unknown gender;;ukjent
+2320;5;SWE;;traveller unknown gender;;okänd
+2321;1;ENG;idAttribute;powered wheelchair;attributeContent/attribute;Big powered wheelchair
+2321;5;SWE;;powered wheelchair;;permobil
+2322;1;ENG;idAttribute;folding wheelchair;attributeContent/attribute;Folded wheelchair
+2322;5;SWE;;folding wheelchair;;Vikbar rullstol
+2323;1;ENG;idAttribute;mobility scooter;attributeContent/attribute;Mobility scooter
+2324;1;ENG;idAttribute;stretcher;attributeContent/attribute;The vehicle has a strecher or can be easily fitted with a stretcher
+2324;2;DAN;;stretcher;;båre
+2324;3;FIN;;stretcher;;paarit
+2324;4;NOR;;stretcher;;båre
+2324;5;SWE;;stretcher;;bår
+2325;1;ENG;idAttribute;standard car;attributeContent/attribute;The traveler needs to go in a standard car used for the commercial transport of passengers
+2325;2;DAN;;standard car;;Den rejsende har brug for at gå i en standard bil, der anvendes til erhvervsmæssig transport af passagerer
+2325;4;NOR;;standard car;;Den reisende må gå i en vanlig bil som brukes til kommersiell transport av passasjerer
+2325;5;SWE;;standard car;;Resenären behöver åka i en standard bil som används för kommersiell transport av passagerare
+2326;1;ENG;idAttribute;special vehicle;attributeContent/attribute;The passenger needs to travel in a special vehicle used for the commercial carriage of passengers with special needs
+2326;2;DAN;;special vehicle;;Passageren har brug for at rejse i en særlig køretøj, der anvendes til erhvervsmæssig personbefordring med særlige behov
+2326;4;NOR;;special vehicle;;Passasjeren må reise i en spesiell bil som brukes til kommersiell transport av passasjerer med spesielle behov
+2326;5;SWE;;special vehicle;;Resenären behöver åka i ett specialfordon använt för yrkesmässig transport av resenär med speciella behov
+2327;1;ENG;idAttribute;foldableseat;attributeContent/attribute;Foldable seat
+2327;5;SWE;;foldableseat;;Fällbart säte
+2328;1;ENG;idAttribute;electrical car;attributeContent/attribute;Passenger requires a electrical car
+2328;5;SWE;;electrical car;;Elektriskt fordon
+2329;1;ENG;idAttribute;travellerAssistance;attributeContent/attribute;Traveller assistance
+2329;5;SWE;;travellerAssistance;;Hjälp resenär
+2330;1;ENG;idAttribute;cagedpet;attributeContent/attribute;Traveller has pet travelling in cage
+2330;5;SWE;;cagedpet;;Resenären reser med djur i bur
+2331;1;ENG;idAttribute;standingshell;attributeContent/attribute;Standing shell
+2331;5;SWE;;standingshell;;Stående skal
+2332;1;ENG;idAttribute;Separator;attributeContent/attribute;Plastic separator in vehicle for virus protection
+2332;5;SWE;;Separator;;Plastavskiljare för virusskydd
+2333;1;ENG;idAttribute;C19Driver;attributeContent/attribute;Driver trained for Covid19 transports
+2333;5;SWE;;C19Driver;;Förare för covid19 transport
+2334;1;ENG;idAttribute;BVH;attributeContent/attribute;Driver trained in basic care hygiene
+2334;5;SWE;;BVH;;Förare utbildad I basal vårdhygien
+2336;1;ENG;idAttribute;lay in frontseat;attributeContent/attribute;Indicates that traveller always need to lay in front seat
+2336;5;SWE;;lay in frontseat;;ligga fram
+2337;1;ENG;idAttribute;pet;attributeContent/attribute;Traveller has a pet
+2337;2;DAN;;pet;;Kæledyr
+2337;3;FIN;;pet;;Lemmikki
+2337;4;NOR;;pet;;Kjæledyr
+2337;5;SWE;;pet;;Sällskapsdjur
+2338;1;ENG;idAttribute;child lt seven;attributeContent/attribute;Traveller is under 7 years old
+2338;2;DAN;;child lt seven;;Børn 0-6 år
+2338;3;FIN;;child lt seven;;Lapsi 0-6 vuotta
+2338;4;NOR;;child lt seven;;Børn 0-6 år
+2338;5;SWE;;child lt seven;;Barn 0-6 år
+2339;1;ENG;idAttribute;child gt seven;attributeContent/attribute;Traveller is over 7 and under 20 years old
+2339;2;DAN;;child gt seven;;Ungdom 7-20 år
+2339;3;FIN;;child gt seven;;Nuori 7-20 vuotta
+2339;4;NOR;;child gt seven;;Ungdom 7-20 år
+2339;5;SWE;;child gt seven;;Ungdom 7-20 år
+2340;1;ENG;idAttribute;content requires 2 seats;attributeContent/attribute;Traveller must not be planned close to other traveller
+2341;1;ENG;idAttribute;content requires seat close to door;attributeContent/attribute;Traveller must be placed close to door. Often used in connection with wheelchair attribute
+2342;1;ENG;idAttribute;palanquin;attributeContent/attribute;Chair used to carry passenger into vehicle
+2342;5;SWE;idAttribute;bärstol;attributeContent/attribute;Stol för att lyfta resenär i och ur fordon
+2343;1;ENG;idAttribute;car belt lock;attributeContent/attribute;Passenger requests Car Lock Belt
+2343;5;SWE;idAttribute;bilbälteslås;attributeContent/attribute;Passagerare behöver bilbälteslås
+2401;1;ENG;idEkInfo;costcenter;payment;Indicates a costcenter used in this payment
+2401;5;SWE;;costcenter;;kostnadsställe
+2402;1;ENG;idEkInfo;project;payment;Indicates a project used in this payment
+2402;2;DAN;;project;;projekt
+2402;3;FIN;;project;;projekti
+2402;4;NOR;;project;;prosjekt
+2402;5;SWE;;project;;projekt
+2501;1;ENG;idRejectreason;ordernotfound;referencesTo;order not found
+2501;5;SWE;;ordernotfound;;order finns inte
+2502;1;ENG;idRejectreason;orderinprogress;referencesTo;content are already in vehicle
+2502;5;SWE;;orderinprogress;;resenär/paket redan i bil
+2503;1;ENG;idRejectreason;notaccordingtoagreement;referencesTo;order is not according to agreement
+2503;5;SWE;;notaccordingtoagreement;;inte enligt avtal
+2504;1;ENG;idRejectreason;nocapacity;referencesTo;no capacity to complete order
+2504;5;SWE;;nocapacity;;ingen resurs att genomföra order med
+2505;1;ENG;idRejectreason;tolate;referencesTo;to late
+2505;5;SWE;;tolate;;för sent
+2506;1;ENG;idRejectreason;travelerrequest;referencesTo;traveler has requested that order shall not be completed
+2506;5;SWE;;travelerrequest;;på begäran av resenär
+2507;1;ENG;idRejectreason;notallowed;referencesTo;not allowed
+2507;5;SWE;;notallowed;;inte tillåtet
+2508;1;ENG;idRejectreason;ordermanuallyhandled;referencesTo;order is manually handled
+2508;5;SWE;;ordermanuallyhandled;;order hanteras manuellt
+2509;1;ENG;idRejectreason;idnotfound;referencesTo;requested id not found
+2509;5;SWE;;idnotfound;;efterfrågat id hittas inte
+2510;1;ENG;idRejectreason;idblocked;referencesTo;requested id blocked
+2510;5;SWE;;idblocked;;efterfrågat id spärrat
+2511;1;ENG;idRejectreason;limitexceeded;referencesTo;limit is exceeded
+2511;5;SWE;;limitexceeded;;antal överskridet
+2512;1;ENG;idRejectreason;incorrectprice;referencesTo;an incorrect price has been used in report
+2512;5;SWE;;incorrectprice;;felaktigt pris har inrapporterats
+2513;1;ENG;idRejectreason;addressinfonotknown;referencesTo;the address is not known
+2513;5;SWE;;addressinfonotknown;;adressinfo finns inte hos Client/Provider
+2514;1;ENG;idRejectreason;addressinfonotsufficient;referencesTo;the address information is not sufficeint
+2514;5;SWE;;addressinfonotsufficient;;otillräcklig adressinfo hos Client/Provider
+2515;1;ENG;idRejectreason;OrderCancelled;referencesTo;Ogiltig operation då ordern är avbokad
+2516;1;ENG;idRejectreason;OrderNoShow;referencesTo;Ogiltig operation då ordern är bomad
+2517;1;ENG;idRejectreason;OrderCompleted;referencesTo;Ogiltig operation då ordern redan är avslutad
+2518;1;ENG;idRejectreason;Customer not picked up;referencesTo;Ogiltig operation då kund inte är hämtad
+2519;1;ENG;idRejectreason;Incorrect position;referencesTo;Ogiltig operation då fordon har felaktig position
+2530;1;ENG;idRejectreason;Driver id not valid;referencesTo;Some driver validations has returned negative in the clients system
+2531;1;ENG;idRejectreason;Vehicle not valid;referencesTo;Some driver validations has returned negative in the clients system
+3001;1;ENG;locationListType;1;bulkLocation;The listtype is described in detail in UseCase 3.2.11
+3101;1;ENG;dispatchResoncible;client;process;The Client is responcible for dispatch, i.e setting or accepting vehicle for order
+3102;1;ENG;dispatchResoncible;provider;process;The Provider is responcible for dispatch, i.e chose of vehicle according to requirements
+3110;1;ENG;pickupconfirmation;notrequested;process;The Client does not request any events to be sent (41xx)
+3111;1;ENG;pickupconfirmation;standard;process;The Client request  events to be sent (41xx) only at actual time
+3112;1;ENG;pickupconfirmation;extended;process;"The Client request  events to be sent (41xx) with actual times and if there is a calculation of estimated time för ""vehicle at node"" this event should also be sent"
+3120;1;ENG;sendinformation(dispatch/delay/arrival);allowsend;nodeprocess;The Client instructs at nodlevel for information to be sent to content rg dispatch, delay and arrival fo the node. Specifik content contact info should be available i the process element.
+3121;1;ENG;sendinformation(dispatch/delay/arrival);neversend;nodeprocess;The Client instructs at nodlevel for information to be sent to content rg dispatch, delay and arrival fo the node. Specifik content contact info should be available i the process element.
+3122;1;ENG;sendinformation(dispatch/delay/arrival);alwayssend;nodeprocess;The Client instructs at nodlevel for information to be sent to content rg dispatch, delay and arrival fo the node. Specifik content contact info should be available i the process element.
+3201;1;ENG;luggageType;checked;vehicle/capacity/luggage;Checked = 23 kg and max liner size 158 cm.
+3202;1;ENG;luggageType;cabin;vehicle/capacity/luggage;Cabin = 8 kg and 55 x 40 x 23 cm
+3203;1;ENG;luggageType;special;vehicle/capacity/luggage;e. g. golf bags, ski equipment, musical instrument.
+3301;1;ENG;typeOfCoordinate;WGS84;geographicLocation;WGS84 used for coordinates (standard)
+3302;1;ENG;typeOfCoordinate;RT90;geographicLocation;RT90 used for coordinates
+3303;1;ENG;typeOfCoordinate;UTM-33;geographicLocation;UTM-33 used for coordinates
+3304;1;ENG;typeOfCoordinate;SWEREF99TM;geographicLocation;SWEREF99TM used for coordinates
+3310;1;ENG;speedSource;gpsunit;geographicLocation;separate gpsunit used to measure speed
+3311;1;ENG;speedSource;taximeter;geographicLocation;taximeter used to measure speed
+3312;1;ENG;speedSource;canbus;geographicLocation;canbus in vehicle used to measure speed
+3401;1;ENG;updateType;timeUpdate;providerorderUpdate;time has been changed for node referred to in referenceTo
+3402;1;ENG;updateType;addressUpdate;providerorderUpdate;address has been changed for node referred to in referenceTo
+3403;1;ENG;updateType;contentUpdate;providerorderUpdate;content has been changed for node referred to in referenceTo
+3404;1;ENG;updateType;cancelation;providerorderUpdate;order or node is cancelled for node referred to in referenceTo
+3501;1;ENG;fuelType;Gasoline;environmentalInformation/fuelConsumptions/fuelConsumption;Gasoline is used as fuel type
+3502;1;ENG;fuelType;Diesel;environmentalInformation/fuelConsumptions/fuelConsumption;Diesel is used as fuel type
+3503;1;ENG;fuelType;Ethanol;environmentalInformation/fuelConsumptions/fuelConsumption;Ethanol is used as fuel type
+3504;1;ENG;fuelType;Electric;environmentalInformation/fuelConsumptions/fuelConsumption;Electric power is used as fuel type
+3505;1;ENG;fuelType;Gas;environmentalInformation/fuelConsumptions/fuelConsumption;Gas is used as the fuel type (conventional Gas, not Hydrogen)
+3506;1;ENG;fuelType;Hydrogen;environmentalInformation/fuelConsumptions/fuelConsumption;Hydrogen is used as fuel type.
+3510;1;ENG;unit;Liter;environmentalInformation/fuelConsumptions/fuelConsumption;Liter is used to measure consuption depending on fueltype
+3511;1;ENG;unit;Kwh;environmentalInformation/fuelConsumptions/fuelConsumption;Kwh is used to measure consuption of electric power
+3512;1;ENG;unit;Kg;environmentalInformation/fuelConsumptions/fuelConsumption;Kg is used to measure consuption of Gas or Hydrogen
+3601;1;ENG;status;none;orderStatus;The order does not exist in the provider system
+3602;1;ENG;status;confirmed;orderStatus;The order is confirmed (i.e. 2001 sent)
+3603;1;ENG;status;dispatching;orderStatus;The order is in the process of finding vehicle
+3604;1;ENG;status;dispatched;orderStatus;The order is accepted by vehicle
+3605;1;ENG;status;started;orderStatus;Vehicle has accpted and the taximeter is started for the order
+3606;1;ENG;status;noshow;orderStatus;Vehicle has reported noshow as the last action in vehicle
+3607;1;ENG;status;completed;orderStatus;The order is completed and orderReport can be or has been sent
+3608;1;ENG;status;cancelled;orderStatus;The order is cancelled
+3701;1;ENG;change;updated;driverSession/changelog/log;The order in idOrder has been updated with new information
+3702;1;ENG;change;moved;driverSession/changelog/log;The order in idOrder has been moved from the driverSession. It may reoccur in another driverSession
+3703;1;ENG;change;added;driverSession/changelog/log;The order in idOrder has been added to the driverSession
+3704;1;ENG;change;cancelled;driverSession/changelog/log;The order in idOrder has been cancelled by Client
+3801;1;ENG;validationType;logindriver;resource/Validation;Driver shall validate using login
+3802;1;ENG;validationType;bky;resource/Validation;Driver shall validate using a bky-test
+3803;1;ENG;validationType;taxidriverlicense;resource/Validation;Driver shall validate using presenting the number from the driver licensing
+3810;1;ENG;validationMethod;manual;resource/Validation;Driver shall validate using a manual process
+3811;1;ENG;validationMethod;card;resource/Validation;Driver shall validate using presentation of a card in the vehicle
+3812;1;ENG;validationMethod;system;resource/Validation;Driver shall validate using a method administrated by 3rd party authority (e.g. a Transport Agency)
+10101;1;ENG;idError;;statusTourError;Passenger id is not correct
+10102;1;ENG;idError;;statusTourError;Agreement specification is not correct
+10103;1;ENG;idError;;statusTourError;Social fee is not correct
+10104;1;ENG;idError;;statusTourError;Pickup address is not in accordance with order
+10105;1;ENG;idError;;statusTourError;Drop off address is not in accordance with order
+10106;1;ENG;idError;;statusTourError;The order is not found
+10107;1;ENG;idError;;statusTourError;The traveller was not picked up
+10201;1;ENG;idError;;statusTourError;Used taxameter calculation is not correct
+10202;1;ENG;idError;;statusTourError;Minimum price is not correct
+10203;1;ENG;idError;;statusTourError;An extra charge is not correct
+10204;1;ENG;idError;;statusTourError;A specified charge for cost is not correct
+10205;1;ENG;idError;;statusTourError;A fixed price is not correct
+10301;1;ENG;idError;;statusTourError;The total distance specified is not correct
+10302;1;ENG;idError;;statusTourError;The distance to first pickup address is not correct
+10303;1;ENG;idError;;statusTourError;The distance on return is not correct
+10304;1;ENG;idError;;statusTourError;The distance from last dropoff address back to startposition is not correct
+10305;1;ENG;idError;;statusTourError;The initially order for a fixprice tour has been changed incorrectly
+10306;1;ENG;idError;;statusTourError;The total distance for a whole day order is not correct
+10307;1;ENG;idError;;statusTourError;Extra minutes for wait(idle) is not correct
+10308;1;ENG;idError;;statusTourError;The duration for wait(idle) is not correct
+10309;1;ENG;idError;;statusTourError;The duration for driving time is not correct
+10310;1;ENG;idError;;statusTourError;Actual time for drop off is later than sent and agreeed in order
+10311;1;ENG;idError;;statusTourError;Actual time for pickup is later than sent and agreed in order
+10312;1;ENG;idError;;statusTourError;Debited time for tour related to a fixed duration agreement is not correct
+10313;1;ENG;idError;;statusTourError;The duration for tour is not correct
+10314;1;ENG;idError;;statusTourError;The total amount is not calculated correct
+10901;1;ENG;idError;;statusTourError;The secified requsition number is used before
+10902;1;ENG;idError;;statusTourError;The tour has already be accounted for
+10903;1;ENG;idError;;statusTourError;The tour is to old to be part of automated accounting
+10904;1;ENG;idError;;statusTourError;The drivers identification is not correct due to suspension
+10905;1;ENG;idError;;statusTourError;The driver is not legitimate or suspended for agreement
+10906;1;ENG;idError;;statusTourError;The idStatus for tour is not correct
+50101;1;ENG;idAction;;actionRequest;Reqeuest for driver estimation of vehicle at node
+50102;1;ENG;idAction;;actionRequest;No content at node
+50103;1;ENG;idAction;;actionRequest;No vehicle at node
+50111;1;ENG;idAction;;actionRequest;Information that Client connect call
+50112;1;ENG;idAction;;actionRequest;Request that Provider connect call
+50113;1;ENG;idAction;;actionRequest;Information that Client has requested the passenger to call
+50114;1;ENG;idAction;;actionRequest;Reuest the driver to call
+50115;1;ENG;idAction;;actionRequest;Request Client to decide call method
+50116;1;ENG;idAction;;actionRequest;Request Driver to connet to URL
+50121;1;ENG;idAction;;actionRequest;Text message from passenger to driver
+50122;1;ENG;idAction;;actionRequest;Text message from driver to passenger

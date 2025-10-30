@@ -1,0 +1,203 @@
+﻿AttributeId;Attribute;Usedin;Explanation;Danish;Finnish;Norwegian;Swedish
+1001;traveller;content/contentType;Attribute in contentType;rejsende;matkustaja;reisende;resenär
+1002;parcel;content/contentType;Attribute in contentType;pakke;paketti;pakke;paket
+1003;action;content/contentType;Attribute in contentType;aktivitet;toiminta;aktivitet;aktivitet
+1004;navigation;content/contentType;Attribute in contentType;navigation;–;navigasjon;navigering
+1005;companion;content/contentType;Attribute in contentType;–;saattaja;–;ledsagare
+1006;cotraveller;content/contentType;Attribute in contentType;–;–;–;medresenär
+1007;child;content/contentType;Attribute in contentType;barn;lapsi;barn;barn
+1008;animal;content/contentType;Attribute in contentType;dyr;eläin;dyr;djur
+1101;flight;content/connection/connectionType;Attribute in conectionType;fly;ilmailu;fly;flyg
+1102;train;content/connection/connectionType;Attribute in conectionType;tog;juna;tog;tåg
+1103;boat;content/connection/connectionType;Attribute in conectionType;båd;vene;båt;båt
+1104;meeting;content/connection/connectionType;Attribute in conectionType;møde;kokous;møte;möte
+1201;forward;vehicle/capacity/seats/position/direction;Forward;–;–;–;f
+1202;backward;vehicle/capacity/seats/position/direction;Backward;–;–;–;b
+1211;comfort;vehicle/capacity/seats/position/legspace;Comfort;–;–;–;c
+1212;normal;vehicle/capacity/seats/position/legspace;Normal;–;–;–;n
+1213;poor;vehicle/capacity/seats/position/legspace;Poor;–;–;–;p
+1301;cash;payment/paymentType;Cash payment;kontant;käteinen;kontant;kontant
+1302;card;payment/paymentType;Payment by card;kort;kortti;kort;kort
+1303;account;payment/paymentType;Account or invoice;faktura;lasku;faktura;faktura
+1304;ticket;payment/paymentType;Ticket;billet;lippu;billett;biljett
+1305;document;payment/paymentType;Travelling document.;rejsedokument;matkustusasiakirja;reisebevis;resehandling
+1306;socialservicefee;payment/paymentType;Amount that the traveller pay of the total fare. The remaining fare are paid by account or invoice.;egenandel;omamaksu;egenandel;egenavgift
+1307;prepaidSocialfee;payment/paymentType;A card or document that indicates that traveller do notneed to pay socialservicefee.;frikort;vapaakortti;frikort;frikort
+1308;claim;payment/paymentType;Claim is a negative amount. Tis indicates that a part of the amount from an account payment will not be paid.;fordring;vaatimus;krav;fordran
+1401;breakpoint;priceCalculation/formula;Use breakpoint calculation;–;–;–;brytpunktstariff
+1402;sumtariff;priceCalculation/formula;Use sumtariff calculation;–;–;–;summatariff
+1411;client;price/priceResoncible;The Client are responcible for setting the price;–;–;–;beställare
+1412;provider;price/priceResoncible;The Provider are responcible for setting the price;–;–;–;utförare
+1501;attributesDriver carrypass;attributesDriver/attribute/idAttribute;Driver can help carry a passenger;–;–;–;bär passagerare
+1502;attributesDriver liftpass;attributesDriver/attribute/idAttribute;Driver can help lift a passenger;–;–;–;lyfter passagerare
+1503;attributesDriver carrylugg;attributesDriver/attribute/idAttribute;Driver can help carry luggage;–;–;–;bär bagage
+1504;attributesDriver animal;attributesDriver/attribute/idAttribute;Driver can take animals in car. No allergy;–;–;–;kör djur
+1505;attributesDriver guide;attributesDriver/attribute/idAttribute;Driver is qualified as Tour Guide;–;–;–;guide
+1506;attributesDriver female;attributesDriver/attribute/idAttribute;Driver is female;–;–;–;kvinnlig
+1507;attributesDriver male;attributesDriver/attribute/idAttribute;Driver is male;–;–;–;manlig
+1508;attributesDriver badge swlfv;attributesDriver/attribute/idAttribute;Driver has been security screened to get luggage from retricted areas on Swedish airports.;–;–;–;säkerhetskontrollerad lfv
+1509;attributesDriver no smoking;attributesDriver/attribute/idAttribute;Non smoking driver;–;–;–;icke rökare
+1510;attributesDriver assisttraveller;attributesDriver/attribute/idAttribute;Driver is qualified to assist traveller to door;–;–;–;assisterar resenär
+1511;attributesDriver C19Driver;attributesDriver/attribute/idAttribute;Driver trained for Covid19 transports;–;–;–;Förare för Covid19 transport
+1512;attributesDriver BVH;attributesDriver/attribute/idAttribute;Driver trained in basic care hygiene;–;–;–;Förare utbildad i basal vårdhygien
+1601;attributesVehicle estate;attributesVehicle/attribute/idAttribute;Combi;–;–;–;kombi
+1602;attributesVehicle volvo;attributesVehicle/attribute/idAttribute;Volvo;–;–;–;volvo
+1603;attributesVehicle mercedes;attributesVehicle/attribute/idAttribute;Mercedes;–;–;–;mercedes
+1604;attributesVehicle environmental;attributesVehicle/attribute/idAttribute;environmentally friendly vehicle;–;–;–;miljöfordon
+1605;attributesVehicle child booster seat;attributesVehicle/attribute/idAttribute;Cushion specially made for children to big to use Child seat and to smal to use safety belt in an normal vay like an adult.;–;–;–;bilbarnkudde
+1606;attributesVehicle child seat;attributesVehicle/attribute/idAttribute;Detachable seat used for smal children;–;–;–;bilbarnstol
+1607;attributesVehicle limousin;attributesVehicle/attribute/idAttribute;??;–;–;–;limosin
+1608;attributesVehicle bike rack;attributesVehicle/attribute/idAttribute;Rack used to transport bikes.;–;–;–;cykelställ
+1609;attributesVehicle tow bar;attributesVehicle/attribute/idAttribute;Device to attach a trailer;–;–;–;dragkrok
+1610;attributesVehicle school sign;attributesVehicle/attribute/idAttribute;Sign placed on the roof of a vehicle used to indicate that the vehicle transports children to and from school;–;–;–;skolskylt
+1611;attributesVehicle wheelchair;attributesVehicle/attribute/idAttribute;The vehicle can carry a wheelchair or can be easily converted to carry a wheelchair;–;–;–;rullstol
+1612;attributesVehicle low rider;attributesVehicle/attribute/idAttribute;Low rider;–;–;–;låggolv
+1613;attributesVehicle stretcher;attributesVehicle/attribute/idAttribute;The vehicle has a strecher or can be easily fitted with a stretcher;–;–;–;bår
+1614;attributesVehicle ramp;attributesVehicle/attribute/idAttribute;Ramp for wheelchairs;–;–;–;ramp
+1615;attributesVehicle lift;attributesVehicle/attribute/idAttribute;Lift for wheelchairs;–;–;–;lift
+1616;attributesVehicle stair climber;attributesVehicle/attribute/idAttribute;Vehicle equipped with stair climber;–;–;–;trappklättrare
+1617;attributesVehicle allergy safe;attributesVehicle/attribute/idAttribute;Vehicle allergy decontaminated;–;–;–;allegisanerad
+1618;attributesVehicle saloon;attributesVehicle/attribute/idAttribute;Sedan;–;–;–;sedan
+1619;attributesVehicle bus;attributesVehicle/attribute/idAttribute;Bus;–;–;–;buss
+1620;attributesVehicle roof box;attributesVehicle/attribute/idAttribute;Roof box;–;–;–;takbox
+1621;attributesVehicle no smoking;attributesVehicle/attribute/idAttribute;Non smoking vehicle;–;–;–;rökfritt fordon
+1622;attributesVehicle perambulator;attributesVehicle/attribute/idAttribute;Perambulator;–;–;–;barnvagn
+1623;attributesVehicle rollator;attributesVehicle/attribute/idAttribute;Rollator;–;–;–;rullator
+1624;attributesVehicle walker;attributesVehicle/attribute/idAttribute;Walker or Walking frame;–;–;–;gåstol
+1625;attributesVehicle blind persons cane;attributesVehicle/attribute/idAttribute;Blind persons cane;–;–;–;blindkäpp
+1626;attributesVehicle commodechair;attributesVehicle/attribute/idAttribute;Commode Chair;–;–;–;toalettstol
+1627;attributesVehicle powered wheelchair;attributesVehicle/attribute/idAttribute;Big powered wheelchair;–;–;–;permobil
+1628;attributesVehicle frontseat;attributesVehicle/attribute/idAttribute;Indicates that the vehicle shall have a front seat;–;–;sitte foran;framsäte
+1629;attributesVehicle lay in backseat;attributesVehicle/attribute/idAttribute;Indicates that the vehicle shall be able to have a passenger laying in back seat;–;–;–;ligga bak
+1630;attributesVehicle lay in frontseat;attributesVehicle/attribute/idAttribute;Indicates that the vehicle shall be able to have a passenger laying in front seat;–;–;–;ligga fram
+1631;attributesVehicle single vehicle;attributesVehicle/attribute/idAttribute;Indicates that the vehicle shall take only thios passenger;–;–;alene bil;egen bil
+1632;attributesVehicle multiple wheelchairs;attributesVehicle/attribute/idAttribute;Indicates that the vehicle shall take multiple wheelchairs;–;–;–;flera rullstolar
+1633;attributesVehicle child seat 0 – 9 month;attributesVehicle/attribute/idAttribute;Detachable seat used for smal children up to 9 month;–;–;–;bilbarnstol 0-9 månader
+1634;attributesVehicle child seat 1-3 year;attributesVehicle/attribute/idAttribute;Detachable seat used for smal children between 10 months and 3 years;–;–;–;bilbarnstol 10 månader-3 år
+1635;attributesVehicle child seat 4+ year;attributesVehicle/attribute/idAttribute;Detachable seat used for smal children from 4 years and up;–;–;–;bilbarnstol 4+ år
+1636;attributesVehicle folding wheelchair;attributesVehicle/attribute/idAttribute;Folded wheelchair;–;–;–;Vikbar rullstol
+1637;attributesVehicle mobility scooter;attributesVehicle/attribute/idAttribute;Mobility scooter;–;–;–;–
+1638;attributesVehicle standard car;attributesVehicle/attribute/idAttribute;Standard car used for commercial transportation of passengers;Standard bil anvendes til erhvervsmæssig transport af passagerer;–;Standard bilen brukes til kommersiell transport av passasjerer;Standard bil som används för kommersiell transport av passagerare
+1639;attributesVehicle special vehicle;attributesVehicle/attribute/idAttribute;Special vehicles used for commercial carriage of passengers with special needs;Særlige køretøjer, der anvendes til erhvervsmæssig personbefordring med særlige behov;–;Spesielle kjøretøyer som brukes til kommersiell transport av passasjerer med spesielle behov;Specialfordon använt för yrkesmässig transport av resenär med speciella behov
+1640;attributeVehicle foldableseat;attributesVehicle/attribute/idAttribute;Foldable seat;–;–;–;Fällbart säte
+1641;attributeVehicle electrical car;attributesVehicle/attribute/idAttribute;electrical car;–;–;–;Eldriven bil
+1642;attributeVehicle cagedpet;attributesVehicle/attribute/idAttribute;Pet travveling in cage;–;–;–;Djur som reseri bur
+1643;attributeVehicle standingshell;attributesVehicle/attribute/idAttribute;Standing shell;–;–;–;Stående skal
+1644;attributeVehicle highstep;attributesVehicle/attribute/idAttribute;High step;–;–;–;Högt insteg
+1645;attributeVehicle stow big wheelchair;attributesVehicle/attribute/idAttribute;stowbigwheelchair;stuvestorkørestol;pysäköiisopyörätuoli;–;stuvastorrullstol
+1646;attributeVehicle four wheel drive;attributesVehicle/attribute/idAttribute;fourwheeldrive;firehjulstræk;neliveto;firehjulstrekk;fyrhjulsdrift
+1647;attributeVehicle Separator;attributesVehicle/attribute/idAttribute;Plastic separator in vehicle for virus protection;–;–;–;Plastavskiljare för virusskydd
+1701;passengerinvehicle;pickupConfirmation/eventType;Passenger picked up. the value “pickup” was initially used.;–;–;–;resenär hämtad
+1702;passengerdropped;pickupConfirmation/eventType;Passenger dropped of. the value “destination” was initially used.;–;–;–;resenär avlämnad
+1703;noshow;pickupConfirmation/eventType;No show at pickup of passenger;–;–;–;bom
+1704;parcelinvehicle;pickupConfirmation/eventType;Parcel picked up;–;–;–;paket hämtat
+1705;parceldropped;pickupConfirmation/eventType;Parcel dropped of;–;–;–;paket avlämnat
+1706;actiondone;pickupConfirmation/eventType;The demanded action has been done. the value “action” was initially used.;–;–;–;aktivitet utförd
+1707;navigationdone;pickupConfirmation/eventType;The demanded navigation has been done. the value “navigation” was initially used.;–;–;–;navigering utförd
+1708;canceledatdoor;pickupConfirmation/eventType;The pickup has been canceled at the door;–;–;–;avbest vid dörren
+1709;vehicleatnode;pickupConfirmation/eventType;The vehicle har arrived at the node;–;–;–;på noden
+1710;infotocontent;pickupConfirmation/eventType;Information to content.;–;–;–;–
+1711;dispatchconfirmationsent;pickupConfirmation/eventType;Dispatch confirmation has been sent.;–;–;–;–
+1712;delayconfirmationsent;pickupConfirmation/eventType;Delay confirmation has been sent.;–;–;–;–
+1713;arrivalconfirmationsent;pickupConfirmation/eventType;Arrival confirmation has been sent.;–;–;–;–
+1714;start;pickupConfirmation/eventType;This indicates that the taximeter in vehicle is set in tarif mode.;–;–;–;start
+1715;stop;pickupConfirmation/eventType;This indicates that the taximeter in vehicle is set off tarif mode.;–;–;–;stop
+1716;acceptOrder;pickupConfirmation/eventType;This acceptance of an order.;–;–;–;accept
+1801;action;node/nodeType;Take a sopecified action;–;–;–;aktivitet
+1802;navigation;node/nodeType;Navigate through this point;navigation;–;navigasjon;navigering
+1803;pickup;node/nodeType;Pickup a passenger or a parcel;–;–;–;hämtning
+1804;destination;node/nodeType;Destination of travel;–;–;–;destination
+1901;break;node/nodeType/subnodeType/action;Driver expected to take a break. Not used to indicate a request for a break from the driver.;raste;tauko;frikvarter;rast
+1902;driverassist;node/nodeType/subnodeType/action;Driver ordered to meet up with another driver to help loading a traveller. Both drivers should have attribute LiftPass.;–;–;–;assistera förare
+1903;mobaidpickup;node/nodeType/subnodeType/action;Pick up a mobility aid for further transportation;–;–;–;hämta hjälpmedel
+1904;mobaiddropoff;node/nodeType/subnodeType/action;Drop off a mobility aid that has been picked up earlier.;–;–;–;lämna hjälpmedel
+1905;ferrydeparture;node/nodeType/subnodeType/action;Vehicle shall be in time to catch the ferry at ordered time and place.;–;–;–;färjeavgång
+1906;ferryarrival;node/nodeType/subnodeType/action;Arrival of ferry with vehicle at ordered time and place;–;–;–;färjeankomst
+1907;waitforinstructions;node/nodeType/subnodeType/action;Used to order a vehicle to wait for further instructions or new node;–;–;–;vänta på instruktioner
+1908;flagstop;node/nodeType/subnodeType/action;Indicates a Flagstop;–;–;–;Instruktion om Flagstop
+2001;adressContent wheelchair;attributeAdress/attribute/idAttribute;Indicates that traveller at this point will be using wheeelchair;kørestol;pyörätuoli;rullestol;rullstol
+2002;adressContent oxygen;attributeAdress/attribute/idAttribute;Indicates that traveller at this point will be using oxygen;oxygen;happi;oksygen;syre
+2003;adressContent dog;attributeAdress/attribute/idAttribute;Indicates that traveller at this point will be accompanied by a dog;–;–;–;ledarhund
+2004;adressContent respirator;attributeAdress/attribute/idAttribute;Indicates that traveller at this point will need a respirator;respirator;hengityslaite;respirator;respirator
+2005;adressContent lift;attributeAdress/attribute/idAttribute;Indicates that traveller at this point will need to go by lift;–;–;–;lift
+2006;adressContent stair climber;attributeAdress/attribute/idAttribute;Indicates that traveller at this point will need cruthches;–;–;–;trappklättrare
+2007;adressContent crutch;attributeAdress/attribute/idAttribute;Indicates that traveller at this point will need a stair climber;krykke;kainalosauva;krykke;krycka
+2008;adressContent perambulator;attributeAdress/attribute/idAttribute;Indicates that traveller at this point will have a perambulator;barnevogn;lastenvaunut;barnevogn;barnvagn
+2009;adressContent rollator;attributeAdress/attribute/idAttribute;Indicates that traveller at this point need a rollator;–;–;–;rullator
+2010;adressContent walker;attributeAdress/attribute/idAttribute;Indicates that traveller at this point need a Walker or Walking frame;–;–;–;gåstol
+2011;adressContent blind persons cane;attributeAdress/attribute/idAttribute;Indicates that traveller at this point need a blind persons cane;–;–;–;blindkäpp
+2012;adressContent commodechair;attributeAdress/attribute/idAttribute;Indicates that traveller at this point need a Commode Chair;–;–;–;toalettstol
+2013;adressContent do not leave unattended;attributeAdress/attribute/idAttribute;Indicates that traveller may not be left unattended. Driver may not leave until responcible person arrives.;–;–;–;överlämning
+2014;adressContent compulsory companion;attributeAdress/attribute/idAttribute;Indicates that traveller always need a companion;–;–;–;obligatorisk ledsagare
+2015;adressContent treatmentCentre;attributeAdress/attribute/idAttribute;indicates that this point is a institution of treatment;–;–;behandlingssted;behandlingsställe
+2101;scheduledtime;timesNode/time/timeType;Scheduled time;–;–;–;planerad tid
+2102;estimatedtime;timesNode/time/timeType;Estimated time;–;–;–;uppskattad tid
+2103;promisedtime;timesNode/time/timeType;Promised time;–;–;–;lovad tid
+2104;actual;timesNode/time/timeType;Actual time;–;–;–;faktisk tid
+2105;scheduled;timesNode/time/timeType;Sceduled time;–;–;–;planerad tid
+2106;promised;timesNode/time/timeType;Promised time;–;–;–;lovad tid
+2107;estimated;timesNode/time/timeType;Estimated time;–;–;–;uppskattad tid
+2108;asap;timesNode/time/timeType;As soon as possible;–;–;–;så snart som möjligt
+2201;mail;contactInfosReservation/contactInfo/contactType;Way of comunication with provider of connecting transportation. Address/number are given in contactInfo.;–;–;–;email
+2202;phone;contactInfosReservation/contactInfo/contactType;Way of comunication with provider of connecting transportation. Address/number are given in contactInfo.;telefon;puhelin;telefon;telefon
+2203;fax;contactInfosReservation/contactInfo/contactType;Way of comunication with provider of connecting transportation. Address/number are given in contactInfo.;fax;telekopiointi;faks;fax
+2204;otherinfo;contactInfosReservation/contactInfo/contactType;Other contactinformation such as operator or place.;fax;–;–;annan kontaktinfo
+2301;attributeContent wheelchair;attributeContent/attribute/idAttribute;Indicates that traveller at this point will be using wheeelchair;kørestol;pyörätuoli;rullestol;rullstol
+2302;attributeContent oxygen;attributeContent/attribute/idAttribute;Indicates that traveller at this point will be using oxygen;oxygen;happi;oksygen;syre
+2303;attributeContent dog;attributeContent/attribute/idAttribute;Indicates that traveller at this point will be accompanied by a dog;–;–;–;ledarhund
+2304;attributeContent respirator;attributeContent/attribute/idAttribute;Indicates that traveller at this point will need a respirator;respirator;hengityslaite;respirator;respirator
+2305;attributeContent lift;attributeContent/attribute/idAttribute;Indicates that traveller at this point will need to go by lift;–;–;–;lift
+2306;attributeContent stair climber;attributeContent/attribute/idAttribute;Indicates that traveller at this point will need a stair climber;–;–;–;trappklättrare
+2307;attributeContent crutch;attributeContent/attribute/idAttribute;Indicates that traveller at this point will need cruthches;krykke;kainalosauva;krykke;krycka
+2308;attributeContent perambulator;attributeContent/attribute/idAttribute;Indicates that traveller at this point will have a perambulator;barnevogn;lastenvaunut;barnevogn;barnvagn
+2309;attributeContent rollator;attributeContent/attribute/idAttribute;Indicates that traveller at this point need a rollator;–;–;–;rullator
+2310;attributeContent walker;attributeContent/attribute/idAttribute;Indicates that traveller at this point need a Walker or Walking frame;–;–;–;gåstol
+2311;attributeContent blind persons cane;attributeContent/attribute/idAttribute;Indicates that traveller at this point need a blind persons cane;–;–;–;blindkäpp
+2312;attributeContent commodechair;attributeContent/attribute/idAttribute;Indicates that traveller at this point need a Commode Chair;–;–;–;toalettstol
+2313;attributeContent do not leave unattended;attributeContent/attribute/idAttribute;Indicates that traveller may not be left unattended. Driver may not leave until responcible person arrives.;–;–;–;överlämning
+2314;attributeContent compulsory companion;attributeContent/attribute/idAttribute;Indicates that traveller always need a companion;–;–;–;obligatorisk ledsagare
+2315;attributeContent frontseat;attributeContent/attribute/idAttribute;Indicates that traveller always need to be placed in front seat;forsæte;etuistuin;forsete;framsäte
+2316;attributeContent lay in backseat;attributeContent/attribute/idAttribute;Indicates that traveller always need to lay in back seat;–;–;–;ligga bak
+2316;attributeContent lay in frontseat;attributeContent/attribute/idAttribute;Indicates that traveller always need to lay in front seat;–;–;–;ligga fram
+2317;attributeContent single vehicle;attributeContent/attribute/idAttribute;Indicates that traveller always need to have a single car;–;–;alene bil;egen bil
+2318;attributeContent traveller female;attributeContent/attribute/idAttribute;Indicates that traveller gender is female;kvinde;nainen;kvinne;kvinna
+2319;attributeContent traveller male;attributeContent/attribute/idAttribute;Indicates that traveller gender is male;mand;mies;mann;man
+2320;attributeContent traveller unknown gender;attributeContent/attribute/idAttribute;Indicates that traveller gender is unknown;ukendt;tuntematon;ukjent;okänd
+2321;attributeContent powered wheelchair;attributeContent/attribute/idAttribute;Big powered wheelchair;–;–;–;permobil
+2322;attributeContent folding wheelchair;attributeContent/attribute/idAttribute;Folded wheelchair;–;–;–;Vikbar rullstol
+2323;attributeContent mobility scooter;attributeContent/attribute/idAttribute;Mobility scooter;–;–;–;–
+2324;attributeContent stretcher;attributeContent/attribute/idAttribute;The vehicle has a strecher or can be easily fitted with a stretcher;båre;paarit;båre;bår
+2325;attributeContent standard car;attributeContent/attribute/idAttribute;The traveler needs to go in a standard car used for the commercial transport of passengers;Den rejsende har brug for at gå i en standard bil, der anvendes til erhvervsmæssig transport af passagerer;–;Den reisende må gå i en vanlig bil som brukes til kommersiell transport av passasjerer;Resenären behöver åka i en standard bil som används för kommersiell transport av passagerare
+2326;attributeContent special vehicle;attributeContent/attribute/idAttribute;The passenger needs to travel in a special vehicle used for the commercial carriage of passengers with special needs;Passageren har brug for at rejse i en særlig køretøj, der anvendes til erhvervsmæssig personbefordring med særlige behov;–;Passasjeren må reise i en spesiell bil som brukes til kommersiell transport av passasjerer med spesielle behov;Resenären behöver åka i ett specialfordon använt för yrkesmässig transport av resenär med speciella behov
+2327;attributeContent foldableseat;attributeContent/attribute/idAttribute;Foldable seat;–;–;–;Fällbart säte
+2328;attributeContent electrical car;attributeContent/attribute/idAttribute;Passenger requires a electrical car;–;–;–;Elektriskt fordon
+2329;attributeContent travellerAssistance;attributeContent/attribute/idAttribute;Traveller assistance;–;–;–;Hjälp resenär
+2330;attributeContent cagedpet;attributeContent/attribute/idAttribute;Traveller has pet travelling in cage;–;–;–;Resenären reser med djur i bur
+2331;attributeContent standingshell;attributeContent/attribute/idAttribute;Standing shell;–;–;–;Stående skal
+2332;Separator;attributeContent/attribute/idAttribute;Plastic separator in vehicle for virus protection;–;–;–;Plastavskiljare för virusskydd
+2333;C19Driver;attributeContent/attribute/idAttribute;Driver trained for Covid19 transports;–;–;–;Förare för covid19 transport
+2334;BVH;attributeContent/attribute/idAttribute;Driver trained in basic care hygiene;–;–;–;Förare utbildad I basal vårdhygien
+2401;costcenter;payment/idEkInfo;Indicates a costcenter used in this payment;–;–;–;kostnadsställe
+2402;project;payment/idEkInfo;Indicates a project used in this payment;projekt;projekti;prosjekt;projekt
+2501;ordernotfound;idRejectreason;order not found;–;–;–;order finns inte
+2501;ordernotfound;idRejectreason;order not found;–;–;–;order finns inte
+2502;orderinprogress;idRejectreason;content are already in vehicle;–;–;–;resenär/paket redan i bil
+2503;notaccordingtoagreement;idRejectreason;order is not according to agreement;–;–;–;inte enligt avtal
+2504;nocapacity;idRejectreason;no capacity to complete order;–;–;–;ingen resurs att genomföra order med
+2505;tolate;idRejectreason;to late;–;–;–;för sent
+2506;travelerrequest;idRejectreason;traveler has requested that order shall not be completed;–;–;–;på begäran av resenär
+2507;notallowed;idRejectreason;not allowed;–;–;–;inte tillåtet
+2508;ordermanuallyhandled;idRejectreason;order is manually handled;–;–;–;order hanteras manuellt
+2509;idnotfound;idRejectreason;requested id not found;–;–;–;efterfrågat id hittas inte
+2510;idblocked;idRejectreason;requested id blocked;–;–;–;efterfrågat id spärrat
+2511;limitexceeded;idRejectreason;limit is exceeded;–;–;–;antal överskridet
+2512;incorrectprice;idRejectreason;an incorrect price has been used in report;–;–;–;felaktigt pris har inrapporterats
+2513;addressinfonotknown;idRejectreason;the address is not known;–;–;–;adressinfo finns inte hos Client/Provider
+2514;addressinfonotsufficient;idRejectReason;the address information is not sufficeint;–;–;–;otillräcklig adressinfo hos Client/Provider
+2515; OrderCancelled;idRejectReason;Ogiltig operation då ordern är avbokad;;;;
+2516; OrderNoShow;idRejectReason;Ogiltig operation då ordern är bomad;;;;
+2517;OrderCompleted ;idRejectReason;Ogiltig operation då ordern redan är avslutad;;;;
+2518;Customer not picked up;idRejectReason;Ogiltig operation då kund inte är hämtad;;;;
+2519;Incorrect position;idRejectReason;Ogiltig operation då fordon har felaktig position;;;;
+2530; Driver id not valid;idRejectReason;Some driver validations has returned negative in the clients system;;;;
+2531;Vehicle not valid;idRejectReason;Some driver validations has returned negative in the clients system;;;;
