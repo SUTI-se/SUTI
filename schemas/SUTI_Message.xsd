@@ -594,6 +594,7 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="1025"/>
 					<xs:enumeration value="1060"/>
 					<xs:enumeration value="1061"/>
+					<xs:enumeration value="1062"/>
 					<xs:enumeration value="1100"/>
 					<xs:enumeration value="1101"/>
 					<xs:enumeration value="1102"/>
@@ -630,6 +631,8 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="2032"/>
 					<xs:enumeration value="2040"/>
 					<xs:enumeration value="2050"/>
+					<xs:enumeration value="2060"/>
+					<xs:enumeration value="2061"/>
 					<xs:enumeration value="2100"/>
 					<xs:enumeration value="2101"/>
 					<xs:enumeration value="2102"/>
@@ -640,6 +643,8 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="2107"/>
 					<xs:enumeration value="2110"/>
 					<xs:enumeration value="2111"/>
+					<xs:enumeration value="2112"/>
+					<xs:enumeration value="2113"/>
 					<xs:enumeration value="2530"/>
 					<xs:enumeration value="2531"/>
 					<xs:enumeration value="2532"/>
@@ -656,6 +661,7 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="3002"/>
 					<xs:enumeration value="3003"/>
 					<xs:enumeration value="3004"/>
+					<xs:enumeration value="3013"/>
 					<xs:enumeration value="4000"/>
 					<xs:enumeration value="4001"/>
 					<xs:enumeration value="4002"/>
@@ -678,11 +684,10 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="5011"/>
 					<xs:enumeration value="5020"/>
 					<xs:enumeration value="5021"/>
-					<xs:enumeration value="5030"/>
-					<xs:enumeration value="6000"/>
 					<xs:enumeration value="6001"/>
 					<xs:enumeration value="6060"/>
 					<xs:enumeration value="6061"/>
+					<xs:enumeration value="6062"/>
 					<xs:enumeration value="6500"/>
 					<xs:enumeration value="6501"/>
 					<xs:enumeration value="6502"/>
@@ -693,6 +698,7 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="6810"/>
 					<xs:enumeration value="7000"/>
 					<xs:enumeration value="7001"/>
+					<xs:enumeration value="7002"/>
 					<xs:enumeration value="7010"/>
 					<xs:enumeration value="7011"/>
 					<xs:enumeration value="7015"/>
@@ -702,17 +708,12 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="7031"/>
 					<xs:enumeration value="7099"/>
 					<xs:enumeration value="8000"/>
-					<xs:enumeration value="8001"/>
 					<xs:enumeration value="8010"/>
 					<xs:enumeration value="8101"/>
 					<xs:enumeration value="8111"/>
 					<xs:enumeration value="8121"/>
 					<xs:enumeration value="8181"/>
 					<xs:enumeration value="8199"/>
-					<xs:enumeration value="2060"/>
-					<xs:enumeration value="2061"/>
-					<xs:enumeration value="2113"/>
-					<xs:enumeration value="3013"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
