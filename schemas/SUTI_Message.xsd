@@ -707,6 +707,8 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="7030"/>
 					<xs:enumeration value="7031"/>
 					<xs:enumeration value="7099"/>
+					<xs:enumeration value="7100"/>
+					<xs:enumeration value="7101"/>
 					<xs:enumeration value="8000"/>
 					<xs:enumeration value="8010"/>
 					<xs:enumeration value="8101"/>
