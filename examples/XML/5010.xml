@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+    xmlns="http://www.suti.se/schema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.suti.se/schema ../../schemas/SUTI_Message.xsd">
+  <orgSender name="Provider name">
+    <idOrg src="SUTI:idlink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Client name">
+    <idOrg src="SUTI:idlink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="5010" msgName="Message to Client From Vehicle">
+    <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2020090915404493" unique="true"/>
+    <referencesTo>
+      <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idOrder" id="469" unique="true"/>
+      <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+      <idVehicle src="systemsupplierId_clientOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+    </referencesTo>
+    <manualDescriptionMsg sendtoInvoice="false" sendtoVehicle="false" sendtoOperator="true" manualText="STATUS:010" vehicleConfirmation="false"/>
+  </msg>
+</SUTI>

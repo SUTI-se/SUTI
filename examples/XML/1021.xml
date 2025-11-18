@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+    xmlns="http://www.suti.se/schema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.suti.se/schema ../../schemas/SUTI_Message.xsd">
+  <orgSender name="Client name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Provider name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="1021" msgName="Resource Login Confirmation">
+    <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2020090915822989" unique="true"/>
+    <referencesTo>
+      <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2020090915402925" unique="true"/>
+      <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+      <idVehicle src="systemsupplierId_clientOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+    </referencesTo>
+  </msg>
+</SUTI>

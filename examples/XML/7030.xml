@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+    xmlns="http://www.suti.se/schema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.suti.se/schema ../../schemas/SUTI_Message.xsd">
+  <orgSender name="Client name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Provider name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="7030" msgName="Syntax error">
+    <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2015121414795235" unique="true"/>
+    <referencesTo>
+      <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2015121414795234" unique="true"/>
+    </referencesTo>
+	<!-- The error found during the processing of message, can be sent by client or the provider-->
+	<manualDescriptionMsg manualText="Error message text" sendtoInvoice="false" sendtoOperator="false" sendtoVehicle="false" vehicleConfirmation="false"/>     
+  </msg>
+</SUTI>

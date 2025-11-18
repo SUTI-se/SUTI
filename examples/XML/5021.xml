@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+    xmlns="http://www.suti.se/schema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.suti.se/schema ../../schemas/SUTI_Message.xsd">
+  <orgSender name="Provider name">
+    <idOrg src="SUTI:idlink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Client name">
+    <idOrg src="SUTI:idlink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="5021" msgName="Requested Location">
+    <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2020090915403947" unique="true"/>
+    <msgTimeStamp>
+      <time time="2020-09-09T15:49:06"/>
+    </msgTimeStamp>
+    <infoTimeStamp>
+      <time time="2020-09-09T15:49:01"/>
+    </infoTimeStamp>
+    <referencesTo>
+      <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2020090915822990" unique="true"/>
+      <idVehicle src="systemsupplierId_clientOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+      <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+    </referencesTo>
+    <addressLocation>
+      <geographicLocation typeOfCoordinate="WGS-84" lat="56.156338" long="13.765966" precision="6"/>
+    </addressLocation>
+  </msg>
+</SUTI>

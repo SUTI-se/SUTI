@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+    xmlns="http://www.suti.se/schema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.suti.se/schema ../../schemas/SUTI_Message.xsd">
+  <orgSender name="Provider name">
+    <idOrg src="SUTI:idlink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Client name">
+    <idOrg src="SUTI:idlink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="4010" msgName="pickupConfirmation">
+    <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2020090913365726" unique="true"/>
+    <referencesTo>
+      <idOrder src="systemsupplierId_providerOwnerId_uniqueId:idOrder" id="2067907" unique="true"/>
+      <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idOrder" id="479" unique="true"/>
+      <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2020090913761991" unique="true"/>
+      <idVehicle src="systemsupplierId_clientOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+      <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+    </referencesTo>
+    <pickupConfirmation eventType="noshow">
+      <nodeConfirmed nodeType="pickup" nodeSeqno="1">
+        <addressNode>
+          <geographicLocation typeOfCoordinate="WGS-84" lat="0.000000" long="0.000000" precision="6"/>
+        </addressNode>
+        <timesNode>
+          <time timeType="estimatedtime" timeAccuracy="5" timeZone="1" time="2020-09-09T13:20:04"/>
+        </timesNode>
+        <contents>
+          <content contentType="traveller" name="Nils Testsson">
+            <idContent src="systemsupplierId_clientOwnerId_uniqueId:idContentId" id="9999"/>
+            <subOrderContent>
+              <idOrder src="systemsupplierId_clientOwnerId_uniqueId:IdSubOrder" id="18555470"/>
+            </subOrderContent>
+          </content>
+        </contents>
+      </nodeConfirmed>
+    </pickupConfirmation>
+  </msg>
+</SUTI>

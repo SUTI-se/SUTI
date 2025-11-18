@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+    xmlns="http://www.suti.se/schema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.suti.se/schema ../../schemas/SUTI_Message.xsd">
+  <orgSender name="Provider name">
+    <idOrg src="SUTI:idlink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Client name">
+    <idOrg src="SUTI:idlink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="1023" msgName="ResourceLogoff">
+    <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2020090914379104" unique="true"/>
+    <referencesTo>
+      <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+      <idVehicle src="systemsupplierId_clientOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+      <idVehicle src="SE:idVehicle" id="ABC123" unique="true"/>
+      <idDriver src="SE:idDriver" id="123456" unique="true"/>
+    </referencesTo>
+    <resourceDispatch>
+      <vehicle>
+        <capacity>
+          <seats noOfSeats="4"/>
+        </capacity>
+      </vehicle>
+      <driver>
+        <idDriver src="SE:idDriver" id="123456" unique="true"/>
+      </driver>
+    </resourceDispatch>
+  </msg>
+</SUTI>

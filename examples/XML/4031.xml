@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+    xmlns="http://www.suti.se/schema"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.suti.se/schema ../../schemas/SUTI_Message.xsd">
+  <orgSender name="Provider name">
+    <idOrg src="SUTI:idlink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Client name">
+    <idOrg src="SUTI:idlink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="4031" msgName="No contact with vehicle">
+    <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2022030815637970" unique="true"/>
+    <referencesTo>
+      <idOrder src="systemsupplierId_providerOwnerId_uniqueId:idOrder" id="10040216-0" unique="true"/>
+      <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idOrder" id="3808732" unique="true"/>
+      <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2022030815283857" unique="true"/>
+      <idVehicle src="systemsupplierId_clientOwnerId_uniqueId:idVehicle" id="11053" unique="true"/>
+      <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="11053" unique="true"/>
+    </referencesTo>
+  </msg>
+</SUTI>
