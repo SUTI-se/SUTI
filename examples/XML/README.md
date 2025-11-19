@@ -1,31 +1,34 @@
 # SUTI XML Examples  
-Katalog: `examples/XML/`
+Directory: `examples/XML/`
 
 ## Quick Start
 
-1. **Validera en fil via kommandorad:**
+1. **Validate a file via command line:**
    ```bash
    cd examples/XML
-   xmllint --noout --schema ../schemas/SUTI_Message.xsd 1020.xml
+   xmllint --noout --schema ../../schemas/SUTI_Message.xsd 1020.xml
    ```
 
-2. **Validera alla filer:**
+2. **Validate all files:**
    ```bash
    cd examples/XML
-   for file in *.xml; do xmllint --noout --schema ../schemas/SUTI_Message.xsd "$file"; done
+   for file in *.xml; do xmllint --noout --schema ../../schemas/SUTI_Message.xsd "$file"; done
    ```
 
-3. **I en IDE:** Öppna valfri XML-fil - validering sker automatiskt via den relativa schemareferensen.
+3. **In an IDE:**  
+   Open any XML file – validation occurs automatically via the relative schema reference.
 
-## Syfte  
-Denna katalog innehåller XML-exempel för olika SUTI-meddelanden. Exemplen kan valideras direkt mot den officiella schemafilen som ligger i repots katalog `schemas/`.
+## Purpose  
+This directory contains XML examples for various SUTI messages.  
+The examples can be validated directly against the official schema file located in the repository’s `schemas/` directory.
 
-Alla XML-filer är konfigurerade med:
-- XML-deklaration med UTF-8 encoding (stödjer svenska tecken som å, ä, ö)
-- Namespace-deklarationer för SUTI-schemat
-- Relativ sökväg till schemafilen för enkel validering
+All XML files are configured with:
 
-## Mappstruktur  
+- XML declaration using UTF-8 encoding (supports Swedish characters å, ä, ö)
+- Namespace declarations for the SUTI schema
+- Relative path to the schema file for easy validation
+
+## Directory Structure  
 ```
 /schemas
     SUTI_Message.xsd
@@ -37,8 +40,8 @@ Alla XML-filer är konfigurerade med:
         ...
 ```
 
-## Schema-referens i exemplen  
-Samtliga XML-exempel refererar till schemat via en **relativ sökväg**:
+## Schema Reference in the Examples  
+All XML examples reference the schema using a **relative path**:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -48,65 +51,66 @@ Samtliga XML-exempel refererar till schemat via en **relativ sökväg**:
     xsi:schemaLocation="http://www.suti.se/schema ../../schemas/SUTI_Message.xsd">
 ```
 
-**Viktigt om encoding:** UTF-8 används för att stödja svenska tecken (å, ä, ö) och andra internationella tecken korrekt.
+**Encoding note:**  
+UTF-8 is used to ensure correct handling of Swedish characters (å, ä, ö) and other international characters.
 
-### Varför en relativ sökväg?
-- Fungerar direkt efter att du klonat repot  
-- Ingen nätverksåtkomst krävs  
-- Alla vanliga IDE:er (VS Code, IntelliJ, Eclipse, oXygen m.fl.) hittar schemat automatiskt  
-- Underlättar lokal utveckling, testning och CI
+### Why a relative path?
+- Works immediately after cloning the repository  
+- Requires no network access  
+- All common IDEs (VS Code, IntelliJ, Eclipse, oXygen, etc.) automatically locate the schema  
+- Simplifies local development, testing, and CI
 
 ---
 
-## Hur du validerar exemplen
+## How to Validate the Examples
 
-### Via kommandorad (CLI)
+### Command Line (CLI)
 
-**Validera en fil:**
+**Validate a single file:**
 ```bash
 cd examples/XML
 xmllint --noout --schema ../../schemas/SUTI_Message.xsd 1020.xml
 ```
 
-**Validera alla filer:**
+**Validate all files:**
 ```bash
 cd examples/XML
 for file in *.xml; do 
-  echo "Validerar $file..."
+  echo "Validating $file..."
   xmllint --noout --schema ../../schemas/SUTI_Message.xsd "$file"
 done
 ```
 
-**Förväntat resultat vid lyckad validering:**
-- Inga felmeddelanden visas
-- Kommandot returnerar utan output (exit code 0)
+**Expected output when validation succeeds:**
+- No error messages  
+- Command exits quietly (exit code 0)
 
-**Exempel på felmeddelande:**
+**Example error:**
 ```
 1020.xml:39: element SUTI: Schemas validity error : Element 'SUTI': ...
 1020.xml fails to validate
 ```
 
-### I en IDE
-Öppna en XML-fil i t.ex.:
+### In an IDE  
+Open a file in:
 
-- **VS Code** (med XML- eller XML Tools-plugin)
+- **VS Code** (with XML or XML Tools extensions)
 - **IntelliJ / WebStorm / Rider**
 - **Eclipse**
 - **oXygen XML Editor**
 
-IDE:n kommer automatiskt validera filen via den relativa sökvägen och visa eventuella fel direkt i editorn.
+The IDE will validate the file automatically using the relative schema path and highlight any issues.
 
 ---
 
-## Viktigt om validering
+## Important Notes on Validation
 
-- `xsi:schemaLocation` fungerar som **hint** för verktyg i utvecklingsmiljö  
-- Produktionssystem bör **inte** validera mot GitHub eller suti.se  
-- I egna projekt: lägg schemat i en lokal katalog (t.ex. `/schemas`)  
-- För robust drift rekommenderas XML Catalog eller likvärdig resolver
+- `xsi:schemaLocation` acts as a **hint** to tools and development environments  
+- Production systems should **not** validate against GitHub or suti.se  
+- In your own system: store the schema in a local directory (e.g., `/schemas`)  
+- For robust operation, use an XML Catalog or equivalent resolver
 
-Exempel på XML Catalog-post:
+Example XML Catalog entry:
 
 ```xml
 <uri name="http://www.suti.se/schema"
@@ -115,36 +119,44 @@ Exempel på XML Catalog-post:
 
 ---
 
-## Versionshantering  
-Schemat `SUTI_Message.xsd` representerar aktuell version av standarden i main-branchen.  
-Vid nya versioner:
+## Version Management  
+The schema `SUTI_Message.xsd` represents the current version of the standard on the main branch.  
+When a new version is released:
 
-- Uppdateras schemafilen  
-- Uppdateras XML-exemplen  
-- Märks tidigare versioner upp via GitHub releases/tags
+- The schema file is updated  
+- XML examples are updated  
+- Previous versions are tagged via GitHub releases
 
 ---
 
-## Support & felsökning
+## Support & Troubleshooting
 
-### Om något exempel inte validerar
+### If an example fails validation:
 
-1. **Kontrollera sökväg:** Säkerställ att `../../schemas/SUTI_Message.xsd` finns relativt till XML-filen
+1. **Check the path:**  
+   Verify that `../../schemas/SUTI_Message.xsd` exists relative to the XML file.
    ```bash
    ls -la ../../schemas/SUTI_Message.xsd
    ```
 
-2. **Kontrollera namespace:** Verifiera att `xmlns="http://www.suti.se/schema"` matchar `targetNamespace` i XSD
+2. **Check namespace:**  
+   Ensure that `xmlns="http://www.suti.se/schema"` matches the schema’s `targetNamespace`.
 
-3. **Nätverksåtkomst:** Säkerställ att IDE:n eller valideringsverktyget inte försöker hämta schemat via nätet
+3. **Network problems:**  
+   Confirm that your IDE/validator is not attempting to fetch the schema from the internet.
 
-4. **Encoding:** Kontrollera att filen är sparad med UTF-8 encoding
+4. **Encoding:**  
+   Make sure the file is saved using UTF-8.
 
-### Vanliga problem
+### Common issues
 
-- **"Schema not found"**: Kontrollera att du kör kommandot från rätt katalog (`examples/XML/`)
-- **"Namespace mismatch"**: Verifiera att namespace-deklarationen i XML-filen matchar schemat
-- **"Invalid character"**: Säkerställ att filen är sparad med UTF-8 encoding
+- **“Schema not found”**:  
+  Run the command from the correct directory (`examples/XML/`).
+
+- **“Namespace mismatch”**:  
+  Ensure that the XML namespace equals the XSD namespace.
+
+- **“Invalid character”**:  
+  File is not saved as UTF-8.
 
 ---
-
