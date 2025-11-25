@@ -712,8 +712,8 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="8000"/>
 					<xs:enumeration value="8010"/>
 					<xs:enumeration value="8101"/>
+					<xs:enumeration value="8102"/>
 					<xs:enumeration value="8111"/>
-					<xs:enumeration value="8121"/>
 					<xs:enumeration value="8181"/>
 					<xs:enumeration value="8199"/>
 				</xs:restriction>
