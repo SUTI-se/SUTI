@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SUTI
-    xmlns="http://www.suti.se/schema"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.suti.se/schema ../../schemas/SUTI_Message.xsd">
+    xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
   <orgSender name="Client name">
     <idOrg src="SUTI:idLink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
   </orgSender>
