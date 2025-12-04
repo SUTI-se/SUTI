@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- edited with XMLSpy v2023 rel. 2 (x64) (http://www.altova.com) by Per Lars Åke Persson (Private) -->
-<xs:schema xmlns:suti="http://www.suti.se/schema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:complexType name="idType">
 		<xs:annotation>
 			<xs:documentation>General type identification-element
@@ -94,6 +94,11 @@ see  UC_3</xs:documentation>
 					<xs:annotation>
 						<xs:documentation>Id of the receiving side.
 See UC_3</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="contactReference" type="contactInfosType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Contact reference information at message level</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="msg" maxOccurs="unbounded">
