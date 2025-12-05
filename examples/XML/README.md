@@ -25,7 +25,7 @@ The examples can be validated directly against the official schema file located 
 All XML files are configured with:
 
 - XML declaration using UTF-8 encoding (supports Swedish characters å, ä, ö)
-- Namespace declarations for the SUTI schema
+- Schema reference using `xsi:noNamespaceSchemaLocation` (the schema does not use a target namespace)
 - Relative path to the schema file for easy validation
 
 ## Directory Structure  
@@ -41,18 +41,20 @@ All XML files are configured with:
 ```
 
 ## Schema Reference in the Examples  
-All XML examples reference the schema using a **relative path**:
+All XML examples reference the schema using a **relative path** with `noNamespaceSchemaLocation`:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <SUTI
-    xmlns="http://www.suti.se/schema"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.suti.se/schema ../../schemas/SUTI_Message.xsd">
+    xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
 ```
 
-**Encoding note:**  
-UTF-8 is used to ensure correct handling of Swedish characters (å, ä, ö) and other international characters.
+**Important notes:**
+
+- **Encoding:** UTF-8 is used to ensure correct handling of Swedish characters (å, ä, ö) and other international characters.
+- **No namespace:** The schema does not define a `targetNamespace`, so XML files use `xsi:noNamespaceSchemaLocation` instead of `xsi:schemaLocation`.
+- **Element structure:** All elements are in the default (no) namespace, so no namespace prefixes are needed on elements.
 
 ### Why a relative path?
 - Works immediately after cloning the repository  
@@ -105,12 +107,14 @@ The IDE will validate the file automatically using the relative schema path and 
 
 ## Important Notes on Validation
 
-- `xsi:schemaLocation` acts as a **hint** to tools and development environments  
+- `xsi:noNamespaceSchemaLocation` acts as a **hint** to tools and development environments  
 - Production systems should **not** validate against GitHub or suti.se  
 - In your own system: store the schema in a local directory (e.g., `/schemas`)  
 - For robust operation, use an XML Catalog or equivalent resolver
 
-Example XML Catalog entry:
+**Note:** Since the schema does not use a target namespace, XML files use `xsi:noNamespaceSchemaLocation` rather than `xsi:schemaLocation`.
+
+Example XML Catalog entry (if using namespace in the future):
 
 ```xml
 <uri name="http://www.suti.se/schema"
@@ -139,8 +143,8 @@ When a new version is released:
    ls -la ../../schemas/SUTI_Message.xsd
    ```
 
-2. **Check namespace:**  
-   Ensure that `xmlns="http://www.suti.se/schema"` matches the schema’s `targetNamespace`.
+2. **Check schema reference:**  
+   Verify that `xsi:noNamespaceSchemaLocation` is used (not `xsi:schemaLocation`), since the schema does not define a target namespace.
 
 3. **Network problems:**  
    Confirm that your IDE/validator is not attempting to fetch the schema from the internet.
@@ -153,8 +157,8 @@ When a new version is released:
 - **“Schema not found”**:  
   Run the command from the correct directory (`examples/XML/`).
 
-- **“Namespace mismatch”**:  
-  Ensure that the XML namespace equals the XSD namespace.
+- **"Schema not found" or "No matching global declaration"**:  
+  Ensure that `xsi:noNamespaceSchemaLocation` is used (the schema does not use a target namespace).
 
 - **“Invalid character”**:  
   File is not saved as UTF-8.
