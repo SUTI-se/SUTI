@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
+  <orgSender name="Client name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Provider name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="4011" msgName="Vehicle event accepted">
+    <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2020090914822984" unique="true"/>
+    <referencesTo>
+      <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idOrder" id="480" unique="true"/>
+      <idOrder src="systemsupplierId_providerOwnerId_uniqueId:idOrder" id="2068244" unique="true"/>
+      <idVehicle src="systemsupplierId_clientOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+      <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+    </referencesTo>
+    <pickupConfirmation eventType="1701">
+      <nodeConfirmed nodeSeqno="1" nodeType="pickup">
+		<contents>
+		  <content contentType="traveller" name="Nils Testsson">
+			<manualDescriptionContent sendtoInvoice="false" sendtoVehicle="true" sendtoOperator="false" vehicleConfirmation="false" manualText="Verkar som  ni bekräftar kund utanför tillåten radie på 0.5 km och ditt avstånd är 1.0 km! Tänk på att detta loggas"/>
+		  </content>
+		</contents>
+	  </nodeConfirmed>
+   </pickupConfirmation>
+  </msg>
+</SUTI>

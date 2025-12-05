@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
+  <orgSender name="Provider name">
+    <idOrg src="SUTI:idlink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Client name">
+    <idOrg src="SUTI:idlink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="4010" msgName="pickupConfirmation">
+    <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2020090914378887" unique="true"/>
+    <referencesTo>
+      <idOrder src="systemsupplierId_providerOwnerId_uniqueId:idOrder" id="2068244" unique="true"/>
+      <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idOrder" id="480" unique="true"/>
+      <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2020090914822982" unique="true"/>
+      <idVehicle src="systemsupplierId_clientOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+      <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+    </referencesTo>
+    <pickupConfirmation eventType="passengerinvehicle">
+      <nodeConfirmed nodeType="pickup" nodeSeqno="1">
+        <addressNode>
+          <geographicLocation typeOfCoordinate="WGS-84" lat="56.156337" long="13.765955" precision="6"/>
+        </addressNode>
+        <timesNode>
+          <time timeType="estimatedtime" timeAccuracy="5" timeZone="1" time="2020-09-09T14:10:25"/>
+        </timesNode>
+        <contents>
+          <content contentType="traveller" name="Nils Testsson">
+            <idContent src="systemsupplierId_clientOwnerId_uniqueId:idContentId" id="1212"/>
+            <subOrderContent>
+              <idOrder src="systemsupplierId_clientOwnerId_uniqueId:IdSubOrder" id="18555472"/>
+            </subOrderContent>
+          </content>
+        </contents>
+      </nodeConfirmed>
+    </pickupConfirmation>
+  </msg>
+</SUTI>

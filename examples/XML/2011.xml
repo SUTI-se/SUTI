@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
+  <orgSender name="Provider name">
+    <idOrg src="SUTI:idlink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Client name">
+    <idOrg src="SUTI:idlink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="2011" msgName="Order Cancellation accepted">
+    <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2015121409309256" unique="true"/>
+    <referencesTo>
+      <idOrder src="systemsupplierId_providerOwnerId_uniqueId:idOrder" id="3640266-0" unique="true"/>
+      <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idOrder" id="11183742" unique="true"/>
+      <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2015121409309255" unique="true"/>
+    </referencesTo>
+  </msg>
+</SUTI>

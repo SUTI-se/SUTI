@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
+  <orgSender name="Client name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Provider name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="5011" msgName="Message To Client From Vehicle Confirmation">
+    <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2020090915820254" unique="true"/>
+    <referencesTo>
+      <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2020090915404493" unique="true"/>
+      <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+      <idVehicle src="systemsupplierId_clientOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+    </referencesTo>
+  </msg>
+</SUTI>

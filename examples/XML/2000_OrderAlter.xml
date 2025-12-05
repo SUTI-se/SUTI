@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
+  <orgSender name="Client name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Provider name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="2000" msgName="Order">
+    <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2020090915822999" unique="true"/>
+    <referencesTo>
+      <idOrder src="systemsupplierId_providerOwnerId_uniqueId:idOrder" id="2068608" unique="true"/>
+      <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idOrder" id="482" unique="true"/>
+      <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2020090915822999" unique="true"/>
+      <idVehicle src="systemsupplierId_clientOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+      <idVehicle src="SE:idVehicle" id="ABC123" unique="true"/>
+      <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+      <idDriver src="SE:idDriver" id="123456" unique="true"/>
+    </referencesTo>
+    <order>
+      <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idOrder" id="482" unique="true"/>
+      <orgProvider name="Provider name">
+        <idOrg src="SUTI:idLink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+      </orgProvider>
+      <process allowRouting="true" trafficControl="true" orderAlteration="true" dispatchResponsible="provider" report="false" preorderedVehicle="false" dispatch="true" manualDispatch="false" pickupconfirmation="standard"/>
+      <economyOrder>
+        <price priceResponsible="client" fixedPrice="true" vatIncluded="true" price="10"/>
+      </economyOrder>
+      <resourceOrder>
+        <vehicle>
+          <idVehicle src="systemsupplierId_clientOwnerId_uniqueId:idVehicle" id="77777" unique="true"/>
+          <capacity>
+            <seats noOfSeats="1"/>
+          </capacity>
+        </vehicle>
+      </resourceOrder>
+      <route>
+        <node nodeSeqno="1" nodeType="pickup">
+          <addressNode addressName=" " street="Kvarnstensgatan" streetNo="8" streetNoLetter="" community="Helsingborg" postalNo="25227">
+            <manualDescriptionAddress sendtoInvoice="false" sendtoVehicle="true" sendtoOperator="true" manualText="Gå in i port B" vehicleConfirmation="false"/>
+            <geographicLocation typeOfCoordinate="WGS-84" lat="56.033811" long="12.711738" precision="6"/>
+          </addressNode>
+          <timesNode>
+            <time timeType="scheduledtime" time="2020-09-09T16:52:00" dwellTime="720"/>
+            <time timeType="estimatedtime" time="2020-09-09T16:47:00" dwellTime="720"/>
+          </timesNode>
+          <contents>
+            <content contentType="traveller" name="Nils Testsson">
+              <idContent src="systemsupplierId_clientOwnerId_uniqueId:idContent" id="15061" unique="true"/>
+              <economyContent>
+                <formOfPayment>
+                  <payment amount="30" paymentType="prepaidSocialfee"/>
+                </formOfPayment>
+              </economyContent>
+              <resourceContent>
+                <vehicle>
+                  <capacity>
+                    <seats noOfSeats="1"/>
+                  </capacity>
+                </vehicle>
+              </resourceContent>
+              <contactInfosContent>
+                <contactInfo contactType="phone" contactInfo="123456789"/>
+              </contactInfosContent>
+              <subOrderContent>
+                <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idSubOrder" id="18555474" unique="true"/>
+              </subOrderContent>
+              <productContent>
+                <idProduct src="systemsupplierId_clientOwnerId_uniqueId:idParaService" id="SJ BCNV" unique="true"/>
+              </productContent>
+            </content>
+          </contents>
+        </node>
+        <node nodeSeqno="2" nodeType="destination">
+          <addressNode addressName="Olympia Bowling" street="Mellersta Stenbocksg" streetNo="10" streetNoLetter="" community="Helsingborg" postalNo="25437">
+            <geographicLocation typeOfCoordinate="WGS-84" lat="56.051413" long="12.706366" precision="6"/>
+          </addressNode>
+          <timesNode>
+            <time timeType="scheduledtime" time="2020-09-09T17:11:21" dwellTime="360"/>
+            <time timeType="estimatedtime" time="2020-09-09T17:11:21" dwellTime="360"/>
+          </timesNode>
+          <contents>
+            <content contentType="traveller" name="Nils Testsson">
+              <idContent src="systemsupplierId_clientOwnerId_uniqueId:idContent" id="15061" unique="true"/>
+              <economyContent>
+                <formOfPayment>
+                  <payment amount="30" paymentType="prepaidSocialfee"/>
+                </formOfPayment>
+              </economyContent>
+              <resourceContent>
+                <vehicle>
+                  <capacity>
+                    <seats noOfSeats="1"/>
+                  </capacity>
+                </vehicle>
+              </resourceContent>
+              <contactInfosContent>
+                <contactInfo contactType="phone" contactInfo="043174700"/>
+              </contactInfosContent>
+              <subOrderContent>
+                <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idSubOrder" id="18555474" unique="true"/>
+              </subOrderContent>
+              <productContent>
+                <idProduct src="systemsupplierId_clientOwnerId_uniqueId:idParaService" id="SJ BCNV" unique="true"/>
+              </productContent>
+            </content>
+          </contents>
+        </node>
+      </route>
+    </order>
+  </msg>
+</SUTI>
