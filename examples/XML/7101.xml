@@ -12,7 +12,7 @@
 	<contactInfo contactType="phone" contactInfo="0431-74700"/>
 	<contactInfo contactType="otherInfo" contactInfo="Jane Doe"/>
   </contactReference>	
-  <msg msgType="7101" msgName="Link mapping confirmation">
+  <msg msgType="7101" msgName="Link Mapping Response">
     <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2025091514795235"/>
     <referencesTo>
       <idDriverSession src="systemsupplierId_providerOwnerId_uniqueId:idDriverSession" id="XXXX"/>
