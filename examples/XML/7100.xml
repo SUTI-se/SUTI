@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
+  <orgSender name="clientOwnerId">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_clientOwnerId_uniqueId"/>
+  </orgSender>
+  <orgReceiver name="Empty">
+    <idOrg src="SUTI:idLink" id="Empty"/>
+  </orgReceiver>
+  <contactReference>	
+	<contactInfo contactType="phone" contactInfo="0431-74700"/>
+	<contactInfo contactType="otherInfo" contactInfo="Jane Doe"/>
+  </contactReference>	
+  <msg msgType="7100" msgName="Link Mapping Request">
+    <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2025091514795234"/>
+	<referencesTo>
+      <idDriverSession src="systemsupplierId_clientOwnerId_uniqueId:idDriverSession" id="XXXX"/>
+      <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idOrder" id="XXXX"/>
+      <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="XXXX"/>
+      <idVehicle src="systemsupplierId_clientOwnerId_uniqueId:idVehicle" id="XXXX"/>
+	  <idVehicle src="SE:idVehicle" id="XXXX"/>
+	  <idDriver src="SE:idDriver" id="XXXX"/>
+      <idSuborder src="systemsupplierId_clientOwnerId_uniqueId:idSuborder" id="XXXX"/>
+      <idNode src="systemsupplierId_clientOwnerId_uniqueId:idNode" id="XXXX"/>
+      <idMsgRef src="systemsupplierId_clientOwnerId_uniqueId:idMsgRef" idMsg="XXXX" msgType="7100"/>
+      <idPassword src="systemsupplierId_clientOwnerId_uniqueId:idPassword" id="XXXX"/>
+      <idRejectReason src="systemsupplierId_clientOwnerId_uniqueId:idRejectReason" id="XXXX"/>
+      <idReceipt src="systemsupplierId_clientOwnerId_uniqueId:idReceipt" id="XXXX"/>
+      <idAuthorization src="systemsupplierId_clientOwnerId_uniqueId:idAuthorization" id="XXXX"/>
+      <idOrderStatus src="systemsupplierId_clientOwnerId_uniqueId:idOrderStatus" id="XXXX"/>
+      <idOrderTemplate src="systemsupplierId_clientOwnerId_uniqueId:idOrderTemplate" id="XXXX"/>
+      <idResponse src="systemsupplierId_clientOwnerId_uniqueId:idResponse" id="XXXX"/>
+      <idOrderForward>
+        <idOrderForwarderClient src="systemsupplierId_clientOwnerId_uniqueId:idOrderForwarderClient" id="XXXX"/>
+        <idOrderForwardProvider src="systemsupplierId_clientOwnerId_uniqueId:idOrderForwardProvider" id="XXXX"/>
+      </idOrderForward>
+      <idRunoffGroup src="systemsupplierId_clientOwnerId_uniqueId:idRunoffGroup" id="XXXX"/>
+    </referencesTo>
+	<order>
+		<idOrder src="systemsupplierId_clientOwnerId_uniqueId:idOrder" id="XXXX"/>
+		<agreement>
+			<idAgreement src="systemsupplierId_clientOwnerId_uniqueId:idAgreement" id="XXXX"/>
+		</agreement>	
+        <resourceOrder>
+			<vehicle>
+				<attributesVehicle>
+					<attribute>
+						<idAttribute src="SUTI:idAttribute" id="xxxx"/>
+					</attribute>
+					<attribute>
+						<idAttribute src="SUTI:idAttribute" id="xxxx"/>
+					</attribute>
+				</attributesVehicle>  
+			</vehicle> 
+			<driver>
+				<attributesDriver>
+					<attribute>
+						<idAttribute src="SUTI:idAttribute" id="xxxx"/>
+					</attribute>
+					<attribute>
+						<idAttribute src="SUTI:idAttribute" id="xxxx"/>
+					</attribute>
+				</attributesDriver>  
+			</driver> 
+        </resourceOrder>
+		<route>
+			<node nodeSeqno="1" nodeType="pickup">
+				<contents>
+					<content contentType="traveller" name="John Doe">
+						<idContent src="systemsupplierId_clientOwnerId_uniqueId:idContent" id="XXXX"/>
+						<attributeContent>
+							<attribute>
+								<idAttribute src="SUTI:idAttribute" id="xxxx"/>
+							</attribute>
+							<attribute>
+								<idAttribute src="SUTI:idAttribute" id="xxxx"/>
+							</attribute>
+						</attributeContent>
+						</content> 
+				</contents>
+			</node>
+		</route>  
+    </order> 
+  </msg>
+</SUTI>

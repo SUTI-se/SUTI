@@ -5,7 +5,7 @@
 		<xs:annotation>
 			<xs:documentation>General type identification-element
 
-See UC_3.1.2 for extensive description. Especiallly is the use and the implemantation of source (src) vital for creating adequate SUTI messages. </xs:documentation>
+See “How to use SUTI” 5.1.2 ID structures and usage. Especially is the use and the implementation of source (src) vital for creating adequate SUTI messages. </xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="src" use="required">
 			<xs:simpleType>
@@ -23,7 +23,7 @@ See UC_3.1.2 for extensive description. Especiallly is the use and the implemant
 
 idType is a general type identification-element
 
-See UC_3.1.2 for extensive description. Especiallly is the use and the implemantation of source (src) vital for creating adequate SUTI messages. </xs:documentation>
+See “How to use SUTI” 5.1.2 ID structures and usage. Especially is the use and the implementation of source (src) vital for creating adequate SUTI messages. </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -47,9 +47,9 @@ General type identification-element</xs:documentation>
 		<xs:annotation>
 			<xs:documentation>General type identification-element.
 
-The usage of this can vary depending of the Client involved. See UC_3 for an example of an implementation. 
+The usage of this can vary depending of the Client involved. See “How to use SUTI” 5.1.7 Economy for an example of an implementation. 
 
-Then used in used in msg 8000, 8010 see UC_2.5 for use of invoiceId</xs:documentation>
+Then used in msg 8000, 8010 see “How to use SUTI” 4.5 Accounting for use of invoiceId</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="src" use="required">
 			<xs:annotation>
@@ -66,9 +66,9 @@ Then used in used in msg 8000, 8010 see UC_2.5 for use of invoiceId</xs:document
 
 General type identification-element.
 
-The usage of this can vary depending of the Client involved. See UC_3 for an example of an implementation. 
+The usage of this can vary depending of the Client involved. See “How to use SUTI” 5.1.7 Economy for an example of an implementation. 
 
-Then used in used in msg 8000, 8010 see UC_2.5 for use of invoiceId</xs:documentation>
+Then used in msg 8000, 8010 see “How to use SUTI” 4.5 Accounting for use of invoiceId</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -78,7 +78,7 @@ Then used in used in msg 8000, 8010 see UC_2.5 for use of invoiceId</xs:document
 
 This document will contain ireferences to other SUTI Documnts where you will find deeper information. We will use the following type of references:
 
-UC_n -> referencing to UseCases chapter n.
+Use case references -> see “How to use SUTI” chapter 4 (Use cases/Flows).
 
 MSG_msgno -> referencing to a certain message in Messages.</xs:documentation>
 		</xs:annotation>
@@ -87,13 +87,18 @@ MSG_msgno -> referencing to a certain message in Messages.</xs:documentation>
 				<xs:element name="orgSender" type="orgType">
 					<xs:annotation>
 						<xs:documentation>Id of the sending side.
-see  UC_3</xs:documentation>
+See “How to use SUTI” 5.2.7 orgSender.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="orgReceiver" type="orgType">
 					<xs:annotation>
 						<xs:documentation>Id of the receiving side.
-See UC_3</xs:documentation>
+See “How to use SUTI” 5.2.6 orgReceiver.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="contactReference" type="contactInfosType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Contact reference information at message level</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="msg" maxOccurs="unbounded">
@@ -119,7 +124,7 @@ See UC_3</xs:documentation>
 			</xs:annotation>
 			<xs:element name="idOrg" type="idType">
 				<xs:annotation>
-					<xs:documentation>The identification of the organization. Then used in orgSendet and orgReceiver a specific SUTI identification is used. See UC_3.2</xs:documentation>
+					<xs:documentation>The identification of the organization. Then used in orgSender and orgReceiver a specific SUTI identification is used. See “How to use SUTI” 5.2.6 orgReceiver and 5.2.7 orgSender.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -144,7 +149,7 @@ See UC_3</xs:documentation>
 			<xs:annotation>
 				<xs:documentation>One SUTI-message
 
-For use of each message se SUTI Document messages and Message Flow. For most of the messages you vill also find docunmentation Use Cases (UC).
+For use of each message see SUTI Document messages and Message Flow. For most of the messages you will also find documentation in “How to use SUTI” chapter 4 (Use cases/Flows).
 
 
 
@@ -169,7 +174,7 @@ src = reference to the SUTI id of the part that is sending this message.</xs:doc
 			<xs:choice minOccurs="0">
 				<xs:element name="order" type="order" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>msgs: 2000,  2900, 4001, 4020</xs:documentation>
+						<xs:documentation>msgs: 2000,  2900, 4001, 4020, 7100, 7101</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="driverSession" type="driverSession" minOccurs="0">
@@ -274,7 +279,7 @@ src = reference to the SUTI id of the part that is sending this message.</xs:doc
 					<xs:complexType>
 						<xs:sequence>
 							<xs:annotation>
-								<xs:documentation>See UC 2_1_2 for usage. </xs:documentation>
+								<xs:documentation>See “How to use SUTI” 4.1.2.4 Resource allocation for usage. </xs:documentation>
 							</xs:annotation>
 							<xs:element name="resourceOrderid" type="idType" minOccurs="0">
 								<xs:annotation>
@@ -311,7 +316,7 @@ src = reference to the SUTI id of the part that is sending this message.</xs:doc
 					<xs:complexType>
 						<xs:sequence>
 							<xs:annotation>
-								<xs:documentation>See UC 2_2 Repetetive orders for detailed description.</xs:documentation>
+								<xs:documentation>See “How to use SUTI” 4.2 Repetetive Orders for detailed description.</xs:documentation>
 							</xs:annotation>
 							<xs:element name="idOrderTemplate">
 								<xs:complexType>
@@ -365,7 +370,7 @@ src = reference to the SUTI id of the part that is sending this message.</xs:doc
 					<xs:complexType>
 						<xs:sequence maxOccurs="unbounded">
 							<xs:annotation>
-								<xs:documentation>See UC 2_2 Repetetive orders for detailed description.</xs:documentation>
+								<xs:documentation>See “How to use SUTI” 4.2 Repetetive Orders for detailed description.</xs:documentation>
 							</xs:annotation>
 							<xs:element name="scheduleElementOrder">
 								<xs:complexType>
@@ -396,7 +401,7 @@ src = reference to the SUTI id of the part that is sending this message.</xs:doc
 					<xs:complexType>
 						<xs:sequence maxOccurs="unbounded">
 							<xs:annotation>
-								<xs:documentation>The messages 15xx is a number of possibilities for the clien to ask the provider for certain information. The responce for a 15xx is a 16xx (eg 1500 responce 1600). For 1500/1600 se UC 2_1_2</xs:documentation>
+								<xs:documentation>The messages 15xx is a number of possibilities for the client to ask the provider for certain information. The response for a 15xx is a 16xx (eg 1500 response 1600). For 1500/1600 see “How to use SUTI” 4.1.2 Additional processes.</xs:documentation>
 							</xs:annotation>
 							<xs:element name="requestItem" type="requestContentType"/>
 							<xs:element name="requestCalendar" type="calendarType" minOccurs="0"/>
@@ -411,7 +416,7 @@ src = reference to the SUTI id of the part that is sending this message.</xs:doc
 					<xs:complexType>
 						<xs:sequence>
 							<xs:annotation>
-								<xs:documentation>The messages 16xx is is an responce on a infoRequest.   The responce for a 15xx is a 16xx (eg 1500 responce 1600). For 1500/1600 se UC 2_1_2</xs:documentation>
+								<xs:documentation>The messages 16xx is a response to an infoRequest. The response for a 15xx is a 16xx (eg 1500 response 1600). For 1500/1600 see “How to use SUTI” 4.1.2 Additional processes.</xs:documentation>
 							</xs:annotation>
 							<xs:element name="responseList" type="node" minOccurs="0" maxOccurs="unbounded"/>
 							<xs:element name="responsePrice" type="price" minOccurs="0" maxOccurs="unbounded"/>
@@ -426,7 +431,7 @@ src = reference to the SUTI id of the part that is sending this message.</xs:doc
 					<xs:complexType>
 						<xs:sequence>
 							<xs:annotation>
-								<xs:documentation>See UC 2_5 for extesive information.</xs:documentation>
+								<xs:documentation>See “How to use SUTI” 4.5 Accounting for extensive information.</xs:documentation>
 							</xs:annotation>
 							<xs:element name="idAccounting" type="idType"/>
 							<xs:element name="tour" minOccurs="0" maxOccurs="unbounded">
@@ -514,12 +519,12 @@ src = reference to the SUTI id of the part that is sending this message.</xs:doc
 					<xs:annotation>
 						<xs:documentation>Msg 110xx
 
-See extensive information in UC_2_6</xs:documentation>
+See “How to use SUTI” 4.6.3 bulkLocation request and response</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:choice>
 							<xs:annotation>
-								<xs:documentation>Used to request a bulk of positions. See UC 3_2.</xs:documentation>
+								<xs:documentation>Used to request a bulk of positions. See “How to use SUTI” 4.6.3 bulkLocation request and response.</xs:documentation>
 							</xs:annotation>
 							<xs:element name="bulkIntervalRequest" type="locationRequest"/>
 							<xs:element name="locationResource" type="resourceType"/>
@@ -543,21 +548,21 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:annotation>
 						<xs:documentation>Msg111x
 
-See extensive information in UC_2_6</xs:documentation>
+See “How to use SUTI” 4.6.3 bulkLocation request and response</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="resourceInformation" type="resourceType" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Msg 100x, 101x
 
-See extensive information in UC_2_6</xs:documentation>
+See “How to use SUTI” 4.6 Exchanging resource information</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="ratings" type="ratingType" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Msg 1061, 6061
 
-See extensive information in UC_2_6</xs:documentation>
+See “How to use SUTI” 4.6 Exchanging resource information</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="actionRequest" minOccurs="0">
@@ -594,6 +599,7 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="1025"/>
 					<xs:enumeration value="1060"/>
 					<xs:enumeration value="1061"/>
+					<xs:enumeration value="1062"/>
 					<xs:enumeration value="1100"/>
 					<xs:enumeration value="1101"/>
 					<xs:enumeration value="1102"/>
@@ -630,6 +636,8 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="2032"/>
 					<xs:enumeration value="2040"/>
 					<xs:enumeration value="2050"/>
+					<xs:enumeration value="2060"/>
+					<xs:enumeration value="2061"/>
 					<xs:enumeration value="2100"/>
 					<xs:enumeration value="2101"/>
 					<xs:enumeration value="2102"/>
@@ -640,6 +648,8 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="2107"/>
 					<xs:enumeration value="2110"/>
 					<xs:enumeration value="2111"/>
+					<xs:enumeration value="2112"/>
+					<xs:enumeration value="2113"/>
 					<xs:enumeration value="2530"/>
 					<xs:enumeration value="2531"/>
 					<xs:enumeration value="2532"/>
@@ -656,6 +666,7 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="3002"/>
 					<xs:enumeration value="3003"/>
 					<xs:enumeration value="3004"/>
+					<xs:enumeration value="3013"/>
 					<xs:enumeration value="4000"/>
 					<xs:enumeration value="4001"/>
 					<xs:enumeration value="4002"/>
@@ -678,11 +689,10 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="5011"/>
 					<xs:enumeration value="5020"/>
 					<xs:enumeration value="5021"/>
-					<xs:enumeration value="5030"/>
-					<xs:enumeration value="6000"/>
 					<xs:enumeration value="6001"/>
 					<xs:enumeration value="6060"/>
 					<xs:enumeration value="6061"/>
+					<xs:enumeration value="6062"/>
 					<xs:enumeration value="6500"/>
 					<xs:enumeration value="6501"/>
 					<xs:enumeration value="6502"/>
@@ -693,6 +703,7 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="6810"/>
 					<xs:enumeration value="7000"/>
 					<xs:enumeration value="7001"/>
+					<xs:enumeration value="7002"/>
 					<xs:enumeration value="7010"/>
 					<xs:enumeration value="7011"/>
 					<xs:enumeration value="7015"/>
@@ -701,18 +712,15 @@ See extensive information in UC_2_6</xs:documentation>
 					<xs:enumeration value="7030"/>
 					<xs:enumeration value="7031"/>
 					<xs:enumeration value="7099"/>
+					<xs:enumeration value="7100"/>
+					<xs:enumeration value="7101"/>
 					<xs:enumeration value="8000"/>
-					<xs:enumeration value="8001"/>
 					<xs:enumeration value="8010"/>
 					<xs:enumeration value="8101"/>
+					<xs:enumeration value="8102"/>
 					<xs:enumeration value="8111"/>
-					<xs:enumeration value="8121"/>
 					<xs:enumeration value="8181"/>
 					<xs:enumeration value="8199"/>
-					<xs:enumeration value="2060"/>
-					<xs:enumeration value="2061"/>
-					<xs:enumeration value="2113"/>
-					<xs:enumeration value="3013"/>
 				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
@@ -802,7 +810,7 @@ No implementation found. If used please contact SUTI Technical Commitee.</xs:doc
 			</xs:element>
 			<xs:element name="idOrderTemplate" type="idType" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>See UC_2.2 Repetetive orders.</xs:documentation>
+					<xs:documentation>See “How to use SUTI” 4.2 Repetetive Orders.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="idResponse" type="idType" minOccurs="0">
@@ -812,7 +820,7 @@ No implementation found. If used please contact SUTI Technical Commitee.</xs:doc
 			</xs:element>
 			<xs:element name="idOrderForward" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>Used to inform all parties involved in a order forward about all information needed. If order forward is used all information in this tag is mandatory. Please see UC_2.1 regarding order forwarded.</xs:documentation>
+					<xs:documentation>Used to inform all parties involved in a order forward about all information needed. If order forward is used all information in this tag is mandatory. Please see “How to use SUTI” 4.1.1.11 Order Forwarded.</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
@@ -1207,7 +1215,7 @@ FALSE = no activation</xs:documentation>
 			<xs:annotation>
 				<xs:documentation>Describes how price is payed
 
-The usage of this can vary depending of the Client involved. See UC_3_2 for an example of an implementation. </xs:documentation>
+The usage of this can vary depending of the Client involved. See “How to use SUTI” 5.1.7 Economy for an example of an implementation. </xs:documentation>
 			</xs:annotation>
 			<xs:element name="payment" maxOccurs="unbounded">
 				<xs:complexType mixed="false">
@@ -1318,7 +1326,7 @@ The usage of this can vary depending of the Client involved. See UC_3_2 for an e
 			<xs:annotation>
 				<xs:documentation>Describes vehicle and driver
 
-See extensive information in UC_3 for use of resources.</xs:documentation>
+See “How to use SUTI” 5.1.3 Resource description for use of resources.</xs:documentation>
 			</xs:annotation>
 			<xs:element name="vehicle" type="vehicle" minOccurs="0"/>
 			<xs:element name="manualDescriptionResource" type="manualDescriptionType" minOccurs="0" maxOccurs="unbounded"/>
@@ -1424,7 +1432,7 @@ Its also possible for the provider to specify the current location of the vehicl
 	<xs:complexType name="capacity">
 		<xs:sequence>
 			<xs:annotation>
-				<xs:documentation>How many seats, the position of seats, luggage spac etc. Please see UC 3_1_3 for a general and or specific documentation of vehicle capasity.
+				<xs:documentation>How many seats, the position of seats, luggage space etc. Please see “How to use SUTI” 5.1.3.2 Seating properties in vehicle for a general and specific documentation of vehicle capacity.
 
 For the attributes there are no practical application. Use of this has be specified in the self declaration. Please contact the technical committee.</xs:documentation>
 			</xs:annotation>
@@ -1480,7 +1488,7 @@ Special = e. g. golf bags, ski equipment, musical instrument.</xs:documentation>
 			</xs:annotation>
 			<xs:element name="position" type="position" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
-					<xs:documentation>position are used to dedicate a seat for a traveller. Further information in latest version of UC 3_1_3</xs:documentation>
+					<xs:documentation>position are used to dedicate a seat for a traveller. Further information in “How to use SUTI” 5.1.3.3 Seating position in vehicle</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -1875,7 +1883,7 @@ Other: Reference to the latest version of SutiAttributeList</xs:documentation>
 			<xs:annotation>
 				<xs:documentation>The coordinates for the address and potentially a known zone.
 
-See UC_3.1 for extensive description
+See “How to use SUTI” 5.1.6 Geographical location for extensive description
 </xs:documentation>
 			</xs:annotation>
 			<xs:element name="vehicleDistance" type="vehicleDistance" minOccurs="0" maxOccurs="unbounded"/>
@@ -2177,7 +2185,7 @@ See UC_3.1 for extensive description
 	<xs:complexType name="pickupConfirmation">
 		<xs:sequence>
 			<xs:annotation>
-				<xs:documentation>To describe events for a node. The events are described in detail in UC 3_2.</xs:documentation>
+				<xs:documentation>To describe events for a node. The events are described in detail in “How to use SUTI” 4.1.4.3 Node events.</xs:documentation>
 			</xs:annotation>
 			<xs:element name="nodeConfirmed" type="node" minOccurs="0"/>
 		</xs:sequence>
@@ -2372,7 +2380,7 @@ OBSERVE!! Contact TU before using this!!!</xs:documentation>
 	<xs:complexType name="orderLink">
 		<xs:sequence>
 			<xs:annotation>
-				<xs:documentation>The use is described in UC 3_1_1_5</xs:documentation>
+				<xs:documentation>The use is described in “How to use SUTI” 4.1.1.5 Multiple client order combined into a shared provider order</xs:documentation>
 			</xs:annotation>
 			<xs:element name="idOrder" type="idType" maxOccurs="unbounded">
 				<xs:annotation>
@@ -2415,7 +2423,7 @@ OBSERVE!! Contact TU before using this!!!</xs:documentation>
 	<xs:complexType name="authorizationAcceptType">
 		<xs:sequence>
 			<xs:annotation>
-				<xs:documentation>This is the answer to a message 2900 where the order is created in the provider system and the client can accept this order. In UC 3_2 Flagstops you will find an example of this. Other use may be where the provider system has been authorized to localy create an order. </xs:documentation>
+				<xs:documentation>This is the answer to a message 2900 where the order is created in the provider system and the client can accept this order. In “How to use SUTI” 4.3 SUTI flagstops you will find an example of this. Other use may be where the provider system has been authorized to localy create an order. </xs:documentation>
 			</xs:annotation>
 			<xs:element name="idAuthorization" type="idType"/>
 			<xs:element name="process" type="nodeprocess"/>
@@ -2464,7 +2472,7 @@ OBSERVE!! Contact TU before using this!!!</xs:documentation>
 	<xs:complexType name="deliveryNote">
 		<xs:sequence>
 			<xs:annotation>
-				<xs:documentation>See UC 2_3 for a detailed description. The content of the deliveryNote should comply with the busines agreement between the client and the provider and can differ from the taximeter information (orderReport).</xs:documentation>
+				<xs:documentation>See “How to use SUTI” 4.4 Delivery Note and associated messages for a detailed description. The content of the deliveryNote should comply with the business agreement between the client and the provider and can differ from the taximeter information (orderReport).</xs:documentation>
 			</xs:annotation>
 			<xs:element name="idReceipt" type="idType">
 				<xs:annotation>
@@ -2890,7 +2898,7 @@ SF:idBankAccount in case of Finish bank account
 	<xs:complexType name="driverSession">
 		<xs:sequence>
 			<xs:annotation>
-				<xs:documentation>See UC 2_1_1_7 for extensive information.</xs:documentation>
+				<xs:documentation>See “How to use SUTI” 4.1.1.7 driverSession for extensive information.</xs:documentation>
 			</xs:annotation>
 			<xs:element name="idDriverSession" type="idType" minOccurs="0"/>
 			<xs:element name="process" type="process" minOccurs="0"/>
@@ -2956,7 +2964,7 @@ SF:idBankAccount in case of Finish bank account
 	<xs:complexType name="changelog">
 		<xs:sequence>
 			<xs:annotation>
-				<xs:documentation>See UC 2_1_1_7 for extensive information.</xs:documentation>
+				<xs:documentation>See “How to use SUTI” 4.1.1.7 driverSession for extensive information.</xs:documentation>
 			</xs:annotation>
 			<xs:element name="log" type="log" minOccurs="0" maxOccurs="unbounded"/>
 		</xs:sequence>
@@ -2983,7 +2991,7 @@ SF:idBankAccount in case of Finish bank account
 	<xs:complexType name="driverSessionReject">
 		<xs:sequence>
 			<xs:annotation>
-				<xs:documentation>See UC 2_1_1_7 for extensive information.</xs:documentation>
+				<xs:documentation>See “How to use SUTI” 4.1.1.7 driverSession for extensive information.</xs:documentation>
 			</xs:annotation>
 			<xs:element name="driverSession" type="driverSession">
 				<xs:annotation>
@@ -3039,7 +3047,7 @@ SF:idBankAccount in case of Finish bank account
 	<xs:complexType name="bulkLocationList">
 		<xs:sequence>
 			<xs:annotation>
-				<xs:documentation>Respoce on a request for a bulk of positions. See UC 3_2.</xs:documentation>
+				<xs:documentation>Response on a request for a bulk of positions. See “How to use SUTI” 4.6.3 bulkLocation request and response.</xs:documentation>
 			</xs:annotation>
 			<xs:element name="locationList" type="xs:string" minOccurs="0"/>
 		</xs:sequence>
