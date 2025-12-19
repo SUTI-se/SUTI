@@ -174,7 +174,7 @@ src = reference to the SUTI id of the part that is sending this message.</xs:doc
 			<xs:choice minOccurs="0">
 				<xs:element name="order" type="order" minOccurs="0">
 					<xs:annotation>
-						<xs:documentation>msgs: 2000,  2900, 4001, 4020</xs:documentation>
+						<xs:documentation>msgs: 2000,  2900, 4001, 4020, 7100, 7101</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="driverSession" type="driverSession" minOccurs="0">
