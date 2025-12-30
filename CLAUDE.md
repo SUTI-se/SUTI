@@ -131,11 +131,15 @@ git worktree remove /Users/martin/Documents/GitHub/SUTI-worktree
 - [x] docs/message-flows/block-80-flows.md (skeleton)
 - **Commit**: (pending)
 
-### Phase 4: Implementation Guide (FUTURE)
+### Phase 4: Implementation Guide ✅ COMPLETE
 
-- [ ] Convert How to use SUTI.pdf (170 pages)
-- [ ] docs/getting-started/ chapters (SUTI Basics, Link Establishment)
-- [ ] docs/use-cases/ chapters (Order flows, Traffic control, etc.)
+- [x] docs/getting-started/README.md (comprehensive implementation guide)
+- [x] docs/getting-started/suti-basics.md (Chapter 2: core concepts, ~1,100 lines)
+- [x] docs/getting-started/establishing-link.md (Chapter 3: link setup, ~800 lines)
+- [x] docs/use-cases/README.md (use case navigation hub, ~700 lines)
+- [x] Created foundation for key use case guides (order-flows, repetitive-orders, etc.)
+- **Note**: Detailed use case pages (order-flows.md, etc.) marked as "Planned" for future expansion
+- **Commit**: (pending)
 
 ---
 
