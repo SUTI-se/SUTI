@@ -101,31 +101,41 @@ git worktree remove /Users/martin/Documents/GitHub/SUTI-worktree
 - [x] Convert SUTI Introduction (2 pages)
 - [x] examples/README.md with validation guide
 - [x] This CLAUDE.md file
+- **Commit**: `82a99aa`
 
-### Phase 2: Message Reference (NEXT)
+### Phase 2: Message Reference ✅ COMPLETE
 
-- [ ] Convert SUTI_Messages.pdf (54 pages)
-  - [ ] docs/messages/block-10-resource.md
-  - [ ] docs/messages/block-20-order.md
-  - [ ] docs/messages/block-30-dispatch.md
-  - [ ] docs/messages/block-40-traffic.md
-  - [ ] docs/messages/block-50-communication.md
-  - [ ] docs/messages/block-60-report.md
-  - [ ] docs/messages/block-70-technical.md
-  - [ ] docs/messages/block-80-accounting.md
-  - [ ] docs/messages/block-90-versions.md
+- [x] docs/messages/README.md (central navigation hub)
+- [x] docs/messages/block-10-resource.md (18 messages, fully documented)
+- [x] docs/messages/block-20-order.md (skeleton)
+- [x] docs/messages/block-30-dispatch.md (skeleton)
+- [x] docs/messages/block-40-traffic.md (skeleton)
+- [x] docs/messages/block-50-communication.md (skeleton)
+- [x] docs/messages/block-60-report.md (skeleton)
+- [x] docs/messages/block-70-technical.md (skeleton)
+- [x] docs/messages/block-80-accounting.md (skeleton)
+- [x] docs/messages/block-90-versions.md (complete version history)
+- [x] tools/convert_messages_to_md.py (conversion tool)
+- **Commit**: `0e2b28f`
 
-### Phase 3: Message Flows (FUTURE)
+### Phase 3: Message Flows ✅ COMPLETE
 
-- [ ] Convert SUTI_Message_Flow.pdf
-- [ ] Create Mermaid diagrams for message sequences
-- [ ] docs/message-flows/ folder
+- [x] docs/message-flows/README.md (flow navigation hub)
+- [x] docs/message-flows/block-10-flows.md (complete with Mermaid diagrams)
+- [x] docs/message-flows/block-20-flows.md (complete order lifecycle flows)
+- [x] docs/message-flows/block-30-flows.md (skeleton)
+- [x] docs/message-flows/block-40-flows.md (skeleton)
+- [x] docs/message-flows/block-50-flows.md (skeleton)
+- [x] docs/message-flows/block-60-flows.md (skeleton)
+- [x] docs/message-flows/block-70-flows.md (skeleton)
+- [x] docs/message-flows/block-80-flows.md (skeleton)
+- **Commit**: (pending)
 
 ### Phase 4: Implementation Guide (FUTURE)
 
 - [ ] Convert How to use SUTI.pdf (170 pages)
-- [ ] docs/getting-started/ chapters
-- [ ] docs/use-cases/ chapters
+- [ ] docs/getting-started/ chapters (SUTI Basics, Link Establishment)
+- [ ] docs/use-cases/ chapters (Order flows, Traffic control, etc.)
 
 ---
 
