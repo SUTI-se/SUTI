@@ -1,0 +1,637 @@
+              SUTI 2019
+              In progress
+             Messageflow
+
+
+
+
+  This document describes the flow of messages between
+Client and Provider. Its intended to give a graphical view of
+how the differnt messages flow between Client and Provider
+   and how the differnt messages depends on eachother.
+
+
+
+
+                                                                Suti
+Alterations
+                                                                                                                                              Suti
+Version 1.0.0                                                          Version 2.3.0
+
+Alteration 2004-02-17:                                                 Alteration 2010-02-16
+
+Telegram 4030 moved to block 7 and renamed 7031.                       Messages 6500, 6501, 6502 and 6510 added in block 60
+
+Version 1.0.2                                                          Message 6000 changed into tgm 2531 orderStatus and moved to block 20
+
+Alteration 2004-11-18:                                                 Messages 2530, 2532, 2900, 2901 and 2902 added in block 20
+
+Message 5040 altered to 2040 and introduced in XML schema.             Version 2.4.0
+
+Message 5021 removed from block 40                                     Alteration 2011-03-01
+
+Position replaced with Location                                        Message 6511 added in block 60
+
+Message 4010 altered from Pick-up Confirmation to Event Confirmation   Version SUTI 2012
+
+Version 2.0.0                                                          Alteration 2012-03-02
+
+Alteration 2007-03-26:                                                 Dokument changed to SUTI 2012
+
+Message 6001 added in block 60                                         Version SUTI 2013
+
+Message 2021, 2021, 2022 and 2023 added in block 20                    Alteration 2012-10-24
+
+Message 2050 added in block 20                                         Text altered in MSG 2005, 2006 and 2007.
+
+Version 2.2.0                                                          Version SUTI 2013.1
+
+Alteration 2008-12-01                                                  Alteration 2013-09-19
+
+Message 1020, 1021, 1022, 1023, 1024 added 1025 added.                 MSG 2060 and 2061 added.
+
+                                                                       Version SUTI 2014
+
+                                                                       Alteration 2014-02-28
+
+                                                                       Messages for Repetetive orders has been added.
+Alterations
+                                                                                                        Suti
+Version SUTI 2015                                         Version SUTI 2019
+
+Alteration 2015-03-02:                                    Alteration 2019-01-22:
+
+Block 80 added.                                           Traffic Control: 4040, 4041 and 4042 added.
+                                                          4100, 4101 and 4102 added.
+Version SUTI 2016
+
+Alteration 2016-02-25:
+
+Message 2030, 2031 and 2032 activated.
+Message 8182 added.
+
+Version SUTI 2017
+
+Alteration 2016-09-16:
+
+Message 2060 and 2061 has been renamed.
+
+Alteration 2017-04-02:
+
+Message 20141, 4011 and 4021 has been added.
+
+Alteration 2017-05-18:
+
+Message 2540 och 2541 has been added.
+
+Alteration 2017-11-02:
+
+Message 3013 has been added. Missed in earlier version.
+
+Alteration 2017-03-22:
+
+Message 1000 to 1012 altered and is now activated..
+Message 1100 to 1102 has been added.
+Message 1110 to 1112 has been added.
+Message 1061 and 6061 has been added.
+              BLOCK 10: DYNAMIC RESORURCE UTILIZATION 01
+
+
+
+                                            MSG 1000 Request for ResourceSingleVehicle
+
+                                         MSG 1001 Request for ResourceVehicleinAgreement
+
+                                             MSG 1002 Request for ResourceAllVehicles
+
+
+
+                                            MSG 1010 Response ResourceSingleVehicle
+
+                                          MSG 1011 Response ResourceVehicleinAgreement
+
+
+
+
+                                                                                           Suti SERVICE PROVIDER
+                                                    MSG 1020 Resource Login
+Suti CLIENT
+
+
+
+
+                                              MSG 1021 Resource Login Confirmation
+
+                                                 MSG 1022 Resource Login Reject
+
+
+
+                                                    MSG 1023 Resource Logoff
+
+                                              MSG 1024 Resource Logoff Confirmation
+
+                                                 MSG 1025 Resource Logoff Reject
+
+
+
+                                                  MSG 1920 Resource Allocation
+
+                                               MSG 1921 Resource Allocation Accept
+
+                                               MSG 1922 Resource Allocation Reject
+              BLOCK 10: DYNAMIC RESORURCE UTILIZATION 02
+
+
+
+                                                 MSG 1100 SingelbulkLocationRequest
+
+                                                MSG 1110 SingleBulkLocationResponse
+
+                                               MSG 1101 AgreementBulkLocationRequest
+
+                                               MSG 1111 AgreementBulkLocationResponse
+
+                                                   MSG 1102 AllBulkLocationRequest
+
+
+                                                  MSG 1112 AllBulkLocationResponse
+
+
+
+
+                                                                                        Suti SERVICE PROVIDER
+Suti CLIENT
+
+
+
+
+                                                       MSG 1060 RatingRequest
+
+                                                      MSG 1061 RatingResponse
+
+
+                                                   MSG 1062 RatingRequestRejected
+
+
+
+
+                                                    MSG 1500 nodeListRequest 1)
+
+                                                    MSG 1600 nodeListResponse 2)
+
+                                                      MSG 1501 priceRequest 1)
+
+                                                     MSG 1601 priceResponse 2)
+
+
+
+
+                1) Uses infoRequest in XSD
+                2) Uses infoResponse in XSD.
+BLOCK 20: Order 01
+
+
+
+                                       MSG 2000 Order
+
+                         MSG 2001 Order Confirmation (Order recieved)
+
+                                   MSG 2002 Order Reject
+
+                             MSG 2003 Order Reject Confirmation
+
+
+
+
+                               MSG 2005 Order Reject Request
+
+
+
+
+                                                                           Suti SERVICE PROVIDER
+                             MSG 2007 Order Reject Request reject
+ Suti CLIENT
+
+
+
+
+                                 MSG 2010 Order Cancelation
+
+                             MSG 2011 Order Cancelation accepted
+
+
+
+
+                              MSG 2013 Order Cancelation reject
+
+
+
+                                 MSG 2020 Node Cancelation
+
+                             MSG 2021 Node Cancelation accepted
+
+                     MSG 2022 Node Cancelation accepted with consequence
+
+                              MSG 2023 Node Cancelation reject
+BLOCK 20: ORDER 02
+
+
+
+                              MSG 2030 Order forwarded
+
+                            MSG 2031 Order forwarded reject
+
+                          MSG 2032 Order forwarded recieved
+
+
+
+                               MSG 2040 Linked Orders
+
+
+
+
+                                                                    Suti SERVICE PROVIDER
+                                MSG 2050 Order Freeze
+ Suti CLIENT
+
+
+
+
+                     MSG 2060 Provider Update Order
+
+                      MSG 2061 Confirmation Provider Update Order
+
+
+
+                             MSG 2530 orderStatusRequest
+
+                                 MSG 2531 orderStatus
+
+                              MSG 2532 orderStatusReject
+
+
+
+
+                            MSG 2900 authorizationRequest
+
+                             MSG 2901 authorizationAccept
+
+                             MSG 2902 authorizationReject
+BLOCK 20: ORDER 03
+
+
+
+                                            MSG 2800 orderTemplate
+
+                                      MSG 2801 orderTemplateconfirmation
+
+
+
+
+                     MSG 2810 scheduleElementConfirmation Uttagna Beställningspostnr (111, Planet -> Ext-Tur)
+
+
+
+
+                                                                                                                Suti SERVICE PROVIDER
+                                                  MSG 2540 requestforOrderinfo
+ Suti CLIENT
+
+
+
+
+                                                       MSG 2541 orderInfo
+BLOCK 20: ORDER 04
+
+
+
+                                       MSG 2100 driverSession
+
+                                 MSG 2101 driverSession Confirmation
+
+                                    MSG 2102 driverSession Reject
+
+                              MSG 2103 driverSession Reject Confirmation
+
+
+
+                                MSG 2105 driverSession Reject Request
+
+                           MSG 2106 driverSession Reject Request accepted
+
+
+
+
+                                                                                    Suti SERVICE PROVIDER
+                             MSG 2107 driverSession Reject Request reject
+ Suti CLIENT
+
+
+
+
+                                 MSG 2110 driverSession Cancelation
+
+                             MSG 2111 driverSession Cancelation accepted
+
+                     MSG 2112 driverSession Cancelation accepted with consequence
+
+                               MSG 2113 driverSession Cancelation reject
+
+
+
+
+                         MSG 2104 driverSession Request (Under consideration)
+BLOCK 30: DISPATCH
+
+
+
+                                            MSG 3000 Request for Dispatch approval ("Suggest a vehicle")
+
+
+                                                                                                                                        2)
+                                                                                                                                              4)
+                                         MSG 3001 Dispatch rejected ("Suggested vehicle not accepted") 1)
+
+
+
+
+                                           MSG 3002 Dispatch approval ("Suggested vehicle accepted") 3)
+
+
+                                                                                                                                       5)
+
+
+
+
+                                                                                                                                                  Suti SERVICE PROVIDER
+                                                 MSG 3003 Dispatch Confirmation (Yes from vehicle)                                           6)
+ Suti CLIENT
+
+
+
+
+                                        MSG 3004Dispatch approval interrupted (No or no answer from vehicle)
+
+
+
+                                                        MSG 2002 Order reject (See block 20)
+
+                                                 MSG 2003 Order Reject Confirmation (See block 20)
+
+
+
+
+                                                            Msg 3013 Dispatch Reservation
+
+               1) Used if the suggested car don't comply with the demands from the client och the client has raised the demands to a
+               higher level. If the demands are raised to a higher level the client may send the new demandtag.
+               2) New vehicle are suggested.
+               3) Vehicle accepted by Client.
+               4) Accepted vehicle no longer in traffic or has reject the order.
+               5) Accepted vehicle has accepted the order.
+               6) The new demands used in 1) are not within the used contract.
+BLOCK 40: TRAFFIC CONTROL
+
+
+
+
+                                       MSG 4001 Requested Traffic Information ("Next node", Info about passenger, road etc.)
+
+                                                                    MSG 4002 Release Vehicle 2)
+
+
+
+                                               MSG 4010 Pickup Confirmation ("Passenger in vehicle", "No Show" etc)
+
+                                                    MSG 4011 Pickup Confirmation Received (with no complaints)
+
+                                MSG 4012 Pickup Confirmation Received (with complaints "Passenger in vehicle", "No Show" etc) 5)
+
+
+
+
+                                                                                                                                                            Suti SERVICE PROVIDER
+                                            MSG 4040 Client Event Confirmation ("Passenger in vehicle", "No Show" etc)
+ Suti CLIENT
+
+
+
+
+                                                 MSG 4041 Client Event Confirmation Received (with no complaints)
+
+                              MSG 4042 ClientEvent Confirmation Received (with complaints "Passenger in vehicle", "No Show" etc) 5)
+
+
+
+                                                     MSG 4020 End of Order ("Order finished", "no more nodes")
+
+                                                                 MSG 4021 Request for End of order
+
+                                                                MSG 4031 No contact with Vehicle 1)
+
+
+               1) Used to indicate that vehicle that service provider no longer have contact with a vehicle.
+               2) Client answer a request for traffic information from a vehicle not performing any order for the client for the moment. Signals that the
+               provider can release that vehicle if it is marked to be working for the client.
+               3) MSG 4040 Request for vehicle. Replaced by MSG 2000 Order with a Processing attribute that indicates that it is a standing order that
+               is about to be carried out.
+               4) MSG 4041 Reply Request for Vehicle. Replaced by either a MSG 3003 Dispatch Confirmation if the requested vehicle is ready or a
+               MSG 2002 Order Reject if the requested vehicle cant carry out the order.
+               5) MSG 4012 shall always contain an explanation why message 4010 has been received with complaints.
+BLOCK 40: TRAFFIC CONTROL
+
+
+
+                                MSG 4100 Request for Action
+
+                            MSG 4101 Request for Action Accepted
+
+                            MSG 4102 Request for Action Rejected
+
+
+
+
+                                                                   Suti SERVICE PROVIDER
+ Suti CLIENT
+BLOCK 50: COMMUNICATION
+
+
+
+                                MSG 5000 Message to Vehicle (can include request for confirmation from Service provider or Vehicle)
+
+                              MSG 5001 Confirmation Message to Vehicle (include information ablout Vehicle contacted/not contacted)
+
+                                                           MSG 5002 Confirmation Message to Vehicle read
+
+                                                                  MSG 4031 No contact with Vehicle
+
+
+
+
+                                                             MSG 5010 Message to Client from Vehicle 2)
+
+
+
+
+                                                                                                                                      Suti SERVICE PROVIDER
+                                                        MSG 5011 Message to Client from Vehicle confirmation
+ Suti CLIENT
+
+
+
+
+                                                                  MSG 5020 Request for Location 1)
+
+                                                                   MSG 5021 Requested Location
+
+
+
+
+               1) Used to request position from Server provider or Vehicle. The answer includes the location in lat/
+               long.
+               2) Includes request from Vehicle for voicecommunication with Client.
+BLOCK 60: REPORT 01
+
+
+
+
+                                                                      MSG 6500 deliveryNote 2)
+
+                                                                   MSG 6501 deliveryNoteAccept
+
+                                                                    MSG 6502 deliveryNoteReject
+
+
+
+
+                                                                                                    Suti SERVICE PROVIDER
+                                                                     MSG 6503 deliveryNoteWait
+ Suti CLIENT
+
+
+
+
+                                                                   MSG 6510 deliveryNoteRequest
+
+                                                               MSG 6511 deliveryNoteRequestReject
+
+                                                                      MSG 6060 RatingRequest
+
+                                                                     MSG 6061 RatingResponse
+
+                                                                 MSG 6062 RatingRequestRejected
+
+
+               1) MSG 6000 altered to MSG 2531 and moved to block 20.
+               2) MSG 6500 shall be sent within 1 working day. This time limit can be altered
+               if a mutual agreement between Client and Provider exists.
+               3)if MSG 6503 has been used by the client it is for the client within two
+               working days to send either MSG6501 or MSG6502. Otherwise, MSG6500 is
+               automatically approved. This time limit can be altered if a mutual agreement
+               between Client and Provider exists.
+     Suti CLIENT
+                        BLOCK 60: REPORT 02
+
+
+
+
+Suti SERVICE PROVIDER
+BLOCK 70: TECHNICAL CONTROL
+
+
+
+                                                    MSG 7000 Keep alive (May occur in both directions)
+
+                                             MSG 7001 Keep alive Confirmation (May occur in both directions)
+
+                                                                 MSG 7002 Temporary Stop
+
+                                                             MSG 7010 Shut Down Service 1)
+
+                                                        MSG 7011 Shut Down Service Complete 2)
+
+                                                              MSG 7015 Shut Down Failure 3)
+
+
+
+
+                                                                                                                                                  Suti SERVICE PROVIDER
+                                                               MSG 7020 ReStart Service 4)
+ Suti CLIENT
+
+
+
+
+                                                                   MSG 7021 ReStart 5)
+
+
+
+                                                                  MSG 7030 Syntax Error
+
+                                                                MSG 7031 Not operational 6)
+
+
+
+                                                        MSG 7099 confirmation of received message
+
+               1) Used to signal that a prepared shutdown will start. Purpose is to give the other side time to finish ongoing orders in an
+               orderly way., clening up
+               2) Used to signal back to the system that will perform a shutdown that the other system has finished the cleaning up and is
+               listening for ReStart message that indicates that the system perfoming shutdown is back onlina and operational.
+               3) Used to signal emergency shutdown. This message gives no time to clean up and the shutdown will follow shortly after this
+               message.
+               4) Sent by the system that performed a shutdown. Indicates that the system is back online and are starting cleanup
+               procedures.
+               5) Sent by the system that performed a shutdown. Indicates that the system is back online and is fully operational.
+               6) Used as answer on requests that can not be handled. For example a requst for traffic information after the order the reque st
+               referes to has been ended. Telegram can be used from both sides.
+BLOCK 80: Accounting
+
+
+
+
+                        Msg 8010 Accounting Reconsider Provider
+
+
+
+
+                            Msg 8101 Accounting Basic Client
+
+
+
+
+                          Msg 8111 Accounting Reconsider Client
+
+
+
+
+                                                                    Suti SERVICE PROVIDER
+ Suti CLIENT
+
+
+
+
+                         Msg 8181 Accounting Revaluate Client
+
+                       Msg 8182 Accounting Revaluate Client Fines
+
+
+
+
+                       Msg 8199 Accounting payment specification
+COMMON DEMANDS
+                                                   Suti
+-Secure information about Sender, Reciever
+-Timestamp from sending system
+-TelegramID used to uniqelly identify every sent
+message. Format shall be
+YYYYMMDDXXXXXXXXXXXX. YYYY is the
+year the message is sent. MM is the month the
+message is sent. DD is the date the message is
+sent. XXXXXXXXXXXX is a counter that resets
+at midnight every day.
+-Messages that can not be handled by the
+recieving part due to different verions at the
+sender and the reciever, shall be answerwered
+by sending MSG 4030 NOT OPERATIONAL.
+

@@ -1,0 +1,275 @@
+An introduction to
+
+
+
+
+Standardized Utilization
+of Transport Information
+                                        What is SUTI used for?
+In Demand Responsive Transport (DRT) the following actors are         SUTI (Standardized Utliization of Transport Information) is a
+involved:                                                             technical communication protocol. It is used for communicating
+                                                                      between a Client’s planning and booking system and a Provider’s
+Travellers in need of transport – the Demand.                         vehicle dispatch system.
+Clients that aggregate transport need and create bookings to satisfy
+those needs, thereby acting on behalf of Travellers. A typical Client is The standard is used by hundreds of DRT services, handling more
+a Public Transport Authority.                                            than 30 million orders yearly in the Nordic region.
+Providers with Drivers and Vehicles that carry out the transport
+needs – the Response. A typical Provider is a Taxi Company.
+
+
+
+
+  Traveller                           Client                       SUTI                      Provider                       Driver
+                      SUTI communicates using Messages
+SUTI defines a number of message types that can be sent between a        - Port-to-port communication (physcial or logical over the internet)
+Client and a Provider, over a SUTI Link. A message will contain either   - HTTP-communication with a single endpoint, set up by the Client,
+a request, or a response to a request. The standard covers relevant        that the Provider calls to send messages and polls to receive
+Use Cases before, during and after transport.                              messages.
+                                                                         - HTTP-communication with dual endpoints, set up by the Client
+SUTI messages are formatted as XML or JSON. The standard                   and Provider respectively.
+doesn’t prescribe a specific communication method. The following
+methods are common among the numerous different                          Each Client defines a preferred communication method and most
+implementations:                                                         Provider softwares support all of them.
+
+
+
+
+                                                               <SUTI>
+                                                                …
+                                                                …
+                                                                …
+
+
+                                                               </SUTI>
+
+
+
+
+                            Client                              SUTI Messages                           Provider
+                                                      Order Flows
+A SUTI implementation defines how Orders are built, communicated                     Description        Characteristics
+and maintained.
+                                                                                     Simple order       A booking for a single Traveller
+                                                                                                        with a transport provider,
+In most cases, one of the patterns on the right is implemented.
+                                                                                                        containing a trip from a pickup
+                                                                                                        node to a drop-off node.
+                                    Node 5                                           Shared transport   The transport route contains
+                                                                                                        multiple – often overlapping –
+                                                                                                        Travellers, each with a pickup
+                                                                                                        and drop-off node. The route is
+                                                                                                        built either Order by Order or as a
+                                                                                                        DriverSession containing all
+                                                                  Order B:                              Orders on the route.
+                                                                  Traveller: Julia
+                                                                  Node 3 to 5        Node by node       Most often a shared transport
+                                                                                     transport          that is built dynamically during
+                                                                                                        transport, one Node at a time.
+                                                                                     Flag-stop          A Traveller signals that it wants
+                                                                                                        to be picked up along the route.
+                                                                                                        An Order is then created by the
+                                                                                                        Provider.
+                                                                                     Repetetive order   Repetetive Order: An Order that is
+                                                                                                        carried out on a regular basis,
+         Order A:                                                                                       booked according to a schedule
+         Traveller: Margaret
+         Node 2 to 4
+                                                                                                        (e.g. school transport).
+
+                                       Node 1
+                                                  Message format
+SUTI messages shall conform to a format described in the standard
+documentation. Schema files (for XML and JSON) define the format       <SUTI>
+                                                                         <orgSender name="clientname">
+and can be used to validate that messages are well-formed.
+                                                                           <idOrg src="SUTI:idLink"
+                                                                                  id="clientsw_clientname_0024"
+The top element of a SUTI Message is <SUTI>, immediately followed                 unique="true"/>
+by <orgSender … /> and <orgReceiver … />. The example                    </orgSender>
+shows orgSender and orgReceiver for a message sent by the                <orgReceiver name="providername">
+Client. If the Provider sends the message, its idOrg will be in the        <idOrg src="SUTI:idLink"
+orgSender section. The orgSender and orgReceiver id’s are                         id="providersw_providername_0009"
+                                                                                  unique="true"/>
+unique for each SUTI implementation.                                     </orgReceiver>
+                                                                         …
+The example shows how the id-attribute of idOrg is built.                …
+
+When initiating a new SUTI Link, the formats for all types of id are   </SUTI>
+communicated between the Client and the Provider in a Link
+Mapping process, described in chapter 3 of How to use SUTI.
+
+The clientsw and providersw names must be approved by the
+SUTI Technical Committee (TC), and the companies need to be
+members of SUTI for the SUTI Link to be considered an official
+implementation of the SUTI standard.
+
+
+
+
+                                                                           Client         Message        Provider
+                                              A simple Message
+The example shows a simple but complete SUTI Message.
+A Message type in SUTI is identified by a four digit number   <SUTI>
+and a corresponding name, found in the msgType and              <orgSender name="Provider name">
+                                                                  <idOrg src="SUTI:idlink"
+msgName attributes.                                                       id="providersw_providername_0009"
+                                                                          unique="true"/>
+The example shows an Order confirmation by the Provider,        </orgSender>
+containing a unique id for the message in idMsg and             <orgReceiver name="Client name">
+references to:                                                    <idOrg src="SUTI:idlink"
+                                                                          id="clientsw_clientname_0024"
+                                                                          unique="true"/>
+- the Order id in the Provider system                           </orgReceiver>
+- the corresponding Order id previously sent by the Client      <msg msgType="2001" msgName="Order confirmation">
+  system and                                                      <idMsg src="providersw_providername_0009:idMsg"
+- The id of the Order Message sent by the Client, to which                id="2020090915405027" unique="true"/>
+  this confirmation is a reply.                                   <referencesTo>
+                                                                     <idOrder src="providersw_providername_0009:idOrder"
+                                                                              id="2068608-0"/>
+                                                                     <idOrder src="clientsw_clientname_0024:idOrder"
+                                                                              id="482" unique="true"/>
+                                                                     <idMsg src="clientsw_clientname_0024:idMsg"
+                                                                            id="2020090915822999" unique="true"/>
+                                                                  </referencesTo>
+                                                                </msg>
+                                                              </SUTI>
+
+
+
+
+        Client        Order confirmation   Provider
+                                              An Order Message
+This XML example shows the general structure of an Order sent by a
+Client.                                                                     <SUTI>
+                                                                              …
+                                                                              <msg msgType="2000" msgName="Order">
+Within the <Order> element a number of subelements can be found:                <idMsg … />
+                                                                                <referencesTo>
+- All Orders have a unique id – idOrder.                                           <order>
+- The Provider is identified via orgProvider.                                        <idOrder … />
+- The agreement that is the basis for the transport is defined by the                <orgProvider … />
+  agreement element.                                                                 <process …/>
+                                                                                     <economyOrder … />
+- The process element contains a description of the transport process.               <resourceOrder> … />
+- economyOrder specifies the specific economic terms for the Order,                  <route>
+  e.g. the Price of the transport.                                                     <node … />
+- resourceOrder specifies the requirements on the Driver and Vehicle                   …
+  to fulfil the Order.                                                               </route>
+- The route contains all the Nodes that needs to be visited to complete            </order>
+                                                                                <referencesTo>
+  the Order.                                                                  </msg>
+- Each Node contains the geographical location of the Node, the             </SUTI>
+  Contents associated with the Node and the type of action to be
+  performed at the node (e.g. pickup, destination).
+
+This introduction will not cover the details of more complex Order types.
+This information can be found in the full documentation of the SUTI
+standard.
+
+
+                                                                                      Client      Order       Provider
+                                     Events and text messages
+The Provider can report actions performed at a Node back to the Client as
+Events using a SUTI Message.
+
+Different actions correspond to different eventTypes, e.g. ”Vehicle at Node”,
+”Passenger in Vehicle”, etc. All eventTypes are described in the SUTI standard
+documentation.
+
+It is also possible for the Client to inform the Provider about Events at a Node                     <SUTI> …
+using a designated Message Type.                                                                 ”Vehicle at node”
+                                                                                                     … </SUTI>
+In addition it is possible to exchange customized text messages between the
+Client and the Vehicle (Driver) during transport, for communicating details or
+information that can not be conveyed via standard Message Types.
+
+
+                   ”The passenger is
+                    at the southern
+                       entrance.”
+
+
+
+
+                                                                                          <SUTI> …
+                                                                                   ”Passenger in vehicle”
+        Client             Events           Provider                                      … </SUTI>
+                                                Vehicle locations
+A common use case is that the Client needs information about the
+geographical location (GPS-position) of Vehicles. There are two main
+methods to achieve this.
+
+The simple method is where Vehicle coordinates are requested for a specific
+Order. This can be either a one-time request or a request for coordinates to
+be sent at a set interval, for instance every 15 seconds.
+
+If Vehicle coordinates are needed for many – or all – vehicles, requesting
+them per Order would result in verbose communication. Therefore there is an
+alternative method called Bulk Location Request, where all Vehicle locations
+are requested for a specific Agreement, compiled in one response message.
+This version also supports locations to be transmitted at a set time interval,
+e.g. 15 seconds.
+                   Due to the higher bandwidth required by Bulk Location
+                    communication, it is commonly set up via a separate
+                     SUTI Link, in addition to the main Link where Order
+                           information is transmitted. Bulk Location
+                            communication can also be transmitted via
+                           JSON, thus minimizing communication load.
+
+
+
+
+        Client                                    Bulk Location Response         Provider
+                                                         Reporting
+When an Order has been completed, the Client can request that the
+Provider sends an Order Report or a Delivery Report.
+
+These reports contain economic information that can be used for
+calculating compensation as part of the accounting process. The
+Reports are gathered for all Orders within a time fram, e.g. a month
+or a week, and the total compensation is aggregated and calculated
+for that time frame.
+
+The details of this communication is described in the Accounting
+section of the SUTI standard.
+
+
+
+
+        Client                       Order Report                   Provider
+                                            The Self Declaration
+A SUTI implementation will cover specific parts of the standard and
+will define a specific order flow and transport control.
+
+The Client specifies its implementation design choices in a Self
+Declaration, containing descriptions and examples of messages and
+the order flow.
+
+Before it can be published as part of a Request for Proposal, a Self
+Declaration needs to be reviewed and approved by the SUTI
+Technical Committee.
+
+Chapter 3 of How to use SUTI contains a more more in-depth
+description of how to create a Self Declaration.
+                                   Documentation and support
+Full documentation of the SUTI Standard is provided via the
+SUTI webpage at suti.se and the SUTI GitHub Repository.
+
+The documentation is divided into two parts: How to use SUTI
+and a SUTI Messages reference.
+
+Support
+SUTI Members can request assistance from the SUTI Technical
+Committee when creating a Self Declaration or implementing a
+SUTI Link.
+
+Non-members are also welcome with general questions
+regarding the SUTI standard and when it’s suitable for
+application.
+
+The Technical Committe holds weekly meetings and will
+respond to questions as quickly as possible, usually within two
+weeks.
+
+The Technical Committee can be reached at
+
