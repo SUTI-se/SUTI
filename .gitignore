@@ -3,7 +3,8 @@
 __MACOSX/
 .AppleDouble
 .LSOverride
-Icon[]
+Icon[
+]
 
 # Thumbnails
 ._*
@@ -25,3 +26,39 @@ Temporary Items
 .apdisk
 *.docx
 *.vsd
+
+# Claude Code working directory
+.claude/
+CLAUDE.md
+
+# Internal development tools (not for public use)
+tools/merge_i18n_translations.py
+
+# Generated CSV files (regenerated from YAML source)
+data/generated_*.csv
+
+# Backup files (generated during modifications)
+*.backup
+*.before_*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg

@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
+  <orgSender name="Client name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true" />
+  </orgSender>
+  <orgReceiver name="Provider name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true" />
+  </orgReceiver>
+  <msg msgName="Driver session" msgType="2100">
+    <idMsg src="systemsupplierId_clientOwnerId_uniqueId:MsgId" id="2025121614758103" unique="true" />
+    <referencesTo>
+      <idDriverSession src="systemsupplierId_clientOwnerId_uniqueId:DriverSessionNumber" id="9690"
+        unique="true" />
+      <idRunoffGroup src="systemsupplierId_clientOwnerId_uniqueId:RunoffGroupId" id="GTTORG"
+        unique="true" />
+    </referencesTo>
+    <driverSession>
+      <idDriverSession src="systemsupplierId_clientOwnerId_uniqueId:DriverSessionId" id="34542439"
+        unique="true" />
+      <process allowRouting="true" trafficControl="true" orderAlteration="true"
+        dispatchResponsible="client" report="false" preorderedVehicle="false" dispatch="true"
+        manualDispatch="false" />
+      <resourceDriverSession>
+        <vehicle>
+          <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="101"
+            unique="true" />
+          <capacity>
+            <seats noOfSeats="1" />
+          </capacity>
+        </vehicle>
+        <resourceTime>
+          <time timeType="estimatedStarttime" timeAccuracy="5" timeZone="1" dwellTime="0"
+            time="2025-12-17T07:06:01" />
+          <time timeType="estimatedEndtime" timeAccuracy="5" timeZone="1" dwellTime="0"
+            time="2025-12-17T08:05:30" />
+        </resourceTime>
+      </resourceDriverSession>
+      <orders>
+        <order>
+          <idOrder src="systemsupplierId_clientOwnerId_uniqueId:OrderId" id="34394460" unique="true" />
+          <orderStatus status="none" />
+          <economyOrder>
+            <price priceResponsible="client" fixedPrice="false" vatIncluded="true">
+              <idCurrency src="ISO 4217" id="SEK" unique="true" />
+            </price>
+            <formOfPayment>
+              <payment amount="0" paymentType="socialservicefee" documentType="" />
+            </formOfPayment>
+          </economyOrder>
+          <resourceOrder>
+            <vehicle>
+              <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="101"
+                unique="true" />
+              <capacity>
+                <seats noOfSeats="1" />
+              </capacity>
+              <attributesVehicle>
+                <attribute>
+                  <idAttribute src="SUTI:idAttribute" id="1638" unique="true" />
+                </attribute>
+              </attributesVehicle>
+            </vehicle>
+            <manualDescriptionResource
+              manualText="Körorder: 9690 GTTORG Platskrav: Sittplats Kudde " sendtoInvoice="false"
+              sendtoVehicle="true" sendtoOperator="true" vehicleConfirmation="false" />
+          </resourceOrder>
+          <route>
+            <node nodeType="pickup" nodeSeqno="1">
+              <addressNode addressName="Storgatan 31, SE-802 86 Gävle, Sverige" street="Lysgatan"
+                streetNo="31" streetNoLetter="" location="" community="Gävle" postalNo="802 86"
+                mapPage="">
+                <geographicLocation typeOfCoordinate="WGS-84" lat="59.67345" long="16.17607"
+                  precision="6" />
+              </addressNode>
+              <timesNode>
+                <time timeType="scheduledtime" timeAccuracy="5" timeZone="1" dwellTime="0"
+                  time="2025-12-17T07:10:00" />
+                <time timeType="estimatedtime" timeAccuracy="5" timeZone="1" dwellTime="0"
+                  time="2025-12-17T07:10:00" />
+              </timesNode>
+              <contents>
+                <content contentType="traveller" name="Ada Adasson">
+                  <attributeContent>
+                    <attribute>
+                      <idAttribute src="SUTI:idAttribute" id="2317" unique="true" />
+                    </attribute>
+                    <attribute>
+                      <idAttribute src="SUTI:idAttribute" id="2313" unique="true" />
+                    </attribute>
+                  </attributeContent>
+                  <resourceContent />
+                  <contactInfosContent>
+                    <contactInfo contactType="phone" contactInfo="070123456" />
+                  </contactInfosContent>
+                </content>
+              </contents>
+            </node>
+            <node nodeType="destination" nodeSeqno="2">
+              <addressNode addressName="Staffansskolan Anpassad" street="Tredje Tvärgatan"
+                streetNo="34" streetNoLetter="" location="Tredje tvärgatan" community="Gävle"
+                postalNo="80284" mapPage="">
+                <manualDescriptionAddress manualText="Tredje tvärgatan" sendtoInvoice="false"
+                  sendtoVehicle="true" sendtoOperator="false" vehicleConfirmation="true" />
+                <geographicLocation typeOfCoordinate="WGS-84" lat="59.6716250322652"
+                  long="16.163967099180706" precision="6" />
+              </addressNode>
+              <timesNode>
+                <time timeType="scheduledtime" timeAccuracy="5" timeZone="1" dwellTime="0"
+                  time="2025-12-17T07:15:12" />
+                <time timeType="estimatedtime" timeAccuracy="5" timeZone="1" dwellTime="0"
+                  time="2025-12-17T07:15:12" />
+              </timesNode>
+              <contents>
+                <content contentType="traveller" name="Ada Adasson">
+                  <attributeContent>
+                    <attribute>
+                      <idAttribute src="SUTI:idAttribute" id="2317" unique="true" />
+                    </attribute>
+                    <attribute>
+                      <idAttribute src="SUTI:idAttribute" id="2313" unique="true" />
+                    </attribute>
+                  </attributeContent>
+                  <resourceContent />
+                  <contactInfosContent>
+                    <contactInfo contactType="phone" contactInfo="07365498 Skolan" />
+                  </contactInfosContent>
+                </content>
+              </contents>
+            </node>
+          </route>
+        </order>
+        <order>
+          <idOrder src="systemsupplierId_clientOwnerId_uniqueId:OrderId" id="34394578" unique="true" />
+          <orderStatus status="none" />
+          <economyOrder>
+            <price priceResponsible="client" fixedPrice="false" vatIncluded="true">
+              <idCurrency src="ISO 4217" id="SEK" unique="true" />
+            </price>
+            <formOfPayment>
+              <payment amount="0" paymentType="socialservicefee" documentType="" />
+            </formOfPayment>
+          </economyOrder>
+          <resourceOrder>
+            <vehicle>
+              <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="101"
+                unique="true" />
+              <capacity>
+                <seats noOfSeats="1" />
+              </capacity>
+              <attributesVehicle>
+                <attribute>
+                  <idAttribute src="SUTI:idAttribute" id="1638" unique="true" />
+                </attribute>
+              </attributesVehicle>
+            </vehicle>
+            <manualDescriptionResource manualText="K rorder: 9690 GTTORG Platskrav: Sittplats Skol "
+              sendtoInvoice="false" sendtoVehicle="true" sendtoOperator="true"
+              vehicleConfirmation="false" />
+          </resourceOrder>
+          <route>
+            <node nodeType="pickup" nodeSeqno="3">
+              <addressNode addressName="" street="Klasro" streetNo="5" streetNoLetter="" location=""
+                community="" postalNo="80595" mapPage="">
+                <manualDescriptionAddress manualText="4Km   Gävle" sendtoInvoice="false"
+                  sendtoVehicle="true" sendtoOperator="false" vehicleConfirmation="true" />
+                <geographicLocation typeOfCoordinate="WGS-84" lat="60.701489" long="17.230823"
+                  precision="6" />
+              </addressNode>
+              <timesNode>
+                <time timeType="scheduledtime" timeAccuracy="5" timeZone="1" dwellTime="0"
+                  time="2025-12-17T07:27:00" />
+                <time timeType="estimatedtime" timeAccuracy="5" timeZone="1" dwellTime="0"
+                  time="2025-12-17T07:27:00" />
+              </timesNode>
+              <contents>
+                <content contentType="traveller" name="Beda Bedasson">
+                  <attributeContent>
+                    <attribute>
+                      <idAttribute src="SUTI:idAttribute" id="2313" unique="true" />
+                    </attribute>
+                  </attributeContent>
+                  <resourceContent />
+                  <contactInfosContent>
+                    <contactInfo contactType="phone" contactInfo="070121212" />
+                  </contactInfosContent>
+                </content>
+              </contents>
+            </node>
+            <node nodeType="destination" nodeSeqno="4">
+              <addressNode addressName="Stora S traskolan" street="Forellplan" streetNo="1"
+                streetNoLetter="" location="070 - 084 89 43" community="G vle" postalNo="80631"
+                mapPage="">
+                <manualDescriptionAddress manualText="070 - 084 89 43" sendtoInvoice="false"
+                  sendtoVehicle="true" sendtoOperator="false" vehicleConfirmation="true" />
+                <geographicLocation typeOfCoordinate="WGS-84" lat="60.69137104226699"
+                  long="17.11366023889232" precision="6" />
+              </addressNode>
+              <timesNode>
+                <time timeType="scheduledtime" timeAccuracy="5" timeZone="1" dwellTime="0"
+                  time="2025-12-17T07:43:07" />
+                <time timeType="estimatedtime" timeAccuracy="5" timeZone="1" dwellTime="0"
+                  time="2025-12-17T07:43:07" />
+              </timesNode>
+              <contents>
+                <content contentType="traveller" name="Beda Bedasson">
+                  <attributeContent>
+                    <attribute>
+                      <idAttribute src="SUTI:idAttribute" id="2313" unique="true" />
+                    </attribute>
+                  </attributeContent>
+                  <resourceContent />
+                  <contactInfosContent>
+                    <contactInfo contactType="phone" contactInfo="070121212" />
+                  </contactInfosContent>
+                </content>
+              </contents>
+            </node>
+          </route>
+        </order>
+        <order>
+          <idOrder src="systemsupplierId_clientOwnerId_uniqueId:OrderId" id="34550219" unique="true" />
+          <orderStatus status="none" />
+          <economyOrder>
+            <price priceResponsible="client" fixedPrice="false" vatIncluded="true">
+              <idCurrency src="ISO 4217" id="SEK" unique="true" />
+            </price>
+            <formOfPayment>
+              <payment amount="0" paymentType="socialservicefee" documentType="" />
+            </formOfPayment>
+          </economyOrder>
+          <resourceOrder>
+            <vehicle>
+              <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="101"
+                unique="true" />
+              <capacity>
+                <seats noOfSeats="1" />
+              </capacity>
+              <attributesVehicle>
+                <attribute>
+                  <idAttribute src="SUTI:idAttribute" id="1638" unique="true" />
+                </attribute>
+              </attributesVehicle>
+            </vehicle>
+            <manualDescriptionResource
+              manualText="Körorder: 9690 GTTORG Platskrav: Sittplats Kudde " sendtoInvoice="false"
+              sendtoVehicle="true" sendtoOperator="true" vehicleConfirmation="false" />
+          </resourceOrder>
+          <route>
+            <node nodeType="pickup" nodeSeqno="5">
+              <addressNode addressName="Bäckebro korttids" street="Sicksackvägen" streetNo="1"
+                streetNoLetter="" location="070-000 50 12 Kör in från Sätrahöjden" community="Gävle"
+                postalNo="" mapPage="">
+                <manualDescriptionAddress manualText="070-000 50 12 Kör in från Sätrahöjden"
+                  sendtoInvoice="false" sendtoVehicle="true" sendtoOperator="false"
+                  vehicleConfirmation="true" />
+                <geographicLocation typeOfCoordinate="WGS-84" lat="60.55511366210161"
+                  long="17.25432311917093" precision="6" />
+              </addressNode>
+              <timesNode>
+                <time timeType="scheduledtime" timeAccuracy="5" timeZone="1" dwellTime="0"
+                  time="2025-12-17T07:50:00" />
+                <time timeType="estimatedtime" timeAccuracy="5" timeZone="1" dwellTime="0"
+                  time="2025-12-17T07:50:00" />
+              </timesNode>
+              <contents>
+                <content contentType="traveller" name="Cecar Cecarrson">
+                  <attributeContent>
+                    <attribute>
+                      <idAttribute src="SUTI:idAttribute" id="2317" unique="true" />
+                    </attribute>
+                    <attribute>
+                      <idAttribute src="SUTI:idAttribute" id="2313" unique="true" />
+                    </attribute>
+                  </attributeContent>
+                  <resourceContent />
+                  <contactInfosContent>
+                    <contactInfo contactType="phone" contactInfo="076 - 321 80 01/070 - 000 00 00" />
+                  </contactInfosContent>
+                </content>
+              </contents>
+            </node>
+            <node nodeType="destination" nodeSeqno="6">
+              <addressNode addressName="Ulvsäters Anpassad" street="" streetNo="1" streetNoLetter=""
+                location="Ulvsätersv.27; 073 321 25 44" community="Gävle" postalNo="0" mapPage="">
+                <manualDescriptionAddress manualText="Ulvsätersv.27; 073 321 25 44"
+                  sendtoInvoice="false" sendtoVehicle="true" sendtoOperator="false"
+                  vehicleConfirmation="true" />
+                <geographicLocation typeOfCoordinate="WGS-84" lat="60.595333" long="17.208847"
+                  precision="6" />
+              </addressNode>
+              <timesNode>
+                <time timeType="scheduledtime" timeAccuracy="5" timeZone="1" dwellTime="0"
+                  time="2025-12-17T07:58:20" />
+                <time timeType="estimatedtime" timeAccuracy="5" timeZone="1" dwellTime="0"
+                  time="2025-12-17T07:58:20" />
+              </timesNode>
+              <contents>
+                <content contentType="traveller" name="Cecar Cecarrson">
+                  <attributeContent>
+                    <attribute>
+                      <idAttribute src="SUTI:idAttribute" id="2317" unique="true" />
+                    </attribute>
+                    <attribute>
+                      <idAttribute src="SUTI:idAttribute" id="2313" unique="true" />
+                    </attribute>
+                  </attributeContent>
+                  <resourceContent />
+                  <contactInfosContent>
+                    <contactInfo contactType="phone" contactInfo="Skolan 073321321" />
+                  </contactInfosContent>
+                </content>
+              </contents>
+            </node>
+          </route>
+        </order>
+      </orders>
+      <changelog>
+        <log change="updated">
+          <idOrder src="systemsupplierId_clientOwnerId_uniqueId:OrderId" id="34394460" unique="true" />
+          <idOrder src="systemsupplierId_providerOwnerId_uniqueId:OrderId" id="13123" unique="true" />
+        </log>
+        <log change="updated">
+          <idOrder src="systemsupplierId_clientOwnerId_uniqueId:OrderId" id="34394578" unique="true" />
+          <idOrder src="systemsupplierId_providerOwnerId_uniqueId:OrderId" id="13125" unique="true" />
+        </log>
+        <log change="updated">
+          <idOrder src="systemsupplierId_clientOwnerId_uniqueId:OrderId" id="34550219" unique="true" />
+          <idOrder src="systemsupplierId_providerOwnerId_uniqueId:OrderId" id="13126" unique="true" />
+        </log>
+      </changelog>
+    </driverSession>
+  </msg>
+</SUTI>

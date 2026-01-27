@@ -1,0 +1,2435 @@
+meta:
+  standard: SUTI
+  sourceFiles:
+  - SUTI_Attribute_List.csv
+  - SUTI_Enumeration_Values.csv
+  notes:
+  - SUTI_ValueText is the code value used in messages.
+  - SUTI_ValueDescription in ENG row is treated as description; in other languages it is treated as localized label/term.
+  - internationalization contains localized labels; description is English description when available.
+  - All 657 enumeration entries from source CSV files are now included.
+enumerations:
+  "actionRequest/idAction/@id":
+    Reqeuest for driver estimation of vehicle at node:
+      id: 50101
+      description: Reqeuest for driver estimation of vehicle at node
+      translations:
+        en: Reqeuest for driver estimation of vehicle at node
+    No content at node:
+      id: 50102
+      description: No content at node
+      translations:
+        en: No content at node
+    No vehicle at node:
+      id: 50103
+      description: No vehicle at node
+      translations:
+        en: No vehicle at node
+    Information that Client connect call:
+      id: 50111
+      description: Information that Client connect call
+      translations:
+        en: Information that Client connect call
+    Request that Provider connect call:
+      id: 50112
+      description: Request that Provider connect call
+      translations:
+        en: Request that Provider connect call
+    Information that Client has requested the passenger to call:
+      id: 50113
+      description: Information that Client has requested the passenger to call
+      translations:
+        en: Information that Client has requested the passenger to call
+    Reuest the driver to call:
+      id: 50114
+      description: Reuest the driver to call
+      translations:
+        en: Reuest the driver to call
+    Request Client to decide call method:
+      id: 50115
+      description: Request Client to decide call method
+      translations:
+        en: Request Client to decide call method
+    Request Driver to connet to URL:
+      id: 50116
+      description: Request Driver to connet to URL
+      translations:
+        en: Request Driver to connet to URL
+    Text message from passenger to driver:
+      id: 50121
+      description: Text message from passenger to driver
+      translations:
+        en: Text message from passenger to driver
+    Text message from driver to passenger:
+      id: 50122
+      description: Text message from driver to passenger
+      translations:
+        en: Text message from driver to passenger
+  "attributeAdress/attribute/idAttribute/@id":
+    wheelchair:
+      id: 2001
+      description: Indicates that traveller at this point will be using wheelchair
+      translations:
+        en: wheelchair
+        da: kørestol
+        fi: pyörätuoli
+        'no': rullestol
+        sv: rullstol
+    oxygen:
+      id: 2002
+      description: Indicates that traveller at this point will be using oxygen
+      translations:
+        en: oxygen
+        da: oxygen
+        fi: happi
+        'no': oksygen
+        sv: syre
+    dog:
+      id: 2003
+      description: Indicates that traveller at this point will be accompanied by a dog
+      translations:
+        en: dog
+        da: hund
+        fi: koira
+        'no': hund
+        sv: ledarhund
+    respirator:
+      id: 2004
+      description: Indicates that traveller at this point will need a respirator
+      translations:
+        en: respirator
+        da: respirator
+        fi: hengityslaite
+        'no': respirator
+        sv: respirator
+    lift:
+      id: 2005
+      description: Indicates that traveller at this point will need to go by lift
+      translations:
+        en: lift
+        da: –
+        fi: nostin
+        'no': heis
+        sv: lift
+    stair climber:
+      id: 2006
+      description: Indicates that traveller at this point will need a stair climber
+      translations:
+        en: stair climber
+        da: trappegang
+        fi: portaiden nousulaite
+        'no': trappeganger
+        sv: trappklättrare
+    crutch:
+      id: 2007
+      description: Indicates that traveller at this point will need crutches
+      translations:
+        en: crutch
+        da: krykke
+        fi: kainalosauva
+        'no': krykke
+        sv: krycka
+    perambulator:
+      id: 2008
+      description: Indicates that traveller at this point will have a perambulator
+      translations:
+        en: perambulator
+        da: barnevogn
+        fi: lastenvaunut
+        'no': barnevogn
+        sv: barnvagn
+    rollator:
+      id: 2009
+      description: Indicates that traveller at this point need a rollator
+      translations:
+        en: rollator
+        da: –
+        fi: rollaattori
+        'no': rullator
+        sv: rullator
+    walker:
+      id: 2010
+      description: Indicates that traveller at this point need a Walker or Walking frame
+      translations:
+        en: walker
+        da: gangstativ
+        fi: kävelyteline
+        'no': gangstativ
+        sv: gåstol
+    blind persons cane:
+      id: 2011
+      description: Indicates that traveller at this point need a blind persons cane
+      translations:
+        en: blind persons cane
+        da: blindestok
+        fi: sokean keppi
+        'no': blindestokk
+        sv: blindkäpp
+    commodechair:
+      id: 2012
+      description: Indicates that traveller at this point need a Commode Chair
+      translations:
+        en: commodechair
+        da: toiletstol
+        fi: wc-tuoli
+        'no': toalettstol
+        sv: toalettstol
+    do not leave unattended:
+      id: 2013
+      description: Indicates that traveller may not be left unattended. Driver may not leave until responsible person arrives.
+      translations:
+        en: do not leave unattended
+        da: efterlad ikke uden opsyn
+        fi: älä jätä ilman valvontaa
+        'no': ikke la være uten tilsyn
+        sv: överlämning
+    compulsory companion:
+      id: 2014
+      description: Indicates that traveller always need a companion
+      translations:
+        en: compulsory companion
+        da: ledsager påkrævet
+        fi: saattaja pakollinen
+        'no': ledsager påkrevd
+        sv: obligatorisk ledsagare
+    treatmentCentre:
+      id: 2015
+      description: indicates that this point is a institution of treatment
+      translations:
+        en: treatmentCentre
+        da: behandlingscenter
+        fi: hoitokeskus
+        'no': behandlingssted
+        sv: behandlingsställe
+  "attributeContent/attribute/idAttribute/@id":
+    wheelchair:
+      id: 2301
+      description: Indicates that traveller at this point will be using wheelchair
+      translations:
+        en: wheelchair
+        da: kørestol
+        fi: pyörätuoli
+        'no': rullestol
+        sv: rullstol
+    oxygen:
+      id: 2302
+      description: Indicates that traveller at this point will be using oxygen
+      translations:
+        en: oxygen
+        da: oxygen
+        fi: happi
+        'no': oksygen
+        sv: syre
+    dog:
+      id: 2303
+      description: Indicates that traveller at this point will be accompanied by a dog
+      translations:
+        en: dog
+        da: hund
+        fi: koira
+        'no': hund
+        sv: ledarhund
+    respirator:
+      id: 2304
+      description: Indicates that traveller at this point will need a respirator
+      translations:
+        en: respirator
+        da: respirator
+        fi: hengityslaite
+        'no': respirator
+        sv: respirator
+    lift:
+      id: 2305
+      description: Indicates that traveller at this point will need to go by lift
+      translations:
+        en: lift
+        da: –
+        fi: nostin
+        'no': heis
+        sv: lift
+    stair climber:
+      id: 2306
+      description: Indicates that traveller at this point will need a stair climber
+      translations:
+        en: stair climber
+        da: trappegang
+        fi: portaiden nousulaite
+        'no': trappeganger
+        sv: trappklättrare
+    crutch:
+      id: 2307
+      description: Indicates that traveller at this point will need crutches
+      translations:
+        en: crutch
+        da: krykke
+        fi: kainalosauva
+        'no': krykke
+        sv: krycka
+    perambulator:
+      id: 2308
+      description: Indicates that traveller at this point will have a perambulator
+      translations:
+        en: perambulator
+        da: barnevogn
+        fi: lastenvaunut
+        'no': barnevogn
+        sv: barnvagn
+    rollator:
+      id: 2309
+      description: Indicates that traveller at this point need a rollator
+      translations:
+        en: rollator
+        da: –
+        fi: rollaattori
+        'no': rullator
+        sv: rullator
+    walker:
+      id: 2310
+      description: Indicates that traveller at this point need a Walker or Walking frame
+      translations:
+        en: walker
+        da: gangstativ
+        fi: kävelyteline
+        'no': gangstativ
+        sv: gåstol
+    blind persons cane:
+      id: 2311
+      description: Indicates that traveller at this point need a blind persons cane
+      translations:
+        en: blind persons cane
+        da: blindestok
+        fi: sokean keppi
+        'no': blindestokk
+        sv: blindkäpp
+    commodechair:
+      id: 2312
+      description: Indicates that traveller at this point need a Commode Chair
+      translations:
+        en: commodechair
+        da: toiletstol
+        fi: wc-tuoli
+        'no': toalettstol
+        sv: toalettstol
+    do not leave unattended:
+      id: 2313
+      description: Indicates that traveller may not be left unattended. Driver may not leave until responsible person arrives.
+      translations:
+        en: do not leave unattended
+        da: efterlad ikke uden opsyn
+        fi: älä jätä ilman valvontaa
+        'no': ikke la være uten tilsyn
+        sv: överlämning
+    compulsory companion:
+      id: 2314
+      description: Indicates that traveller always need a companion
+      translations:
+        en: compulsory companion
+        da: ledsager påkrævet
+        fi: saattaja pakollinen
+        'no': ledsager påkrevd
+        sv: obligatorisk ledsagare
+    frontseat:
+      id: 2315
+      description: Indicates that traveller always need to be placed in front seat
+      translations:
+        en: frontseat
+        da: forsæte
+        fi: etuistuin
+        'no': forsete
+        sv: framsäte
+    lay in backseat:
+      id: 2316
+      description: Indicates that traveller always need to lay in back seat
+      translations:
+        en: lay in backseat
+        da: ligge i bagsæde
+        fi: makaa takapenkillä
+        'no': ligge i baksete
+        sv: ligga bak
+    single vehicle:
+      id: 2317
+      description: Indicates that traveller always need to have a single car
+      translations:
+        en: single vehicle
+        da: enkelt køretøj
+        fi: yksittäinen ajoneuvo
+        'no': alene bil
+        sv: egen bil
+    traveller female:
+      id: 2318
+      description: Indicates that traveller gender is female
+      translations:
+        en: traveller female
+        da: kvinde
+        fi: nainen
+        'no': kvinne
+        sv: kvinna
+    traveller male:
+      id: 2319
+      description: Indicates that traveller gender is male
+      translations:
+        en: traveller male
+        da: mand
+        fi: mies
+        'no': mann
+        sv: man
+    traveller unknown gender:
+      id: 2320
+      description: Indicates that traveller gender is unknown
+      translations:
+        en: traveller unknown gender
+        da: ukendt
+        fi: tuntematon
+        'no': ukjent
+        sv: okänd
+    powered wheelchair:
+      id: 2321
+      description: Big powered wheelchair
+      translations:
+        en: powered wheelchair
+        da: el-rullestol
+        fi: sähköpyörätuoli
+        'no': el-rullestol
+        sv: permobil
+    folding wheelchair:
+      id: 2322
+      description: Folded wheelchair
+      translations:
+        en: folding wheelchair
+        da: sammenfoldelig rullestol
+        fi: taitettava pyörätuoli
+        'no': sammenleggbar rullestol
+        sv: Vikbar rullstol
+    mobility scooter:
+      id: 2323
+      description: Mobility scooter
+      translations:
+        en: mobility scooter
+        da: promenadescooter
+        fi: liikkumisskoottri
+        'no': el-scooter
+        sv: promenadscooter
+    stretcher:
+      id: 2324
+      description: The vehicle has a stretcher or can be easily fitted with a stretcher
+      translations:
+        en: stretcher
+        da: båre
+        fi: paarit
+        'no': båre
+        sv: bår
+    standard car:
+      id: 2325
+      description: The traveler needs to go in a standard car used for the commercial transport of passengers
+      translations:
+        en: standard car
+        da: Den rejsende har brug for at gå i en standard bil, der anvendes til erhvervsmæssig transport af passagerer
+        fi: normaali auto
+        'no': Den reisende må gå i en vanlig bil som brukes til kommersiell transport av passasjerer
+        sv: Resenären behöver åka i en standard bil som används för kommersiell transport av passagerare
+    special vehicle:
+      id: 2326
+      description: The passenger needs to travel in a special vehicle used for the commercial carriage of passengers with special needs
+      translations:
+        en: special vehicle
+        da: Passageren har brug for at rejse i en særlig køretøj, der anvendes til erhvervsmæssig personbefordring med særlige behov
+        fi: erikoisajoneuvo
+        'no': Passasjeren må reise i en spesiell bil som brukes til kommersiell transport av passasjerer med spesielle behov
+        sv: Resenären behöver åka i ett specialfordon använt för yrkesmässig transport av resenär med speciella behov
+    foldableseat:
+      id: 2327
+      description: Foldable seat
+      translations:
+        en: foldableseat
+        da: foldbart sæde
+        fi: taitettava istuin
+        'no': sammenleggbart sete
+        sv: Fällbart säte
+    electrical car:
+      id: 2328
+      description: Passenger requires a electrical car
+      translations:
+        en: electrical car
+        da: elbil
+        fi: sähköauto
+        'no': elbil
+        sv: Elektriskt fordon
+    travellerAssistance:
+      id: 2329
+      description: Traveller assistance
+      translations:
+        en: travellerAssistance
+        da: rejsendehjælp
+        fi: matkustajanavustus
+        'no': reisendehjelp
+        sv: Hjälp resenär
+    cagedpet:
+      id: 2330
+      description: Traveller has pet travelling in cage
+      translations:
+        en: cagedpet
+        da: kæledyr i bur
+        fi: lemmikki häkissä
+        'no': kjæledyr i bur
+        sv: Resenären reser med djur i bur
+    standingshell:
+      id: 2331
+      description: Standing shell
+      translations:
+        en: standingshell
+        da: ståskal
+        fi: seisomakuori
+        'no': ståskall
+        sv: Stående skal
+    Separator:
+      id: 2332
+      description: Plastic separator in vehicle for virus protection
+      translations:
+        en: Separator
+        da: –
+        fi: –
+        'no': –
+        sv: Plastavskiljare för virusskydd
+    C19Driver:
+      id: 2333
+      description: Driver trained for Covid19 transports
+      translations:
+        en: C19Driver
+        da: –
+        fi: –
+        'no': –
+        sv: Förare för covid19 transport
+    BVH:
+      id: 2334
+      description: Driver trained in basic care hygiene
+      translations:
+        en: BVH
+        da: –
+        fi: –
+        'no': –
+        sv: Förare utbildad I basal vårdhygien
+    lay in frontseat:
+      id: 2336
+      description: Indicates that traveller always need to lay in front seat
+      translations:
+        en: lay in frontseat
+        sv: ligga fram
+    pet:
+      id: 2337
+      description: Traveller has a pet
+      translations:
+        en: pet
+        da: Kæledyr
+        fi: Lemmikki
+        'no': Kjæledyr
+        sv: Sällskapsdjur
+    child lt seven:
+      id: 2338
+      description: Traveller is under 7 years old
+      translations:
+        en: child lt seven
+        da: Børn 0-6 år
+        fi: Lapsi 0-6 vuotta
+        'no': Børn 0-6 år
+        sv: Barn 0-6 år
+    child gt seven:
+      id: 2339
+      description: Traveller is over 7 and under 20 years old
+      translations:
+        en: child gt seven
+        da: Ungdom 7-20 år
+        fi: Nuori 7-20 vuotta
+        'no': Ungdom 7-20 år
+        sv: Ungdom 7-20 år
+    content requires 2 seats:
+      id: 2340
+      description: Traveller must not be planned close to other traveller
+      translations:
+        en: content requires 2 seats
+    content requires seat close to door:
+      id: 2341
+      description: Traveller must be placed close to door. Often used in connection with wheelchair attribute
+      translations:
+        en: content requires seat close to door
+    palanquin:
+      id: 2342
+      description: Chair used to carry passenger into vehicle
+      translations:
+        en: palanquin
+        sv: Stol för att lyfta resenär i och ur fordon
+    car belt lock:
+      id: 2343
+      description: Passenger requests Car Lock Belt
+      translations:
+        en: car belt lock
+        sv: Passagerare behöver bilbälteslås
+  "attributesDriver/attribute/idAttribute/@id":
+    carrypass:
+      id: 1501
+      description: Driver can help carry a passenger
+      translations:
+        en: carrypass
+        da: bærer passager
+        fi: kantaa matkustajan
+        'no': bærer passasjer
+        sv: bär passagerare
+    liftpass:
+      id: 1502
+      description: Driver can help lift a passenger
+      translations:
+        en: liftpass
+        da: løfter passager
+        fi: nostaa matkustajan
+        'no': løfter passasjer
+        sv: lyfter passagerare
+    carrylugg:
+      id: 1503
+      description: Driver can help carry luggage
+      translations:
+        en: carrylugg
+        da: bærer bagage
+        fi: kantaa matkatavarat
+        'no': bærer bagasje
+        sv: bär bagage
+    animal:
+      id: 1504
+      description: Driver can take animals in car. No allergy
+      translations:
+        en: animal
+        da: kører dyr
+        fi: kuljettaa eläimiä
+        'no': kjører dyr
+        sv: kör djur
+    guide:
+      id: 1505
+      description: Driver is qualified as Tour Guide
+      translations:
+        en: guide
+        da: –
+        fi: opas
+        'no': –
+        sv: guide
+    female:
+      id: 1506
+      description: Driver is female
+      translations:
+        en: female
+        da: kvinde
+        fi: nainen
+        'no': kvinne
+        sv: kvinnlig
+    male:
+      id: 1507
+      description: Driver is male
+      translations:
+        en: male
+        da: mand
+        fi: mies
+        'no': mann
+        sv: manlig
+    badge swlfv:
+      id: 1508
+      description: Driver has been security screened to get luggage from retricted areas on Swedish airports.
+      translations:
+        en: badge swlfv
+        da: ID swlfv
+        fi: tunnus swlfv
+        'no': ID swlfv
+        sv: säkerhetskontrollerad lfv
+    no smoking:
+      id: 1509
+      description: Non smoking driver
+      translations:
+        en: no smoking
+        da: ingen rygning
+        fi: ei tupakointia
+        'no': ingen røyking
+        sv: icke rökare
+    assisttraveller:
+      id: 1510
+      description: Driver is qualified to assist traveller to door
+      translations:
+        en: assisttraveller
+        da: hjælp rejsende
+        fi: auttaa matkustajaa
+        'no': hjelp reisende
+        sv: assisterar resenär
+    C19Driver:
+      id: 1511
+      description: Driver trained for Covid19 transports
+      translations:
+        en: C19Driver
+        da: –
+        fi: –
+        'no': –
+        sv: Förare för Covid19 transport
+    BVH:
+      id: 1512
+      description: Driver trained in basic care hygiene
+      translations:
+        en: BVH
+        da: –
+        fi: –
+        'no': –
+        sv: Förare utbildad i basal vårdhygien
+    car belt lock:
+      id: 1513
+      description: Driver trained in use of Car Belt Lock
+      translations:
+        en: car belt lock
+        sv: Förare utbildad i användning av bilbälteslås
+  "attributesVehicle/attribute/idAttribute/@id":
+    estate:
+      id: 1601
+      description: Combi
+      translations:
+        en: estate
+        da: stationcar
+        fi: farmari
+        'no': stasjonsvogn
+        sv: kombi
+    volvo:
+      id: 1602
+      description: Volvo
+      translations:
+        en: volvo
+        da: –
+        fi: –
+        'no': –
+        sv: volvo
+    mercedes:
+      id: 1603
+      description: Mercedes
+      translations:
+        en: mercedes
+        da: –
+        fi: –
+        'no': –
+        sv: mercedes
+    environmental:
+      id: 1604
+      description: environmentally friendly vehicle
+      translations:
+        en: environmentally friendly vehicle
+        da: miljøvenlig køretøj
+        fi: ympäristöystävällinen ajoneuvo
+        'no': miljøvennlig kjøretøy
+        sv: miljöfordon
+    child booster seat:
+      id: 1605
+      description: Cushion specially made for children to big to use Child seat and to smal to use safety belt in an normal vay like an adult.
+      translations:
+        en: child booster seat
+        da: børnepude
+        fi: lasten korotustyyny
+        'no': barnepute
+        sv: bilbarnkudde
+    child seat:
+      id: 1606
+      description: Detachable seat used for smal children
+      translations:
+        en: child seat
+        da: autostol
+        fi: lasten turvaistulin
+        'no': bilbarnstol
+        sv: bilbarnstol
+    limousin:
+      id: 1607
+      description: Not a taxi marked vehicle
+      translations:
+        en: limousin
+        da: –
+        fi: limusliini
+        'no': limosin
+        sv: limosin
+    bike rack:
+      id: 1608
+      description: Rack used to transport bikes.
+      translations:
+        en: bike rack
+        da: cykelstativ
+        fi: pyöräteline
+        'no': sykkelstativ
+        sv: cykelställ
+    tow bar:
+      id: 1609
+      description: Device to attach a trailer
+      translations:
+        en: tow bar
+        da: anhængertræk
+        fi: vetokoukku
+        'no': tilhengerfeste
+        sv: dragkrok
+    school sign:
+      id: 1610
+      description: Sign placed on the roof of a vehicle used to indicate that the vehicle transports children to and from school
+      translations:
+        en: school sign
+        da: skoleskilt
+        fi: koulukyltti
+        'no': skoleskilt
+        sv: skolskylt
+    wheelchair:
+      id: 1611
+      description: The vehicle can carry a wheelchair or can be easily converted to carry a wheelchair
+      translations:
+        en: wheelchair
+        da: rullestol
+        fi: pyörätuoli
+        'no': rullestol
+        sv: rullstol
+    low rider:
+      id: 1612
+      description: Low rider
+      translations:
+        en: low rider
+        da: lav indstigning
+        fi: matala sisäänkäynti
+        'no': lav innstigning
+        sv: låggolv
+    stretcher:
+      id: 1613
+      description: The vehicle has a stretcher or can be easily fitted with a stretcher
+      translations:
+        en: stretcher
+        da: båre
+        fi: paarit
+        'no': båre
+        sv: bår
+    ramp:
+      id: 1614
+      description: Ramp for wheelchairs
+      translations:
+        en: ramp
+        da: rampe
+        fi: ramppi
+        'no': rampe
+        sv: ramp
+    lift:
+      id: 1615
+      description: Lift for wheelchairs
+      translations:
+        en: lift
+        da: –
+        fi: nostin
+        'no': heis
+        sv: lift
+    stair climber:
+      id: 1616
+      description: Vehicle equipped with stair climber
+      translations:
+        en: stair climber
+        da: trappegang
+        fi: portaiden nousulaite
+        'no': trappeganger
+        sv: trappklättrare
+    allergy safe:
+      id: 1617
+      description: Vehicle allergy decontaminated
+      translations:
+        en: allergy safe
+        da: allergisikker
+        fi: allergiaturvallinen
+        'no': allergisikker
+        sv: allegisanerad
+    saloon:
+      id: 1618
+      description: Sedan
+      translations:
+        en: saloon
+        da: sedan
+        fi: sedan
+        'no': sedan
+        sv: sedan
+    bus:
+      id: 1619
+      description: Bus
+      translations:
+        en: bus
+        da: –
+        fi: bussi
+        'no': buss
+        sv: buss
+    roof box:
+      id: 1620
+      description: Roof box
+      translations:
+        en: roof box
+        da: tagboks
+        fi: kattoboksi
+        'no': takboks
+        sv: takbox
+    no smoking:
+      id: 1621
+      description: Non smoking vehicle
+      translations:
+        en: no smoking
+        da: ingen rygning
+        fi: ei tupakointia
+        'no': ingen røyking
+        sv: rökfritt fordon
+    perambulator:
+      id: 1622
+      description: Perambulator
+      translations:
+        en: perambulator
+        da: barnevogn
+        fi: lastenvaunut
+        'no': barnevogn
+        sv: barnvagn
+    rollator:
+      id: 1623
+      description: Rollator
+      translations:
+        en: rollator
+        da: –
+        fi: rollaattori
+        'no': rullator
+        sv: rullator
+    walker:
+      id: 1624
+      description: Walker or Walking frame
+      translations:
+        en: walker
+        da: gangstativ
+        fi: kävelyteline
+        'no': gangstativ
+        sv: gåstol
+    blind persons cane:
+      id: 1625
+      description: Blind persons cane
+      translations:
+        en: blind persons cane
+        da: blindestok
+        fi: sokean keppi
+        'no': blindestokk
+        sv: blindkäpp
+    commodechair:
+      id: 1626
+      description: Commode Chair
+      translations:
+        en: commodechair
+        da: toiletstol
+        fi: wc-tuoli
+        'no': toalettstol
+        sv: toalettstol
+    powered wheelchair:
+      id: 1627
+      description: Big powered wheelchair
+      translations:
+        en: powered wheelchair
+        da: el-rullestol
+        fi: sähköpyörätuoli
+        'no': el-rullestol
+        sv: permobil
+    frontseat:
+      id: 1628
+      description: Indicates that the vehicle shall have a front seat
+      translations:
+        en: frontseat
+        da: forsæde
+        fi: etupenkki
+        'no': sitte foran
+        sv: framsäte
+    lay in backseat:
+      id: 1629
+      description: Indicates that the vehicle shall be able to have a passenger laying in back seat
+      translations:
+        en: lay in backseat
+        da: ligge i bagsæde
+        fi: makaa takapenkillä
+        'no': ligge i baksete
+        sv: ligga bak
+    lay in frontseat:
+      id: 1630
+      description: Indicates that the vehicle shall be able to have a passenger laying in front seat
+      translations:
+        en: lay in frontseat
+        da: ligge i forsæde
+        fi: makaa etupenkillä
+        'no': ligge i forsete
+        sv: ligga fram
+    single vehicle:
+      id: 1631
+      description: Indicates that the vehicle shall take only thios passenger
+      translations:
+        en: single vehicle
+        da: enkelt køretøj
+        fi: yksittäinen ajoneuvo
+        'no': alene bil
+        sv: egen bil
+    multiple wheelchairs:
+      id: 1632
+      description: Indicates that the vehicle shall take multiple wheelchairs
+      translations:
+        en: multiple wheelchairs
+        da: flere rullestole
+        fi: useita pyörätuoleja
+        'no': flere rullesto ler
+        sv: flera rullstolar
+    child seat 0 – 9 month:
+      id: 1633
+      description: Detachable seat used for smal children up to 9 month
+      translations:
+        en: child seat 0 – 9 month
+        da: autostol 0-9 måneder
+        fi: turvaistulin 0-9 kuukautta
+        'no': bilbarnstol 0-9 måneder
+        sv: bilbarnstol 0-9 månader
+    child seat 1-3 year:
+      id: 1634
+      description: Detachable seat used for smal children between 10 months and 3 years
+      translations:
+        en: child seat 1-3 year
+        da: autostol 1-3 år
+        fi: turvaistulin 1-3 vuotta
+        'no': bilbarnstol 1-3 år
+        sv: bilbarnstol 10 månader-3 år
+    child seat 4+ year:
+      id: 1635
+      description: Detachable seat used for smal children from 4 years and up
+      translations:
+        en: child seat 4+ year
+        da: autostol 4+ år
+        fi: turvaistulin 4+ vuotta
+        'no': bilbarnstol 4+ år
+        sv: bilbarnstol 4+ år
+    folding wheelchair:
+      id: 1636
+      description: Folded wheelchair
+      translations:
+        en: folding wheelchair
+        da: sammenfoldelig rullestol
+        fi: taitettava pyörätuoli
+        'no': sammenleggbar rullestol
+        sv: Vikbar rullstol
+    mobility scooter:
+      id: 1637
+      description: Mobility scooter
+      translations:
+        en: mobility scooter
+        da: promenadescooter
+        fi: liikkumisskoottri
+        'no': el-scooter
+        sv: promenadscooter
+    standard car:
+      id: 1638
+      description: Standard car used for commercial transportation of passengers
+      translations:
+        en: standard car
+        da: Standard bil anvendes til erhvervsmæssig transport af passagerer
+        fi: normaali auto
+        'no': Standard bilen brukes til kommersiell transport av passasjerer
+        sv: Standard bil som används för kommersiell transport av passagerare
+    special vehicle:
+      id: 1639
+      description: Special vehicles used for commercial carriage of passengers with special needs
+      translations:
+        en: special vehicle
+        da: Særlige køretøjer, der anvendes til erhvervsmæssig personbefordring med særlige behov
+        fi: erikoisajoneuvo
+        'no': Spesielle kjøretøyer som brukes til kommersiell transport av passasjerer med spesielle behov
+        sv: Specialfordon använt för yrkesmässig transport av resenär med speciella behov
+    foldableseat:
+      id: 1640
+      description: Foldable seat
+      translations:
+        en: foldableseat
+        da: foldbart sæde
+        fi: taitettava istuin
+        'no': sammenleggbart sete
+        sv: Fällbart säte
+    electrical car:
+      id: 1641
+      description: electrical car
+      translations:
+        en: electrical car
+        da: elbil
+        fi: sähköauto
+        'no': elbil
+        sv: Eldriven bil
+    cagedpet:
+      id: 1642
+      description: Pet travveling in cage
+      translations:
+        en: cagedpet
+        da: kæledyr i bur
+        fi: lemmikki häkissä
+        'no': kjæledyr i bur
+        sv: Djur som reseri bur
+    standingshell:
+      id: 1643
+      description: Standing shell
+      translations:
+        en: standingshell
+        da: ståskal
+        fi: seisomakuori
+        'no': ståskall
+        sv: Stående skal
+    highstep:
+      id: 1644
+      description: High step
+      translations:
+        en: highstep
+        da: højt trin
+        fi: korkea askelma
+        'no': høyt trinn
+        sv: Högt insteg
+    stow big wheelchair:
+      id: 1645
+      description: stowbigwheelchair
+      translations:
+        en: stow big wheelchair
+        da: stuvestorkørestol
+        fi: pysäköiisopyörätuoli
+        'no': stuvestorrullestol
+        sv: stuvastorrullstol
+    four wheel drive:
+      id: 1646
+      description: fourwheeldrive
+      translations:
+        en: four wheel drive
+        da: firehjulstræk
+        fi: neliveto
+        'no': firehjulstrekk
+        sv: fyrhjulsdrift
+    Separator:
+      id: 1647
+      description: Plastic separator in vehicle for virus protection
+      translations:
+        en: Separator
+        da: –
+        fi: –
+        'no': –
+        sv: Plastavskiljare för virusskydd
+    palanquin:
+      id: 1648
+      description: Chair used to carry passenger into/from vehicle
+      translations:
+        en: palanquin
+        sv: Stol för att lyfta resenär i och ur fordon
+    car belt lock:
+      id: 1649
+      description: Vehicle is provided with Car Belt Lock
+      translations:
+        en: car belt lock
+        sv: Bil har bilbälteslås
+  "bulkLocation/@locationListType":
+    '1':
+      id: 3001
+      description: The listtype is described in detail in UseCase 3.2.11
+      translations:
+        en: 1
+  "changelog/log/@change":
+    updated:
+      id: 3701
+      description: The order in idOrder has been updated with new information
+      translations:
+        en: updated
+    moved:
+      id: 3702
+      description: The order in idOrder has been moved from the driverSession. It may reoccur in another driverSession
+      translations:
+        en: moved
+    added:
+      id: 3703
+      description: The order in idOrder has been added to the driverSession
+      translations:
+        en: added
+    cancelled:
+      id: 3704
+      description: The order in idOrder has been cancelled by Client
+      translations:
+        en: cancelled
+  "connection/@connectionType":
+    flight:
+      id: 1101
+      description: Indicates that the connection is a flight
+      translations:
+        en: flight
+        da: fly
+        fi: ilmailu
+        'no': fly
+        sv: flyg
+    train:
+      id: 1102
+      description: Indicates that the connection is a train
+      translations:
+        en: train
+        da: tog
+        fi: juna
+        'no': tog
+        sv: tåg
+    boat:
+      id: 1103
+      description: Indicates that the connection is a boat trip
+      translations:
+        en: boat
+        da: båd
+        fi: vene
+        'no': båt
+        sv: båt
+    meeting:
+      id: 1104
+      description: Indicates that the connection is a scheduled meeting
+      translations:
+        en: meeting
+        da: møde
+        fi: kokous
+        'no': møte
+        sv: möte
+  "contactInfo/@contactType":
+    mail:
+      id: 2201
+      description: Way of communication with provider of connecting transportation. Address/number are given in contactInfo.
+      translations:
+        en: mail
+        da: –
+        fi: sähköposti
+        'no': e-post
+        sv: email
+    phone:
+      id: 2202
+      description: Way of communication with provider of connecting transportation. Address/number are given in contactInfo.
+      translations:
+        en: phone
+        da: telefon
+        fi: puhelin
+        'no': telefon
+        sv: telefon
+    fax:
+      id: 2203
+      description: Way of communication with provider of connecting transportation. Address/number are given in contactInfo.
+      translations:
+        en: fax
+        da: fax
+        fi: telekopiointi
+        'no': faks
+        sv: fax
+    otherinfo:
+      id: 2204
+      description: Other contactinformation such as operator or place.
+      translations:
+        en: otherinfo
+        da: fax
+        fi: muita tietoja
+        'no': annen info
+        sv: annan kontaktinfo
+    sms:
+      id: 2205
+      description: contact using sms
+      translations:
+        en: sms
+    bookingagent:
+      id: 2206
+      description: Contact holds the phonenumber to a bookingagent responsible for order
+      translations:
+        en: bookingagent
+    web:
+      id: 2207
+      description: The contact element contains an web-address to be used
+      translations:
+        en: web
+  "content/@contentType":
+    traveller:
+      id: 1001
+      description: The content of the node is any number of humans
+      translations:
+        en: traveller
+        da: rejsende
+        fi: matkustaja
+        'no': reisende
+        sv: resenär
+    parcel:
+      id: 1002
+      description: The content of the node is any number of parcel pieces
+      translations:
+        en: parcel
+        da: pakke
+        fi: paketti
+        'no': pakke
+        sv: paket
+    action:
+      id: 1003
+      description: The scope of the node is to do a specifically described activity
+      translations:
+        en: action
+        da: aktivitet
+        fi: toiminta
+        'no': aktivitet
+        sv: aktivitet
+    navigation:
+      id: 1004
+      description: The scope of the node is to position the vehicle
+      translations:
+        en: navigation
+        da: navigation
+        fi: navigointi
+        'no': navigasjon
+        sv: navigering
+    companion:
+      id: 1005
+      description: This is a description of a companion
+      translations:
+        en: companion
+        da: ledsager
+        fi: saattaja
+        'no': ledsager
+        sv: ledsagare
+    cotraveller:
+      id: 1006
+      description: This is a description of a cotraveller
+      translations:
+        en: cotraveller
+        da: medrejsende
+        fi: matkakumppani
+        'no': medreisende
+        sv: medresenär
+    child:
+      id: 1007
+      description: Notifies that this content is a child
+      translations:
+        en: child
+        da: barn
+        fi: lapsi
+        'no': barn
+        sv: barn
+    animal:
+      id: 1008
+      description: Notifies that this content is an animal
+      translations:
+        en: animal
+        da: dyr
+        fi: eläin
+        'no': dyr
+        sv: djur
+  "fuelConsumption/@fuelType":
+    Gasoline:
+      id: 3501
+      description: Gasoline is used as fuel type
+      translations:
+        en: Gasoline is used as fuel type
+    Diesel:
+      id: 3502
+      description: Diesel is used as fuel type
+      translations:
+        en: Diesel is used as fuel type
+    Ethanol:
+      id: 3503
+      description: Ethanol is used as fuel type
+      translations:
+        en: Ethanol is used as fuel type
+    Electric:
+      id: 3504
+      description: Electric power is used as fuel type
+      translations:
+        en: Electric power is used as fuel type
+    Gas:
+      id: 3505
+      description: Gas is used as the fuel type (conventional Gas, not Hydrogen)
+      translations:
+        en: Gas is used as the fuel type (conventional Gas, not Hydrogen)
+    Hydrogen:
+      id: 3506
+      description: Hydrogen is used as fuel type.
+      translations:
+        en: Hydrogen is used as fuel type.
+  "fuelConsumption/@unit":
+    Liter:
+      id: 3510
+      description: Liter is used to measure consumption depending on fueltype
+      translations:
+        en: Liter is used to measure consumption depending on fueltype
+    Kwh:
+      id: 3511
+      description: Kwh is used to measure consumption of electric power
+      translations:
+        en: Kwh is used to measure consumption of electric power
+    Kg:
+      id: 3512
+      description: Kg is used to measure consumption of Gas or Hydrogen
+      translations:
+        en: Kg is used to measure consumption of Gas or Hydrogen
+  "geographicLocation/@speedSource":
+    gpsunit:
+      id: 3310
+      description: separate gpsunit used to measure speed
+      translations:
+        en: gpsunit
+    taximeter:
+      id: 3311
+      description: taximeter used to measure speed
+      translations:
+        en: taximeter used to measure speed
+    canbus:
+      id: 3312
+      description: canbus in vehicle used to measure speed
+      translations:
+        en: canbus in vehicle used to measure speed
+  "geographicLocation/@typeOfCoordinate":
+    WGS84:
+      id: 3301
+      description: WGS84 used for coordinates (standard)
+      translations:
+        en: WGS84 used for coordinates (standard)
+    RT90:
+      id: 3302
+      description: RT90 used for coordinates
+      translations:
+        en: RT90 used for coordinates
+    UTM-33:
+      id: 3303
+      description: UTM-33 used for coordinates
+      translations:
+        en: UTM-33 used for coordinates
+    SWEREF99TM:
+      id: 3304
+      description: SWEREF99TM used for coordinates
+      translations:
+        en: SWEREF99TM used for coordinates
+  "idEkInfo/@src":
+    costcenter:
+      id: 2401
+      description: Indicates a costcenter used in this payment
+      translations:
+        en: costcenter
+        da: omkostningssted
+        fi: kustannuspaikka
+        'no': kostnadssted
+        sv: kostnadsställe
+    project:
+      id: 2402
+      description: Indicates a project used in this payment
+      translations:
+        en: project
+        da: projekt
+        fi: projekti
+        'no': prosjekt
+        sv: projekt
+  "idRejectReason/@id":
+    ordernotfound:
+      id: 2501
+      description: order not found
+      translations:
+        en: ordernotfound
+        da: ordre ikke fundet
+        fi: tilausta ei löydy
+        'no': ordre ikke funnet
+        sv: order finns inte
+    orderinprogress:
+      id: 2502
+      description: content are already in vehicle
+      translations:
+        en: orderinprogress
+        da: ordre i gang
+        fi: tilaus käynnissä
+        'no': ordre pågår
+        sv: resenär/paket redan i bil
+    notaccordingtoagreement:
+      id: 2503
+      description: order is not according to agreement
+      translations:
+        en: notaccordingtoagreement
+        da: ikke i henhold til aftale
+        fi: ei sopimuksen mukainen
+        'no': ikke i henhold til avtale
+        sv: inte enligt avtal
+    nocapacity:
+      id: 2504
+      description: no capacity to complete order
+      translations:
+        en: nocapacity
+        da: ingen kapacitet
+        fi: ei kapasiteettia
+        'no': ingen kapasitet
+        sv: ingen resurs att genomföra order med
+    tolate:
+      id: 2505
+      description: to late
+      translations:
+        en: tolate
+        da: for sent
+        fi: liian myöhään
+        'no': for sent
+        sv: för sent
+    travelerrequest:
+      id: 2506
+      description: traveler has requested that order shall not be completed
+      translations:
+        en: travelerrequest
+        da: rejsende anmodning
+        fi: matkustajan pyyntö
+        'no': reisende forespørsel
+        sv: på begäran av resenär
+    notallowed:
+      id: 2507
+      description: not allowed
+      translations:
+        en: notallowed
+        da: ikke tilladt
+        fi: ei sallittu
+        'no': ikke tillatt
+        sv: inte tillåtet
+    ordermanuallyhandled:
+      id: 2508
+      description: order is manually handled
+      translations:
+        en: ordermanuallyhandled
+        da: ordre håndteret manuelt
+        fi: tilaus käsitelty manuaalisesti
+        'no': ordre håndtert manuelt
+        sv: order hanteras manuellt
+    idnotfound:
+      id: 2509
+      description: requested id not found
+      translations:
+        en: idnotfound
+        da: id ikke fundet
+        fi: tunnusta ei löydy
+        'no': id ikke funnet
+        sv: efterfrågat id hittas inte
+    idblocked:
+      id: 2510
+      description: requested id blocked
+      translations:
+        en: idblocked
+        da: id blokeret
+        fi: tunnus estetty
+        'no': id blokkert
+        sv: efterfrågat id spärrat
+    limitexceeded:
+      id: 2511
+      description: limit is exceeded
+      translations:
+        en: limitexceeded
+        da: grænse overskredet
+        fi: raja ylitetty
+        'no': grense overskredet
+        sv: antal överskridet
+    incorrectprice:
+      id: 2512
+      description: an incorrect price has been used in report
+      translations:
+        en: incorrectprice
+        da: forkert pris
+        fi: väärä hinta
+        'no': feil pris
+        sv: felaktigt pris har inrapporterats
+    addressinfonotknown:
+      id: 2513
+      description: the address is not known
+      translations:
+        en: addressinfonotknown
+        da: adresseinfo ikke kendt
+        fi: osoitetieto ei tunneta
+        'no': adresseinfo ikke kjent
+        sv: adressinfo finns inte hos Client/Provider
+    addressinfonotsufficient:
+      id: 2514
+      description: the address information is not sufficient
+      translations:
+        en: addressinfonotsufficient
+        da: adresseinfo ikke tilstrækkelig
+        fi: osoitetieto ei riittävä
+        'no': adresseinfo ikke tilstrekkelig
+        sv: otillräcklig adressinfo hos Client/Provider
+    OrderCancelled:
+      id: 2515
+      description: Ogiltig operation då ordern är avbokad
+      translations:
+        en: OrderCancelled
+    OrderNoShow:
+      id: 2516
+      description: Ogiltig operation då ordern är bomad
+      translations:
+        en: OrderNoShow
+    OrderCompleted:
+      id: 2517
+      description: Ogiltig operation då ordern redan är avslutad
+      translations:
+        en: OrderCompleted
+    Customer not picked up:
+      id: 2518
+      description: Ogiltig operation då kund inte är hämtad
+      translations:
+        en: Customer not picked up
+    Incorrect position:
+      id: 2519
+      description: Ogiltig operation då fordon har felaktig position
+      translations:
+        en: Incorrect position
+    Driver id not valid:
+      id: 2530
+      description: Some driver validations has returned negative in the clients system
+      translations:
+        en: Driver id not valid
+    Vehicle not valid:
+      id: 2531
+      description: Some driver validations has returned negative in the clients system
+      translations:
+        en: Vehicle not valid
+  "luggage/@luggageType":
+    checked:
+      id: 3201
+      description: Checked = 23 kg and max liner size 158 cm.
+      translations:
+        en: checked
+    cabin:
+      id: 3202
+      description: Cabin = 8 kg and 55 x 40 x 23 cm
+      translations:
+        en: cabin
+    special:
+      id: 3203
+      description: e. g. golf bags, ski equipment, musical instrument.
+      translations:
+        en: special
+  "node/@nodeType":
+    action:
+      id: 1801
+      description: Take a specified action, see subNodeType
+      translations:
+        en: action
+        da: handling
+        fi: toiminto
+        'no': handling
+        sv: aktivitet
+    navigation:
+      id: 1802
+      description: Navigate through this point
+      translations:
+        en: navigation
+        da: navigation
+        fi: navigointi
+        'no': navigasjon
+        sv: navigering
+    pickup:
+      id: 1803
+      description: Pickup a passenger or a parcel
+      translations:
+        en: pickup
+        da: afhentning
+        fi: nouto
+        'no': henting
+        sv: hämtning
+    destination:
+      id: 1804
+      description: Destination of travel
+      translations:
+        en: destination
+        da: –
+        fi: määränpää
+        'no': destinasjon
+        sv: destination
+  "node/@subnodeType":
+    break:
+      id: 1901
+      description: Driver expected to take a break. Not used to indicate a request for a break from the driver.
+      translations:
+        en: break
+        da: raste
+        fi: tauko
+        'no': frikvarter
+        sv: rast
+    driverassist:
+      id: 1902
+      description: Driver ordered to meet up with another driver to help loading a traveller. Both drivers should have attribute LiftPass.
+      translations:
+        en: driverassist
+        da: chauffør hjælper
+        fi: kuljettaja avustaa
+        'no': sjåfør hjelper
+        sv: assistera förare
+    mobaidpickup:
+      id: 1903
+      description: Pick up a mobility aid for further transportation
+      translations:
+        en: mobaidpickup
+        da: afhente mobilitetshjælp
+        fi: nouta liikkumisapu
+        'no': hente mobilitetshjelpemiddel
+        sv: hämta hjälpmedel
+    mobaiddropoff:
+      id: 1904
+      description: Drop off a mobility aid that has been picked up earlier.
+      translations:
+        en: mobaiddropoff
+        da: aflevere mobilitetshjælp
+        fi: jätä liikkumisapu
+        'no': levere mobilitetshjelpemiddel
+        sv: lämna hjälpmedel
+    ferrydeparture:
+      id: 1905
+      description: Vehicle shall be in time to catch the ferry at ordered time and place.
+      translations:
+        en: ferrydeparture
+        da: færgeafgang
+        fi: lautan lähtö
+        'no': fergeavgang
+        sv: färjeavgång
+    ferryarrival:
+      id: 1906
+      description: Arrival of ferry with vehicle at ordered time and place
+      translations:
+        en: ferryarrival
+        da: færgeankomst
+        fi: lautan saapuminen
+        'no': fergeankomst
+        sv: färjeankomst
+    waitforinstructions:
+      id: 1907
+      description: Used to order a vehicle to wait for further instructions or new node
+      translations:
+        en: waitforinstructions
+        da: vent på instruktioner
+        fi: odota ohjeita
+        'no': vent på instruksjoner
+        sv: vänta på instruktioner
+    flagstop:
+      id: 1908
+      description: Indicates a Flagstop
+      translations:
+        en: flagstop
+        da: –
+        fi: lippupysäkki
+        'no': flaggstopp
+        sv: Instruktion om Flagstop
+    refuel:
+      id: 1909
+      description: stop for refuelling
+      translations:
+        en: refuel
+    pullout:
+      id: 1910
+      description: pullout is a startnode sent as first node requesting vehicle to start session
+      translations:
+        en: pullout is a startnode sent as first node requesting vehicle to start session
+    pullin:
+      id: 1911
+      description: pullin is an endnode for the return of vehicle at end of a session
+      translations:
+        en: pullin is an endnode for the return of vehicle at end of a session
+  "nodeprocess/@sendinformationDisptch":
+    allowsend:
+      id: 3120
+      description: The Client instructs at nodlevel for information to be sent to content rg dispatch, delay and arrival fo the node. Specifik content contact info should be available i the process element.
+      translations:
+        en: allowsend
+    neversend:
+      id: 3121
+      description: The Client instructs at nodlevel for information to be sent to content rg dispatch, delay and arrival fo the node. Specifik content contact info should be available i the process element.
+      translations:
+        en: neversend
+    alwayssend:
+      id: 3122
+      description: The Client instructs at nodlevel for information to be sent to content rg dispatch, delay and arrival fo the node. Specifik content contact info should be available i the process element.
+      translations:
+        en: alwayssend
+  "orderStatus/@status":
+    none:
+      id: 3601
+      description: The order does not exist in the provider system
+      translations:
+        en: none
+    confirmed:
+      id: 3602
+      description: The order is confirmed (i.e. 2001 sent)
+      translations:
+        en: confirmed
+    dispatching:
+      id: 3603
+      description: The order is in the process of finding vehicle
+      translations:
+        en: dispatching
+    dispatched:
+      id: 3604
+      description: The order is accepted by vehicle
+      translations:
+        en: dispatched
+    started:
+      id: 3605
+      description: Vehicle has accpted and the taximeter is started for the order
+      translations:
+        en: started
+    noshow:
+      id: 3606
+      description: Vehicle has reported noshow as the last action in vehicle
+      translations:
+        en: noshow
+    completed:
+      id: 3607
+      description: The order is completed and orderReport can be or has been sent
+      translations:
+        en: completed
+    cancelled:
+      id: 3608
+      description: The order is cancelled
+      translations:
+        en: cancelled
+  "payment/@paymentType":
+    cash:
+      id: 1301
+      description: Cash payment
+      translations:
+        en: cash
+        da: kontant
+        fi: käteinen
+        'no': kontant
+        sv: kontant
+    card:
+      id: 1302
+      description: Payment by card
+      translations:
+        en: card
+        da: kort
+        fi: kortti
+        'no': kort
+        sv: kort
+    account:
+      id: 1303
+      description: Account or invoice
+      translations:
+        en: account
+        da: faktura
+        fi: lasku
+        'no': faktura
+        sv: faktura
+    ticket:
+      id: 1304
+      description: Ticket
+      translations:
+        en: ticket
+        da: billet
+        fi: lippu
+        'no': billett
+        sv: biljett
+    document:
+      id: 1305
+      description: Travelling document.
+      translations:
+        en: document
+        da: rejsedokument
+        fi: matkustusasiakirja
+        'no': reisebevis
+        sv: resehandling
+    socialservicefee:
+      id: 1306
+      description: Amount that the traveller pay of the total fare. The remaining fare are paid by account or invoice.
+      translations:
+        en: socialservicefee
+        da: egenandel
+        fi: omamaksu
+        'no': egenandel
+        sv: egenavgift
+    prepaidSocialfee:
+      id: 1307
+      description: A card or document that indicates that traveller do not need to pay socialservicefee.
+      translations:
+        en: prepaidSocialfee
+        da: frikort
+        fi: vapaakortti
+        'no': frikort
+        sv: frikort
+    claim:
+      id: 1308
+      description: Claim is a negative amount. This indicates that a part of the amount from an account payment will not be paid.
+      translations:
+        en: claim
+        da: fordring
+        fi: vaatimus
+        'no': krav
+        sv: fordran
+    NoShow:
+      id: 1309
+      description: Initiated by driver specifiying a special accountpayment in case of noshow
+      translations:
+        en: NoShow
+    providerCompensation:
+      id: 1310
+      description: Initiated by driver specifiying a special accountpayment in case special compensation for external cost occured
+      translations:
+        en: providerCompensation
+    creditcardfee:
+      id: 1311
+      description: Initiated by driver specifiying an extra cost for payment by creditcard
+      translations:
+        en: creditcardfee
+  "pickupConfirmation/@eventType":
+    passengerinvehicle:
+      id: 1701
+      description: Passenger picked up. the value “pickup” was initially used.
+      translations:
+        en: passengerinvehicle
+        da: passager i køretøj
+        fi: matkustaja ajoneuvossa
+        'no': passasjer i kjøretøy
+        sv: resenär hämtad
+    passengerdropped:
+      id: 1702
+      description: Passenger dropped of. the value “destination” was initially used.
+      translations:
+        en: passengerdropped
+        da: passager afsat
+        fi: matkustaja laskettu
+        'no': passasjer levert
+        sv: resenär avlämnad
+    noshow:
+      id: 1703
+      description: No show at pickup of passenger
+      translations:
+        en: noshow
+        da: ikke mødt op
+        fi: ei ilmestynyt
+        'no': møtte ikke opp
+        sv: bom
+    parcelinvehicle:
+      id: 1704
+      description: Parcel picked up
+      translations:
+        en: parcelinvehicle
+        da: pakke i køretøj
+        fi: paketti ajoneuvossa
+        'no': pakke i kjøretøy
+        sv: paket hämtat
+    parceldropped:
+      id: 1705
+      description: Parcel dropped of
+      translations:
+        en: parceldropped
+        da: pakke afleveret
+        fi: paketti toimitettu
+        'no': pakke levert
+        sv: paket avlämnat
+    actiondone:
+      id: 1706
+      description: The demanded action has been done. the value “action” was initially used.
+      translations:
+        en: actiondone
+        da: opgave udført
+        fi: toimenpide suoritettu
+        'no': oppgave utført
+        sv: aktivitet utförd
+    navigationdone:
+      id: 1707
+      description: The demanded navigation has been done. the value “navigation” was initially used.
+      translations:
+        en: navigationdone
+        da: navigation udført
+        fi: navigointi suoritettu
+        'no': navigering utført
+        sv: navigering utförd
+    canceledatdoor:
+      id: 1708
+      description: The pickup has been canceled at the door
+      translations:
+        en: canceledatdoor
+        da: annulleret ved dør
+        fi: peruutettu ovella
+        'no': kansellert ved dør
+        sv: avbest vid dörren
+    vehicleatnode:
+      id: 1709
+      description: The vehicle har arrived at the node
+      translations:
+        en: vehicleatnode
+        da: køretøj ved node
+        fi: ajoneuvo solmussa
+        'no': kjøretøy ved node
+        sv: på noden
+    infotocontent:
+      id: 1710
+      description: Information to content.
+      translations:
+        en: infotocontent
+        da: –
+        fi: –
+        'no': –
+        sv: –
+    dispatchconfirmationsent:
+      id: 1711
+      description: Dispatch confirmation has been sent.
+      translations:
+        en: dispatchconfirmationsent
+        da: –
+        fi: –
+        'no': –
+        sv: –
+    delayconfirmationsent:
+      id: 1712
+      description: Delay confirmation has been sent.
+      translations:
+        en: delayconfirmationsent
+        da: –
+        fi: –
+        'no': –
+        sv: –
+    arrivalconfirmationsent:
+      id: 1713
+      description: Arrival confirmation has been sent.
+      translations:
+        en: arrivalconfirmationsent
+        da: –
+        fi: –
+        'no': –
+        sv: –
+    start:
+      id: 1714
+      description: This indicates that the taximeter in vehicle is set in tarif mode.
+      translations:
+        en: start
+        da: –
+        fi: aloita
+        'no': –
+        sv: start
+    stop:
+      id: 1715
+      description: This indicates that the taximeter in vehicle is set off tarif mode.
+      translations:
+        en: stop
+        da: –
+        fi: lopeta
+        'no': stopp
+        sv: stop
+    acceptOrder:
+      id: 1716
+      description: This acceptance of an order.
+      translations:
+        en: acceptOrder
+        da: –
+        fi: –
+        'no': –
+        sv: accept
+    vehicleExitNode:
+      id: 1717
+      description: pls check Use Cases for definition
+      translations:
+        en: vehicleExitNode
+    noContentAtNode:
+      id: 1718
+      description: pls check Use Cases for definition
+      translations:
+        en: noContentAtNode
+    contentAtNode:
+      id: 1719
+      description: pls check Use Cases for definition
+      translations:
+        en: contentAtNode
+    contentNoShow:
+      id: 1720
+      description: pls check Use Cases for definition
+      translations:
+        en: contentNoShow
+  "price/@priceResponsible":
+    client:
+      id: 1411
+      description: The Client are responsible for setting the price
+      translations:
+        en: client
+        da: bestiller
+        fi: tilaaja
+        'no': bestiller
+        sv: beställare
+    provider:
+      id: 1412
+      description: The Provider are responsible for setting the price
+      translations:
+        en: provider
+        da: udfører
+        fi: tuottaja
+        'no': utfører
+        sv: utförare
+  "priceCalculation/@formula":
+    breakpoint:
+      id: 1401
+      description: Use breakpoint calculation
+      translations:
+        en: breakpoint
+        da: brytpunktstarif
+        fi: murtopistekaava
+        'no': knekkpunkttariff
+        sv: brytpunktstariff
+    sumtariff:
+      id: 1402
+      description: Use sumtariff calculation
+      translations:
+        en: sumtariff
+        da: sumtarif
+        fi: summataksa
+        'no': –
+        sv: summatariff
+  "process/@dispatchResponsible":
+    client:
+      id: 3101
+      description: The Client is responsible for dispatch, i.e setting or accepting vehicle for order
+      translations:
+        en: client
+    provider:
+      id: 3102
+      description: The Provider is responsible for dispatch, i.e chose of vehicle according to requirements
+      translations:
+        en: provider
+  "process/@pickupconfirmation":
+    notrequested:
+      id: 3110
+      description: The Client does not request any events to be sent (41xx)
+      translations:
+        en: notrequested
+    standard:
+      id: 3111
+      description: The Client request  events to be sent (41xx) only at actual time
+      translations:
+        en: standard
+    extended:
+      id: 3112
+      description: The Client request  events to be sent (41xx) with actual times and if there is a calculation of estimated time för "vehicle at node" this event should also be sent
+      translations:
+        en: extended
+  "providerorderUpdate/@updateType":
+    timeUpdate:
+      id: 3401
+      description: time has been changed for node referred to in referenceTo
+      translations:
+        en: timeUpdate
+    addressUpdate:
+      id: 3402
+      description: address has been changed for node referred to in referenceTo
+      translations:
+        en: addressUpdate
+    contentUpdate:
+      id: 3403
+      description: content has been changed for node referred to in referenceTo
+      translations:
+        en: contentUpdate
+    cancelation:
+      id: 3404
+      description: order or node is cancelled for node referred to in referenceTo
+      translations:
+        en: cancelation
+  "resource/Validation/@validationMethod":
+    manual:
+      id: 3810
+      description: Driver shall validate using a manual process
+      translations:
+        en: manual
+    card:
+      id: 3811
+      description: Driver shall validate using presentation of a card in the vehicle
+      translations:
+        en: card
+    system:
+      id: 3812
+      description: Driver shall validate using a method administrated by 3rd party authority (e.g. a Transport Agency)
+      translations:
+        en: system
+  "resource/Validation/@validationType":
+    logindriver:
+      id: 3801
+      description: Driver shall validate using login
+      translations:
+        en: logindriver
+    bky:
+      id: 3802
+      description: Driver shall validate using a bky-test
+      translations:
+        en: bky
+    taxidriverlicense:
+      id: 3803
+      description: Driver shall validate using presenting the number from the driver licensing
+      translations:
+        en: taxidriverlicense
+  "statusTourError/idError/@id":
+    Passenger id is not correct:
+      id: 10101
+      description: Passenger id is not correct
+      translations:
+        en: Passenger id is not correct
+    Agreement specification is not correct:
+      id: 10102
+      description: Agreement specification is not correct
+      translations:
+        en: Agreement specification is not correct
+    Social fee is not correct:
+      id: 10103
+      description: Social fee is not correct
+      translations:
+        en: Social fee is not correct
+    Pickup address is not in accordance with order:
+      id: 10104
+      description: Pickup address is not in accordance with order
+      translations:
+        en: Pickup address is not in accordance with order
+    Drop off address is not in accordance with order:
+      id: 10105
+      description: Drop off address is not in accordance with order
+      translations:
+        en: Drop off address is not in accordance with order
+    The order is not found:
+      id: 10106
+      description: The order is not found
+      translations:
+        en: The order is not found
+    The traveller was not picked up:
+      id: 10107
+      description: The traveller was not picked up
+      translations:
+        en: The traveller was not picked up
+    Used taxameter calculation is not correct:
+      id: 10201
+      description: Used taxameter calculation is not correct
+      translations:
+        en: Used taxameter calculation is not correct
+    Minimum price is not correct:
+      id: 10202
+      description: Minimum price is not correct
+      translations:
+        en: Minimum price is not correct
+    An extra charge is not correct:
+      id: 10203
+      description: An extra charge is not correct
+      translations:
+        en: An extra charge is not correct
+    A specified charge for cost is not correct:
+      id: 10204
+      description: A specified charge for cost is not correct
+      translations:
+        en: A specified charge for cost is not correct
+    A fixed price is not correct:
+      id: 10205
+      description: A fixed price is not correct
+      translations:
+        en: A fixed price is not correct
+    The total distance specified is not correct:
+      id: 10301
+      description: The total distance specified is not correct
+      translations:
+        en: The total distance specified is not correct
+    The distance to first pickup address is not correct:
+      id: 10302
+      description: The distance to first pickup address is not correct
+      translations:
+        en: The distance to first pickup address is not correct
+    The distance on return is not correct:
+      id: 10303
+      description: The distance on return is not correct
+      translations:
+        en: The distance on return is not correct
+    The distance from last dropoff address back to startposition is not correct:
+      id: 10304
+      description: The distance from last dropoff address back to startposition is not correct
+      translations:
+        en: The distance from last dropoff address back to startposition is not correct
+    The initially order for a fixprice tour has been changed incorrectly:
+      id: 10305
+      description: The initially order for a fixprice tour has been changed incorrectly
+      translations:
+        en: The initially order for a fixprice tour has been changed incorrectly
+    The total distance for a whole day order is not correct:
+      id: 10306
+      description: The total distance for a whole day order is not correct
+      translations:
+        en: The total distance for a whole day order is not correct
+    Extra minutes for wait(idle) is not correct:
+      id: 10307
+      description: Extra minutes for wait(idle) is not correct
+      translations:
+        en: Extra minutes for wait(idle) is not correct
+    The duration for wait(idle) is not correct:
+      id: 10308
+      description: The duration for wait(idle) is not correct
+      translations:
+        en: The duration for wait(idle) is not correct
+    The duration for driving time is not correct:
+      id: 10309
+      description: The duration for driving time is not correct
+      translations:
+        en: The duration for driving time is not correct
+    Actual time for drop off is later than sent and agreeed in order:
+      id: 10310
+      description: Actual time for drop off is later than sent and agreeed in order
+      translations:
+        en: Actual time for drop off is later than sent and agreeed in order
+    Actual time for pickup is later than sent and agreed in order:
+      id: 10311
+      description: Actual time for pickup is later than sent and agreed in order
+      translations:
+        en: Actual time for pickup is later than sent and agreed in order
+    Debited time for tour related to a fixed duration agreement is not correct:
+      id: 10312
+      description: Debited time for tour related to a fixed duration agreement is not correct
+      translations:
+        en: Debited time for tour related to a fixed duration agreement is not correct
+    The duration for tour is not correct:
+      id: 10313
+      description: The duration for tour is not correct
+      translations:
+        en: The duration for tour is not correct
+    The total amount is not calculated correct:
+      id: 10314
+      description: The total amount is not calculated correct
+      translations:
+        en: The total amount is not calculated correct
+    The secified requsition number is used before:
+      id: 10901
+      description: The secified requsition number is used before
+      translations:
+        en: The secified requsition number is used before
+    The tour has already be accounted for:
+      id: 10902
+      description: The tour has already be accounted for
+      translations:
+        en: The tour has already be accounted for
+    The tour is to old to be part of automated accounting:
+      id: 10903
+      description: The tour is to old to be part of automated accounting
+      translations:
+        en: The tour is to old to be part of automated accounting
+    The drivers identification is not correct due to suspension:
+      id: 10904
+      description: The drivers identification is not correct due to suspension
+      translations:
+        en: The drivers identification is not correct due to suspension
+    The driver is not legitimate or suspended for agreement:
+      id: 10905
+      description: The driver is not legitimate or suspended for agreement
+      translations:
+        en: The driver is not legitimate or suspended for agreement
+    The idStatus for tour is not correct:
+      id: 10906
+      description: The idStatus for tour is not correct
+      translations:
+        en: The idStatus for tour is not correct
+  "time/@timeType":
+    scheduledtime:
+      id: 2101
+      description: Scheduled time
+      translations:
+        en: scheduledtime
+        da: planlagt tid
+        fi: aikataulutettu aika
+        'no': planlagt tid
+        sv: planerad tid
+    estimatedtime:
+      id: 2102
+      description: Estimated time
+      translations:
+        en: estimatedtime
+        da: estimeret tid
+        fi: arvioitu aika
+        'no': estimert tid
+        sv: uppskattad tid
+    promisedtime:
+      id: 2103
+      description: Promised time
+      translations:
+        en: promisedtime
+        da: lovet tid
+        fi: luvattu aika
+        'no': lovet tid
+        sv: lovad tid
+    actual:
+      id: 2104
+      description: Actual time
+      translations:
+        en: actual
+        da: faktisk
+        fi: todellinen
+        'no': faktisk
+        sv: faktisk tid
+    scheduled:
+      id: 2105
+      description: Sceduled time (same as 2101)
+      translations:
+        en: scheduled
+        da: planlagt
+        fi: aikataulutettu
+        'no': planlagt
+        sv: planerad tid
+    promised:
+      id: 2106
+      description: Promised time (same as 2103)
+      translations:
+        en: promised
+        da: lovet
+        fi: luvattu
+        'no': lovet
+        sv: lovad tid
+    estimated:
+      id: 2107
+      description: Estimated time (same as 2102)
+      translations:
+        en: estimated
+        da: estimeret
+        fi: arvioitu
+        'no': estimert
+        sv: uppskattad tid
+    asap:
+      id: 2108
+      description: As soon as possible
+      translations:
+        en: asap
+        da: hurtigst muligt
+        fi: mahdollisimman pian
+        'no': så snart som mulig
+        sv: så snart som möjligt
+    estimatedStarttime:
+      id: 2109
+      description: Estimated starttime for a session for the vehicle/driver
+      translations:
+        en: estimatedStarttime
+    estimatedEndtime:
+      id: 2110
+      description: Estimated endtime for a session for the vehicle/driver
+      translations:
+        en: estimatedEndtime
+    requestedlatetime:
+      id: 2111
+      description: requested  latest endtime for a dropoff-node for the vehicle/driver
+      translations:
+        en: requestedlatetime
+  "vehicle/capacity/seats/position/@direction":
+    forward:
+      id: 1201
+      description: The vehicle needs an empty forward position
+      translations:
+        en: forward
+        da: f
+        fi: e
+        'no': f
+        sv: f
+    backward:
+      id: 1202
+      description: The vehicle needs an empty backward position
+      translations:
+        en: backward
+        da: b
+        fi: t
+        'no': b
+        sv: b
+  "vehicle/capacity/seats/position/@legSpace":
+    comfort:
+      id: 1211
+      description: The vehicle needs an empty position with much legspace
+      translations:
+        en: comfort
+        da: c
+        fi: m
+        'no': c
+        sv: c
+    normal:
+      id: 1212
+      description: The vehicle needs an empty position with normal legspace (default)
+      translations:
+        en: normal
+        da: n
+        fi: n
+        'no': n
+        sv: n
+    poor:
+      id: 1213
+      description: The empty position in the vehicle may have short legpace
+      translations:
+        en: poor
+        da: –
+        fi: –
+        'no': –
+        sv: p
