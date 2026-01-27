@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<SUTI
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
+  <orgSender name="PASS">
+    <idOrg src="SUTI:idlink" id="trapeze_pass_0001" unique="true" />
+  </orgSender>
+  <orgReceiver name="HDCOM">
+    <idOrg src="SUTI:idlink" id="holmedal_hdcom_0001" unique="true" />
+  </orgReceiver>
+  <msg msgType="2000" msgName="Order">
+    <idMsg src="trapeze_pass_0001:idMsg" id="2015121809865469" unique="true" />
+    <order>
+      <idOrder src="trapeze_pass_0001:idOrder" id="11183742" unique="true" />
+      <agreement>
+        <idAgreement src="trapeze_pass_0001:idAgreement" id="123456" />
+      </agreement>
+      <process allowRouting="false" trafficControl="true" pickupconfirmation="standard"
+        orderAlteration="false" dispatchResponsible="provider" report="false"
+        preorderedVehicle="false" dispatch="true" manualDispatch="false" />
+      <resourceOrder>
+        <vehicle>
+          <idVehicle src="trapeze_pass_0001:idVehicle" id="51006P" />
+        </vehicle>
+      </resourceOrder>
+      <route>
+        <node nodeSeqno="1" nodeType="pickup">
+          <addressNode addressName="" street="Baravägen" streetNo="1" streetNoLetter=""
+            community="Lund" postalNo="22240">
+            <geographicLocation typeOfCoordinate="WGS-84" lat="55.718095" long="13.190738"
+              precision="6" />
+          </addressNode>
+          <timesNode>
+            <time timeType="estimatedtime" time="2015-08-10T08:00:18" />
+            <time timeType="scheduledtime" time="2015-08-10T08:00:00" />
+          </timesNode>
+          <contents>
+            <content contentType="traveller" name="John Doe">
+              <idContent src="trapeze_pass_0001:ContentId" id="5319397" unique="true" />
+              <attributeContent>
+                <attribute>
+                  <idAttribute src="SUTI:idAttribute" id="2313" unique="true" />
+                </attribute>
+              </attributeContent>
+              <economyContent>
+                <formOfPayment>
+                  <payment amount="0" paymentType="prepaidsocialfee" />
+                </formOfPayment>
+              </economyContent>
+              <resourceContent>
+                <vehicle>
+                  <capacity>
+                    <seats noOfSeats="1" noOfItems="1" />
+                  </capacity>
+                  <attributesVehicle>
+                    <attribute>
+                      <idAttribute src="SUTI:idLink" id="1628" unique="true" />
+                    </attribute>
+                  </attributesVehicle>
+                </vehicle>
+                <driver>
+                  <attributesDriver>
+                    <attribute>
+                      <idAttribute src="SUTI:idAttribute" id="1510" unique="true" />
+                    </attribute>
+                  </attributesDriver>
+                </driver>
+              </resourceContent>
+              <contactInfosContent>
+                <contactInfo contactType="phone" contactInfo="0431-74700" />
+              </contactInfosContent>
+              <subOrderContent>
+                <idOrder src="trapeze_pass_0001:idSubOrder" id="11183750" unique="true" />
+              </subOrderContent>
+            </content>
+          </contents>
+        </node>
+        <node nodeSeqno="2" nodeType="destination">
+          <addressNode addressName="" street="Kalkstensvägen" streetNo="14" streetNoLetter=""
+            community="Lund" postalNo="22240">
+            <geographicLocation typeOfCoordinate="WGS-84" lat="55.690147" long="13.215330"
+              precision="6" />
+          </addressNode>
+          <timesNode>
+            <time timeType="estimatedtime" time="2015-08-10T08:07:18" />
+            <time timeType="scheduledtime" time="2015-08-10T08:07:00" />
+          </timesNode>
+          <contents>
+            <content contentType="traveller" name="John Doe">
+              <idContent src="trapeze_pass_0001:ContentId" id="5319397" unique="true" />
+              <attributeContent>
+                <attribute>
+                  <idAttribute src="SUTI:idLink" id="1001" unique="true" />
+                </attribute>
+              </attributeContent>
+              <economyContent>
+                <formOfPayment>
+                  <payment amount="0" paymentType="prepaidsocialfee" />
+                </formOfPayment>
+              </economyContent>
+              <subOrderContent>
+                <idOrder src="trapeze_pass_0001:idSubOrder" id="11183750" unique="true" />
+              </subOrderContent>
+            </content>
+          </contents>
+        </node>
+        <node nodeSeqno="3" nodeType="action" subnodeType="break">
+          <addressNode addressName="" street="" streetNoLetter="" community="" postalNo="">
+            <geographicLocation typeOfCoordinate="WGS-84" lat="55.718095" long="13.190738"
+              precision="6" />
+          </addressNode>
+          <timesNode>
+            <time timeType="estimatedtime" time="2015-08-10T08:00:18" />
+            <time timeType="scheduledtime" time="2015-08-10T08:00:00" />
+          </timesNode>
+          <contents />
+        </node>
+        <node nodeSeqno="4" nodeType="pickup">
+          <addressNode addressName="" street="Vikingavägen" streetNo="17" streetNoLetter=""
+            community="Lund" postalNo="22240">
+            <geographicLocation typeOfCoordinate="WGS-84" lat="55.695565" long="13.242720"
+              precision="6" />
+          </addressNode>
+          <timesNode>
+            <time timeType="estimatedtime" time="2015-08-10T08:12:18" />
+            <time timeType="scheduledtime" time="2015-08-10T08:12:00" />
+          </timesNode>
+          <contents>
+            <content contentType="traveller" name="Jane Doe">
+              <idContent src="trapeze_pass_0001:ContentId" id="446699" unique="true" />
+              <economyContent>
+                <formOfPayment>
+                  <payment amount="0" paymentType="prepaidsocialfee" />
+                </formOfPayment>
+              </economyContent>
+              <resourceContent>
+                <vehicle>
+                  <capacity>
+                    <seats noOfSeats="1" noOfItems="1" />
+                  </capacity>
+                  <attributesVehicle>
+                    <attribute>
+                      <idAttribute src="SUTI:idLink" id="1611" unique="true" />
+                    </attribute>
+                  </attributesVehicle>
+                </vehicle>
+                <driver>
+                  <attributesDriver>
+                    <attribute>
+                      <idAttribute src="SUTI:idAttribute" id="1510" unique="true" />
+                    </attribute>
+                  </attributesDriver>
+                </driver>
+              </resourceContent>
+              <contactInfosContent>
+                <contactInfo contactType="phone" contactInfo="0431-74700" />
+              </contactInfosContent>
+              <subOrderContent>
+                <idOrder src="trapeze_pass_0001:idSubOrder" id="11183751" unique="true" />
+              </subOrderContent>
+            </content>
+          </contents>
+        </node>
+        <node nodeSeqno="5" nodeType="destination">
+          <addressNode addressName="" street="Latinlinjen" streetNo="11" streetNoLetter=""
+            community="Lund" postalNo="22240">
+            <geographicLocation typeOfCoordinate="WGS-84" lat="55.708449" long="13.244673"
+              precision="6" />
+          </addressNode>
+          <timesNode>
+            <time timeType="estimatedtime" time="2015-08-10T08:20:18" />
+            <time timeType="scheduledtime" time="2015-08-10T08:20:00" />
+          </timesNode>
+          <contents>
+            <content contentType="traveller" name="Jane Doe">
+              <idContent src="trapeze_pass_0001:ContentId" id="446699" unique="true" />
+              <economyContent>
+                <formOfPayment>
+                  <payment amount="0" paymentType="prepaidsocialfee" />
+                </formOfPayment>
+              </economyContent>
+              <subOrderContent>
+                <idOrder src="trapeze_pass_0001:idSubOrder" id="11183751" unique="true" />
+              </subOrderContent>
+            </content>
+          </contents>
+        </node>
+      </route>
+    </order>
+  </msg>
+</SUTI>
