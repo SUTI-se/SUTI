@@ -1,0 +1,18 @@
+1. vi har lämnat iden att utgå ifrån xml schemat, skall vara ett JSON schemat
+2. Tanken är att vi skall ha ett JSON schema per specificerat telegram
+3. Om där finns delar som är gemensamt med telegrammen så skall vi kolla på att ha dessa i ett separat gemensamt schema
+4. Tanken är att vi har en sutiheader, msgheader och sedan respektive meddelande
+
+*Array av referencesTo, attributeContent skulle heta attributesContent
+
+*attributesVehicle, attributesContent skall vara array av idAttribute så vi skippar mellansteg attribute
+
+*Om finns t.ex många idVehicle som i element vehicle skall vi göra en array med plural idVehicleArray 
+ och seats som har position då en array med namn positions
+
+*formOfPayment döps om till payments
+
+*contactInfoDriver döps om till contactInfosDriver och blir en array av contactInfo
+
+
+

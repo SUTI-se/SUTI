@@ -1,0 +1,73 @@
+{ 
+	"SUTI_1111_bulkLocationResponse": {
+		"msg": {
+			"msgType": "1111",
+			"msgTimeStamp": "2019-12-18T10:39:00.000Z",
+			"orgSender": {
+				"name": "ThisProvider",
+				"idOrg": {
+					"src": "SUTI:idLink",
+					"id": "systemprov_provsite_0001",
+					"unique": true
+				}
+			},
+			"orgReceiver": {
+				"name": "ThisClient",
+				"idOrg": {
+					"src": "SUTI:idLink",
+					"id": "systemclient_clientsite_0009",
+					"unique": true
+				}
+			},
+			"idMsg": {
+				"src": "systemprov_provsite_0001:MSGID",
+				"id": "2019121812345678",
+				"unique": true
+			},
+			"referencesTo": [
+				{
+					"idMsg": {
+						"src": "systemclient_clientsite_0009:MSGID",
+						"id": "2019121887654321",
+						"unique": true
+					}
+				}
+			]
+		},
+		"bulkLocationList": {
+			"isComplete": true,
+			"locationListType": 1,
+			"msgSeqNo": 1,
+			"msgCount": 1,
+			"locationList": [
+				{
+					"vehicleIdProvider": "123",
+					"time": "2019-12-18T10:39:00.000Z",
+					"status": "O",
+					"lat": 59.339176,
+					"lon": 17.991666,
+					"speed": 15,
+					"direction": 210
+				},
+				{
+					"vehicleIdProvider": "101",
+					"time": "2019-12-18T10:39:00.000Z",
+					"status": "N",
+					"lat": 59.339176,
+					"lon": 16.544566,
+					"speed": 45,
+					"direction": 80
+				},
+				{
+					"vehicleIdProvider": "254",
+					"time": "2019-12-18T10:39:00.000Z",
+					"status": "F",
+					"lat": 58.587176,
+					"lon": 18.877666,
+					"speed": 0,
+					"direction": 360
+				}
+			]
+		}
+	}
+}

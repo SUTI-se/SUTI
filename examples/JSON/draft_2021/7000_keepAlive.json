@@ -1,0 +1,29 @@
+{
+	"SUTI_7000_keepAlive": {
+		"msg": {
+			"msgType": "7000",
+			"msgTimeStamp": "2019-12-18T10:39:00.000",
+			"orgSender": {
+				"name": "ThisProvider",
+				"idOrg": {
+					"src": "SUTI:idLink",
+					"id": "systemprov_provsite_0001",
+					"unique": true
+				}
+			},
+			"orgReceiver": {
+				"name": "ThisClient",
+				"idOrg": {
+					"src": "SUTI:idLink",
+					"id": "systemclient_clientsite_0009",
+					"unique": true
+				}
+			},
+			"idMsg": {
+				"src": "systemprov_provsite_0001:MSGID",
+				"id": "2019121812345678",
+				"unique": true
+			}
+		}
+	}
+}

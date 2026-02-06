@@ -1,0 +1,151 @@
+{
+	"SUTI_4010_eventVehicle": {
+		"msg": {
+			"msgType": "4010",
+			"msgTimeStamp": "2019-12-18T10:39:00.000",
+			"orgSender": {
+				"name": "ThisProvider",
+				"idOrg": {
+					"src": "SUTI:idLink",
+					"id": "systemprov_provsite_0001",
+					"unique": true
+				}
+			},
+			"orgReceiver": {
+				"name": "ThisClient",
+				"idOrg": {
+					"src": "SUTI:idLink",
+					"id": "systemclient_clientsite_0009",
+					"unique": true
+				}
+			},
+			"idMsg": {
+				"src": "systemprov_provsite_0001:MSGID",
+				"id": "2019121812345678",
+				"unique": true
+			},
+			"referencesTo": [
+				{
+					"idMsg": {
+						"src": "systemclient_clientsite_0009:MSGID",
+						"id": "2019121887654321",
+						"unique": true
+					}
+				},
+				{
+					"idOrder": {
+						"src": "systemprov_provsite_0001:idOrder",
+						"id": "3640266-0",
+						"unique": true
+					}
+				},
+				{
+					"idOrder": {
+						"src": "systemclient_clientsite_0009:idOrder",
+						"id": "11183742",
+						"unique": true
+					}
+				},
+				{
+					"idMsg": {
+						"src": "systemclient_clientsite_0009:idMsg",
+						"id": "2015121809865469",
+						"unique": true
+					}
+				}
+			]
+		},
+		"event": {
+			"eventType": "passengerinvehicle",
+			"eventNode": {
+				"nodeSeqno": 1,
+				"nodeType": "pickup",
+				"addressNode": {
+					"addressName": "",
+					"street": "Avägen",
+					"streetNo": 1,
+					"streetNoLetter": "",
+					"community": "Orten",
+					"postalNo": "99999",
+					"geographicLocation": {
+						"typeOfCoordinate": "WGS-84",
+						"lat": 55.700000,
+						"lon": 13.190000,
+						"precision": 6
+					}
+				},
+				"timesNode": [
+						{
+							"timeType": "scheduledtime",
+							"time": "2019-08-10T08:00:00"
+						},
+						{
+							"timeType": "promisedtime",
+							"time": "2019-08-10T08:00:00",
+							"dwellTime": 600
+						},
+						{
+							"timeType": "estimatedtime",
+							"time": "2019-08-10T08:00:00",
+							"dwellTime": 600
+						},
+						{
+							"timeType": "actual",
+							"time": "2019-08-10T08:00:00",
+							"dwellTime": 600
+						}
+				],
+				"contents": [
+					{
+						"contentType": "traveller",
+						"nameContent": "John Doe",
+						"idContent": {
+							"src": "systemclient_clientsite_0009:idContentId",
+							"id": "5319397",
+							"unique": true
+						},
+						"attributesContent": [
+							{
+								"src": "SUTI:idAttribute",
+								"id": 2313,
+								"unique": true
+							}
+						],
+						"resourceContent": {
+							"vehicle": {
+								"capacity": {
+									"seats": {
+										"noOfSeats": 1,
+										"noOfItems": 1
+									}
+								},
+								"attributesVehicle": [
+									{
+										"src": "SUTI:idLink",
+										"id": 1628,
+										"unique": true
+									}
+								]
+							}
+						},
+						"contactInfosContent": [
+							{
+								"contactType": "phone",
+								"contactInfo": "0431-74700"
+							}
+						],
+						"subOrderContent": {
+							"idOrderArray": [
+								{
+									"src": "systemclient_clientsite_0009:idSubOrder",
+									"id": "11183750",
+									"unique": true
+								}
+							]
+						}
+					}
+				]
+			}
+		}
+	}
+}
