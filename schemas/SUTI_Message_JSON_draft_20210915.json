@@ -1,0 +1,3648 @@
+{
+	"$schema": "http://json-schema.org/schema#",
+	"$ref": "#/definitions/SUTI_validateObject",
+	"definitions": {
+		"SUTI_validateObject": {
+			"type": "object",
+			"properties": {
+				"SUTI_4100_actionRequest": {
+					"$ref": "#/definitions/SUTI_4100_actionRequest"
+				}
+			},
+			"required": [
+				"SUTI_4100_actionRequest"
+			],
+			"additionalProperties": false
+		},
+		"xs:anySimpleType": {
+			"type": "number"
+		},
+		"xs:anyType": {
+			"type": "object",
+			"properties": {
+				"$": {
+					"type": [
+						"string",
+						"number",
+						"boolean"
+					]
+				}
+			},
+			"patternProperties": {
+				"^@\\w+$": {
+					"type": [
+						"string",
+						"number",
+						"boolean"
+					]
+				},
+				"^\\w+$": {
+				}
+			},
+			"additionalProperties": false
+		},
+		"xs:boolean": {
+			"type": "boolean"
+		},
+		"xs:date": {
+			"type": "string"
+		},
+		"xs:dateTime": {
+			"type": "string"
+		},
+		"xs:decimal": {
+			"type": "number"
+		},
+		"xs:float": {
+			"type": "string"
+		},
+		"xs:int": {
+			"type": "integer",
+			"minimum": -2147483648,
+			"maximum": 2147483647
+		},
+		"xs:integer": {
+			"type": "integer"
+		},
+		"xs:nonNegativeInteger": {
+			"type": "integer",
+			"minimum": 0
+		},
+		"xs:positiveInteger": {
+			"type": "integer",
+			"minimum": 1
+		},
+		"xs:string": {
+			"type": "string"
+		},
+		"SUTI_1000_resourceRequest": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"resourceReservation": {
+					"$ref": "#/definitions/resourceReservation"
+				}
+			},
+			"additionalProperties": false
+		},
+		"SUTI_1061_ratingResponse": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"ratings": {
+					"$ref": "#/definitions/msgRatingList"
+				}
+			},
+			"additionalProperties": false
+		},
+		"SUTI_1100_bulkLocationRequest": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"bulkLocationRequest": {
+					"$ref": "#/definitions/bulkLocationRequest"
+				}
+			},
+			"required": [
+				"msg",
+				"bulkLocationRequest"
+			],
+			"additionalProperties": false
+		},
+		"SUTI_1111_bulkLocationResponse": {
+			"$ref": "#/definitions/msgBulkLocationList"
+		},
+		"SUTI_1112_bulkLocationResponse": {
+			"$ref": "#/definitions/msgBulkLocationList"
+		},
+		"SUTI_1500_nodeListRequest": {
+			"type": "object",
+			"properties": {
+				"infoRequest": {
+					"$ref": "#/definitions/infoRequest"
+				},
+				"msg": {
+					"$ref": "#/definitions/msg"
+				}
+			},
+			"additionalProperties": false
+		},
+		"SUTI_1600_nodeListResponse": {
+			"type": "object",
+			"properties": {
+				"infoResponse": {
+					"$ref": "#/definitions/InfoResponse"
+				},
+				"msg": {
+					"$ref": "#/definitions/msg"
+				}
+			},
+			"additionalProperties": false
+		},
+		"SUTI_1920_resourceAllocation": {
+			"$ref": "#/definitions/msgResourceAllocation"
+		},
+		"SUTI_2000_order": {
+			"$ref": "#/definitions/msgOrder"
+		},
+		"SUTI_2001_orderConfirmation": {
+			"$ref": "#/definitions/msgBasic"
+		},
+		"SUTI_2002_orderReject": {
+			"$ref": "#/definitions/msgOrderReject"
+		},
+		"SUTI_2012_cancellationAcceptWithConsequence": {
+			"$ref": "#/definitions/cancellationConsequence"
+		},
+		"SUTI_2020_nodeCancellation": {
+			"$ref": "#/definitions/msgNodeCancellation"
+		},
+		"SUTI_2030_orderForward": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"orderForward": {
+					"$ref": "#/definitions/orderForward"
+				}
+			},
+			"required": [
+				"msg",
+				"orderForward"
+			],
+			"additionalProperties": false
+		},
+		"SUTI_2060_providerOrderUpdate": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"providerOrderUpdate": {
+					"$ref": "#/definitions/providerorderUpdate"
+				}
+			},
+			"additionalProperties": false
+		},
+		"SUTI_2100_driverSession": {
+			"$ref": "#/definitions/msgDriverSession"
+		},
+		"SUTI_2040_orderLink": {
+			"$ref": "#/definitions/msgDriverSession"
+		},
+		"SUTI_2101_driverSessionAccept": {
+			"$ref": "#/definitions/msgDriverSession"
+		},
+		"SUTI_2102_driverSessionReject": {
+			"$ref": "#/definitions/msgDriverSessionReject"
+		},
+		"SUTI_2800_orderTemplate": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"orderTemplate": {
+					"$ref": "#/definitions/orderTemplate"
+				}
+			},
+			"required": [
+				"msg",
+				"orderTemplate"
+			],
+			"additionalProperties": false
+		},
+		"SUTI_2810_ScheduleElementConfirmation": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"scheduleElementOrderList": {
+					"$ref": "#/definitions/scheduleElementOrderList"
+				}
+			},
+			"required": [
+				"msg",
+				"scheduleElementOrderList"
+			],
+			"additionalProperties": false
+		},
+		"SUTI_2901_authorizationAccept": {
+			"$ref": "#/definitions/msgResource"
+		},
+		"SUTI_3003_dispatchConfirmation": {
+			"$ref": "#/definitions/msgResource"
+		},
+		"SUTI_4000_trafficInformationRequest": {
+			"$ref": "#/definitions/msgResource"
+		},
+		"SUTI_4001_trafficInformationResponse": {
+			"$ref": "#/definitions/msgOrder"
+		},
+		"SUTI_4010_eventVehicle": {
+			"$ref": "#/definitions/msgEvent"
+		},
+		"SUTI_4100_actionRequest": {
+			"$ref": "#/definitions/msgActionRequest"
+		},
+		"SUTI_5000_messageToVehicle": {
+			"$ref": "#/definitions/msgMessageTo"
+		},
+		"SUTI_5020_locationRequest": {
+			"$ref": "#/definitions/msgLocationRequest"
+		},
+		"SUTI_5021_locationResponse": {
+			"$ref": "#/definitions/msgGeographicLocation"
+		},
+		"SUTI_6001_orderReport": {
+			"$ref": "#/definitions/msgOrderReport"
+		},
+		"SUTI_6500_deliveryNote": {
+			"$ref": "#/definitions/msgDeliveryNote"
+		},
+		"SUTI_7000_keepAlive": {
+			"$ref": "#/definitions/msgBasic"
+		},
+		"SUTI_7001_keepAliveConfirmation": {
+			"$ref": "#/definitions/msgBasic"
+		},
+		"SUTI_8000_accounting": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"accounting": {
+					"$ref": "#/definitions/accounting"
+				}
+			},
+			"required": [
+				"msg",
+				"accounting"
+			],
+			"additionalProperties": false
+		},
+		"accounting": {
+			"type": "object",
+			"properties": {
+				"accountingType": {
+					"type": "string"
+				},
+				"economyReportAccounting": {
+					"$ref": "#/definitions/economyReport"
+				},
+				"idAccounting": {
+					"$ref": "#/definitions/idAccounting"
+				},
+				"orgClient": {
+					"$ref": "#/definitions/organization"
+				},
+				"orgProvider": {
+					"$ref": "#/definitions/organization"
+				},
+				"tours": {
+					"$ref": "#/definitions/tourList"
+				}
+			},
+			"required": [
+				"economyReportAccounting",
+				"idAccounting",
+				"orgClient",
+				"orgProvider"
+			],
+			"additionalProperties": false
+		},
+		"address": {
+			"type": "object",
+			"properties": {
+				"addressName": {
+					"type": "string"
+				},
+				"community": {
+					"type": "string"
+				},
+				"country": {
+					"type": "string"
+				},
+				"location": {
+					"type": "string"
+				},
+				"url": {
+					"type": "string"
+				},
+				"postalNo": {
+					"type": "string"
+				},
+				"street": {
+					"type": "string"
+				},
+				"streetNo": {
+					"$ref": "#/definitions/xs:positiveInteger"
+				},
+				"streetNoLetter": {
+					"type": "string"
+				},
+				"geographicLocation": {
+					"$ref": "#/definitions/geographicLocation"
+				},
+				"idAddressName": {
+					"$ref": "#/definitions/id",
+					"description": "This brings the possibility to specify an identity for the organization at the address. The source and the use should be described in a self declaration."
+				},
+				"idCommunity": {
+					"$ref": "#/definitions/id",
+					"description": "This brings the possibility to refer to a national id for municipality."
+				},
+				"idCountry": {
+					"$ref": "#/definitions/id",
+					"description": "Id identifying Country. Source (src)  shall refer to ISO 3166-1"
+				},
+				"idPostalCode": {
+					"$ref": "#/definitions/id",
+					"description": "This brings the possibility to refer to a nationally defined postal code."
+				},
+				"idStreet": {
+					"$ref": "#/definitions/id",
+					"description": "This brings the possibility to refer to national or comercial map data."
+				},
+				"idZone": {
+					"$ref": "#/definitions/id"
+				},
+				"manualDescriptionAddress": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/manualDescription"
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+		"agreement": {
+			"type": "object",
+			"properties": {
+				"nameAgreement": {
+					"type": "string"
+				},
+				"idAgreement": {
+					"$ref": "#/definitions/idAgreement"
+				},
+				"product": {
+					"$ref": "#/definitions/product"
+				}
+			},
+			"additionalProperties": false
+		},
+		"actionRequest": {
+			"type": "object",
+			"properties": {
+				"idAction": {
+					"$ref": "#/definitions/idAction"
+				},
+				"nodeAction": {
+					"$ref": "#/definitions/node"
+				},
+				"contactAction": {
+					"$ref": "#/definitions/contactInfo"
+				}
+			},
+			"additionalProperties": false
+		},
+		"amount": {
+			"type": "object",
+			"properties": {
+				"amountExclVat": {
+					"$ref": "#/definitions/xs:decimal"
+				},
+				"amountInclVat": {
+					"$ref": "#/definitions/xs:decimal"
+				},
+				"amountVat": {
+					"$ref": "#/definitions/xs:decimal"
+				},
+				"idCurrency": {
+					"$ref": "#/definitions/idCurrency",
+					"description": "To specify an ID for an account to use."
+				},
+				"vatPercent": {
+					"type": "number"
+				}
+			},
+			"required": [
+				"amountInclVat"
+			],
+			"additionalProperties": false
+		},
+		"amountType": {
+			"type": "object",
+			"properties": {
+				"amount": {
+					"$ref": "#/definitions/amount"
+				},
+				"distance": {
+					"$ref": "#/definitions/xs:integer"
+				},
+				"duration": {
+					"$ref": "#/definitions/xs:integer"
+				},
+				"idAmount": {
+					"$ref": "#/definitions/id",
+					"description": "To specify an ID for an account to use."
+				}
+			},
+			"required": [
+				"amount"
+			],
+			"additionalProperties": false
+		},
+		"associatedReservation": {
+			"type": "object",
+			"properties": {
+				"addressReservation": {
+					"$ref": "#/definitions/address"
+				},
+				"contactInfoListReservation": {
+					"$ref": "#/definitions/contactInfoList"
+				},
+				"idReservation": {
+					"$ref": "#/definitions/IdReservation"
+				},
+				"orgReservation": {
+					"$ref": "#/definitions/org"
+				},
+				"timesReservation": {
+					"$ref": "#/definitions/timeList"
+				}
+			},
+			"required": [
+				"addressReservation",
+				"contactInfoListReservation",
+				"timesReservation"
+			],
+			"additionalProperties": false
+		},
+		"attribute": {
+			"$ref": "#/definitions/id"
+		},
+		"attributeList": {
+			"$ref": "#/definitions/idList"
+		},
+		"authorizationAccept": {
+			"type": "object",
+			"properties": {
+				"contents": {
+					"$ref": "#/definitions/contentList"
+				},
+				"idAuthorization": {
+					"$ref": "#/definitions/idAuthorization"
+				},
+				"process": {
+					"$ref": "#/definitions/nodeProcess"
+				},
+				"restriction": {
+					"$ref": "#/definitions/restriction"
+				}
+			},
+			"required": [
+				"contents",
+				"idAuthorization",
+				"process",
+				"restriction"
+			],
+			"additionalProperties": false
+		},
+		"bulkLocationList": {
+			"type": "object",
+			"properties": {
+				"isComplete": {
+					"type": "boolean"
+				},
+				"locationListType": {
+					"$ref": "#/definitions/xs:positiveInteger"
+				},
+				"msgCount": {
+					"$ref": "#/definitions/xs:positiveInteger"
+				},
+				"msgSeqno": {
+					"$ref": "#/definitions/xs:positiveInteger"
+				},
+				"locationList": {
+					"$ref": "#/definitions/locationList"
+				}
+			},
+			"required": [
+				"locationList"
+			],
+			"additionalProperties": false
+		},
+		"bulkLocationRequest": {
+			"type": "object",
+			"properties": {
+				"locationListType": {
+					"type": "string",
+					"enum": [
+						"1"
+					]
+				},
+				"statusBreak": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"statusFree": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"statusNotinuse": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"statusOccupied": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"bulkIntervalRequest": {
+					"$ref": "#/definitions/locationRequest"
+				},
+				"bulkLocationAgreement": {
+					"$ref": "#/definitions/agreement"
+				},
+				"locationResource": {
+					"$ref": "#/definitions/resource"
+				}
+			},
+			"additionalProperties": false
+		},
+		"calculationFare": {
+			"type": "object",
+			"properties": {
+				"calculationType": {
+					"$ref": "#/definitions/id",
+					"description": "Identity of the used tariff"
+				},
+				"fixedPriceAmount": {
+					"$ref": "#/definitions/xs:float",
+					"description": "Amount of a fixed price"
+				},
+				"taximeterAmount": {
+					"description": "Amount from Taximeter",
+					"type": "object",
+					"properties": {
+						"distanceTotalPrice": {
+							"type": "object",
+							"properties": {
+								"distanceCount": {
+									"$ref": "#/definitions/xs:float"
+								},
+								"distanceUnitPrice": {
+									"$ref": "#/definitions/xs:float"
+								}
+							},
+							"required": [
+								"distanceCount",
+								"distanceUnitPrice"
+							],
+							"additionalProperties": false
+						},
+						"durationTotalPrice": {
+							"type": "object",
+							"properties": {
+								"durationCount": {
+									"$ref": "#/definitions/xs:float"
+								},
+								"durationUnitPrice": {
+									"$ref": "#/definitions/xs:float"
+								}
+							},
+							"required": [
+								"durationCount",
+								"durationUnitPrice"
+							],
+							"additionalProperties": false
+						},
+						"startPrice": {
+							"$ref": "#/definitions/xs:float"
+						},
+						"taximeterTotalPrice": {
+							"$ref": "#/definitions/xs:float"
+						}
+					},
+					"required": [
+						"distanceTotalPrice",
+						"durationTotalPrice",
+						"startPrice",
+						"taximeterTotalPrice"
+					],
+					"additionalProperties": false
+				}
+			},
+			"additionalProperties": false
+		},
+		"calculationFareList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/calculationFare"
+			}
+		},
+		"calendar": {
+			"type": "object",
+			"properties": {
+				"additionalDates": {
+					"$ref": "#/definitions/dateList"
+				},
+				"exceptionDates": {
+					"$ref": "#/definitions/dateList"
+				},
+				"validPeriod": {
+					"$ref": "#/definitions/period"
+				},
+				"validWeekdays": {
+					"$ref": "#/definitions/weekdays"
+				}
+			},
+			"additionalProperties": false
+		},
+		"cancellationConsequence": {
+			"type": "object",
+			"properties": {
+				"cancellationAcceptance": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"cancellationConsequence": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"economyCancellation": {
+					"$ref": "#/definitions/economy"
+				}
+			},
+			"required": [
+				"cancellationAcceptance",
+				"cancellationConsequence"
+			],
+			"additionalProperties": false
+		},
+		"capacity": {
+			"type": "object",
+			"properties": {
+				"fullArea": {
+					"$ref": "#/definitions/xs:float"
+				},
+				"luggageArea": {
+					"$ref": "#/definitions/xs:float"
+				},
+				"stretcherArea": {
+					"$ref": "#/definitions/xs:float"
+				},
+				"luggage": {
+					"type": "array",
+					"items": {
+						"description": "Luggage refer to international air transport agreement. \nCabin = 8 kg and 55 x 40 x 23 cm.\nChecked = 23 kg and max liner size 158 cm.\nSpecial = e. g. golf bags, ski equipment, musical instrument.",
+						"type": "object",
+						"properties": {
+							"luggageType": {
+								"type": "string",
+								"enum": [
+									"checked",
+									"cabin",
+									"special"
+								]
+							},
+							"pcs": {
+								"$ref": "#/definitions/xs:int"
+							}
+						},
+						"additionalProperties": false
+					}
+				},
+				"seats": {
+					"$ref": "#/definitions/seats"
+				}
+			},
+			"required": [
+				"seats"
+			],
+			"additionalProperties": false
+		},
+		"changelog": {
+			"type": "object",
+			"properties": {
+				"logs": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/log"
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+		"connection": {
+			"type": "object",
+			"properties": {
+				"connectionArrDep": {
+					"type": "string",
+					"enum": [
+						"A",
+						"D"
+					]
+				},
+				"connectionName": {
+					"type": "string"
+				},
+				"connectionType": {
+					"type": "string",
+					"enum": [
+						"1101",
+						"flight",
+						"1102",
+						"train",
+						"1103",
+						"boat",
+						"1104",
+						"meeting"
+					]
+				},
+				"associatedReservation": {
+					"$ref": "#/definitions/associatedReservation"
+				}
+			},
+			"required": [
+				"connectionArrDep",
+				"connectionType"
+			],
+			"additionalProperties": false
+		},
+		"contactInfo": {
+			"description": "The telno, mailaddress etc",
+			"type": "object",
+			"minProperties": 1,
+			"properties": {
+				"contactValue": {
+					"description": "Contains the values of the corresponding typs, i.e. the phonenummber etc",
+					"type": "string"
+				},
+				"contactType": {
+					"$ref": "#/definitions/contactType"
+				},
+				"contactSpec": {
+					"description": "Possible specification of what the the info represents, i.e. Personal mail, Teams-link etc.",
+					"type": "string"
+				}
+			},
+			"required": [
+				"contactValue",
+				"contactType"
+			],
+			"additionalProperties": false
+		},
+		"contactInfoList": {
+			"type": "array",
+			"minItems": 1,
+			"items": {
+				"$ref": "#/definitions/contactInfo"
+			},
+			"additionalItems": false
+		},
+		"contactType": {
+			"type": "string",
+			"enum": [
+				"text",
+				"phone",
+				"email",
+				"url"
+			]
+		},
+		"content": {
+			"type": "object",
+			"properties": {
+				"contentType": {
+					"type": "string",
+					"enum": [
+						"1001",
+						"traveller",
+						"1002",
+						"parcel",
+						"1003",
+						"action",
+						"1004",
+						"navigation",
+						"1005",
+						"companion",
+						"1006",
+						"coTraveller",
+						"1007",
+						"child",
+						"1008",
+						"animal"
+					]
+				},
+				"gender": {
+					"type": "string",
+					"enum": [
+						"female",
+						"male",
+						"child"
+					]
+				},
+				"maxTravelDuration": {
+					"$ref": "#/definitions/xs:anySimpleType"
+				},
+				"nameContent": {
+					"type": "string"
+				},
+				"attributeListContent": {
+					"$ref": "#/definitions/attributeList",
+					"description": "Attributes of idContent. Mainly a traveller but may be used in other type of contents such as parcel."
+				},
+				"connection": {
+					"$ref": "#/definitions/connection"
+				},
+				"contactInfoListContent": {
+					"$ref": "#/definitions/contactInfoList"
+				},
+				"economyContent": {
+					"$ref": "#/definitions/economy"
+				},
+				"idContent": {
+					"$ref": "#/definitions/idContent",
+					"description": "personal id or corresponding parcelid. The source shall be described in self declaration."
+				},
+				"manualDescriptionContent": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/manualDescription"
+					}
+				},
+				"productContent": {
+					"$ref": "#/definitions/product"
+				},
+				"resourceContent": {
+					"$ref": "#/definitions/resource"
+				},
+				"subOrderContent": {
+					"$ref": "#/definitions/subOrder",
+					"description": "in case one or several nodes is built from a subOrder in clients system these ordernumbers can be placed here. Observe that the same suborder number may occur in several nodes and the suborder therefore may consists of several nodes. The system of the provider can store these orders separately and can by using message 2040 tell the client its corresponding ordernumbers"
+				}
+			},
+			"required": [
+				"contentType",
+				"nameContent"
+			],
+			"additionalProperties": false
+		},
+		"contentList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/content"
+			}
+		},
+		"date": {
+			"description": "Should normally be the local time.",
+			"type": "object",
+			"properties": {
+				"date": {
+					"$ref": "#/definitions/xs:date"
+				}
+			},
+			"required": [
+				"date"
+			],
+			"additionalProperties": false
+		},
+		"dateList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/date"
+			}
+		},
+		"deliveryNote": {
+			"type": "object",
+			"properties": {
+				"deliveryNoteType": {
+					"type": "string",
+					"enum": [
+						"debit",
+						"credit"
+					]
+				},
+				"agreementDeliveryNote": {
+					"$ref": "#/definitions/agreement"
+				},
+				"economyReportList": {
+					"$ref": "#/definitions/economyReportList"
+				},
+				"eventListReport": {
+					"$ref": "#/definitions/eventList"
+				},
+				"idReceipt": {
+					"$ref": "#/definitions/id",
+					"description": "Used to indicate receipt number generated by taximeter."
+				},
+				"summaryReportDeliveryNote": {
+					"$ref": "#/definitions/summaryReport"
+				}
+			},
+			"required": [
+				"idReceipt",
+				"summaryReportDeliveryNote"
+			],
+			"additionalProperties": false
+		},
+		"driver": {
+			"description": "attributes for the driver",
+			"type": "object",
+			"properties": {
+				"driverLink": {
+					"$ref": "#/definitions/url"
+				},
+				"name": {
+					"type": "string"
+				},
+				"attributeListDriver": {
+					"$ref": "#/definitions/attributeList"
+				},
+				"contactInfoListDriver": {
+					"$ref": "#/definitions/contactInfoList"
+				},
+				"idDriver": {
+					"$ref": "#/definitions/idDriver",
+					"description": "Source (src) shall refer to the providers staff of drivers och a uniquely defined group of the providers staff of drivers."
+				},
+				"ratingsDriver": {
+					"$ref": "#/definitions/rating"
+				}
+			},
+			"additionalProperties": false
+		},
+		"driverSession": {
+			"type": "object",
+			"properties": {
+				"changelog": {
+					"$ref": "#/definitions/changelog",
+					"description": "If populated, contains changes that have been made to the orders within the driver session since last received by the provider."
+				},
+				"idDriverSession": {
+					"$ref": "#/definitions/idDriverSession"
+				},
+				"orders": {
+					"$ref": "#/definitions/orderList",
+					"description": "Contains the orders included in the driver session."
+				},
+				"process": {
+					"$ref": "#/definitions/process"
+				},
+				"resourceDriverSession": {
+					"$ref": "#/definitions/resource",
+					"description": "Defines the requirements needed to execute the driver session."
+				}
+			},
+			"additionalProperties": false
+		},
+		"driverSessionAccept": {
+			"type": "object",
+			"properties": {
+				"changelog": {
+					"$ref": "#/definitions/changelog",
+					"description": "If populated, contains changes that have been made to the orders within the driver session since last received by the provider."
+				},
+				"idDriverSession": {
+					"$ref": "#/definitions/idDriverSession"
+				},
+				"resourceDriverSession": {
+					"$ref": "#/definitions/resource",
+					"description": "Defines the requirements needed to execute the driver session."
+				},
+				"sessionNodeList": {
+					"$ref": "#/definitions/sessionNodeList"
+				}
+			},
+			"additionalProperties": false
+		},
+		"driverSessionReject": {
+			"type": "object",
+			"properties": {
+				"attributesReject": {
+					"$ref": "#/definitions/attributeList",
+					"description": "Indicates which attributes that the rejection of this order are based upon."
+				},
+				"changelog": {
+					"$ref": "#/definitions/changelog",
+					"description": "Contains which changes from the changelog was rejected by the provider."
+				},
+				"driverSession": {
+					"$ref": "#/definitions/driverSession",
+					"description": "Contains the nodes element as a representation of the driver session from the providers side after the rejection is made."
+				}
+			},
+			"required": [
+				"attributesReject",
+				"changelog",
+				"driverSession"
+			],
+			"additionalProperties": false
+		},
+		"economy": {
+			"type": "object",
+			"properties": {
+				"exchangeRates": {
+					"$ref": "#/definitions/exhangeRateList"
+				},
+				"paymentList": {
+					"$ref": "#/definitions/paymentList"
+				},
+				"manualDescriptionEconomy": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/manualDescription"
+					}
+				},
+				"price": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/price"
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+		"economyReport": {
+			"type": "object",
+			"properties": {
+				"nodeSeqno": {
+					"$ref": "#/definitions/xs:positiveInteger"
+				},
+				"formOfPayment": {
+					"$ref": "#/definitions/formOfPayment"
+				},
+				"subOrderEconomy": {
+					"$ref": "#/definitions/subOrder",
+					"description": "Used if economyreport are sent for each suborder"
+				}
+			},
+			"required": [
+				"formOfPayment"
+			],
+			"additionalProperties": false
+		},
+		"economyReportList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/economyReport"
+			}
+		},
+		"environmentalInformation": {
+			"type": "object",
+			"properties": {
+				"emptydrivingFactor": {
+					"$ref": "#/definitions/xs:decimal"
+				},
+				"fuelConsumptions": {
+					"type": "object",
+					"properties": {
+						"fuelConsumption": {
+							"type": "array",
+							"minItems": 1,
+							"items": {
+								"type": "object",
+								"properties": {
+									"consumption": {
+										"$ref": "#/definitions/xs:decimal"
+									},
+									"fuelType": {
+										"type": "string",
+										"enum": [
+											"Gasoline",
+											"Diesel",
+											"Ethanol",
+											"Electric",
+											"Gas",
+											"Hydrogen"
+										]
+									},
+									"unit": {
+										"type": "string",
+										"enum": [
+											"Liter",
+											"Kwh",
+											"Kg"
+										]
+									}
+								},
+								"additionalProperties": false
+							}
+						}
+					},
+					"required": [
+						"fuelConsumption"
+					],
+					"additionalProperties": false
+				}
+			},
+			"required": [
+				"fuelConsumptions"
+			],
+			"additionalProperties": false
+		},
+		"errorType": {
+			"type": "object",
+			"properties": {
+				"idError": {
+					"$ref": "#/definitions/idError"
+				},
+				"manualDescriptionError": {
+					"$ref": "#/definitions/manualDescription"
+				}
+			},
+			"additionalProperties": false
+		},
+		"event": {
+			"type": "object",
+			"properties": {
+				"eventType": {
+					"type": "string",
+					"enum": [
+						"1716",
+						"acceptOrder",
+						"1714",
+						"start",
+						"1715",
+						"stop",
+						"pickup",
+						"destination",
+						"navigation",
+						"action",
+						"1701",
+						"passengerinvehicle",
+						"1702",
+						"passengerdropped",
+						"1703",
+						"noshow",
+						"1704",
+						"parcelinvehicle",
+						"1705",
+						"parceldropped",
+						"1706",
+						"actiondone",
+						"1707",
+						"navigationdone",
+						"1708",
+						"cancelatdoor",
+						"1709",
+						"vehicleatnode",
+						"1710",
+						"infotocontent",
+						"1711",
+						"dispatchconfirmationsent",
+						"1712",
+						"delayconfirmationsent",
+						"1713",
+						"arrivalconfirmationsent"
+					]
+				},
+				"eventNode": {
+					"$ref": "#/definitions/node"
+				}
+			},
+			"required": [
+				"eventType"
+			],
+			"additionalProperties": false
+		},
+		"eventList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/event"
+			}
+		},
+		"exhangeRate": {
+			"type": "object",
+			"properties": {
+				"exchangeRate": {
+					"$ref": "#/definitions/xs:float"
+				},
+				"idCurrencyFrom": {
+					"$ref": "#/definitions/id",
+					"description": "Source (src) shall refer to ISO 4217."
+				},
+				"idCurrencyTo": {
+					"$ref": "#/definitions/id",
+					"description": "Source (src) shall refer to ISO 4217."
+				}
+			},
+			"required": [
+				"exchangeRate",
+				"idCurrencyFrom",
+				"idCurrencyTo"
+			],
+			"additionalProperties": false
+		},
+		"exhangeRateList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/exhangeRate"
+			}
+		},
+		"formOfPayment": {
+			"type": "object",
+			"properties": {
+				"paymentList": {
+					"$ref": "#/definitions/paymentList"
+				}
+			},
+			"required": [
+				"paymentList"
+			],
+			"additionalProperties": false
+		},
+		"geographicLocation": {
+			"type": "object",
+			"properties": {
+				"deviationSpeed": {
+					"$ref": "#/definitions/xs:integer"
+				},
+				"direction": {
+					"$ref": "#/definitions/xs:integer"
+				},
+				"height": {
+					"$ref": "#/definitions/xs:decimal"
+				},
+				"lat": {
+					"$ref": "#/definitions/xs:decimal"
+				},
+				"lon": {
+					"$ref": "#/definitions/xs:decimal"
+				},
+				"precision": {
+					"$ref": "#/definitions/xs:integer"
+				},
+				"speed": {
+					"$ref": "#/definitions/xs:integer"
+				},
+				"speedSource": {
+					"type": "string",
+					"enum": [
+						"gpsunit",
+						"taximeter"
+					]
+				},
+				"typeOfCoordinate": {
+					"type": "string",
+					"enum": [
+						"WGS84",
+						"WGS-84",
+						"RT90"
+					]
+				},
+				"zone": {
+					"type": "string"
+				},
+				"vehicleDistance": {
+					"$ref": "#/definitions/vehicleDistance"
+				}
+			},
+			"required": [
+				"lat",
+				"lon",
+				"precision",
+				"typeOfCoordinate"
+			],
+			"additionalProperties": false
+		},
+		"id": {
+			"description": "General type identification-element\n\nSee UC_3.1.2 for extensive description. Especiallly is the use and the implemantation of source (src) vital for creating adequate SUTI messages. ",
+			"$comment": "r",
+			"type": "object",
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"src": {
+					"type": "string"
+				},
+				"unique": {
+					"$ref": "#/definitions/xs:boolean"
+				}
+			},
+			"required": [
+				"id",
+				"src"
+			],
+			"additionalProperties": false
+		},
+		"idList": {
+			"type": "array",
+			"minItems": 0,
+			"items": {
+				"$ref": "#/definitions/id"
+			}
+		},
+		"idAccounting": {
+			"$ref": "#/definitions/id"
+		},
+		"idAction": {
+			"$ref": "#/definitions/id"
+		},
+		"idActivity": {
+			"$ref": "#/definitions/id"
+		},
+		"idAgreement": {
+			"$ref": "#/definitions/id"
+		},
+		"idAuthorization": {
+			"$ref": "#/definitions/id"
+		},
+		"idContent": {
+			"$ref": "#/definitions/id"
+		},
+		"idCurrency": {
+			"$ref": "#/definitions/id"
+		},
+		"idDriver": {
+			"$ref": "#/definitions/id"
+		},
+		"idDriverSession": {
+			"$ref": "#/definitions/id"
+		},
+		"idEkinfo": {
+			"$ref": "#/definitions/id"
+		},
+		"idError": {
+			"$ref": "#/definitions/id"
+		},
+		"idMsg": {
+			"$ref": "#/definitions/id"
+		},
+		"idObject": {
+			"description": "Introduced to implement idObjects with an array of different id-objeckts like in referencesTo",
+			"type": "object",
+			"properties": {
+				"idObject": {
+					"$ref": "#/definitions/id"
+				}
+			}
+		},
+		"idObjectList": {
+			"description": "Shall include an array of different Id-obekts",
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/idObject"
+			}
+		},
+		"IdOrder": {
+			"$ref": "#/definitions/id"
+		},
+		"idOrderTemplate": {
+			"$ref": "#/definitions/id"
+		},
+		"IdOrg": {
+			"$ref": "#/definitions/id"
+		},
+		"IdProduct": {
+			"$ref": "#/definitions/id"
+		},
+		"IdReservation": {
+			"$ref": "#/definitions/id"
+		},
+		"idVehicle": {
+			"$ref": "#/definitions/id"
+		},
+		"idTaxa": {
+			"$ref": "#/definitions/id"
+		},
+		"infoRequest": {
+			"type": "object",
+			"properties": {
+				"requestCalendar": {
+					"$ref": "#/definitions/calendar"
+				},
+				"requestItemArray": {
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"$ref": "#/definitions/requestContentType"
+					}
+				},
+				"requestProductArray": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/product"
+					}
+				}
+			},
+			"required": [
+				"requestItemArray"
+			],
+			"additionalProperties": false
+		},
+		"InfoResponse": {
+			"type": "object",
+			"properties": {
+				"responseNodes": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/node"
+					}
+				},
+				"responseOrgArray": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/organization"
+					}
+				},
+				"responsePriceArray": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/price"
+					}
+				}
+			},
+			"additionalProperties": false
+		},
+		"locationList": {
+			"type": "array",
+			"minItems": 0,
+			"items": 
+				{
+					"$ref": "#/definitions/vehicleBulkLocation"
+				},
+			
+			"additionalItems": false
+		},
+		"locationRequest": {
+			"type": "object",
+			"properties": {
+				"interval": {
+					"description": "Interval between positions",
+					"type": "object",
+					"properties": {
+						"meter": {
+							"$ref": "#/definitions/xs:integer"
+						},
+						"seconds": {
+							"$ref": "#/definitions/xs:integer"
+						}
+					},
+					"additionalProperties": false
+				},
+				"timeFrom": {
+					"$ref": "#/definitions/time",
+					"description": "Time to start sending positions to Client"
+				},
+				"timeTo": {
+					"$ref": "#/definitions/time",
+					"description": "Time to stop sending positions to Client"
+				}
+			},
+			"additionalProperties": false
+		},
+		"log": {
+			"type": "object",
+			"properties": {
+				"change": {
+					"type": "string",
+					"enum": [
+						"updated",
+						"moved",
+						"added",
+						"cancelled"
+					]
+				},
+				"idOrderList": {
+					"$ref": "#/definitions/idList"
+				}
+			},
+			"additionalProperties": false
+		},
+		"logList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/log"
+			}
+		},
+		"manualDescriptionMessage": {
+			"type": "object",
+			"properties": {
+				"contentConfirmation": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"manualText": {
+					"$ref": "#/definitions/manualText"
+				},
+				"sendingOperator": {
+					"type": "string"
+				},
+				"sendtoContent": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"sendtoInvoice": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"sendtoOperator": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"sendtoVehicle": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"vehicleConfirmation": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"idActionText": {
+					"$ref": "#/definitions/id",
+					"description": "Brings the possibility for the Sender to set up a list of predefined actions or messages tha th receiver shal take notice of. The is the defined by the sender."
+				},
+				"textTimestamp": {
+					"$ref": "#/definitions/timeList",
+					"description": "This is the time then the manual message wil be in effect."
+				}
+			},
+			"required": [
+				"manualText"
+			],
+			"additionalProperties": false
+		},
+		"manualDescription": {
+			"type": "object",
+			"properties": {
+				"manualText": {
+					"$ref": "#/definitions/manualText"
+				},
+				"idActionText": {
+					"$ref": "#/definitions/id",
+					"description": "Brings the possibility for the Sender to set up a list of predefined actions or messages tha th receiver shal take notice of. The is the defined by the sender."
+				},
+				"textTimestamp": {
+					"$ref": "#/definitions/timeList",
+					"description": "This is the time then the manual message wil be in effect."
+				},
+				"url": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		},
+		"manualText": {
+			"type": "object",
+			"properties": {
+				"manualText": {
+					"type": "string"
+				},
+				"url": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		},
+		"messageTo": {
+			"type": "object",
+			"properties": {
+				"contentConfirmation": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"manualText": {
+					"$ref": "#/definitions/manualText"
+				},
+				"sendingOperator": {
+					"type": "string"
+				},
+				"sendtoContent": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"sendtoInvoice": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"sendtoOperator": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"sendtoVehicle": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"vehicleConfirmation": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"idActionText": {
+					"$ref": "#/definitions/id",
+					"description": "Brings the possibility for the Sender to set up a list of predefined actions or messages tha th receiver shal take notice of. The is the defined by the sender."
+				},
+				"textTimestamp": {
+					"$ref": "#/definitions/timeList",
+					"description": "This is the time then the manual message wil be in effect."
+				}
+			},
+			"required": [
+				"manualText"
+			],
+			"additionalProperties": false
+		},
+		"msg": {
+			"type": "object",
+			"properties": {
+				"orgSender": {
+					"$ref": "#/definitions/org"
+				},
+				"orgReceiver": {
+					"$ref": "#/definitions/org"
+				},
+				"infoTimeStamp": {
+					"$ref": "#/definitions/xs:dateTime"
+				},
+				"msgTimeStamp": {
+					"$ref": "#/definitions/xs:dateTime"
+				},
+				"msgType": {
+					"type": "string",
+					"enum": [
+						"1000",
+						"1001",
+						"1002",
+						"1010",
+						"1011",
+						"1012",
+						"1020",
+						"1021",
+						"1022",
+						"1023",
+						"1024",
+						"1025",
+						"1060",
+						"1061",
+						"1100",
+						"1101",
+						"1102",
+						"1110",
+						"1111",
+						"1112",
+						"1120",
+						"1121",
+						"1122",
+						"1500",
+						"1501",
+						"1600",
+						"1601",
+						"1920",
+						"1921",
+						"1922",
+						"2000",
+						"2001",
+						"2002",
+						"2003",
+						"2005",
+						"2006",
+						"2007",
+						"2010",
+						"2011",
+						"2012",
+						"2013",
+						"2020",
+						"2021",
+						"2022",
+						"2023",
+						"2030",
+						"2031",
+						"2032",
+						"2040",
+						"2050",
+						"2100",
+						"2101",
+						"2102",
+						"2103",
+						"2104",
+						"2105",
+						"2106",
+						"2107",
+						"2110",
+						"2111",
+						"2530",
+						"2531",
+						"2532",
+						"2540",
+						"2541",
+						"2800",
+						"2801",
+						"2810",
+						"2900",
+						"2901",
+						"2902",
+						"3000",
+						"3001",
+						"3002",
+						"3003",
+						"3004",
+						"4000",
+						"4001",
+						"4002",
+						"4010",
+						"4011",
+						"4012",
+						"4020",
+						"4021",
+						"4031",
+						"4040",
+						"4041",
+						"4042",
+						"4100",
+						"4101",
+						"4102",
+						"5000",
+						"5001",
+						"5002",
+						"5010",
+						"5011",
+						"5020",
+						"5021",
+						"5030",
+						"6000",
+						"6001",
+						"6060",
+						"6061",
+						"6500",
+						"6501",
+						"6502",
+						"6503",
+						"6510",
+						"6511",
+						"6800",
+						"6810",
+						"7000",
+						"7001",
+						"7010",
+						"7011",
+						"7015",
+						"7020",
+						"7021",
+						"7030",
+						"7031",
+						"7099",
+						"8000",
+						"8001",
+						"8010",
+						"8101",
+						"8111",
+						"8121",
+						"8181",
+						"8199",
+						"2060",
+						"2061",
+						"2113",
+						"3013"
+					]
+				},
+				"idMsg": {
+					"$ref": "#/definitions/idMsg"
+				},
+				"referencesTo": {
+					"$ref": "#/definitions/referencesTo"
+				},
+				"idVerson": {
+					"$ref": "#/definitions/id"
+				}
+			},
+			"required": [
+				"orgSender",
+				"orgReceiver",
+				"idMsg"
+			],
+			"additionalProperties": false
+		},
+		"msgBasic": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				}
+			},
+			"required": [
+				"msg"
+			],
+			"additionalProperties": false
+		},
+		"msgAccounting": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"accounting": {
+					"$ref": "#/definitions/accounting"
+				}
+			},
+			"required": [
+				"msg",
+				"accounting"
+			],
+			"additionalProperties": false
+		},
+		"msgActionRequest": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"actionRequest": {
+					"$ref": "#/definitions/actionRequest"
+				}
+			},
+			"required": [
+				"msg",
+				"actionRequest"
+			],
+			"additionalProperties": false
+		},
+		"msgAuthorizationAccept": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"authorizationAccept": {
+					"$ref": "#/definitions/authorizationAccept"
+				}
+			},
+			"required": [
+				"msg",
+				"authorizationAccept"
+			],
+			"additionalProperties": false
+		},
+		"msgBulkLocationList": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"bulkLocationList": {
+					"$ref": "#/definitions/bulkLocationList"
+				}
+			},
+			"required": [
+				"msg",
+				"bulkLocationList"
+			],
+			"additionalProperties": false
+		},
+		"msgBulkLocationRequest": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"bulkLocationRequest": {
+					"$ref": "#/definitions/bulkLocationRequest"
+				}
+			},
+			"required": [
+				"msg",
+				"bulkLocationRequest"
+			],
+			"additionalProperties": false
+		},
+		"msgCancellationConsequence": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"cancellationConsequence": {
+					"$ref": "#/definitions/cancellationConsequence"
+				}
+			},
+			"required": [
+				"msg",
+				"cancellationConsequence"
+			],
+			"additionalProperties": false
+		},
+		"msgDeliveryNote": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"deliveryNote": {
+					"$ref": "#/definitions/deliveryNote"
+				}
+			},
+			"required": [
+				"msg",
+				"deliveryNote"
+			],
+			"additionalProperties": false
+		},
+		"msgDriverSession": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"driverSession": {
+					"$ref": "#/definitions/driverSession"
+				}
+			},
+			"required": [
+				"msg",
+				"driverSession"
+			],
+			"additionalProperties": false
+		},
+		"msgDriverSessionAccept": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"driverSessionAccept": {
+					"$ref": "#/definitions/driverSessionAccept"
+				}
+			},
+			"required": [
+				"msg",
+				"driverSessionAccept"
+			],
+			"additionalProperties": false
+		},
+		"msgDriverSessionReject": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"driverSessionReject": {
+					"$ref": "#/definitions/driverSessionReject"
+				}
+			},
+			"required": [
+				"msg",
+				"driverSessionReject"
+			],
+			"additionalProperties": false
+		},
+		"msgEvent": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"event": {
+					"$ref": "#/definitions/event"
+				}
+			},
+			"required": [
+				"msg",
+				"event"
+			],
+			"additionalProperties": false
+		},
+		"msgGeographicLocation": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"geographicLocation": {
+					"$ref": "#/definitions/geographicLocation"
+				}
+			},
+			"required": [
+				"msg",
+				"geographicLocation"
+			],
+			"additionalProperties": false
+		},
+		"msgInfoRequest": {
+			"type": "object",
+			"properties": {
+				"infoRequest": {
+					"$ref": "#/definitions/infoRequest"
+				},
+				"msg": {
+					"$ref": "#/definitions/msg"
+				}
+			},
+			"additionalProperties": false
+		},
+		"msgInfoResponse": {
+			"type": "object",
+			"properties": {
+				"infoResponse": {
+					"$ref": "#/definitions/InfoResponse"
+				},
+				"msg": {
+					"$ref": "#/definitions/msg"
+				}
+			},
+			"additionalProperties": false
+		},
+		"msgLocationRequest": {
+			"type": "object",
+			"properties": {
+				"locationRequest": {
+					"$ref": "#/definitions/locationRequest"
+				},
+				"msg": {
+					"$ref": "#/definitions/msg"
+				}
+			},
+			"additionalProperties": false
+		},
+		"msgMessageTo": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"messageTo": {
+					"$ref": "#/definitions/messageTo"
+				}
+			},
+			"required": [
+				"msg",
+				"messageTo"
+			],
+			"additionalProperties": false
+		},
+		"msgNodeCancellation": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"nodeCancellation": {
+					"$ref": "#/definitions/nodeCancellation"
+				}
+			},
+			"required": [
+				"msg"
+			],
+			"additionalProperties": false
+		},
+		"msgOrder": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"order": {
+					"$ref": "#/definitions/order"
+				}
+			},
+			"required": [
+				"msg",
+				"order"
+			],
+			"additionalProperties": false
+		},
+		"msgOrderForward": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"orderForward": {
+					"$ref": "#/definitions/orderForward"
+				}
+			},
+			"required": [
+				"msg",
+				"orderForward"
+			],
+			"additionalProperties": false
+		},
+		"msgOrderReject": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"orderReject": {
+					"$ref": "#/definitions/orderReject"
+				}
+			},
+			"required": [
+				"msg",
+				"orderReject"
+			],
+			"additionalProperties": false
+		},
+		"msgOrderReport": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"orderReport": {
+					"$ref": "#/definitions/orderReport"
+				}
+			},
+			"required": [
+				"msg",
+				"orderReport"
+			],
+			"additionalProperties": false
+		},
+		"msgOrderTemplate": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"orderTemplate": {
+					"$ref": "#/definitions/orderTemplate"
+				}
+			},
+			"required": [
+				"msg",
+				"orderTemplate"
+			],
+			"additionalProperties": false
+		},
+		"msgProviderOrderUpdate": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"providerOrderUpdate": {
+					"$ref": "#/definitions/providerorderUpdate"
+				}
+			},
+			"additionalProperties": false
+		},
+		"msgRatingList": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"ratingList": {
+					"$ref": "#/definitions/ratingList"
+				}
+			},
+			"additionalProperties": false
+		},
+		"msgResource": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"resource": {
+					"$ref": "#/definitions/resource"
+				}
+			},
+			"additionalProperties": false
+		},
+		"msgResourceAllocation": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"resourceAlloc ation": {
+					"$ref": "#/definitions/resourceAllocation"
+				}
+			},
+			"required": [
+				"msg",
+				"resourceAlloc ation"
+			],
+			"additionalProperties": false
+		},
+		"msgResourceResevation": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"resourceReservation": {
+					"$ref": "#/definitions/resourceReservation"
+				}
+			},
+			"additionalProperties": false
+		},
+		"msgScheduleElementOrderList": {
+			"type": "object",
+			"properties": {
+				"msg": {
+					"$ref": "#/definitions/msg"
+				},
+				"scheduleElementOrderList": {
+					"$ref": "#/definitions/scheduleElementOrderList"
+				}
+			},
+			"required": [
+				"msg",
+				"scheduleElementOrderList"
+			],
+			"additionalProperties": false
+		},
+		"multiDispatch": {
+			"description": "Presence of this element in order indicates that the order may have been sent to more than one provider",
+			"type": "object",
+			"additionalProperties": false
+		},
+		"node": {
+			"type": "object",
+			"properties": {
+				"nodeSeqno": {
+					"$ref": "#/definitions/xs:positiveInteger"
+				},
+				"nodeType": {
+					"type": "string",
+					"enum": [
+						"1801",
+						"action",
+						"1802",
+						"navigation",
+						"1803",
+						"pickup",
+						"1804",
+						"destination"
+					]
+				},
+				"subnodeType": {
+					"type": "string",
+					"enum": [
+						"1901",
+						"break",
+						"1902",
+						"driverassist",
+						"1903",
+						"mobaidpickup",
+						"1904",
+						"mobaiddropoff",
+						"1905",
+						"ferrydeparture",
+						"1906",
+						"ferryarrival",
+						"1907",
+						"waitforinstructions",
+						"1908",
+						"flagstop",
+						"refuel",
+						"pullin",
+						"pullout"
+					]
+				},
+				"addressNode": {
+					"$ref": "#/definitions/address"
+				},
+				"contentList": {
+					"$ref": "#/definitions/contentList"
+				},
+				"nodeprocess": {
+					"$ref": "#/definitions/nodeProcess"
+				},
+				"timeListNode": {
+					"$ref": "#/definitions/timeList"
+				}
+			},
+			"required": [
+				"nodeSeqno",
+				"nodeType"
+			],
+			"additionalProperties": false
+		},
+		"nodeList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/node"
+			}
+		},
+		"nodeCancellation": {
+			"type": "object",
+			"properties": {
+				"nodeEnd": {
+					"$ref": "#/definitions/xs:positiveInteger"
+				},
+				"nodeStart": {
+					"$ref": "#/definitions/xs:positiveInteger"
+				}
+			},
+			"required": [
+				"nodeStart"
+			],
+			"additionalProperties": false
+		},
+		"nodeProcess": {
+			"type": "object",
+			"properties": {
+				"sendinformationArrival": {
+					"type": "string",
+					"enum": [
+						"alwayssend",
+						"neversend",
+						"allowsend"
+					]
+				},
+				"sendinformationDelay": {
+					"type": "string",
+					"enum": [
+						"allowsend",
+						"neversend",
+						"alwayssend"
+					]
+				},
+				"sendinformationDisptch": {
+					"type": "string",
+					"enum": [
+						"allowsend",
+						"neversend",
+						"alwayssend"
+					]
+				},
+				"sendinformationContent": {
+					"$ref": "#/definitions/contactInfo",
+					"description": "If this element is not used the contact info to use shall be the contactinfo supplied in Content. It's the Clients responsibility to confirm that both  the contactType and the contactIfo are valid."
+				}
+			},
+			"additionalProperties": false
+		},
+		"order": {
+			"type": "object",
+			"properties": {
+				"agreement": {
+					"$ref": "#/definitions/agreement"
+				},
+				"economyOrder": {
+					"$ref": "#/definitions/economy"
+				},
+				"idOrder": {
+					"$ref": "#/definitions/IdOrder",
+					"description": "Must be the identity of the order specified by the client. The source shall normally belong to the client. Most often the implementation of the source is the clients sutiLinkId."
+				},
+				"orderStatus": {
+					"$ref": "#/definitions/orderStatus"
+				},
+				"orgProvider": {
+					"$ref": "#/definitions/org"
+				},
+				"process": {
+					"$ref": "#/definitions/process"
+				},
+				"resourceOrder": {
+					"$ref": "#/definitions/resource",
+					"description": "Contains the total or maximum amount of demands neededed to complete this order."
+				},
+				"route": {
+					"$ref": "#/definitions/route"
+				}
+			},
+			"additionalProperties": false
+		},
+		"orderList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/order"
+			}
+		},
+		"orderForward": {
+			"type": "object",
+			"properties": {
+				"idOrderProvider": {
+					"$ref": "#/definitions/IdOrder",
+					"description": "idOrder used by provider to whom the order is forwarded."
+				},
+				"idOrderClient": {
+					"$ref": "#/definitions/IdOrder",
+					"description": "idOrder used by provider to whom the order is forwarded."
+				},
+				"orgClientForward": {
+					"$ref": "#/definitions/org",
+					"description": "Organisational information about forwarding Client."
+				},
+				"orgProviderForward": {
+					"$ref": "#/definitions/org",
+					"description": "Organisational information about forwarding Client."
+				}
+			},
+			"additionalProperties": false
+		},
+		"orderReject": {
+			"type": "object",
+			"properties": {
+				"attributesReject": {
+					"$ref": "#/definitions/attributeList"
+				},
+				"orderSentBefore": {
+					"type": "object",
+					"properties": {
+						"idMsg": {
+							"$ref": "#/definitions/idMsg"
+						}
+					},
+					"required": [
+						"idMsg"
+					],
+					"additionalProperties": false
+				},
+				"orgNewProvider": {
+					"$ref": "#/definitions/org"
+				},
+				"resourceReject": {
+					"$ref": "#/definitions/resource",
+					"description": "Indicates which resources that the rejection of this order are based upon."
+				}
+			},
+			"additionalProperties": false
+		},
+		"orderReport": {
+			"type": "object",
+			"properties": {
+				"economyReportList": {
+					"$ref": "#/definitions/economyReportList"
+				},
+				"eventListReports": {
+					"$ref": "#/definitions/eventList"
+				},
+				"summaryReportList": {
+					"$ref": "#/definitions/summaryReportList"
+				}
+			},
+			"required": [
+				"summaryReportList"
+			],
+			"additionalProperties": false
+		},
+		"orderStatus": {
+			"type": "object",
+			"properties": {
+				"status": {
+					"type": "string",
+					"enum": [
+						"none",
+						"started",
+						"completed",
+						"noshow",
+						"confirmed",
+						"dispatching",
+						"dispatched",
+						"cancelled"
+					]
+				}
+			},
+			"required": [
+				"status"
+			],
+			"additionalProperties": false
+		},
+		"orderTemplate": {
+			"type": "object",
+			"properties": {
+				"idOrderTemplate": {
+					"$ref": "#/definitions/idOrderTemplate"
+				},
+				"orderTemplateAgreement": {
+					"$ref": "#/definitions/agreement"
+				},
+				"orderTemplateCalendar": {
+					"$ref": "#/definitions/calendar"
+				},
+				"scheduleElementList": {
+					"$ref": "#/definitions/scheduleElementList"
+				}
+			},
+			"required": [
+				"idOrderTemplate",
+				"orderTemplateCalendar",
+				"scheduleElementList"
+			],
+			"additionalProperties": false
+		},
+		"org": {
+			"type": "object",
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"idOrg": {
+					"$ref": "#/definitions/id",
+					"description": "The identification of the organization. Then used in orgSendet and orgReceiver a specific SUTI identification is used. See UC_3.2"
+				}
+			},
+			"required": [
+				"name",
+				"idOrg"
+			]
+		},
+		"organization": {
+			"description": "The element describes identification and payment elements for one and only one organizational unit.",
+			"type": "object",
+			"properties": {
+				"orgCity": {
+					"$ref": "#/definitions/xs:anySimpleType"
+				},
+				"orgName": {
+					"type": "string"
+				},
+				"adressOrg": {
+					"$ref": "#/definitions/address"
+				},
+				"contactInfoListOrg": {
+					"$ref": "#/definitions/contactInfoList"
+				},
+				"idOrgArray": {
+					"$ref": "#/definitions/idList"
+				},
+				"orgPayment": {
+					"$ref": "#/definitions/orgPayment"
+				},
+				"organization": {
+					"$ref": "#/definitions/org"
+				}
+			},
+			"required": [
+				"orgName",
+				"idOrgArray"
+			],
+			"additionalProperties": false
+		},
+		"orgPayment": {
+			"type": "object",
+			"properties": {
+				"ClearingNo": {
+					"type": "number"
+				},
+				"nameofBank": {
+					"type": "string"
+				},
+				"IdPayment": {
+					"$ref": "#/definitions/idList"
+				}
+			},
+			"required": [
+				"IdPayment"
+			],
+			"additionalProperties": false
+		},
+		"payment": {
+			"type": "object",
+			"properties": {
+				"amount": {
+					"$ref": "#/definitions/amount"
+				},
+				"documentType": {
+					"type": "string"
+				},
+				"noOfDocuments": {
+					"$ref": "#/definitions/xs:nonNegativeInteger"
+				},
+				"paymentType": {
+					"type": "string",
+					"enum": [
+						"1301",
+						"cash",
+						"1302",
+						"card",
+						"1303",
+						"account",
+						"1304",
+						"ticket",
+						"1305",
+						"document",
+						"1306",
+						"socialservicefee",
+						"1307",
+						"prepaidSocialfee",
+						"prepaidsocialfee",
+						"1308",
+						"claim",
+						"NoShow",
+						"providerCompensation"
+					]
+				},
+				"seqno": {
+					"$ref": "#/definitions/xs:positiveInteger"
+				},
+				"idCurrency": {
+					"$ref": "#/definitions/idCurrency",
+					"description": "Source (src)  shall refer to ISO 4217."
+				},
+				"idEkInfo": {
+					"$ref": "#/definitions/idList"
+				},
+				"idPayment": {
+					"$ref": "#/definitions/id",
+					"description": "Source (src) shall refer to the actual set of payment Identities used by the provider"
+				},
+				"vatAmountSpecification": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/vatAmountSpecification"
+					}
+				}
+			},
+			"required": [
+				"amount",
+				"paymentType"
+			],
+			"additionalProperties": false
+		},
+		"paymentList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/payment"
+			}
+		},
+		"period": {
+			"type": "object",
+			"properties": {
+				"weekType": {
+					"type": "string",
+					"enum": [
+						"all",
+						"odd",
+						"even"
+					]
+				},
+				"validFrom": {
+					"$ref": "#/definitions/xs:dateTime"
+				},
+				"validTo": {
+					"$ref": "#/definitions/xs:dateTime"
+				}
+			},
+			"additionalProperties": false
+		},
+		"position": {
+			"description": "The caracteristics of a seat position",
+			"type": "object",
+			"properties": {
+				"access": {
+					"$ref": "#/definitions/xs:nonNegativeInteger"
+				},
+				"direction": {
+					"type": "string",
+					"enum": [
+						"1201",
+						"forward",
+						"1202",
+						"backward"
+					]
+				},
+				"legSpace": {
+					"type": "string",
+					"enum": [
+						"1211",
+						"comfort",
+						"1212",
+						"normal",
+						"1213",
+						"poor"
+					]
+				},
+				"row": {
+					"$ref": "#/definitions/xs:positiveInteger"
+				},
+				"seat": {
+					"type": "string"
+				}
+			},
+			"additionalProperties": false
+		},
+		"price": {
+			"type": "object",
+			"properties": {
+				"fixedPrice": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"paymentType": {
+					"type": "string",
+					"enum": [
+						"1301",
+						"cash",
+						"1302",
+						"card",
+						"1303",
+						"account",
+						"1304",
+						"ticket",
+						"1305",
+						"document",
+						"1306",
+						"socialservicefee",
+						"1307",
+						"prepaidSocialfee",
+						"prepaidsocialfee",
+						"1308",
+						"claim",
+						"NoShow",
+						"providerCompensation"
+					]
+				},
+				"price": {
+					"$ref": "#/definitions/amount"
+				},
+				"priceResponsible": {
+					"type": "string",
+					"enum": [
+						"1411",
+						"client",
+						"1412",
+						"provider"
+					]
+				},
+				"priceCalculation": {
+					"$ref": "#/definitions/priceCalculation"
+				},
+				"taxiMeter": {
+					"$ref": "#/definitions/taxiMeter"
+				}
+			},
+			"required": [
+				"fixedPrice",
+				"priceResponsible"
+			],
+			"additionalProperties": false
+		},
+		"priceCalculation": {
+			"type": "object",
+			"properties": {
+				"formula": {
+					"type": "string",
+					"enum": [
+						"1401",
+						"breakpoint",
+						"1402",
+						"sumtariff"
+					]
+				},
+				"kmFee": {
+					"$ref": "#/definitions/xs:float"
+				},
+				"kmFeeDistance": {
+					"$ref": "#/definitions/xs:float"
+				},
+				"minuteFee": {
+					"$ref": "#/definitions/xs:float"
+				},
+				"minuteFeeTime": {
+					"$ref": "#/definitions/xs:float"
+				},
+				"startFee": {
+					"$ref": "#/definitions/xs:float"
+				},
+				"vatIncluded": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"vatPercent": {
+					"$ref": "#/definitions/xs:float"
+				},
+				"idCurrency": {
+					"$ref": "#/definitions/id",
+					"description": "Source (src) shall refer to ISO 4217."
+				}
+			},
+			"required": [
+				"formula",
+				"kmFee",
+				"minuteFee",
+				"startFee",
+				"vatIncluded",
+				"idCurrency"
+			],
+			"additionalProperties": false
+		},
+		"process": {
+			"type": "object",
+			"properties": {
+				"allowForward": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"allowRouting": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"automaticStatus": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"deliveryNote": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"dispatch": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"dispatchResponsible": {
+					"type": "string",
+					"enum": [
+						"client",
+						"provider"
+					]
+				},
+				"manualDispatch": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"orderAlteration": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"pickupconfirmation": {
+					"type": "string",
+					"enum": [
+						"notrequested",
+						"standard",
+						"extended"
+					]
+				},
+				"preeOrder": {
+					"type": "string"
+				},
+				"preorderedVehicle": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"report": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"statusDistance": {
+					"$ref": "#/definitions/xs:nonNegativeInteger"
+				},
+				"trafficControl": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"multiDispatch": {
+					"description": "The presence of this property incicates that the orde may be provisional and sent to more than one Provider",
+					"type": "boolean"
+				}
+			},
+			"required": [
+				"allowRouting",
+				"dispatchResponsible"
+			],
+			"additionalProperties": false
+		},
+		"product": {
+			"type": "object",
+			"properties": {
+				"nameProduct": {
+					"type": "string"
+				},
+				"idProduct": {
+					"$ref": "#/definitions/IdProduct"
+				}
+			},
+			"required": [
+				"idProduct"
+			],
+			"additionalProperties": false
+		},
+		"providerorderUpdate": {
+			"type": "object",
+			"properties": {
+				"updateType": {
+					"type": "string",
+					"enum": [
+						"timeUpdate",
+						"addressUpdate",
+						"contentUpdate",
+						"cancelation"
+					]
+				},
+				"nodeUpdated": {
+					"$ref": "#/definitions/node"
+				}
+			},
+			"additionalProperties": false
+		},
+		"ratingId": {
+			"type": "object",
+			"properties": {
+				"ratingValue": {
+					"$ref": "#/definitions/xs:decimal"
+				},
+				"ratingComment": {
+					"$ref": "#/definitions/manualDescription"
+				},
+				"idRating": {
+					"$ref": "#/definitions/id"
+				}
+			},
+			"required": [
+				"idRating"
+			],
+			"additionalProperties": false
+		},
+		"rating": {
+			"type": "object",
+			"properties": {
+				"valueCnt": {
+					"$ref": "#/definitions/xs:int"
+				},
+				"manualRatingCommon": {
+					"$ref": "#/definitions/manualDescription"
+				},
+				"ratingList": {
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"$ref": "#/definitions/ratingId"
+					}
+				},
+				"ratingTimeFrom": {
+					"$ref": "#/definitions/time"
+				},
+				"ratingTimeTo": {
+					"$ref": "#/definitions/time"
+				}
+			},
+			"required": [
+				"ratingList"
+			],
+			"additionalProperties": false
+		},
+		"ratingList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/rating"
+			}
+		},
+		"referencesTo": {
+			"$ref": "#/definitions/idObjectList"
+		},
+		"requestContentType": {
+			"type": "object",
+			"properties": {
+				"requestContent": {
+					"$ref": "#/definitions/id",
+					"description": "personal id or corresponding parcelid"
+				},
+				"requestCustomer": {
+					"$ref": "#/definitions/id",
+					"description": "CustomerID for a specific customer or a 0 for All customers "
+				},
+				"requestOrg": {
+					"$ref": "#/definitions/organization",
+					"description": "The element describes identification and payment elements for one and only one organizational unit."
+				},
+				"requestPrice": {
+					"$ref": "#/definitions/order"
+				},
+				"requestVehicle": {
+					"$ref": "#/definitions/vehicle",
+					"description": "Source (src) shall refer to the whole fleet of the provider och a uniquely defined group of the providers fleet."
+				}
+			},
+			"additionalProperties": false
+		},
+		"resource": {
+			"type": "object",
+			"properties": {
+				"MethodDispatch": {
+					"type": "string",
+					"enum": [
+						"normal",
+						"change",
+						"preedispatched"
+					]
+				},
+				"driver": {
+					"$ref": "#/definitions/driver",
+					"description": "Describes the demands of the driver that vill perform this node"
+				},
+				"idOrg": {
+					"$ref": "#/definitions/id",
+					"description": "Id of a organisation acting as sub provider to the provider. "
+				},
+				"manualDescriptionResource": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/manualDescription"
+					}
+				},
+				"resourceTime": {
+					"$ref": "#/definitions/timeList"
+				},
+				"resourceValidation": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/validation"
+					}
+				},
+				"vehicle": {
+					"$ref": "#/definitions/vehicle"
+				},
+				"vehiclestartLocation": {
+					"$ref": "#/definitions/geographicLocation",
+					"description": "client may order vehicle to be dispatched from this area"
+				}
+			},
+			"additionalProperties": false
+		},
+		"resourceAllocation": {
+			"type": "object",
+			"properties": {
+				"resourceCapacity": {
+					"$ref": "#/definitions/resource"
+				},
+				"resourceAddress": {
+					"$ref": "#/definitions/address"
+				},
+				"resourceStartTime": {
+					"$ref": "#/definitions/time"
+				},
+				"resourceEndTime": {
+					"$ref": "#/definitions/time"
+				},
+				"resourceIdOrder": {
+					"$ref": "#/definitions/IdOrder"
+				}
+			},
+			"additionalProperties": false
+		},
+		"resourceReservation": {
+			"type": "object",
+			"properties": {
+				"addressRequest": {
+					"$ref": "#/definitions/address",
+					"description": "Requested address"
+				},
+				"missionbeginTime": {
+					"$ref": "#/definitions/timeList",
+					"description": "The time the requested resource has to be att the startingpoint of the mission."
+				},
+				"missionendTime": {
+					"$ref": "#/definitions/timeList",
+					"description": "The time that the mission is estimated to end."
+				},
+				"resourceRequest": {
+					"$ref": "#/definitions/resource",
+					"description": "Requested resources"
+				}
+			},
+			"required": [
+				"missionbeginTime"
+			],
+			"additionalProperties": false
+		},
+		"restriction": {
+			"type": "object",
+			"properties": {
+				"distance": {
+					"$ref": "#/definitions/xs:integer"
+				},
+				"adressRestrictions": {
+					"type": "object",
+					"properties": {
+						"addressArray": {
+							"type": "array",
+							"minItems": 1,
+							"items": {
+								"$ref": "#/definitions/address"
+							}
+						}
+					},
+					"required": [
+						"addressArray"
+					],
+					"additionalProperties": false
+				},
+				"priceRestriction": {
+					"$ref": "#/definitions/price"
+				}
+			},
+			"required": [
+				"priceRestriction"
+			],
+			"additionalProperties": false
+		},
+		"route": {
+			"type": "object",
+			"properties": {
+				"nodeList": {
+					"$ref": "#/definitions/nodeList"
+				}
+			},
+			"additionalProperties": false
+		},
+		"scheduleElement": {
+			"type": "object",
+			"properties": {
+				"scheduleElementFunction": {
+					"type": "string",
+					"enum": [
+						"Insert",
+						"Delete",
+						"Update"
+					]
+				},
+				"scheduleElementSequenceNbr": {
+					"$ref": "#/definitions/xs:integer"
+				},
+				"scheduleElementDate": {
+					"$ref": "#/definitions/date"
+				},
+				"scheduleElementReferencesTo": {
+					"$ref": "#/definitions/referencesTo"
+				},
+				"scheduleElementRoute": {
+					"$ref": "#/definitions/route"
+				},
+				"scheduleElementWeekdays": {
+					"$ref": "#/definitions/weekdays"
+				}
+			},
+			"additionalProperties": false
+		},
+		"scheduleElementList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/scheduleElement"
+			}
+		},
+		"scheduleElementOrder": {
+			"type": "object",
+			"properties": {
+				"orderListClosed": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"scheduleElementOrderReferencesTo": {
+					"$ref": "#/definitions/referencesTo"
+				},
+				"scheduledElementOrderDate": {
+					"$ref": "#/definitions/date"
+				}
+			},
+			"required": [
+				"scheduledElementOrderDate"
+			],
+			"additionalProperties": false
+		},
+		"scheduleElementOrderList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/scheduleElementOrder"
+			}
+		},
+		"seats": {
+			"type": "object",
+			"properties": {
+				"noOfItems": {
+					"$ref": "#/definitions/xs:nonNegativeInteger"
+				},
+				"noOfSeats": {
+					"$ref": "#/definitions/xs:nonNegativeInteger"
+				},
+				"noOfSeatsMax": {
+					"$ref": "#/definitions/xs:nonNegativeInteger"
+				},
+				"position": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/position",
+						"description": "position are used to dedicate a seat for a traveller. Further information in latest version of UC 3_1_3"
+					}
+				}
+			},
+			"required": [
+				"noOfSeats"
+			],
+			"additionalProperties": false
+		},
+		"sessionNode": {
+			"type": "object",
+			"properties": {
+				"idOrderList": {
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"$ref": "#/definitions/id",
+						"description": "Provider and/or Client order ids"
+					}
+				},
+				"node": {
+					"$ref": "#/definitions/node"
+				}
+			},
+			"required": [
+				"idOrderList",
+				"node"
+			],
+			"additionalProperties": false
+		},
+		"sessionNodeList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/sessionNode"
+			}
+		},
+		"subOrder": {
+			"type": "object",
+			"properties": {
+				"idOrderList": {
+					"$ref": "#/definitions/idList"
+				}
+			},
+			"required": [
+				"idOrderList"
+			],
+			"additionalProperties": false
+		},
+		"suborderTour": {
+			"type": "object",
+			"properties": {
+				"economyReportSuborder": {
+					"$ref": "#/definitions/economyReport"
+				},
+				"eventListSuborderTour": {
+					"$ref": "#/definitions/eventList"
+				},
+				"idSuborderClient": {
+					"$ref": "#/definitions/IdOrder"
+				},
+				"idSuborderProvider": {
+					"$ref": "#/definitions/IdOrder"
+				},
+				"summaryReportSuborder": {
+					"$ref": "#/definitions/summaryReport"
+				}
+			},
+			"additionalProperties": false
+		},
+		"summaryReport": {
+			"type": "object",
+			"properties": {
+				"distanceStart": {
+					"$ref": "#/definitions/xs:integer"
+				},
+				"durationStart": {
+					"$ref": "#/definitions/xs:integer"
+				},
+				"orderEnded": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"idListVehicle": {
+					"$ref": "#/definitions/idList"
+				},
+				"subOrderSummary": {
+					"$ref": "#/definitions/subOrder"
+				}
+			},
+			"additionalProperties": false
+		},
+		"summaryReportList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/summaryReport"
+			}
+		},
+		"taxiMeter": {
+			"type": "object",
+			"properties": {
+				"activate": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"idTaxa": {
+					"$ref": "#/definitions/idTaxa",
+					"description": "Source (src) shall refer to the used tariff of the provider."
+				}
+			},
+			"required": [
+				"activate",
+				"idTaxa"
+			],
+			"additionalProperties": false
+		},
+		"time": {
+			"description": "Should normally be the local time.",
+			"type": "object",
+			"properties": {
+				"dwellTime": {
+					"$ref": "#/definitions/xs:int"
+				},
+				"time": {
+					"$ref": "#/definitions/xs:dateTime"
+				},
+				"timeAccuracy": {
+					"type": "string"
+				},
+				"timeType": {
+					"type": "string",
+					"enum": [
+						"2101",
+						"scheduledtime",
+						"2102",
+						"estimatedtime",
+						"2103",
+						"promisedtime",
+						"2104",
+						"actual",
+						"2105",
+						"scheduled",
+						"2107",
+						"estimated",
+						"2106",
+						"promised",
+						"2108",
+						"asap",
+						"estimatedEndtime",
+						"estimatedStarttime"
+					]
+				},
+				"timeZone": {
+					"$ref": "#/definitions/xs:integer"
+				}
+			},
+			"required": [
+				"time"
+			],
+			"additionalProperties": false
+		},
+		"timeList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/time"
+			}
+		},
+		"tour": {
+			"type": "object",
+			"properties": {
+				"calculationsTour": {
+					"$ref": "#/definitions/calculationFareList"
+				},
+				"economyReportsTour": {
+					"$ref": "#/definitions/economyReportList"
+				},
+				"eventsTour": {
+					"type": "array",
+					"items": {
+						"description": "This is the element to place events that is not connected to a specific content (suborder). ",
+						"type": "object",
+						"properties": {
+							"eventVehicle": {
+								"type": "string",
+								"enum": [
+									"1711",
+									"dispatchconfirmationsent",
+									"1714",
+									"start",
+									"1715",
+									"stop",
+									"1716",
+									"acceptOrder"
+								]
+							},
+							"eventTourTime": {
+								"$ref": "#/definitions/time"
+							},
+							"tourGeographicLocation": {
+								"$ref": "#/definitions/geographicLocation"
+							}
+						},
+						"required": [
+							"eventVehicle"
+						],
+						"additionalProperties": false
+					}
+				},
+				"referencesToTour": {
+					"$ref": "#/definitions/referencesTo"
+				},
+				"resourceTour": {
+					"$ref": "#/definitions/resource"
+				},
+				"statusTour": {
+					"type": "object",
+					"properties": {
+						"idActivity": {
+							"$ref": "#/definitions/idActivity",
+							"description": "Indicates request for payment, accept payment, review payment etc"
+						},
+						"manualDescriptionStatus": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/manualDescription"
+							}
+						},
+						"statusTourErrors": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/errorType"
+							}
+						}
+					},
+					"required": [
+						"idActivity"
+					],
+					"additionalProperties": false
+				},
+				"suborderTourList": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/suborderTour"
+					}
+				},
+				"summaryReportTour": {
+					"$ref": "#/definitions/summaryReport"
+				}
+			},
+			"required": [
+				"referencesToTour",
+				"statusTour"
+			],
+			"additionalProperties": false
+		},
+		"tourList": {
+			"type": "array",
+			"items": {
+				"$ref": "#/definitions/tour"
+			}
+		},
+		"url": {
+			"type": "string"
+		},
+		"validation": {
+			"type": "object",
+			"properties": {
+				"validationMethod": {
+					"type": "string",
+					"enum": [
+						"manual",
+						"card",
+						"system"
+					]
+				},
+				"validationType": {
+					"type": "string",
+					"enum": [
+						"logindriver",
+						"bky",
+						"taxidriverlicense"
+					]
+				},
+				"validationDescription": {
+					"$ref": "#/definitions/manualDescription"
+				},
+				"validationTime": {
+					"$ref": "#/definitions/timeList"
+				}
+			},
+			"additionalProperties": false
+		},
+		"vatAmountSpecification": {
+			"type": "object",
+			"properties": {
+				"detailedVatAmount": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/amountType",
+						"description": "Do not use until further notece!!"
+					}
+				},
+				"totalVatAmount": {
+					"$ref": "#/definitions/amountType"
+				}
+			},
+			"required": [
+				"totalVatAmount"
+			],
+			"additionalProperties": false
+		},
+		"vehicle": {
+			"type": "object",
+			"properties": {
+				"noOfVehicle": {
+					"$ref": "#/definitions/xs:positiveInteger"
+				},
+				"taximeterSoftware": {
+					"type": "string"
+				},
+				"taximeterType": {
+					"type": "string"
+				},
+				"vehicleLink": {
+					"$ref": "#/definitions/url"
+				},
+				"attributeListVehicle": {
+					"$ref": "#/definitions/attributeList"
+				},
+				"capacity": {
+					"$ref": "#/definitions/capacity"
+				},
+				"contactInfoListVehicle": {
+					"$ref": "#/definitions/contactInfoList"
+				},
+				"environmentalinfoVehicle": {
+					"$ref": "#/definitions/environmentalInformation"
+				},
+				"idVehicleList": {
+					"$ref": "#/definitions/idList"
+				},
+				"ratingVehicle": {
+					"$ref": "#/definitions/rating"
+				},
+				"vehicleCurrentLocation": {
+					"$ref": "#/definitions/geographicLocation",
+					"description": "Used then the client wants to specify the restrictions or trhe requirements of the vehicle position nescesary for an order.\n\nIts also possible for the provider to specify the current location of the vehicle at the acceptanse of an order or proposal for an order."
+				}
+			},
+			"additionalProperties": false
+		},
+		"vehicleDistance": {
+			"type": "object",
+			"properties": {
+				"range": {
+					"$ref": "#/definitions/xs:int"
+				},
+				"rangeUnit": {
+					"type": "string",
+					"enum": [
+						"meter",
+						"seconds"
+					]
+				},
+				"startTime": {
+					"$ref": "#/definitions/timeList",
+					"description": "The time period to propose car starts"
+				},
+				"stopTime": {
+					"$ref": "#/definitions/timeList",
+					"description": "The time period to propose car stops"
+				}
+			},
+			"required": [
+				"startTime",
+				"stopTime"
+			],
+			"additionalProperties": false
+		},
+		"vehicleLocation": {
+			"type": "object",
+			"properties": {
+				"geographicLocation": {
+					"$ref": "#/definitions/geographicLocation",
+					"description": "Vehicle geographic location"
+				},
+				"idListVehicle": {
+					"$ref": "#/definitions/idList"
+				},
+				"time": {
+					"$ref": "#/definitions/time",
+					"description": "Time when location data was sampled"
+				}
+			},
+			"required": [
+				"geographicLocation",
+				"idListVehicle",
+				"time"
+			],
+			"additionalProperties": false
+		},
+		"vehicleBulkLocation": {
+			"type": "object",
+			"properties": {
+				"vehicleIdProvider": {
+					"type": "string"
+				},
+				"time": {
+					"$ref": "#/definitions/xs:dateTime"
+				},
+				"status": {
+					"type": "string"
+				},
+				"lat": {
+					"$ref": "#/definitions/xs:decimal"
+				},
+				"lon": {
+					"$ref": "#/definitions/xs:decimal"
+				},
+				"direction": {
+					"$ref": "#/definitions/xs:integer"
+				},
+				"speed": {
+					"$ref": "#/definitions/xs:integer"
+				}
+			},
+			"required": [
+				"vehicleIdProvider",
+				"time",
+				"status",
+				"lat",
+				"lon"
+			],
+			"additionalProperties": false
+		},
+		"weekdays": {
+			"type": "object",
+			"properties": {
+				"friday": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"monday": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"saturday": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"sunday": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"thursday": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"tuesday": {
+					"$ref": "#/definitions/xs:boolean"
+				},
+				"wednesday": {
+					"$ref": "#/definitions/xs:boolean"
+				}
+			},
+			"additionalProperties": false
+		}
+	}
+}
