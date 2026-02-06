@@ -2,25 +2,25 @@
 <SUTI
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
-  <orgSender name="PASS">
-    <idOrg src="SUTI:idlink" id="trapeze_pass_0001" unique="true" />
+  <orgSender name="Client name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
   </orgSender>
-  <orgReceiver name="HDCOM">
-    <idOrg src="SUTI:idlink" id="holmedal_hdcom_0001" unique="true" />
+  <orgReceiver name="Provider name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
   </orgReceiver>
   <msg msgType="2000" msgName="Order">
-    <idMsg src="trapeze_pass_0001:idMsg" id="2015121809865469" unique="true" />
+    <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2015121809865469" unique="true" />
     <order>
-      <idOrder src="trapeze_pass_0001:idOrder" id="11183742" unique="true" />
+      <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idOrder" id="11183742" unique="true" />
       <agreement>
-        <idAgreement src="trapeze_pass_0001:idAgreement" id="123456" />
+        <idAgreement src="systemsupplierId_clientOwnerId_uniqueId:idAgreement" id="123456" />
       </agreement>
       <process allowRouting="false" trafficControl="true" pickupconfirmation="standard"
         orderAlteration="false" dispatchResponsible="provider" report="false"
         preorderedVehicle="false" dispatch="true" manualDispatch="false" />
       <resourceOrder>
         <vehicle>
-          <idVehicle src="trapeze_pass_0001:idVehicle" id="51006P" />
+          <idVehicle src="systemsupplierId_clientOwnerId_uniqueId:idVehicle" id="51006P" />
         </vehicle>
       </resourceOrder>
       <route>
@@ -36,7 +36,7 @@
           </timesNode>
           <contents>
             <content contentType="traveller" name="John Doe">
-              <idContent src="trapeze_pass_0001:ContentId" id="5319397" unique="true" />
+              <idContent src="systemsupplierId_clientOwnerId_uniqueId:ContentId" id="5319397" unique="true" />
               <attributeContent>
                 <attribute>
                   <idAttribute src="SUTI:idAttribute" id="2313" unique="true" />
@@ -70,7 +70,7 @@
                 <contactInfo contactType="phone" contactInfo="0431-74700" />
               </contactInfosContent>
               <subOrderContent>
-                <idOrder src="trapeze_pass_0001:idSubOrder" id="11183750" unique="true" />
+                <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idSubOrder" id="11183750" unique="true" />
               </subOrderContent>
             </content>
           </contents>
@@ -87,7 +87,7 @@
           </timesNode>
           <contents>
             <content contentType="traveller" name="John Doe">
-              <idContent src="trapeze_pass_0001:ContentId" id="5319397" unique="true" />
+              <idContent src="systemsupplierId_clientOwnerId_uniqueId:ContentId" id="5319397" unique="true" />
               <attributeContent>
                 <attribute>
                   <idAttribute src="SUTI:idLink" id="1001" unique="true" />
@@ -99,7 +99,7 @@
                 </formOfPayment>
               </economyContent>
               <subOrderContent>
-                <idOrder src="trapeze_pass_0001:idSubOrder" id="11183750" unique="true" />
+                <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idSubOrder" id="11183750" unique="true" />
               </subOrderContent>
             </content>
           </contents>
@@ -127,7 +127,7 @@
           </timesNode>
           <contents>
             <content contentType="traveller" name="Jane Doe">
-              <idContent src="trapeze_pass_0001:ContentId" id="446699" unique="true" />
+              <idContent src="systemsupplierId_clientOwnerId_uniqueId:ContentId" id="446699" unique="true" />
               <economyContent>
                 <formOfPayment>
                   <payment amount="0" paymentType="prepaidsocialfee" />
@@ -156,7 +156,7 @@
                 <contactInfo contactType="phone" contactInfo="0431-74700" />
               </contactInfosContent>
               <subOrderContent>
-                <idOrder src="trapeze_pass_0001:idSubOrder" id="11183751" unique="true" />
+                <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idSubOrder" id="11183751" unique="true" />
               </subOrderContent>
             </content>
           </contents>
@@ -173,14 +173,14 @@
           </timesNode>
           <contents>
             <content contentType="traveller" name="Jane Doe">
-              <idContent src="trapeze_pass_0001:ContentId" id="446699" unique="true" />
+              <idContent src="systemsupplierId_clientOwnerId_uniqueId:ContentId" id="446699" unique="true" />
               <economyContent>
                 <formOfPayment>
                   <payment amount="0" paymentType="prepaidsocialfee" />
                 </formOfPayment>
               </economyContent>
               <subOrderContent>
-                <idOrder src="trapeze_pass_0001:idSubOrder" id="11183751" unique="true" />
+                <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idSubOrder" id="11183751" unique="true" />
               </subOrderContent>
             </content>
           </contents>
