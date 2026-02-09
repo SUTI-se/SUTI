@@ -1,0 +1,59 @@
+{
+  "msg": {
+    "msgType": "2002",
+    "msgTimeStamp": "2019-12-18T10:39:00.000Z",
+    "orgSender": {
+      "name": "ThisProvider",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemprov_provsite_0001",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "ThisClient",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemclient_clientsite_0009",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemprov_provsite_0001:MSGID",
+      "id": "2019121812345678",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemclient_clientsite_0009:MSGID",
+          "id": "2019121887654321",
+          "unique": true
+        }
+      },
+      {
+        "idOrder": {
+          "src": "systemprov_provsite_0001:idOrder",
+          "id": "3640266-0",
+          "unique": true
+        }
+      },
+      {
+        "idOrder": {
+          "src": "systemclient_clientsite_0009:idOrder",
+          "id": "11183742",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "orderReject": {
+    "attributesReject": [
+      {
+        "src": "SUTI:idLink",
+        "id": "1628",
+        "unique": true
+      }
+    ]
+  }
+}

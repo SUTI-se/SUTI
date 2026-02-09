@@ -1,0 +1,185 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suti.se/schema/legacy/SUTI_BulkLocation.schema.json",
+  "title": "SUTI BulkLocation Legacy Schema",
+  "description": "Backward-compatible schema for bulkLocation messages (1100, 1111, 1112) using the 2021 wrapper format. DEPRECATED: Migrate to SUTI_Message.schema.json by 2027-06-30.",
+
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "SUTI_1100_bulkLocationRequest": {
+          "$ref": "#/$defs/msgBulkLocationRequest"
+        }
+      },
+      "required": ["SUTI_1100_bulkLocationRequest"],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "SUTI_1111_bulkLocationResponse": {
+          "$ref": "#/$defs/msgBulkLocationList"
+        }
+      },
+      "required": ["SUTI_1111_bulkLocationResponse"],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "SUTI_1112_bulkLocationResponse": {
+          "$ref": "#/$defs/msgBulkLocationList"
+        }
+      },
+      "required": ["SUTI_1112_bulkLocationResponse"],
+      "additionalProperties": false
+    }
+  ],
+
+  "$defs": {
+    "msgBulkLocationRequest": {
+      "type": "object",
+      "properties": {
+        "msg": { "$ref": "#/$defs/msg" },
+        "bulkLocationRequest": { "$ref": "#/$defs/bulkLocationRequest" }
+      },
+      "required": ["msg", "bulkLocationRequest"],
+      "additionalProperties": false
+    },
+
+    "msgBulkLocationList": {
+      "type": "object",
+      "properties": {
+        "msg": { "$ref": "#/$defs/msg" },
+        "bulkLocationList": { "$ref": "#/$defs/bulkLocationList" }
+      },
+      "required": ["msg", "bulkLocationList"],
+      "additionalProperties": false
+    },
+
+    "msg": {
+      "type": "object",
+      "description": "Message header (legacy format)",
+      "properties": {
+        "msgType": {
+          "type": "string",
+          "enum": ["1100", "1111", "1112"]
+        },
+        "msgTimeStamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "infoTimeStamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "orgSender": { "$ref": "#/$defs/org" },
+        "orgReceiver": { "$ref": "#/$defs/org" },
+        "idMsg": { "$ref": "#/$defs/id" },
+        "referencesTo": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/referenceToMsg" }
+        }
+      },
+      "required": ["msgType", "orgSender", "orgReceiver", "idMsg"]
+    },
+
+    "id": {
+      "type": "object",
+      "properties": {
+        "src": { "type": "string" },
+        "id": { "type": "string" },
+        "unique": { "type": "boolean" }
+      },
+      "required": ["src", "id"]
+    },
+
+    "org": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "idOrg": { "$ref": "#/$defs/id" }
+      },
+      "required": ["name", "idOrg"]
+    },
+
+    "referenceToMsg": {
+      "type": "object",
+      "properties": {
+        "idMsg": { "$ref": "#/$defs/id" }
+      }
+    },
+
+    "bulkLocationRequest": {
+      "type": "object",
+      "properties": {
+        "locationListType": { "type": "string" },
+        "statusBreak": { "type": "boolean" },
+        "statusFree": { "type": "boolean" },
+        "statusNotinuse": { "type": "boolean" },
+        "statusOccupied": { "type": "boolean" },
+        "bulkIntervalRequest": { "$ref": "#/$defs/locationRequest" },
+        "bulkLocationAgreement": { "$ref": "#/$defs/agreement" },
+        "locationResource": { "$ref": "#/$defs/resource" }
+      },
+      "additionalProperties": false
+    },
+
+    "bulkLocationList": {
+      "type": "object",
+      "properties": {
+        "isComplete": { "type": "boolean" },
+        "locationListType": { "type": "integer" },
+        "msgSeqNo": { "type": "integer" },
+        "msgCount": { "type": "integer" },
+        "locationList": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/vehicleLocation" }
+        }
+      },
+      "required": ["locationList"],
+      "additionalProperties": false
+    },
+
+    "vehicleLocation": {
+      "type": "object",
+      "properties": {
+        "vehicleIdProvider": { "type": "string" },
+        "time": { "type": "string", "format": "date-time" },
+        "status": {
+          "type": "string",
+          "enum": ["O", "F", "B", "N"]
+        },
+        "lat": { "type": "number" },
+        "lon": { "type": "number" },
+        "speed": { "type": "number" },
+        "direction": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+
+    "locationRequest": {
+      "type": "object",
+      "properties": {
+        "intervalSeconds": { "type": "integer" }
+      }
+    },
+
+    "agreement": {
+      "type": "object",
+      "properties": {
+        "nameAgreement": { "type": "string" },
+        "idAgreement": { "$ref": "#/$defs/id" }
+      }
+    },
+
+    "resource": {
+      "type": "object",
+      "properties": {
+        "idVehicle": { "$ref": "#/$defs/id" },
+        "idDriver": { "$ref": "#/$defs/id" }
+      }
+    }
+  }
+}

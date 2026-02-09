@@ -1,0 +1,1243 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://suti.se/schema/SUTI_Message.schema.json",
+  "title": "SUTI Message Schema",
+  "description": "JSON Schema for SUTI (Standardized Utilization of Transport Information) messages. Version 2026 draft.",
+  "type": "object",
+  "properties": {
+    "msg": { "$ref": "#/$defs/msg" }
+  },
+  "required": ["msg"],
+
+  "allOf": [
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "1000" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "resourceReservation": { "$ref": "#/$defs/resourceReservation" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "1061" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "ratings": { "$ref": "#/$defs/ratingList" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "1100" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "bulkLocationRequest": { "$ref": "#/$defs/bulkLocationRequest" }
+        },
+        "required": ["msg", "bulkLocationRequest"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "enum": ["1111", "1112"] } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "bulkLocationList": { "$ref": "#/$defs/bulkLocationList" }
+        },
+        "required": ["msg", "bulkLocationList"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "1500" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "infoRequest": { "$ref": "#/$defs/infoRequest" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "1600" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "infoResponse": { "$ref": "#/$defs/infoResponse" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "1920" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "resourceAllocation": { "$ref": "#/$defs/resourceAllocation" }
+        },
+        "required": ["msg", "resourceAllocation"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "2000" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "order": { "$ref": "#/$defs/order" }
+        },
+        "required": ["msg", "order"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "2001" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": { "msg": true },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "2002" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "orderReject": { "$ref": "#/$defs/orderReject" }
+        },
+        "required": ["msg", "orderReject"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "2012" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "cancellationConsequence": { "$ref": "#/$defs/cancellationConsequence" }
+        },
+        "required": ["msg", "cancellationConsequence"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "2020" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "nodeCancellation": { "$ref": "#/$defs/nodeCancellation" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "2030" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "orderForward": { "$ref": "#/$defs/orderForward" }
+        },
+        "required": ["msg", "orderForward"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "enum": ["2040", "2100", "2101"] } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "driverSession": { "$ref": "#/$defs/driverSession" }
+        },
+        "required": ["msg", "driverSession"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "2060" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "providerOrderUpdate": { "$ref": "#/$defs/providerOrderUpdate" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "2102" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "driverSessionReject": { "$ref": "#/$defs/driverSessionReject" }
+        },
+        "required": ["msg", "driverSessionReject"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "2800" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "orderTemplate": { "$ref": "#/$defs/orderTemplate" }
+        },
+        "required": ["msg", "orderTemplate"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "2810" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "scheduleElementOrderList": { "$ref": "#/$defs/scheduleElementOrderList" }
+        },
+        "required": ["msg", "scheduleElementOrderList"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "enum": ["2901", "3003", "4000"] } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "resource": { "$ref": "#/$defs/resource" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "4001" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "order": { "$ref": "#/$defs/order" }
+        },
+        "required": ["msg", "order"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "4010" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "event": { "$ref": "#/$defs/event" }
+        },
+        "required": ["msg", "event"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "4100" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "actionRequest": { "$ref": "#/$defs/actionRequest" }
+        },
+        "required": ["msg", "actionRequest"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "5000" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "messageTo": { "$ref": "#/$defs/messageTo" }
+        },
+        "required": ["msg", "messageTo"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "5020" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "locationRequest": { "$ref": "#/$defs/locationRequest" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "5021" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "geographicLocation": { "$ref": "#/$defs/geographicLocation" }
+        },
+        "required": ["msg", "geographicLocation"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "6001" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "orderReport": { "$ref": "#/$defs/orderReport" }
+        },
+        "required": ["msg", "orderReport"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "6500" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "deliveryNote": { "$ref": "#/$defs/deliveryNote" }
+        },
+        "required": ["msg", "deliveryNote"],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "enum": ["7000", "7001"] } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": { "msg": true },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "const": "8000" } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "accounting": { "$ref": "#/$defs/accounting" }
+        },
+        "required": ["msg", "accounting"],
+        "unevaluatedProperties": false
+      }
+    }
+  ],
+
+  "$defs": {
+    "msg": {
+      "type": "object",
+      "description": "Common message header for all SUTI messages",
+      "properties": {
+        "msgType": {
+          "type": "string",
+          "description": "Message type code (4 digits)",
+          "pattern": "^[1-8][0-9]{3}$"
+        },
+        "msgTimeStamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the message was created"
+        },
+        "infoTimeStamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp of the information content"
+        },
+        "orgSender": {
+          "$ref": "#/$defs/org",
+          "description": "Sending organization"
+        },
+        "orgReceiver": {
+          "$ref": "#/$defs/org",
+          "description": "Receiving organization"
+        },
+        "idMsg": {
+          "$ref": "#/$defs/id",
+          "description": "Unique message identifier"
+        },
+        "referencesTo": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/referenceToMsg" },
+          "description": "References to related messages"
+        },
+        "idVersion": {
+          "$ref": "#/$defs/id",
+          "description": "Schema version identifier"
+        }
+      },
+      "required": ["msgType", "orgSender", "orgReceiver", "idMsg"]
+    },
+
+    "id": {
+      "type": "object",
+      "description": "Generic identifier with source and value",
+      "properties": {
+        "src": {
+          "type": "string",
+          "description": "Source/namespace of the identifier"
+        },
+        "id": {
+          "type": "string",
+          "description": "The identifier value"
+        },
+        "unique": {
+          "type": "boolean",
+          "description": "Whether this identifier is globally unique"
+        }
+      },
+      "required": ["src", "id"]
+    },
+
+    "org": {
+      "type": "object",
+      "description": "Organization identifier",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Organization name"
+        },
+        "idOrg": {
+          "$ref": "#/$defs/id",
+          "description": "Organization identifier"
+        }
+      },
+      "required": ["name", "idOrg"]
+    },
+
+    "referenceToMsg": {
+      "type": "object",
+      "description": "Reference to another message",
+      "properties": {
+        "idMsg": { "$ref": "#/$defs/id" },
+        "idOrder": { "$ref": "#/$defs/id" },
+        "idNode": { "$ref": "#/$defs/id" }
+      }
+    },
+
+    "address": {
+      "type": "object",
+      "description": "Physical address",
+      "properties": {
+        "addressName": { "type": "string" },
+        "street": { "type": "string" },
+        "streetNo": { "type": "integer", "minimum": 1 },
+        "streetNoLetter": { "type": "string" },
+        "postalNo": { "type": "string" },
+        "community": { "type": "string" },
+        "country": { "type": "string" },
+        "location": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "geographicLocation": { "$ref": "#/$defs/geographicLocation" },
+        "idAddressName": { "$ref": "#/$defs/id" },
+        "idCommunity": { "$ref": "#/$defs/id" },
+        "idCountry": { "$ref": "#/$defs/id" },
+        "idPostalCode": { "$ref": "#/$defs/id" },
+        "idStreet": { "$ref": "#/$defs/id" },
+        "idZone": { "$ref": "#/$defs/id" },
+        "manualDescriptions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/manualDescription" }
+        }
+      }
+    },
+
+    "geographicLocation": {
+      "type": "object",
+      "description": "Geographic coordinates",
+      "properties": {
+        "typeOfCoordinate": {
+          "type": "string",
+          "enum": ["WGS-84", "RT90", "SWEREF99"],
+          "default": "WGS-84"
+        },
+        "lat": { "type": "number", "description": "Latitude" },
+        "lon": { "type": "number", "description": "Longitude" },
+        "precision": { "type": "integer", "description": "Coordinate precision in meters" }
+      },
+      "required": ["lat", "lon"]
+    },
+
+    "order": {
+      "type": "object",
+      "description": "Transport order",
+      "properties": {
+        "idOrder": {
+          "$ref": "#/$defs/id",
+          "description": "Order identifier from the client"
+        },
+        "orderStatus": { "$ref": "#/$defs/orderStatus" },
+        "agreement": { "$ref": "#/$defs/agreement" },
+        "economyOrder": { "$ref": "#/$defs/economy" },
+        "orgProvider": { "$ref": "#/$defs/org" },
+        "process": { "$ref": "#/$defs/process" },
+        "resourceOrder": { "$ref": "#/$defs/resource" },
+        "route": { "$ref": "#/$defs/route" }
+      },
+      "required": ["idOrder"]
+    },
+
+    "orderStatus": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["none", "started", "completed", "noShow", "confirmed", "dispatching", "dispatched", "cancelled"]
+        }
+      },
+      "required": ["status"]
+    },
+
+    "route": {
+      "type": "object",
+      "description": "Route with nodes",
+      "properties": {
+        "nodes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/node" }
+        }
+      }
+    },
+
+    "node": {
+      "type": "object",
+      "description": "A point in a route (pickup, destination, etc.)",
+      "properties": {
+        "nodeSeqNo": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Sequence number of the node"
+        },
+        "nodeType": {
+          "type": "string",
+          "enum": ["action", "navigation", "pickup", "destination"],
+          "description": "Type of node"
+        },
+        "subnodeType": {
+          "type": "string",
+          "enum": [
+            "break", "driverAssist", "mobAidPickup", "mobAidDropoff",
+            "ferryDeparture", "ferryArrival", "waitForInstructions",
+            "flagStop", "refuel", "pullIn", "pullOut"
+          ]
+        },
+        "addressNode": { "$ref": "#/$defs/address" },
+        "contents": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/content" }
+        },
+        "nodeProcess": { "$ref": "#/$defs/nodeProcess" },
+        "times": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/time" }
+        }
+      },
+      "required": ["nodeSeqNo", "nodeType"]
+    },
+
+    "nodeProcess": {
+      "type": "object",
+      "properties": {
+        "sendInformationArrival": {
+          "type": "string",
+          "enum": ["alwaysSend", "neverSend", "allowSend"]
+        },
+        "sendInformationDelay": {
+          "type": "string",
+          "enum": ["alwaysSend", "neverSend", "allowSend"]
+        },
+        "sendInformationDispatch": {
+          "type": "string",
+          "enum": ["alwaysSend", "neverSend", "allowSend"]
+        },
+        "sendInformationContent": { "$ref": "#/$defs/contactInfo" }
+      }
+    },
+
+    "content": {
+      "type": "object",
+      "description": "Passenger or goods content",
+      "properties": {
+        "contentType": {
+          "type": "string",
+          "enum": ["traveller", "parcel", "goods"]
+        },
+        "contentSeqNo": { "type": "integer", "minimum": 1 },
+        "idContent": { "$ref": "#/$defs/id" },
+        "nameContent": { "type": "string" },
+        "contacts": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/contactInfo" }
+        },
+        "mobilityAids": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/mobilityAid" }
+        }
+      }
+    },
+
+    "contactInfo": {
+      "type": "object",
+      "properties": {
+        "contactType": {
+          "type": "string",
+          "enum": ["phone", "mobile", "email", "sms", "fax"]
+        },
+        "contactInfo": { "type": "string" }
+      }
+    },
+
+    "mobilityAid": {
+      "type": "object",
+      "properties": {
+        "mobilityAidType": {
+          "type": "string",
+          "enum": [
+            "wheelchair", "electricWheelchair", "rollator", "cane",
+            "crutches", "walkingFrame", "visualAid", "hearingAid",
+            "stretcher", "childSeat", "babyCarriage"
+          ]
+        },
+        "quantity": { "type": "integer", "minimum": 1 }
+      }
+    },
+
+    "event": {
+      "type": "object",
+      "description": "Traffic event (pickup confirmation, etc.)",
+      "properties": {
+        "eventType": {
+          "type": "string",
+          "enum": [
+            "acceptOrder", "start", "stop", "pickup", "destination",
+            "navigation", "action", "passengerInVehicle", "passengerDropped",
+            "noShow", "parcelInVehicle", "parcelDropped", "actionDone",
+            "navigationDone", "cancelAtDoor", "vehicleAtNode", "infoToContent",
+            "dispatchConfirmationSent", "delayConfirmationSent", "arrivalConfirmationSent"
+          ]
+        },
+        "eventNode": { "$ref": "#/$defs/node" }
+      },
+      "required": ["eventType"]
+    },
+
+    "process": {
+      "type": "object",
+      "description": "Order processing settings",
+      "properties": {
+        "allowForward": { "type": "boolean" },
+        "allowRouting": { "type": "boolean" },
+        "automaticStatus": { "type": "boolean" },
+        "deliveryNote": { "type": "boolean" },
+        "dispatch": { "type": "boolean" },
+        "dispatchResponsible": {
+          "type": "string",
+          "enum": ["client", "provider"]
+        },
+        "manualDispatch": { "type": "boolean" },
+        "orderAlteration": { "type": "boolean" },
+        "pickupConfirmation": {
+          "type": "string",
+          "enum": ["notRequested", "standard", "extended"]
+        },
+        "preOrder": { "type": "string" },
+        "preorderedVehicle": { "type": "boolean" },
+        "report": { "type": "boolean" },
+        "statusDistance": { "type": "integer", "minimum": 0 },
+        "trafficControl": { "type": "boolean" },
+        "multiDispatch": { "type": "boolean" }
+      },
+      "required": ["allowRouting", "dispatchResponsible"]
+    },
+
+    "agreement": {
+      "type": "object",
+      "properties": {
+        "nameAgreement": { "type": "string" },
+        "idAgreement": { "$ref": "#/$defs/id" },
+        "product": { "$ref": "#/$defs/product" }
+      }
+    },
+
+    "product": {
+      "type": "object",
+      "properties": {
+        "nameProduct": { "type": "string" },
+        "idProduct": { "$ref": "#/$defs/id" }
+      },
+      "required": ["idProduct"]
+    },
+
+    "economy": {
+      "type": "object",
+      "properties": {
+        "priceEstimate": { "$ref": "#/$defs/amount" },
+        "priceFixed": { "$ref": "#/$defs/amount" },
+        "payments": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/payment" }
+        }
+      }
+    },
+
+    "amount": {
+      "type": "object",
+      "properties": {
+        "amountExclVat": { "type": "number" },
+        "amountInclVat": { "type": "number" },
+        "amountVat": { "type": "number" },
+        "vatPercent": { "type": "number" },
+        "idCurrency": { "$ref": "#/$defs/id" }
+      },
+      "required": ["amountInclVat"]
+    },
+
+    "payment": {
+      "type": "object",
+      "properties": {
+        "paymentType": {
+          "type": "string",
+          "enum": [
+            "cash", "card", "account", "ticket", "voucher",
+            "prepaidSocialFee", "app", "invoice"
+          ]
+        },
+        "amount": { "$ref": "#/$defs/amount" },
+        "documentType": { "type": "string" },
+        "noOfDocuments": { "type": "integer", "minimum": 0 }
+      }
+    },
+
+    "resource": {
+      "type": "object",
+      "description": "Vehicle/driver resource",
+      "properties": {
+        "idVehicle": { "$ref": "#/$defs/id" },
+        "idDriver": { "$ref": "#/$defs/id" },
+        "vehicleDescription": { "type": "string" },
+        "driverName": { "type": "string" },
+        "capacity": { "$ref": "#/$defs/capacity" },
+        "geographicLocation": { "$ref": "#/$defs/geographicLocation" },
+        "driverContacts": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/contactInfo" }
+        }
+      }
+    },
+
+    "capacity": {
+      "type": "object",
+      "properties": {
+        "seats": { "type": "integer", "minimum": 0 },
+        "wheelchairPlaces": { "type": "integer", "minimum": 0 },
+        "stretcherPlaces": { "type": "integer", "minimum": 0 },
+        "luggageArea": { "type": "number" },
+        "fullArea": { "type": "number" }
+      }
+    },
+
+    "time": {
+      "type": "object",
+      "properties": {
+        "timeType": {
+          "type": "string",
+          "enum": [
+            "scheduled", "calculated", "estimated", "actual",
+            "earliest", "latest", "promised"
+          ]
+        },
+        "time": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["timeType", "time"]
+    },
+
+    "manualDescription": {
+      "type": "object",
+      "properties": {
+        "language": { "type": "string" },
+        "text": { "type": "string" }
+      }
+    },
+
+    "bulkLocationRequest": {
+      "type": "object",
+      "properties": {
+        "locationListType": { "type": "string" },
+        "statusBreak": { "type": "boolean" },
+        "statusFree": { "type": "boolean" },
+        "statusNotInUse": { "type": "boolean" },
+        "statusOccupied": { "type": "boolean" },
+        "bulkIntervalRequest": { "$ref": "#/$defs/locationRequest" },
+        "bulkLocationAgreement": { "$ref": "#/$defs/agreement" },
+        "locationResource": { "$ref": "#/$defs/resource" }
+      }
+    },
+
+    "bulkLocationList": {
+      "type": "object",
+      "properties": {
+        "isComplete": { "type": "boolean" },
+        "locationListType": { "type": "integer", "minimum": 1 },
+        "msgSeqNo": { "type": "integer", "minimum": 1 },
+        "msgCount": { "type": "integer", "minimum": 1 },
+        "locations": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/vehicleLocation" }
+        }
+      },
+      "required": ["locations"]
+    },
+
+    "vehicleLocation": {
+      "type": "object",
+      "properties": {
+        "vehicleIdProvider": { "type": "string" },
+        "time": { "type": "string", "format": "date-time" },
+        "status": {
+          "type": "string",
+          "enum": ["O", "F", "B", "N"],
+          "description": "O=Occupied, F=Free, B=Break, N=NotInUse"
+        },
+        "lat": { "type": "number" },
+        "lon": { "type": "number" },
+        "speed": { "type": "number" },
+        "direction": { "type": "number", "minimum": 0, "maximum": 360 }
+      }
+    },
+
+    "locationRequest": {
+      "type": "object",
+      "properties": {
+        "intervalSeconds": { "type": "integer", "minimum": 1 },
+        "idVehicle": { "$ref": "#/$defs/id" },
+        "idDriver": { "$ref": "#/$defs/id" }
+      }
+    },
+
+    "orderReject": {
+      "type": "object",
+      "properties": {
+        "attributesReject": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "orderSentBefore": {
+          "type": "object",
+          "properties": {
+            "idMsg": { "$ref": "#/$defs/id" }
+          },
+          "required": ["idMsg"]
+        },
+        "orgNewProvider": { "$ref": "#/$defs/org" },
+        "resourceReject": { "$ref": "#/$defs/resource" }
+      }
+    },
+
+    "cancellationConsequence": {
+      "type": "object",
+      "properties": {
+        "cancellationAcceptance": { "type": "boolean" },
+        "cancellationConsequence": { "type": "boolean" },
+        "economyCancellation": { "$ref": "#/$defs/economy" }
+      },
+      "required": ["cancellationAcceptance", "cancellationConsequence"]
+    },
+
+    "nodeCancellation": {
+      "type": "object",
+      "properties": {
+        "nodeStart": { "type": "integer", "minimum": 1 },
+        "nodeEnd": { "type": "integer", "minimum": 1 }
+      },
+      "required": ["nodeStart"]
+    },
+
+    "orderForward": {
+      "type": "object",
+      "properties": {
+        "idOrderProvider": { "$ref": "#/$defs/id" },
+        "idOrderClient": { "$ref": "#/$defs/id" },
+        "orgClientForward": { "$ref": "#/$defs/org" },
+        "orgProviderForward": { "$ref": "#/$defs/org" }
+      }
+    },
+
+    "driverSession": {
+      "type": "object",
+      "properties": {
+        "idDriverSession": { "$ref": "#/$defs/id" },
+        "orders": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/order" }
+        },
+        "process": { "$ref": "#/$defs/process" },
+        "resourceDriverSession": { "$ref": "#/$defs/resource" }
+      }
+    },
+
+    "driverSessionReject": {
+      "type": "object",
+      "properties": {
+        "idDriverSession": { "$ref": "#/$defs/id" },
+        "rejectReason": { "type": "string" }
+      }
+    },
+
+    "providerOrderUpdate": {
+      "type": "object",
+      "properties": {
+        "updateType": {
+          "type": "string",
+          "enum": ["timeUpdate", "addressUpdate", "contentUpdate", "cancellation"]
+        },
+        "nodeUpdated": { "$ref": "#/$defs/node" }
+      }
+    },
+
+    "orderTemplate": {
+      "type": "object",
+      "properties": {
+        "idOrderTemplate": { "$ref": "#/$defs/id" },
+        "orderTemplateAgreement": { "$ref": "#/$defs/agreement" },
+        "orderTemplateCalendar": { "$ref": "#/$defs/calendar" },
+        "schedules": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/scheduleElement" }
+        }
+      },
+      "required": ["idOrderTemplate", "orderTemplateCalendar", "schedules"]
+    },
+
+    "calendar": {
+      "type": "object",
+      "properties": {
+        "validPeriod": { "$ref": "#/$defs/period" },
+        "validWeekdays": { "$ref": "#/$defs/weekdays" },
+        "additionalDates": {
+          "type": "array",
+          "items": { "type": "string", "format": "date" }
+        },
+        "exceptionDates": {
+          "type": "array",
+          "items": { "type": "string", "format": "date" }
+        }
+      }
+    },
+
+    "period": {
+      "type": "object",
+      "properties": {
+        "startDate": { "type": "string", "format": "date" },
+        "endDate": { "type": "string", "format": "date" }
+      }
+    },
+
+    "weekdays": {
+      "type": "object",
+      "properties": {
+        "monday": { "type": "boolean" },
+        "tuesday": { "type": "boolean" },
+        "wednesday": { "type": "boolean" },
+        "thursday": { "type": "boolean" },
+        "friday": { "type": "boolean" },
+        "saturday": { "type": "boolean" },
+        "sunday": { "type": "boolean" }
+      }
+    },
+
+    "scheduleElement": {
+      "type": "object",
+      "properties": {
+        "idScheduleElement": { "$ref": "#/$defs/id" },
+        "order": { "$ref": "#/$defs/order" }
+      }
+    },
+
+    "scheduleElementOrderList": {
+      "type": "object",
+      "properties": {
+        "scheduleElements": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/scheduleElement" }
+        }
+      }
+    },
+
+    "actionRequest": {
+      "type": "object",
+      "properties": {
+        "idAction": { "$ref": "#/$defs/id" },
+        "nodeAction": { "$ref": "#/$defs/node" },
+        "contactAction": { "$ref": "#/$defs/contactInfo" }
+      }
+    },
+
+    "messageTo": {
+      "type": "object",
+      "properties": {
+        "manualText": { "type": "string" },
+        "sendingOperator": { "type": "string" },
+        "sendToContent": { "type": "boolean" },
+        "sendToInvoice": { "type": "boolean" },
+        "sendToOperator": { "type": "boolean" },
+        "sendToVehicle": { "type": "boolean" },
+        "vehicleConfirmation": { "type": "boolean" },
+        "idActionText": { "$ref": "#/$defs/id" },
+        "timestamps": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/time" }
+        }
+      },
+      "required": ["manualText"]
+    },
+
+    "orderReport": {
+      "type": "object",
+      "properties": {
+        "economyReports": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/economyReport" }
+        },
+        "events": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/event" }
+        },
+        "summaryReports": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/summaryReport" }
+        }
+      },
+      "required": ["summaryReports"]
+    },
+
+    "economyReport": {
+      "type": "object",
+      "properties": {
+        "amount": { "$ref": "#/$defs/amount" },
+        "distance": { "type": "integer" },
+        "duration": { "type": "integer" }
+      }
+    },
+
+    "summaryReport": {
+      "type": "object",
+      "properties": {
+        "nodeSeqNo": { "type": "integer", "minimum": 1 },
+        "contentSeqNo": { "type": "integer", "minimum": 1 },
+        "status": { "type": "string" },
+        "times": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/time" }
+        }
+      }
+    },
+
+    "deliveryNote": {
+      "type": "object",
+      "properties": {
+        "idDeliveryNote": { "$ref": "#/$defs/id" },
+        "deliveryNoteType": { "type": "string" },
+        "order": { "$ref": "#/$defs/order" },
+        "resource": { "$ref": "#/$defs/resource" }
+      }
+    },
+
+    "accounting": {
+      "type": "object",
+      "properties": {
+        "accountingType": { "type": "string" },
+        "economyReportAccounting": { "$ref": "#/$defs/economyReport" },
+        "idAccounting": { "$ref": "#/$defs/id" },
+        "orgClient": { "$ref": "#/$defs/organization" },
+        "orgProvider": { "$ref": "#/$defs/organization" },
+        "tours": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/tour" }
+        }
+      },
+      "required": ["economyReportAccounting", "idAccounting", "orgClient", "orgProvider"]
+    },
+
+    "organization": {
+      "type": "object",
+      "properties": {
+        "orgName": { "type": "string" },
+        "orgCity": { "type": "string" },
+        "addressOrg": { "$ref": "#/$defs/address" },
+        "contacts": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/contactInfo" }
+        },
+        "ids": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "orgPayment": { "$ref": "#/$defs/orgPayment" }
+      },
+      "required": ["orgName", "ids"]
+    },
+
+    "orgPayment": {
+      "type": "object",
+      "properties": {
+        "clearingNo": { "type": "string" },
+        "nameOfBank": { "type": "string" },
+        "idPayment": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" }
+        }
+      }
+    },
+
+    "tour": {
+      "type": "object",
+      "properties": {
+        "idTour": { "$ref": "#/$defs/id" },
+        "orders": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/order" }
+        }
+      }
+    },
+
+    "infoRequest": {
+      "type": "object",
+      "properties": {
+        "requestType": { "type": "string" },
+        "idRequest": { "$ref": "#/$defs/id" }
+      }
+    },
+
+    "infoResponse": {
+      "type": "object",
+      "properties": {
+        "responseType": { "type": "string" },
+        "nodes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/node" }
+        }
+      }
+    },
+
+    "resourceReservation": {
+      "type": "object",
+      "properties": {
+        "idReservation": { "$ref": "#/$defs/id" },
+        "resource": { "$ref": "#/$defs/resource" },
+        "period": { "$ref": "#/$defs/period" }
+      }
+    },
+
+    "resourceAllocation": {
+      "type": "object",
+      "properties": {
+        "idAllocation": { "$ref": "#/$defs/id" },
+        "resource": { "$ref": "#/$defs/resource" },
+        "orders": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/order" }
+        }
+      }
+    },
+
+    "ratingList": {
+      "type": "object",
+      "properties": {
+        "ratings": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/rating" }
+        }
+      }
+    },
+
+    "rating": {
+      "type": "object",
+      "properties": {
+        "idRating": { "$ref": "#/$defs/id" },
+        "ratingValue": { "type": "number" },
+        "ratingComment": { "type": "string" }
+      }
+    }
+  }
+}

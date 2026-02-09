@@ -14,6 +14,8 @@ This directory contains planning documents for the SUTI schema modernization eff
 | [profile-based-standard-analysis.md](profile-based-standard-analysis.md) | Analysis of profile-based XSD structure |
 | [json-legacy-analysis.md](json-legacy-analysis.md) | Analysis of 2021 JSON work and alignment with current strategy |
 | [json-schema-2021-annotated-analysis.md](json-schema-2021-annotated-analysis.md) | **Detailed schema review** - Line-by-line analysis with problems and improvements |
+| [json-2021-refactoring-plan.md](json-2021-refactoring-plan.md) | **Refactoring plan** - Detailed specification for 2021→2026 migration |
+| [json-schema-2026-changelog.md](json-schema-2026-changelog.md) | **Changelog** - Complete list of changes between 2021 and 2026 schemas |
 
 ### Presentations & Handouts
 
@@ -44,6 +46,8 @@ This directory contains planning documents for the SUTI schema modernization eff
 ## Related Resources
 
 - [schemas/](../schemas/) - XSD and JSON Schema files
+  - [SUTI_Message.schema.json](../schemas/SUTI_Message.schema.json) - **New 2026 JSON Schema**
+  - [SUTI_BulkLocation_legacy.schema.json](../schemas/SUTI_BulkLocation_legacy.schema.json) - Legacy schema for 1100/1111/1112
 - [examples/JSON/](../examples/JSON/) - JSON message examples
 - [docs/](../docs/) - SUTI documentation
 

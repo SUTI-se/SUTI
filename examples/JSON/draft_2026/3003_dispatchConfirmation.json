@@ -1,0 +1,114 @@
+{
+  "msg": {
+    "msgType": "3003",
+    "msgTimeStamp": "2019-12-18T10:39:00.000Z",
+    "orgSender": {
+      "name": "ThisProvider",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemprov_provsite_0001",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "ThisClient",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemclient_clientsite_0009",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemprov_provsite_0001:MSGID",
+      "id": "2019121812345678",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemclient_clientsite_0009:MSGID",
+          "id": "2019121887654321",
+          "unique": true
+        }
+      },
+      {
+        "idOrder": {
+          "src": "systemprov_provsite_0001:idOrder",
+          "id": "3640266-0",
+          "unique": true
+        }
+      },
+      {
+        "idOrder": {
+          "src": "systemclient_clientsite_0009:idOrder",
+          "id": "11183742",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "resource": {
+    "vehicle": {
+      "idVehicleList": [
+        {
+          "src": "systemclient_clientsite_0009:idVehicle",
+          "id": "51006P",
+          "unique": true
+        },
+        {
+          "src": "systemprov_provsite_0001:idVehicle",
+          "id": "3110",
+          "unique": true
+        }
+      ],
+      "capacity": {
+        "seats": {
+          "noOfSeats": 4
+        }
+      },
+      "attributeListVehicle": [
+        {
+          "src": "SUTI:idAttribute",
+          "id": "1628",
+          "unique": true
+        },
+        {
+          "src": "SUTI:idAttribute",
+          "id": "1611",
+          "unique": true
+        }
+      ]
+    },
+    "driver": {
+      "attributeListDriver": [
+        {
+          "src": "SUTI:idAttribute",
+          "id": "1510",
+          "unique": true
+        },
+        {
+          "src": "SUTI:idAttribute",
+          "id": "2313",
+          "unique": true
+        }
+      ],
+      "idDriver": {
+        "src": "SE:idDriver",
+        "id": "123456",
+        "unique": true
+      },
+      "contactInfoListDriver": [
+        {
+          "contactType": "phone",
+          "contactInfo": "0431-74700"
+        }
+      ]
+    },
+    "vehicleStartLocation": {
+      "typeOfCoordinate": "WGS-84",
+      "precision": 6,
+      "lat": 56.04701,
+      "lon": 12.70394
+    }
+  }
+}

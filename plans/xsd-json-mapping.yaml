@@ -1,0 +1,497 @@
+# XSD to JSON Schema Mapping
+# SUTI Standard Version 2026
+#
+# This file documents the explicit mapping between XSD element/type names
+# and their corresponding JSON Schema property names.
+#
+# Created: 2026-02-09
+# Updated: 2026-02-09
+
+# =============================================================================
+# METADATA
+# =============================================================================
+version: "2026.1"
+xsd_source: "SUTI_Message.xsd"
+json_schema_target: "SUTI_Message.schema.json"
+
+# =============================================================================
+# STRUCTURAL MAPPINGS
+# =============================================================================
+# This section documents the transformation between three formats:
+# 1. XSD/XML - The original SUTI XML schema format
+# 2. JSON Schema 2021 - First JSON adaptation with wrapper elements
+# 3. JSON Schema 2026 - Modern flat JSON format (current standard)
+#
+structure:
+  # Root element transformation
+  root:
+    xsd_xml: |
+      <SUTI>
+        <orgSender>...</orgSender>
+        <orgReceiver>...</orgReceiver>
+        <msg msgType="2000">
+          <idMsg>...</idMsg>
+          <order>...</order>  <!-- body is CHILD of msg -->
+        </msg>
+      </SUTI>
+    json_2021: |
+      {
+        "SUTI_2000_order": {
+          "msg": { "msgType": "2000", "orgSender": {...}, ... },
+          "order": { ... }
+        }
+      }
+    json_2026: |
+      {
+        "msg": { "msgType": "2000", "orgSender": {...}, ... },
+        "order": { ... }
+      }
+    notes: |
+      Key transformations:
+      - XSD: Root <SUTI> contains orgSender/orgReceiver at envelope level, body is child of <msg>
+      - 2021 JSON: Wrapper element "SUTI_XXXX_name" contains msg and body as siblings
+      - 2026 JSON: No wrapper, msg and body are siblings at root level
+      - orgSender/orgReceiver moved into msg header for JSON formats
+      - msgType attribute identifies message type in all formats
+
+  # Schema definition location
+  definitions:
+    xsd: "complexType/simpleType definitions"
+    json_2021: "definitions"
+    json_2026: "$defs"
+    notes: "JSON Schema draft-2020-12 convention uses $defs"
+
+  # Organization placement
+  organization_header:
+    xsd_xml: "SUTI/orgSender, SUTI/orgReceiver (envelope level)"
+    json: "msg/orgSender, msg/orgReceiver (inside message header)"
+    notes: "In JSON, organization info is part of each message header"
+
+  # Message type identification
+  message_type:
+    xsd_xml: '<msg msgType="2000"> attribute'
+    json_2021: 'SUTI_2000_order wrapper element name + msg.msgType property'
+    json_2026: 'msg.msgType property only'
+    notes: "2026 format uses conditional schema validation based on msgType value"
+
+# =============================================================================
+# ARRAY PROPERTY MAPPINGS (XSD-style → JSON-idiomatisk)
+# =============================================================================
+arrays:
+  # Node lists
+  - xsd: "nodeList"
+    json: "nodes"
+    context: "route"
+    notes: "Plural form for arrays"
+
+  # Time lists
+  - xsd: "timeListNode"
+    json: "times"
+    context: "node"
+    notes: "Simplified, plural form"
+
+  # Content lists
+  - xsd: "contentList"
+    json: "contents"
+    context: "node"
+    notes: "Plural form"
+
+  # Location lists
+  - xsd: "locationList"
+    json: "locations"
+    context: "bulkLocationList"
+    notes: "Plural form"
+
+  # Contact info lists
+  - xsd: "contactInfoList"
+    json: "contacts"
+    context: "content"
+    notes: "Simplified name + plural"
+
+  - xsd: "contactInfoListOrg"
+    json: "contacts"
+    context: "organization"
+    notes: "Simplified to plural"
+
+  - xsd: "contactInfoDriver"
+    json: "driverContacts"
+    context: "resource"
+    notes: "Explicit prefix for clarity"
+
+  # Payment lists
+  - xsd: "formOfPayment (unbounded)"
+    json: "payments"
+    context: "economy"
+    notes: "Plural form for array"
+
+  # Schedule lists
+  - xsd: "scheduleElementList"
+    json: "schedules"
+    context: "orderTemplate"
+    notes: "Simplified + plural"
+
+  # Report lists
+  - xsd: "economyReportList"
+    json: "economyReports"
+    context: "orderReport"
+    notes: "Plural form"
+
+  - xsd: "eventListReports"
+    json: "events"
+    context: "orderReport"
+    notes: "Simplified + plural"
+
+  - xsd: "summaryReportList"
+    json: "summaryReports"
+    context: "orderReport"
+    notes: "Plural form"
+
+  # Organization IDs
+  - xsd: "idOrgArray"
+    json: "ids"
+    context: "organization"
+    notes: "Simplified"
+
+  # Manual descriptions
+  - xsd: "manualDescriptionAddress"
+    json: "manualDescriptions"
+    context: "address"
+    notes: "Plural form"
+
+  # Timestamps
+  - xsd: "textTimestamp"
+    json: "timestamps"
+    context: "messageTo"
+    notes: "Plural form"
+
+# =============================================================================
+# ENUMERATION MAPPINGS
+# =============================================================================
+enumerations:
+  # Time types
+  timeType:
+    strategy: "text-only"
+    xsd_values:
+      - "2101": "scheduledtime"
+      - "2102": "estimatedtime"
+      - "2103": "promisedtime"
+      - "2104": "actualtime"
+      - "2105": "asaptime"
+      - "2106": "earliesttime"
+      - "2107": "latesttime"
+    json_values:
+      - "scheduled"
+      - "estimated"
+      - "promised"
+      - "actual"
+      - "earliest"
+      - "latest"
+      - "calculated"
+    mapping:
+      "2101": "scheduled"
+      "scheduledtime": "scheduled"
+      "2102": "estimated"
+      "estimatedtime": "estimated"
+      "2103": "promised"
+      "promisedtime": "promised"
+      "2104": "actual"
+      "actualtime": "actual"
+      "2106": "earliest"
+      "earliesttime": "earliest"
+      "2107": "latest"
+      "latesttime": "latest"
+    notes: "Removed 'time' suffix for cleaner JSON"
+
+  # Node types
+  nodeType:
+    strategy: "text-only"
+    xsd_values:
+      - "1801": "action"
+      - "1802": "navigation"
+      - "1803": "pickup"
+      - "1804": "destination"
+    json_values:
+      - "action"
+      - "navigation"
+      - "pickup"
+      - "destination"
+    notes: "Only text values, numeric codes removed"
+
+  # Event types
+  eventType:
+    strategy: "text-only"
+    xsd_values:
+      - "1701": "passengerinvehicle"
+      - "1702": "passengerdropped"
+      - "1703": "noshow"
+      - "1709": "vehicleatnode"
+      - "1714": "start"
+      - "1715": "stop"
+      - "1716": "acceptOrder"
+    json_values:
+      - "passengerInVehicle"
+      - "passengerDropped"
+      - "noShow"
+      - "vehicleAtNode"
+      - "start"
+      - "stop"
+      - "acceptOrder"
+      - "pickup"
+      - "destination"
+      - "navigation"
+      - "action"
+      - "parcelInVehicle"
+      - "parcelDropped"
+      - "actionDone"
+      - "navigationDone"
+      - "cancelAtDoor"
+      - "infoToContent"
+      - "dispatchConfirmationSent"
+      - "delayConfirmationSent"
+      - "arrivalConfirmationSent"
+    mapping:
+      "1701": "passengerInVehicle"
+      "passengerinvehicle": "passengerInVehicle"
+      "1702": "passengerDropped"
+      "passengerdropped": "passengerDropped"
+      "1703": "noShow"
+      "noshow": "noShow"
+      "1709": "vehicleAtNode"
+      "vehicleatnode": "vehicleAtNode"
+    notes: "camelCase applied consistently, numeric codes removed"
+
+  # Payment types
+  paymentType:
+    strategy: "text-only"
+    xsd_values:
+      - "1301": "cash"
+      - "1302": "card"
+      - "1303": "account"
+      - "1304": "ticket"
+      - "1305": "voucher"
+      - "1306": "prepaidsocialfee"
+      - "1307": "app"
+      - "1308": "invoice"
+    json_values:
+      - "cash"
+      - "card"
+      - "account"
+      - "ticket"
+      - "voucher"
+      - "prepaidSocialFee"
+      - "app"
+      - "invoice"
+    mapping:
+      "1301": "cash"
+      "1302": "card"
+      "1303": "account"
+      "1304": "ticket"
+      "1305": "voucher"
+      "1306": "prepaidSocialFee"
+      "prepaidsocialfee": "prepaidSocialFee"
+      "1307": "app"
+      "1308": "invoice"
+    notes: "camelCase applied to prepaidSocialFee"
+
+  # Dispatch responsible
+  dispatchResponsible:
+    strategy: "text-only"
+    xsd_values:
+      - "3101": "client"
+      - "3102": "provider"
+    json_values:
+      - "client"
+      - "provider"
+    mapping:
+      "3101": "client"
+      "3102": "provider"
+
+  # Order status
+  orderStatus:
+    strategy: "text-only"
+    json_values:
+      - "none"
+      - "started"
+      - "completed"
+      - "noShow"
+      - "confirmed"
+      - "dispatching"
+      - "dispatched"
+      - "cancelled"
+    notes: "camelCase for noShow"
+
+# =============================================================================
+# ANOMALY CORRECTIONS
+# =============================================================================
+anomaly_corrections:
+  # Semantic corrections
+  - xsd_name: "pickupConfirmation"
+    json_name: "event"
+    type: "semantic"
+    reason: "Historical naming; element is used for all event types, not just pickup confirmation"
+    reference: "HowToUseSUTI.txt lines 555-557"
+
+  - xsd_name: "nodeCancelation"
+    json_name: null
+    type: "deprecation"
+    reason: "Misspelling; only nodeCancellation supported in JSON"
+    reference: "XSD comment at line 250-252"
+
+  # Spelling corrections
+  - xsd_name: "idVerson"
+    json_name: "idVersion"
+    type: "spelling"
+
+  - xsd_name: "preeOrder"
+    json_name: "preOrder"
+    type: "spelling"
+
+  - xsd_name: "exhangeRate"
+    json_name: "exchangeRate"
+    type: "spelling"
+
+  - xsd_name: "resourceAlloc ation"
+    json_name: "resourceAllocation"
+    type: "spelling"
+    reason: "Space in name removed"
+
+  - xsd_name: "nodeprocess"
+    json_name: "nodeProcess"
+    type: "spelling"
+    reason: "camelCase correction"
+
+  - xsd_name: "msgSeqno"
+    json_name: "msgSeqNo"
+    type: "spelling"
+    reason: "camelCase correction"
+
+  - xsd_name: "sendinformationDisptch"
+    json_name: "sendInformationDispatch"
+    type: "spelling"
+    reason: "Multiple corrections"
+
+# =============================================================================
+# TYPE MAPPINGS (XSD types → JSON Schema types)
+# =============================================================================
+type_mappings:
+  # XSD base types removed - use native JSON types
+  - xsd_type: "xs:string"
+    json_schema: '{"type": "string"}'
+
+  - xsd_type: "xs:integer"
+    json_schema: '{"type": "integer"}'
+
+  - xsd_type: "xs:int"
+    json_schema: '{"type": "integer"}'
+    notes: "Removed min/max constraints from xs:int"
+
+  - xsd_type: "xs:positiveInteger"
+    json_schema: '{"type": "integer", "minimum": 1}'
+
+  - xsd_type: "xs:nonNegativeInteger"
+    json_schema: '{"type": "integer", "minimum": 0}'
+
+  - xsd_type: "xs:decimal"
+    json_schema: '{"type": "number"}'
+
+  - xsd_type: "xs:float"
+    json_schema: '{"type": "number"}'
+    notes: "Fixed bug where xs:float was mapped to string"
+
+  - xsd_type: "xs:boolean"
+    json_schema: '{"type": "boolean"}'
+
+  - xsd_type: "xs:date"
+    json_schema: '{"type": "string", "format": "date"}'
+
+  - xsd_type: "xs:dateTime"
+    json_schema: '{"type": "string", "format": "date-time"}'
+
+  - xsd_type: "xs:anyType"
+    json_schema: null
+    notes: "XML-specific, removed in JSON"
+
+  - xsd_type: "xs:anySimpleType"
+    json_schema: null
+    notes: "XML-specific, removed in JSON"
+
+# =============================================================================
+# MESSAGE TYPE MAPPINGS
+# =============================================================================
+message_types:
+  "1000":
+    name: "resourceRequest"
+    body: "resourceReservation"
+
+  "1061":
+    name: "ratingResponse"
+    body: "ratings"
+
+  "1100":
+    name: "bulkLocationRequest"
+    body: "bulkLocationRequest"
+    legacy: true
+
+  "1111":
+    name: "bulkLocationResponse"
+    body: "bulkLocationList"
+    legacy: true
+
+  "1112":
+    name: "bulkLocationResponse"
+    body: "bulkLocationList"
+    legacy: true
+
+  "2000":
+    name: "order"
+    body: "order"
+
+  "2001":
+    name: "orderConfirmation"
+    body: null
+    notes: "Header only message"
+
+  "2002":
+    name: "orderReject"
+    body: "orderReject"
+
+  "3003":
+    name: "dispatchConfirmation"
+    body: "resource"
+
+  "4010":
+    name: "eventVehicle"
+    body: "event"
+
+  "5000":
+    name: "messageToVehicle"
+    body: "messageTo"
+
+  "5020":
+    name: "locationRequest"
+    body: "locationRequest"
+
+  "5021":
+    name: "locationResponse"
+    body: "geographicLocation"
+
+  "7000":
+    name: "keepAlive"
+    body: null
+    notes: "Header only message"
+
+  "7001":
+    name: "keepAliveConfirmation"
+    body: null
+    notes: "Header only message"
+
+# =============================================================================
+# CONVERSION NOTES
+# =============================================================================
+notes:
+  - "XSD wrapper elements (SUTI_XXXX_*) are removed in JSON"
+  - "Message type is identified by msg.msgType property"
+  - "All enumerations use text values only (numeric codes removed)"
+  - "Array properties use plural naming convention"
+  - "camelCase is applied consistently"
+  - "Legacy schema exists for bulkLocation backward compatibility"
