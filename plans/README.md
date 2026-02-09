@@ -9,6 +9,7 @@ This directory contains planning documents for the SUTI schema modernization eff
 | Document | Description |
 |----------|-------------|
 | [json-schema-strategy-2026.md](json-schema-strategy-2026.md) | **Main strategy document** - Comprehensive analysis of JSON Schema approaches |
+| [json-schema-simplification.md](json-schema-simplification.md) | **Schema simplification proposal** - Removing wrapper elements, migration plan |
 | [xsd-anomalies-for-json.md](xsd-anomalies-for-json.md) | Identified anomalies and naming drift that should be corrected in JSON |
 | [profile-based-standard-analysis.md](profile-based-standard-analysis.md) | Analysis of profile-based XSD structure |
 | [json-legacy-analysis.md](json-legacy-analysis.md) | Analysis of 2021 JSON work and alignment with current strategy |
