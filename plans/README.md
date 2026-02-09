@@ -13,6 +13,7 @@ This directory contains planning documents for the SUTI schema modernization eff
 | [xsd-anomalies-for-json.md](xsd-anomalies-for-json.md) | Identified anomalies and naming drift that should be corrected in JSON |
 | [profile-based-standard-analysis.md](profile-based-standard-analysis.md) | Analysis of profile-based XSD structure |
 | [json-legacy-analysis.md](json-legacy-analysis.md) | Analysis of 2021 JSON work and alignment with current strategy |
+| [json-schema-2021-annotated-analysis.md](json-schema-2021-annotated-analysis.md) | **Detailed schema review** - Line-by-line analysis with problems and improvements |
 
 ### Presentations & Handouts
 
