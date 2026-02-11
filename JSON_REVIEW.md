@@ -1,8 +1,33 @@
 # Review: JSON 2026 Draft vs Schema
 
 Date: 2026-02-09
+Updated: 2026-02-10
 Scope: examples/JSON/draft_2026/ and schemas/SUTI_Message.schema.json
 Method: Read plans in plans/, sampled key examples, compared to 2026 schema definitions, and validated all draft_2026 examples against the 2026 schema using jsonschema Draft 2020-12.
+
+---
+
+## ✅ Resolution Status (2026-02-10)
+
+**All findings from this review have been addressed.** See [json-schema-alignment-plan.md](plans/json-schema-alignment-plan.md) for implementation details.
+
+| Finding | Status | Resolution |
+|---------|--------|------------|
+| Resource modeling drift | ✅ Resolved | Schema restructured with nested `vehicle`/`driver` + `startLocation` |
+| Content payloads exceed schema | ✅ Resolved | Schema expanded with `economy`, `resource`, `subOrder`, `attributes` |
+| Enum casing mismatches | ✅ Resolved | Examples updated to camelCase; enums fixed in SUTI_Enumerations.yaml |
+| time omits dwellTime | ✅ Resolved | `dwellTime` added to time definition |
+| Unknown msgType passes | ✅ Resolved | `not` + `then: false` pattern rejects unknown types |
+| No additionalProperties | ✅ Resolved | `additionalProperties: false` on all ~50 $defs |
+
+**Validation Results (2026-02-10):**
+- 12 example files validated
+- 11 against SUTI_Message.schema.json (all pass)
+- 1 against SUTI_BulkLocation_legacy.schema.json (pass)
+
+---
+
+## Original Review (2026-02-09)
 
 ## Validation Results (draft_2026 vs 2026 schema)
 
@@ -140,8 +165,13 @@ Relevant plan files:
 7001_keepAliveConfirmation.json
 - Header-only message aligns with schema (msg only). No obvious mismatches.
 
-## Open Questions
+## Open Questions (Resolved 2026-02-10)
 
-- Are draft_2026 examples intended to fully validate against the 2026 schema, or are they transitional?
-- Should the 2026 schema keep the flattened resource and content model, or adopt nested vehicle/driver structures from XSD?
-- Should JSON treat msgType as a strict enum of known types rather than only a pattern?
+- ~~Are draft_2026 examples intended to fully validate against the 2026 schema, or are they transitional?~~
+  → **Resolved:** Yes, examples must fully validate. All 12 now pass strict validation.
+
+- ~~Should the 2026 schema keep the flattened resource and content model, or adopt nested vehicle/driver structures from XSD?~~
+  → **Resolved:** Nested structures adopted. `resource` now contains `vehicle`/`driver` objects.
+
+- ~~Should JSON treat msgType as a strict enum of known types rather than only a pattern?~~
+  → **Resolved:** Unknown msgTypes now rejected via `not` + `then: false` pattern in allOf.

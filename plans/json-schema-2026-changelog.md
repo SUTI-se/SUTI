@@ -416,3 +416,100 @@ Alla andra meddelanden ska använda det nya formatet direkt:
 **Författare:** Claude Code
 **Granskad:** Väntar
 **Giltig från:** Q2 2026
+
+---
+
+## 16. Uppdateringar 2026-02-10 (v1.2)
+
+### 16.1 Strukturförändringar
+
+| Ändring | Beskrivning |
+|---------|-------------|
+| **resource** | Omstrukturerad med nested `vehicle`/`driver` objekt + `startLocation` |
+| **capacity** | Ändrad från `integer` till `capacityItem` objekt med `noOfSeats`/`noOfItems` |
+| **content** | Utökad med `economy`, `resource`, `subOrder`, `contactInfo`, `attributes` |
+
+### 16.2 Nya typdefinitioner
+
+| Typ | Beskrivning |
+|-----|-------------|
+| `vehicleResource` | Fordonsdata med `ids`, `capacity`, `attributes`, `location` |
+| `driverResource` | Förardata med `id`, `name`, `attributes`, `contactInfo` |
+| `capacityItem` | `{ noOfSeats, noOfItems }` för kapacitetsspecifikation |
+| `resourceSpec` | Resursspecifikation för innehåll (nested `vehicle`/`driver`) |
+| `vehicleSpec` | Fordonsspec för innehåll |
+| `driverSpec` | Förarspec för innehåll |
+| `subOrder` | Underorder med `orderIds` array |
+| `economy` | Ekonomi med `priceEstimate`, `priceFixed`, `payments` |
+
+### 16.3 Egenskapsnamnsförenklingar
+
+All redundant kontext har tagits bort från egenskapsnamn:
+
+| Tidigare | Nu | Kontext |
+|----------|-----|---------|
+| `idVehicleList` | `ids` | vehicle |
+| `attributeListVehicle` | `attributes` | vehicle |
+| `attributeListDriver` | `attributes` | driver |
+| `contactInfoListDriver` | `contactInfo` | driver |
+| `attributeListContent` | `attributes` | content |
+| `contactInfoListContent` | `contactInfo` | content |
+| `economyContent` | `economy` | content |
+| `resourceContent` | `resource` | content |
+| `subOrderContent` | `subOrder` | content |
+| `paymentList` | `payments` | economy |
+| `idOrderList` | `orderIds` | subOrder |
+| `idContent` | `id` | content |
+| `nameContent` | `name` | content |
+| `vehicleStartLocation` | `startLocation` | resource |
+| `contactInfo.contactInfo` | `contactInfo.contactValue` | contactInfo |
+
+### 16.4 Striktare validering
+
+| Ändring | Beskrivning |
+|---------|-------------|
+| `additionalProperties: false` | Tillagt på ALLA ~50 $defs |
+| Unknown msgType rejection | `not` + `then: false` pattern avvisar okända meddelandetyper |
+
+### 16.5 Enum-casing korrigerad
+
+| Tidigare | Nu |
+|----------|-----|
+| `OrderCancelled` | `orderCancelled` |
+| `OrderNoShow` | `orderNoShow` |
+| `OrderCompleted` | `orderCompleted` |
+| `NoShow` | `noShow` |
+| `prepaidSocialfee` | `prepaidSocialFee` |
+| `socialservicefee` | `socialServiceFee` |
+| `estimatedStarttime` | `estimatedStartTime` |
+| `estimatedEndtime` | `estimatedEndTime` |
+
+### 16.6 time-definition utökad
+
+```json
+"time": {
+  "properties": {
+    "timeType": { "enum": ["scheduled", "calculated", "estimated", "actual", "earliest", "latest", "promised"] },
+    "time": { "type": "string", "format": "date-time" },
+    "dwellTime": { "type": "integer", "minimum": 0 }
+  }
+}
+```
+
+### 16.7 Exempeluppdateringar
+
+Alla 11 original-exempel uppdaterade med:
+- Förenklade egenskapsnamn
+- Korrigerad camelCase
+- Striktare struktur
+
+Nytt legacy-exempel tillagt:
+- `1111_bulkLocationResponse.legacy.json` - Demonstrerar wrapper-format
+
+### 16.8 Valideringsresultat
+
+```
+✓ 12 filer validerar mot respektive schema
+✓ 11 filer mot SUTI_Message.schema.json
+✓ 1 fil mot SUTI_BulkLocation_legacy.schema.json
+```

@@ -3,6 +3,7 @@
   "$id": "https://suti.se/schema/SUTI_Message.schema.json",
   "title": "SUTI Message Schema",
   "description": "JSON Schema for SUTI (Standardized Utilization of Transport Information) messages. Version 2026 draft.",
+  "version": "2026.1",
   "type": "object",
   "properties": {
     "msg": { "$ref": "#/$defs/msg" }
@@ -399,18 +400,129 @@
         "required": ["msg", "accounting"],
         "unevaluatedProperties": false
       }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "enum": ["1020", "1023"] } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "resourceDispatch": { "$ref": "#/$defs/resourceDispatch" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "enum": ["1021", "1022"] } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": { "msg": true },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "enum": ["2010", "2011"] } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": { "msg": true },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "enum": ["4011", "4012"] } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "event": { "$ref": "#/$defs/event" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "enum": ["4020", "7100", "7101"] } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "order": { "$ref": "#/$defs/order" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "enum": ["4031", "5011"] } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": { "msg": true },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": { "msg": { "properties": { "msgType": { "enum": ["5010", "7030", "7031"] } } } },
+        "required": ["msg"]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "messageTo": { "$ref": "#/$defs/messageTo" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "not": { "$ref": "#/$defs/msgTypeEnum" }
+              }
+            }
+          }
+        },
+        "required": ["msg"]
+      },
+      "then": false
     }
   ],
 
   "$defs": {
+    "msgTypeEnum": {
+      "type": "string",
+      "description": "Valid SUTI message type codes (centralized for reuse)",
+      "enum": [
+        "1000", "1020", "1021", "1022", "1023", "1061", "1100", "1111", "1112", "1500", "1600", "1920",
+        "2000", "2001", "2002", "2010", "2011", "2012", "2020", "2030", "2040", "2060",
+        "2100", "2101", "2102", "2800", "2810", "2901", "3003",
+        "4000", "4001", "4010", "4011", "4012", "4020", "4031", "4100",
+        "5000", "5010", "5011", "5020", "5021",
+        "6001", "6500",
+        "7000", "7001", "7030", "7031", "7100", "7101",
+        "8000"
+      ]
+    },
+
     "msg": {
       "type": "object",
       "description": "Common message header for all SUTI messages",
       "properties": {
         "msgType": {
-          "type": "string",
-          "description": "Message type code (4 digits)",
-          "pattern": "^[1-8][0-9]{3}$"
+          "$ref": "#/$defs/msgTypeEnum",
+          "description": "Message type code (4 digits)"
         },
         "msgTimeStamp": {
           "type": "string",
@@ -444,7 +556,8 @@
           "description": "Schema version identifier"
         }
       },
-      "required": ["msgType", "orgSender", "orgReceiver", "idMsg"]
+      "required": ["msgType", "orgSender", "orgReceiver", "idMsg"],
+      "additionalProperties": false
     },
 
     "id": {
@@ -464,7 +577,8 @@
           "description": "Whether this identifier is globally unique"
         }
       },
-      "required": ["src", "id"]
+      "required": ["src", "id"],
+      "additionalProperties": false
     },
 
     "org": {
@@ -480,17 +594,24 @@
           "description": "Organization identifier"
         }
       },
-      "required": ["name", "idOrg"]
+      "required": ["name", "idOrg"],
+      "additionalProperties": false
     },
 
     "referenceToMsg": {
       "type": "object",
-      "description": "Reference to another message",
+      "description": "Reference to another message (must have at least one identifier)",
       "properties": {
         "idMsg": { "$ref": "#/$defs/id" },
         "idOrder": { "$ref": "#/$defs/id" },
         "idNode": { "$ref": "#/$defs/id" }
-      }
+      },
+      "anyOf": [
+        { "required": ["idMsg"] },
+        { "required": ["idOrder"] },
+        { "required": ["idNode"] }
+      ],
+      "additionalProperties": false
     },
 
     "address": {
@@ -517,7 +638,8 @@
           "type": "array",
           "items": { "$ref": "#/$defs/manualDescription" }
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "geographicLocation": {
@@ -529,11 +651,22 @@
           "enum": ["WGS-84", "RT90", "SWEREF99"],
           "default": "WGS-84"
         },
-        "lat": { "type": "number", "description": "Latitude" },
-        "lon": { "type": "number", "description": "Longitude" },
+        "lat": {
+          "type": "number",
+          "description": "Latitude (WGS-84: -90 to 90)",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "lon": {
+          "type": "number",
+          "description": "Longitude (WGS-84: -180 to 180)",
+          "minimum": -180,
+          "maximum": 180
+        },
         "precision": { "type": "integer", "description": "Coordinate precision in meters" }
       },
-      "required": ["lat", "lon"]
+      "required": ["lat", "lon"],
+      "additionalProperties": false
     },
 
     "order": {
@@ -552,7 +685,8 @@
         "resourceOrder": { "$ref": "#/$defs/resource" },
         "route": { "$ref": "#/$defs/route" }
       },
-      "required": ["idOrder"]
+      "required": ["idOrder"],
+      "additionalProperties": false
     },
 
     "orderStatus": {
@@ -563,7 +697,8 @@
           "enum": ["none", "started", "completed", "noShow", "confirmed", "dispatching", "dispatched", "cancelled"]
         }
       },
-      "required": ["status"]
+      "required": ["status"],
+      "additionalProperties": false
     },
 
     "route": {
@@ -574,7 +709,8 @@
           "type": "array",
           "items": { "$ref": "#/$defs/node" }
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "node": {
@@ -610,7 +746,8 @@
           "items": { "$ref": "#/$defs/time" }
         }
       },
-      "required": ["nodeSeqNo", "nodeType"]
+      "required": ["nodeSeqNo", "nodeType"],
+      "additionalProperties": false
     },
 
     "nodeProcess": {
@@ -629,7 +766,8 @@
           "enum": ["alwaysSend", "neverSend", "allowSend"]
         },
         "sendInformationContent": { "$ref": "#/$defs/contactInfo" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "content": {
@@ -641,17 +779,25 @@
           "enum": ["traveller", "parcel", "goods"]
         },
         "contentSeqNo": { "type": "integer", "minimum": 1 },
-        "idContent": { "$ref": "#/$defs/id" },
-        "nameContent": { "type": "string" },
-        "contacts": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string" },
+        "contactInfo": {
           "type": "array",
           "items": { "$ref": "#/$defs/contactInfo" }
         },
         "mobilityAids": {
           "type": "array",
           "items": { "$ref": "#/$defs/mobilityAid" }
-        }
-      }
+        },
+        "attributes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "economy": { "$ref": "#/$defs/economy" },
+        "resource": { "$ref": "#/$defs/resourceSpec" },
+        "subOrder": { "$ref": "#/$defs/subOrder" }
+      },
+      "additionalProperties": false
     },
 
     "contactInfo": {
@@ -661,8 +807,9 @@
           "type": "string",
           "enum": ["phone", "mobile", "email", "sms", "fax"]
         },
-        "contactInfo": { "type": "string" }
-      }
+        "contactValue": { "type": "string" }
+      },
+      "additionalProperties": false
     },
 
     "mobilityAid": {
@@ -677,7 +824,8 @@
           ]
         },
         "quantity": { "type": "integer", "minimum": 1 }
-      }
+      },
+      "additionalProperties": false
     },
 
     "event": {
@@ -696,7 +844,8 @@
         },
         "eventNode": { "$ref": "#/$defs/node" }
       },
-      "required": ["eventType"]
+      "required": ["eventType"],
+      "additionalProperties": false
     },
 
     "process": {
@@ -725,7 +874,8 @@
         "trafficControl": { "type": "boolean" },
         "multiDispatch": { "type": "boolean" }
       },
-      "required": ["allowRouting", "dispatchResponsible"]
+      "required": ["allowRouting", "dispatchResponsible"],
+      "additionalProperties": false
     },
 
     "agreement": {
@@ -734,7 +884,8 @@
         "nameAgreement": { "type": "string" },
         "idAgreement": { "$ref": "#/$defs/id" },
         "product": { "$ref": "#/$defs/product" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "product": {
@@ -743,7 +894,8 @@
         "nameProduct": { "type": "string" },
         "idProduct": { "$ref": "#/$defs/id" }
       },
-      "required": ["idProduct"]
+      "required": ["idProduct"],
+      "additionalProperties": false
     },
 
     "economy": {
@@ -755,7 +907,8 @@
           "type": "array",
           "items": { "$ref": "#/$defs/payment" }
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "amount": {
@@ -767,7 +920,8 @@
         "vatPercent": { "type": "number" },
         "idCurrency": { "$ref": "#/$defs/id" }
       },
-      "required": ["amountInclVat"]
+      "required": ["amountInclVat"],
+      "additionalProperties": false
     },
 
     "payment": {
@@ -783,35 +937,106 @@
         "amount": { "$ref": "#/$defs/amount" },
         "documentType": { "type": "string" },
         "noOfDocuments": { "type": "integer", "minimum": 0 }
-      }
+      },
+      "additionalProperties": false
     },
 
     "resource": {
       "type": "object",
-      "description": "Vehicle/driver resource",
+      "description": "Dispatched vehicle/driver resource",
       "properties": {
-        "idVehicle": { "$ref": "#/$defs/id" },
-        "idDriver": { "$ref": "#/$defs/id" },
-        "vehicleDescription": { "type": "string" },
-        "driverName": { "type": "string" },
-        "capacity": { "$ref": "#/$defs/capacity" },
-        "geographicLocation": { "$ref": "#/$defs/geographicLocation" },
-        "driverContacts": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/contactInfo" }
-        }
-      }
+        "vehicle": { "$ref": "#/$defs/vehicleResource" },
+        "driver": { "$ref": "#/$defs/driverResource" },
+        "startLocation": { "$ref": "#/$defs/geographicLocation" }
+      },
+      "additionalProperties": false
     },
 
     "capacity": {
       "type": "object",
       "properties": {
-        "seats": { "type": "integer", "minimum": 0 },
-        "wheelchairPlaces": { "type": "integer", "minimum": 0 },
-        "stretcherPlaces": { "type": "integer", "minimum": 0 },
-        "luggageArea": { "type": "number" },
-        "fullArea": { "type": "number" }
-      }
+        "seats": { "$ref": "#/$defs/capacityItem" },
+        "wheelchairs": { "$ref": "#/$defs/capacityItem" },
+        "stretchers": { "$ref": "#/$defs/capacityItem" },
+        "animals": { "$ref": "#/$defs/capacityItem" }
+      },
+      "additionalProperties": false
+    },
+
+    "capacityItem": {
+      "type": "object",
+      "properties": {
+        "noOfSeats": { "type": "integer", "minimum": 0 },
+        "noOfItems": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+
+    "vehicleResource": {
+      "type": "object",
+      "description": "Vehicle details for dispatched resource",
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "ids": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "description": { "type": "string" },
+        "capacity": { "$ref": "#/$defs/capacity" },
+        "attributes": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "location": { "$ref": "#/$defs/geographicLocation" }
+      },
+      "additionalProperties": false
+    },
+
+    "driverResource": {
+      "type": "object",
+      "description": "Driver details for dispatched resource",
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "type": "string" },
+        "attributes": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "contactInfo": { "type": "array", "items": { "$ref": "#/$defs/contactInfo" } }
+      },
+      "additionalProperties": false
+    },
+
+    "resourceSpec": {
+      "type": "object",
+      "description": "Resource specification for content (vehicle/driver requirements)",
+      "properties": {
+        "vehicle": { "$ref": "#/$defs/vehicleSpec" },
+        "driver": { "$ref": "#/$defs/driverSpec" }
+      },
+      "additionalProperties": false
+    },
+
+    "vehicleSpec": {
+      "type": "object",
+      "description": "Vehicle specification (requirements for content)",
+      "properties": {
+        "attributes": { "type": "array", "items": { "$ref": "#/$defs/id" } },
+        "capacity": { "$ref": "#/$defs/capacity" }
+      },
+      "additionalProperties": false
+    },
+
+    "driverSpec": {
+      "type": "object",
+      "description": "Driver specification (requirements for content)",
+      "properties": {
+        "attributes": { "type": "array", "items": { "$ref": "#/$defs/id" } }
+      },
+      "additionalProperties": false
+    },
+
+    "subOrder": {
+      "type": "object",
+      "description": "Sub-order reference",
+      "properties": {
+        "orderIds": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" }
+        }
+      },
+      "additionalProperties": false
     },
 
     "time": {
@@ -827,9 +1052,15 @@
         "time": {
           "type": "string",
           "format": "date-time"
+        },
+        "dwellTime": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Dwell time in seconds"
         }
       },
-      "required": ["timeType", "time"]
+      "required": ["timeType", "time"],
+      "additionalProperties": false
     },
 
     "manualDescription": {
@@ -837,7 +1068,8 @@
       "properties": {
         "language": { "type": "string" },
         "text": { "type": "string" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "bulkLocationRequest": {
@@ -851,7 +1083,8 @@
         "bulkIntervalRequest": { "$ref": "#/$defs/locationRequest" },
         "bulkLocationAgreement": { "$ref": "#/$defs/agreement" },
         "locationResource": { "$ref": "#/$defs/resource" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "bulkLocationList": {
@@ -866,7 +1099,8 @@
           "items": { "$ref": "#/$defs/vehicleLocation" }
         }
       },
-      "required": ["locations"]
+      "required": ["locations"],
+      "additionalProperties": false
     },
 
     "vehicleLocation": {
@@ -883,7 +1117,8 @@
         "lon": { "type": "number" },
         "speed": { "type": "number" },
         "direction": { "type": "number", "minimum": 0, "maximum": 360 }
-      }
+      },
+      "additionalProperties": false
     },
 
     "locationRequest": {
@@ -892,7 +1127,8 @@
         "intervalSeconds": { "type": "integer", "minimum": 1 },
         "idVehicle": { "$ref": "#/$defs/id" },
         "idDriver": { "$ref": "#/$defs/id" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "orderReject": {
@@ -907,11 +1143,13 @@
           "properties": {
             "idMsg": { "$ref": "#/$defs/id" }
           },
-          "required": ["idMsg"]
+          "required": ["idMsg"],
+          "additionalProperties": false
         },
         "orgNewProvider": { "$ref": "#/$defs/org" },
         "resourceReject": { "$ref": "#/$defs/resource" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "cancellationConsequence": {
@@ -921,7 +1159,8 @@
         "cancellationConsequence": { "type": "boolean" },
         "economyCancellation": { "$ref": "#/$defs/economy" }
       },
-      "required": ["cancellationAcceptance", "cancellationConsequence"]
+      "required": ["cancellationAcceptance", "cancellationConsequence"],
+      "additionalProperties": false
     },
 
     "nodeCancellation": {
@@ -930,7 +1169,8 @@
         "nodeStart": { "type": "integer", "minimum": 1 },
         "nodeEnd": { "type": "integer", "minimum": 1 }
       },
-      "required": ["nodeStart"]
+      "required": ["nodeStart"],
+      "additionalProperties": false
     },
 
     "orderForward": {
@@ -940,7 +1180,8 @@
         "idOrderClient": { "$ref": "#/$defs/id" },
         "orgClientForward": { "$ref": "#/$defs/org" },
         "orgProviderForward": { "$ref": "#/$defs/org" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "driverSession": {
@@ -953,7 +1194,8 @@
         },
         "process": { "$ref": "#/$defs/process" },
         "resourceDriverSession": { "$ref": "#/$defs/resource" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "driverSessionReject": {
@@ -961,7 +1203,8 @@
       "properties": {
         "idDriverSession": { "$ref": "#/$defs/id" },
         "rejectReason": { "type": "string" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "providerOrderUpdate": {
@@ -972,7 +1215,8 @@
           "enum": ["timeUpdate", "addressUpdate", "contentUpdate", "cancellation"]
         },
         "nodeUpdated": { "$ref": "#/$defs/node" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "orderTemplate": {
@@ -986,7 +1230,8 @@
           "items": { "$ref": "#/$defs/scheduleElement" }
         }
       },
-      "required": ["idOrderTemplate", "orderTemplateCalendar", "schedules"]
+      "required": ["idOrderTemplate", "orderTemplateCalendar", "schedules"],
+      "additionalProperties": false
     },
 
     "calendar": {
@@ -1002,7 +1247,8 @@
           "type": "array",
           "items": { "type": "string", "format": "date" }
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "period": {
@@ -1010,7 +1256,8 @@
       "properties": {
         "startDate": { "type": "string", "format": "date" },
         "endDate": { "type": "string", "format": "date" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "weekdays": {
@@ -1023,7 +1270,8 @@
         "friday": { "type": "boolean" },
         "saturday": { "type": "boolean" },
         "sunday": { "type": "boolean" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "scheduleElement": {
@@ -1031,7 +1279,8 @@
       "properties": {
         "idScheduleElement": { "$ref": "#/$defs/id" },
         "order": { "$ref": "#/$defs/order" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "scheduleElementOrderList": {
@@ -1041,7 +1290,8 @@
           "type": "array",
           "items": { "$ref": "#/$defs/scheduleElement" }
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "actionRequest": {
@@ -1050,7 +1300,8 @@
         "idAction": { "$ref": "#/$defs/id" },
         "nodeAction": { "$ref": "#/$defs/node" },
         "contactAction": { "$ref": "#/$defs/contactInfo" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "messageTo": {
@@ -1069,7 +1320,8 @@
           "items": { "$ref": "#/$defs/time" }
         }
       },
-      "required": ["manualText"]
+      "required": ["manualText"],
+      "additionalProperties": false
     },
 
     "orderReport": {
@@ -1088,7 +1340,8 @@
           "items": { "$ref": "#/$defs/summaryReport" }
         }
       },
-      "required": ["summaryReports"]
+      "required": ["summaryReports"],
+      "additionalProperties": false
     },
 
     "economyReport": {
@@ -1097,7 +1350,8 @@
         "amount": { "$ref": "#/$defs/amount" },
         "distance": { "type": "integer" },
         "duration": { "type": "integer" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "summaryReport": {
@@ -1110,7 +1364,8 @@
           "type": "array",
           "items": { "$ref": "#/$defs/time" }
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "deliveryNote": {
@@ -1120,7 +1375,8 @@
         "deliveryNoteType": { "type": "string" },
         "order": { "$ref": "#/$defs/order" },
         "resource": { "$ref": "#/$defs/resource" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "accounting": {
@@ -1136,7 +1392,8 @@
           "items": { "$ref": "#/$defs/tour" }
         }
       },
-      "required": ["economyReportAccounting", "idAccounting", "orgClient", "orgProvider"]
+      "required": ["economyReportAccounting", "idAccounting", "orgClient", "orgProvider"],
+      "additionalProperties": false
     },
 
     "organization": {
@@ -1145,7 +1402,7 @@
         "orgName": { "type": "string" },
         "orgCity": { "type": "string" },
         "addressOrg": { "$ref": "#/$defs/address" },
-        "contacts": {
+        "contactInfo": {
           "type": "array",
           "items": { "$ref": "#/$defs/contactInfo" }
         },
@@ -1155,7 +1412,8 @@
         },
         "orgPayment": { "$ref": "#/$defs/orgPayment" }
       },
-      "required": ["orgName", "ids"]
+      "required": ["orgName", "ids"],
+      "additionalProperties": false
     },
 
     "orgPayment": {
@@ -1167,7 +1425,8 @@
           "type": "array",
           "items": { "$ref": "#/$defs/id" }
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "tour": {
@@ -1178,7 +1437,8 @@
           "type": "array",
           "items": { "$ref": "#/$defs/order" }
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "infoRequest": {
@@ -1186,7 +1446,8 @@
       "properties": {
         "requestType": { "type": "string" },
         "idRequest": { "$ref": "#/$defs/id" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "infoResponse": {
@@ -1197,7 +1458,8 @@
           "type": "array",
           "items": { "$ref": "#/$defs/node" }
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "resourceReservation": {
@@ -1206,7 +1468,8 @@
         "idReservation": { "$ref": "#/$defs/id" },
         "resource": { "$ref": "#/$defs/resource" },
         "period": { "$ref": "#/$defs/period" }
-      }
+      },
+      "additionalProperties": false
     },
 
     "resourceAllocation": {
@@ -1218,7 +1481,8 @@
           "type": "array",
           "items": { "$ref": "#/$defs/order" }
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "ratingList": {
@@ -1228,7 +1492,8 @@
           "type": "array",
           "items": { "$ref": "#/$defs/rating" }
         }
-      }
+      },
+      "additionalProperties": false
     },
 
     "rating": {
@@ -1237,7 +1502,28 @@
         "idRating": { "$ref": "#/$defs/id" },
         "ratingValue": { "type": "number" },
         "ratingComment": { "type": "string" }
-      }
+      },
+      "additionalProperties": false
+    },
+
+    "resourceDispatch": {
+      "type": "object",
+      "description": "Resource dispatch information for vehicle login/logout",
+      "properties": {
+        "vehicle": { "$ref": "#/$defs/vehicleResource" },
+        "driver": { "$ref": "#/$defs/driverResource" },
+        "manualDescription": { "$ref": "#/$defs/messageTo" },
+        "resourceValidation": {
+          "type": "object",
+          "properties": {
+            "validationType": { "type": "string" },
+            "validationMethod": { "type": "string" },
+            "validationTime": { "$ref": "#/$defs/time" }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
     }
   }
 }

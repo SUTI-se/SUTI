@@ -1,0 +1,50 @@
+{
+  "msg": {
+    "msgType": "4031",
+    "msgTimeStamp": "2022-03-08T15:37:00.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2022030815637970",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idOrder": {
+          "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+          "id": "10040216-0",
+          "unique": true
+        }
+      },
+      {
+        "idOrder": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+          "id": "3808732",
+          "unique": true
+        }
+      },
+      {
+        "idMsg": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+          "id": "2022030815283857",
+          "unique": true
+        }
+      }
+    ]
+  }
+}

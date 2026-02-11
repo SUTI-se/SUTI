@@ -1,0 +1,36 @@
+{
+  "msg": {
+    "msgType": "1022",
+    "msgTimeStamp": "2020-09-09T15:32:00.000Z",
+    "orgSender": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+      "id": "2020090915822995",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+          "id": "2020090915404125",
+          "unique": true
+        }
+      }
+    ]
+  }
+}

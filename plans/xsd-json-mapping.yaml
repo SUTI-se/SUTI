@@ -10,7 +10,7 @@
 # =============================================================================
 # METADATA
 # =============================================================================
-version: "2026.1"
+version: "2026.3"  # Updated: contacts → contactInfo (compound noun naming)
 xsd_source: "SUTI_Message.xsd"
 json_schema_target: "SUTI_Message.schema.json"
 
@@ -102,21 +102,21 @@ arrays:
     context: "bulkLocationList"
     notes: "Plural form"
 
-  # Contact info lists
+  # Contact info lists (keep compound noun item type name)
   - xsd: "contactInfoList"
-    json: "contacts"
+    json: "contactInfo"
     context: "content"
-    notes: "Simplified name + plural"
+    notes: "Keep item type name (compound noun doesn't pluralize)"
 
   - xsd: "contactInfoListOrg"
-    json: "contacts"
+    json: "contactInfo"
     context: "organization"
-    notes: "Simplified to plural"
+    notes: "Keep item type name (v1.2)"
 
   - xsd: "contactInfoDriver"
-    json: "driverContacts"
-    context: "resource"
-    notes: "Explicit prefix for clarity"
+    json: "contactInfo"
+    context: "driver"
+    notes: "Keep item type name (v1.2)"
 
   # Payment lists
   - xsd: "formOfPayment (unbounded)"
@@ -163,6 +163,79 @@ arrays:
     json: "timestamps"
     context: "messageTo"
     notes: "Plural form"
+
+# =============================================================================
+# PROPERTY SIMPLIFICATIONS (v1.1 - 2026-02-10)
+# =============================================================================
+# Properties are simplified by removing redundant context when nested.
+# Principle: If the parent provides context, don't repeat it in the child name.
+#
+property_simplifications:
+  # Content-level simplifications
+  content:
+    - xsd: "idContent"
+      json: "id"
+      notes: "Context is content"
+    - xsd: "nameContent"
+      json: "name"
+      notes: "Context is content"
+    - xsd: "economyContent"
+      json: "economy"
+      notes: "Drop redundant 'Content' suffix"
+    - xsd: "resourceContent"
+      json: "resource"
+      notes: "Drop redundant 'Content' suffix"
+    - xsd: "subOrderContent"
+      json: "subOrder"
+      notes: "Drop redundant 'Content' suffix"
+    - xsd: "attributeListContent"
+      json: "attributes"
+      notes: "Drop suffix, use plural"
+    - xsd: "contactInfoListContent"
+      json: "contactInfo"
+      notes: "Keep item type name (compound noun)"
+
+  # Vehicle-level simplifications
+  vehicle:
+    - xsd: "idVehicle"
+      json: "id"
+      notes: "Context is vehicle"
+    - xsd: "idVehicleList"
+      json: "ids"
+      notes: "Context is vehicle, plural for array"
+    - xsd: "vehicleDescription"
+      json: "description"
+      notes: "Context is vehicle"
+    - xsd: "attributeListVehicle"
+      json: "attributes"
+      notes: "Drop suffix, use plural"
+
+  # Driver-level simplifications
+  driver:
+    - xsd: "idDriver"
+      json: "id"
+      notes: "Context is driver"
+    - xsd: "driverName"
+      json: "name"
+      notes: "Context is driver"
+    - xsd: "attributeListDriver"
+      json: "attributes"
+      notes: "Drop suffix, use plural"
+    - xsd: "contactInfoDriver"
+      json: "contactInfo"
+      notes: "Keep item type name (compound noun)"
+
+  # SubOrder-level simplifications
+  subOrder:
+    - xsd: "idOrderList"
+      json: "orderIds"
+      notes: "Need prefix to distinguish from other IDs"
+
+  # Resource-level simplifications
+  resource:
+    - xsd: "vehicleStartLocation"
+      json: "startLocation"
+      notes: "Drop 'vehicle' prefix, context is resource"
 
 # =============================================================================
 # ENUMERATION MAPPINGS
@@ -416,16 +489,38 @@ type_mappings:
     notes: "XML-specific, removed in JSON"
 
 # =============================================================================
-# MESSAGE TYPE MAPPINGS
+# MESSAGE TYPE MAPPINGS (Complete - all 51 msgTypes)
 # =============================================================================
+# Updated: 2026-02-11 - Added all 16 missing msgTypes from completeness review
 message_types:
+  # Resource messages (1xxx)
   "1000":
     name: "resourceRequest"
     body: "resourceReservation"
 
+  "1020":
+    name: "resourceLogin"
+    body: "resourceDispatch"
+    notes: "Vehicle/driver login with optional validation"
+
+  "1021":
+    name: "resourceLoginConfirmation"
+    body: null
+    notes: "Header only - confirms login"
+
+  "1022":
+    name: "resourceLoginReject"
+    body: null
+    notes: "Header only - rejects login"
+
+  "1023":
+    name: "resourceLogoff"
+    body: "resourceDispatch"
+    notes: "Vehicle/driver logoff"
+
   "1061":
     name: "ratingResponse"
-    body: "ratings"
+    body: "ratingList"
 
   "1100":
     name: "bulkLocationRequest"
@@ -438,10 +533,23 @@ message_types:
     legacy: true
 
   "1112":
-    name: "bulkLocationResponse"
+    name: "bulkLocationResponsePart"
     body: "bulkLocationList"
     legacy: true
 
+  "1500":
+    name: "infoRequest"
+    body: "infoRequest"
+
+  "1600":
+    name: "infoResponse"
+    body: "infoResponse"
+
+  "1920":
+    name: "resourceAllocation"
+    body: "resourceAllocation"
+
+  # Order messages (2xxx)
   "2000":
     name: "order"
     body: "order"
@@ -455,17 +563,116 @@ message_types:
     name: "orderReject"
     body: "orderReject"
 
+  "2010":
+    name: "orderCancellation"
+    body: null
+    notes: "Header only - request to cancel order"
+
+  "2011":
+    name: "orderCancellationAccepted"
+    body: null
+    notes: "Header only - confirms cancellation"
+
+  "2012":
+    name: "cancellationConsequence"
+    body: "cancellationConsequence"
+
+  "2020":
+    name: "nodeCancellation"
+    body: "nodeCancellation"
+
+  "2030":
+    name: "orderForward"
+    body: "orderForward"
+
+  "2040":
+    name: "orderLink"
+    body: "driverSession"
+
+  "2060":
+    name: "providerOrderUpdate"
+    body: "providerOrderUpdate"
+
+  "2100":
+    name: "driverSession"
+    body: "driverSession"
+
+  "2101":
+    name: "driverSessionAccept"
+    body: "driverSession"
+
+  "2102":
+    name: "driverSessionReject"
+    body: "driverSessionReject"
+
+  "2800":
+    name: "orderTemplate"
+    body: "orderTemplate"
+
+  "2810":
+    name: "scheduleElementConfirmation"
+    body: "scheduleElementOrderList"
+
+  "2901":
+    name: "authorizationAccept"
+    body: "resource"
+
+  # Dispatch messages (3xxx)
   "3003":
     name: "dispatchConfirmation"
     body: "resource"
+
+  # Vehicle/Event messages (4xxx)
+  "4000":
+    name: "trafficInfoRequest"
+    body: "resource"
+
+  "4001":
+    name: "trafficInfoResponse"
+    body: "order"
 
   "4010":
     name: "eventVehicle"
     body: "event"
 
+  "4011":
+    name: "vehicleEventAccepted"
+    body: "event"
+    notes: "Confirms receipt of 4010 event"
+
+  "4012":
+    name: "vehicleEventRejected"
+    body: "event"
+    notes: "Rejects 4010 event"
+
+  "4020":
+    name: "endOfOrder"
+    body: "order"
+    notes: "Signals order completion with final data"
+
+  "4031":
+    name: "noContactWithVehicle"
+    body: null
+    notes: "Header only - communication lost"
+
+  "4100":
+    name: "actionRequest"
+    body: "actionRequest"
+
+  # Message/Location messages (5xxx)
   "5000":
     name: "messageToVehicle"
     body: "messageTo"
+
+  "5010":
+    name: "messageFromVehicle"
+    body: "messageTo"
+    notes: "Uses messageTo body type (not manualDescription)"
+
+  "5011":
+    name: "messageFromVehicleConfirm"
+    body: null
+    notes: "Header only - confirms receipt of 5010"
 
   "5020":
     name: "locationRequest"
@@ -475,6 +682,16 @@ message_types:
     name: "locationResponse"
     body: "geographicLocation"
 
+  # Report messages (6xxx)
+  "6001":
+    name: "orderReport"
+    body: "orderReport"
+
+  "6500":
+    name: "deliveryNote"
+    body: "deliveryNote"
+
+  # System messages (7xxx)
   "7000":
     name: "keepAlive"
     body: null
@@ -484,6 +701,31 @@ message_types:
     name: "keepAliveConfirmation"
     body: null
     notes: "Header only message"
+
+  "7030":
+    name: "syntaxError"
+    body: "messageTo"
+    notes: "Error message using messageTo for details"
+
+  "7031":
+    name: "notOperational"
+    body: "messageTo"
+    notes: "System not operational message"
+
+  "7100":
+    name: "linkMappingRequest"
+    body: "order"
+    notes: "Request to establish link between systems"
+
+  "7101":
+    name: "linkMappingResponse"
+    body: "order"
+    notes: "Response to link mapping request"
+
+  # Accounting messages (8xxx)
+  "8000":
+    name: "accounting"
+    body: "accounting"
 
 # =============================================================================
 # CONVERSION NOTES

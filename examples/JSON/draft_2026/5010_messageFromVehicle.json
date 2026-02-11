@@ -1,0 +1,43 @@
+{
+  "msg": {
+    "msgType": "5010",
+    "msgTimeStamp": "2020-09-09T15:40:00.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2020090915404493",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idOrder": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+          "id": "469",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "messageTo": {
+    "manualText": "STATUS:010",
+    "sendToInvoice": false,
+    "sendToVehicle": false,
+    "sendToOperator": true,
+    "vehicleConfirmation": false
+  }
+}

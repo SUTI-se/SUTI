@@ -58,7 +58,7 @@
     },
     "resourceOrder": {
       "vehicle": {
-        "idVehicleList": [
+        "ids": [
           {
             "src": "systemclient_clientsite_0009:idVehicle",
             "id": "51006P",
@@ -94,44 +94,44 @@
           "times": [
             {
               "timeType": "scheduled",
-              "time": "2015-08-10T08:00:00",
+              "time": "2015-08-10T08:00:00Z",
               "dwellTime": 0
             },
             {
               "timeType": "promised",
-              "time": "2015-08-10T08:00:00",
+              "time": "2015-08-10T08:00:00Z",
               "dwellTime": 600
             }
           ],
           "contents": [
             {
               "contentType": "traveller",
-              "nameContent": "John Doe",
-              "idContent": {
+              "name": "John Doe",
+              "id": {
                 "src": "systemclient_clientsite_0009:idContentId",
                 "id": "5319397",
                 "unique": true
               },
-              "attributeListContent": [
+              "attributes": [
                 {
                   "src": "SUTI:idLink",
                   "id": "1001",
                   "unique": true
                 }
               ],
-              "economyContent": {
-                "paymentList": [
+              "economy": {
+                "payments": [
                   {
                     "amount": {
                       "amountInclVat": 0.0,
                       "amountExclVat": 0.0,
                       "amountVat": 0.0
                     },
-                    "paymentType": "prepaidsocialfee"
+                    "paymentType": "prepaidSocialFee"
                   }
                 ]
               },
-              "resourceContent": {
+              "resource": {
                 "vehicle": {
                   "capacity": {
                     "seats": {
@@ -139,7 +139,7 @@
                       "noOfItems": 1
                     }
                   },
-                  "attributeListVehicle": [
+                  "attributes": [
                     {
                       "src": "SUTI:idLink",
                       "id": "1628",
@@ -148,7 +148,7 @@
                   ]
                 },
                 "driver": {
-                  "attributeListDriver": [
+                  "attributes": [
                     {
                       "src": "SUTI:idAttribute",
                       "id": "1510",
@@ -162,14 +162,14 @@
                   ]
                 }
               },
-              "contactInfoListContent": [
+              "contactInfo": [
                 {
                   "contactType": "phone",
-                  "contactInfo": "0431-74700"
+                  "contactValue": "0431-74700"
                 }
               ],
-              "subOrderContent": {
-                "idOrderList": [
+              "subOrder": {
+                "orderIds": [
                   {
                     "src": "systemclient_clientsite_0009:idSubOrder",
                     "id": "11183750",
@@ -200,43 +200,43 @@
           "times": [
             {
               "timeType": "estimated",
-              "time": "2015-08-10T08:07:18"
+              "time": "2015-08-10T08:07:18Z"
             },
             {
               "timeType": "scheduled",
-              "time": "2015-08-10T08:07:00"
+              "time": "2015-08-10T08:07:00Z"
             }
           ],
           "contents": [
             {
               "contentType": "traveller",
-              "nameContent": "John Doe",
-              "idContent": {
+              "name": "John Doe",
+              "id": {
                 "src": "systemclient_clientsite_0009:idContentId",
                 "id": "5319397",
                 "unique": true
               },
-              "attributeListContent": [
+              "attributes": [
                 {
                   "src": "SUTI:idLink",
                   "id": "1001",
                   "unique": true
                 }
               ],
-              "economyContent": {
-                "paymentList": [
+              "economy": {
+                "payments": [
                   {
                     "amount": {
                       "amountInclVat": 0.0,
                       "amountExclVat": 0.0,
                       "amountVat": 0.0
                     },
-                    "paymentType": "prepaidsocialfee"
+                    "paymentType": "prepaidSocialFee"
                   }
                 ]
               },
-              "subOrderContent": {
-                "idOrderList": [
+              "subOrder": {
+                "orderIds": [
                   {
                     "src": "systemclient_clientsite_0009:idSubOrder",
                     "id": "11183750",

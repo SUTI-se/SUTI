@@ -135,14 +135,14 @@
         "msgCount": { "type": "integer" },
         "locationList": {
           "type": "array",
-          "items": { "$ref": "#/$defs/vehicleLocation" }
+          "items": { "$ref": "#/$defs/vehicleBulkLocation" }
         }
       },
       "required": ["locationList"],
       "additionalProperties": false
     },
 
-    "vehicleLocation": {
+    "vehicleBulkLocation": {
       "type": "object",
       "properties": {
         "vehicleIdProvider": { "type": "string" },

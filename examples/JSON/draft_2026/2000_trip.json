@@ -1,0 +1,223 @@
+{
+  "msg": {
+    "msgType": "2000",
+    "msgTimeStamp": "2020-09-09T16:52:00.000Z",
+    "orgSender": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+      "id": "2020090915822999",
+      "unique": true
+    }
+  },
+  "order": {
+    "idOrder": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+      "id": "482",
+      "unique": true
+    },
+    "orgProvider": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "process": {
+      "allowRouting": true,
+      "trafficControl": true,
+      "orderAlteration": false,
+      "dispatchResponsible": "provider",
+      "report": false,
+      "preorderedVehicle": false,
+      "dispatch": true,
+      "manualDispatch": false,
+      "pickupConfirmation": "standard"
+    },
+    "resourceOrder": {
+      "vehicle": {
+        "ids": [
+          {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idVehicle",
+            "id": "77777",
+            "unique": true
+          }
+        ],
+        "capacity": {
+          "seats": {
+            "noOfSeats": 1
+          }
+        }
+      }
+    },
+    "route": {
+      "nodes": [
+        {
+          "nodeSeqNo": 1,
+          "nodeType": "pickup",
+          "addressNode": {
+            "addressName": " ",
+            "street": "Kvarnstensgatan",
+            "streetNo": 10,
+            "streetNoLetter": "",
+            "community": "Helsingborg",
+            "postalNo": "25227",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 56.053811,
+              "lon": 12.720738,
+              "precision": 6
+            }
+          },
+          "times": [
+            {
+              "timeType": "scheduled",
+              "time": "2020-09-09T16:52:00Z",
+              "dwellTime": 720
+            },
+            {
+              "timeType": "estimated",
+              "time": "2020-09-09T16:47:00Z",
+              "dwellTime": 720
+            }
+          ],
+          "contents": [
+            {
+              "contentType": "traveller",
+              "name": "Nils Testsson",
+              "id": {
+                "src": "systemsupplierId_clientOwnerId_uniqueId:idContent",
+                "id": "15061",
+                "unique": true
+              },
+              "economy": {
+                "payments": [
+                  {
+                    "amount": {
+                      "amountInclVat": 30.0
+                    },
+                    "paymentType": "prepaidSocialFee"
+                  }
+                ]
+              },
+              "resource": {
+                "vehicle": {
+                  "capacity": {
+                    "seats": {
+                      "noOfSeats": 1
+                    }
+                  }
+                }
+              },
+              "contactInfo": [
+                {
+                  "contactType": "phone",
+                  "contactValue": "123456789"
+                }
+              ],
+              "subOrder": {
+                "orderIds": [
+                  {
+                    "src": "systemsupplierId_clientOwnerId_uniqueId:idSubOrder",
+                    "id": "18555474",
+                    "unique": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "nodeSeqNo": 2,
+          "nodeType": "destination",
+          "addressNode": {
+            "addressName": "Olympia Bowling",
+            "street": "Mellersta Stenbocksg",
+            "streetNo": 10,
+            "streetNoLetter": "",
+            "community": "Helsingborg",
+            "postalNo": "25437",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 56.051413,
+              "lon": 12.706366,
+              "precision": 6
+            }
+          },
+          "times": [
+            {
+              "timeType": "scheduled",
+              "time": "2020-09-09T17:11:21Z",
+              "dwellTime": 360
+            },
+            {
+              "timeType": "estimated",
+              "time": "2020-09-09T17:11:21Z",
+              "dwellTime": 360
+            }
+          ],
+          "contents": [
+            {
+              "contentType": "traveller",
+              "name": "Nils Testsson",
+              "id": {
+                "src": "systemsupplierId_clientOwnerId_uniqueId:idContent",
+                "id": "15061",
+                "unique": true
+              },
+              "economy": {
+                "payments": [
+                  {
+                    "amount": {
+                      "amountInclVat": 30.0
+                    },
+                    "paymentType": "prepaidSocialFee"
+                  }
+                ]
+              },
+              "resource": {
+                "vehicle": {
+                  "capacity": {
+                    "seats": {
+                      "noOfSeats": 1
+                    }
+                  }
+                }
+              },
+              "contactInfo": [
+                {
+                  "contactType": "phone",
+                  "contactValue": "043174700"
+                }
+              ],
+              "subOrder": {
+                "orderIds": [
+                  {
+                    "src": "systemsupplierId_clientOwnerId_uniqueId:idSubOrder",
+                    "id": "18555474",
+                    "unique": true
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,350 @@
+{
+  "msg": {
+    "msgType": "2100",
+    "msgTimeStamp": "2025-12-16T14:00:00.000Z",
+    "orgSender": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:MsgId",
+      "id": "2025121614758103",
+      "unique": true
+    }
+  },
+  "driverSession": {
+    "idDriverSession": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:DriverSessionId",
+      "id": "34542439",
+      "unique": true
+    },
+    "process": {
+      "allowRouting": true,
+      "trafficControl": true,
+      "orderAlteration": true,
+      "dispatchResponsible": "client",
+      "report": false,
+      "preorderedVehicle": false,
+      "dispatch": true,
+      "manualDispatch": false
+    },
+    "resourceDriverSession": {
+      "vehicle": {
+        "ids": [
+          {
+            "src": "systemsupplierId_providerOwnerId_uniqueId:idVehicle",
+            "id": "101",
+            "unique": true
+          }
+        ],
+        "capacity": {
+          "seats": {
+            "noOfSeats": 4
+          }
+        }
+      }
+    },
+    "orders": [
+      {
+        "idOrder": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:OrderId",
+          "id": "34394460",
+          "unique": true
+        },
+        "process": {
+          "allowRouting": true,
+          "trafficControl": true,
+          "orderAlteration": true,
+          "dispatchResponsible": "client",
+          "report": false,
+          "preorderedVehicle": false,
+          "dispatch": true,
+          "manualDispatch": false,
+          "pickupConfirmation": "standard"
+        },
+        "resourceOrder": {
+          "vehicle": {
+            "ids": [
+              {
+                "src": "systemsupplierId_providerOwnerId_uniqueId:idVehicle",
+                "id": "101",
+                "unique": true
+              }
+            ],
+            "capacity": {
+              "seats": {
+                "noOfSeats": 1
+              }
+            },
+            "attributes": [
+              {
+                "src": "SUTI:idAttribute",
+                "id": "1638",
+                "unique": true
+              }
+            ]
+          }
+        },
+        "route": {
+          "nodes": [
+            {
+              "nodeSeqNo": 1,
+              "nodeType": "pickup",
+              "addressNode": {
+                "addressName": "Storgatan 31, SE-802 86 Gävle, Sverige",
+                "street": "Lysgatan",
+                "streetNo": 31,
+                "streetNoLetter": "",
+                "community": "Gävle",
+                "postalNo": "802 86",
+                "geographicLocation": {
+                  "typeOfCoordinate": "WGS-84",
+                  "lat": 59.67345,
+                  "lon": 16.17607,
+                  "precision": 6
+                }
+              },
+              "times": [
+                {
+                  "timeType": "scheduled",
+                  "time": "2025-12-17T07:10:00Z"
+                },
+                {
+                  "timeType": "estimated",
+                  "time": "2025-12-17T07:10:00Z"
+                }
+              ],
+              "contents": [
+                {
+                  "contentType": "traveller",
+                  "name": "Ada Adasson",
+                  "attributes": [
+                    {
+                      "src": "SUTI:idAttribute",
+                      "id": "2317",
+                      "unique": true
+                    },
+                    {
+                      "src": "SUTI:idAttribute",
+                      "id": "2313",
+                      "unique": true
+                    }
+                  ],
+                  "contactInfo": [
+                    {
+                      "contactType": "phone",
+                      "contactValue": "070123456"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nodeSeqNo": 2,
+              "nodeType": "destination",
+              "addressNode": {
+                "addressName": "Staffansskolan Anpassad",
+                "street": "Tredje Tvärgatan",
+                "streetNo": 34,
+                "streetNoLetter": "",
+                "community": "Gävle",
+                "postalNo": "80284",
+                "geographicLocation": {
+                  "typeOfCoordinate": "WGS-84",
+                  "lat": 59.6716250322652,
+                  "lon": 16.163967099180706,
+                  "precision": 6
+                }
+              },
+              "times": [
+                {
+                  "timeType": "scheduled",
+                  "time": "2025-12-17T07:15:12Z"
+                },
+                {
+                  "timeType": "estimated",
+                  "time": "2025-12-17T07:15:12Z"
+                }
+              ],
+              "contents": [
+                {
+                  "contentType": "traveller",
+                  "name": "Ada Adasson",
+                  "attributes": [
+                    {
+                      "src": "SUTI:idAttribute",
+                      "id": "2317",
+                      "unique": true
+                    },
+                    {
+                      "src": "SUTI:idAttribute",
+                      "id": "2313",
+                      "unique": true
+                    }
+                  ],
+                  "contactInfo": [
+                    {
+                      "contactType": "phone",
+                      "contactValue": "07365498"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "idOrder": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:OrderId",
+          "id": "34394578",
+          "unique": true
+        },
+        "process": {
+          "allowRouting": true,
+          "trafficControl": true,
+          "orderAlteration": true,
+          "dispatchResponsible": "client",
+          "report": false,
+          "preorderedVehicle": false,
+          "dispatch": true,
+          "manualDispatch": false,
+          "pickupConfirmation": "standard"
+        },
+        "resourceOrder": {
+          "vehicle": {
+            "ids": [
+              {
+                "src": "systemsupplierId_providerOwnerId_uniqueId:idVehicle",
+                "id": "101",
+                "unique": true
+              }
+            ],
+            "capacity": {
+              "seats": {
+                "noOfSeats": 1
+              }
+            },
+            "attributes": [
+              {
+                "src": "SUTI:idAttribute",
+                "id": "1638",
+                "unique": true
+              }
+            ]
+          }
+        },
+        "route": {
+          "nodes": [
+            {
+              "nodeSeqNo": 3,
+              "nodeType": "pickup",
+              "addressNode": {
+                "addressName": "",
+                "street": "Klasro",
+                "streetNo": 5,
+                "streetNoLetter": "",
+                "community": "",
+                "postalNo": "80595",
+                "geographicLocation": {
+                  "typeOfCoordinate": "WGS-84",
+                  "lat": 60.701489,
+                  "lon": 17.230823,
+                  "precision": 6
+                }
+              },
+              "times": [
+                {
+                  "timeType": "scheduled",
+                  "time": "2025-12-17T07:27:00Z"
+                },
+                {
+                  "timeType": "estimated",
+                  "time": "2025-12-17T07:27:00Z"
+                }
+              ],
+              "contents": [
+                {
+                  "contentType": "traveller",
+                  "name": "Beda Bedasson",
+                  "attributes": [
+                    {
+                      "src": "SUTI:idAttribute",
+                      "id": "2313",
+                      "unique": true
+                    }
+                  ],
+                  "contactInfo": [
+                    {
+                      "contactType": "phone",
+                      "contactValue": "070121212"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "nodeSeqNo": 4,
+              "nodeType": "destination",
+              "addressNode": {
+                "addressName": "Stora Sätraskolan",
+                "street": "Forellplan",
+                "streetNo": 1,
+                "streetNoLetter": "",
+                "community": "Gävle",
+                "postalNo": "80631",
+                "geographicLocation": {
+                  "typeOfCoordinate": "WGS-84",
+                  "lat": 60.69137104226699,
+                  "lon": 17.11366023889232,
+                  "precision": 6
+                }
+              },
+              "times": [
+                {
+                  "timeType": "scheduled",
+                  "time": "2025-12-17T07:43:07Z"
+                },
+                {
+                  "timeType": "estimated",
+                  "time": "2025-12-17T07:43:07Z"
+                }
+              ],
+              "contents": [
+                {
+                  "contentType": "traveller",
+                  "name": "Beda Bedasson",
+                  "attributes": [
+                    {
+                      "src": "SUTI:idAttribute",
+                      "id": "2313",
+                      "unique": true
+                    }
+                  ],
+                  "contactInfo": [
+                    {
+                      "contactType": "phone",
+                      "contactValue": "070121212"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

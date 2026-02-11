@@ -1,0 +1,64 @@
+{
+  "msg": {
+    "msgType": "1020",
+    "msgTimeStamp": "2020-09-09T04:10:02.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2020090915402925",
+      "unique": true
+    }
+  },
+  "resourceDispatch": {
+    "vehicle": {
+      "capacity": {
+        "seats": {
+          "noOfSeats": 4
+        }
+      }
+    },
+    "driver": {
+      "id": {
+        "src": "SE:idDriver",
+        "id": "123456",
+        "unique": true
+      },
+      "contactInfo": [
+        {
+          "contactType": "phone",
+          "contactValue": "043174700"
+        }
+      ]
+    },
+    "manualDescription": {
+      "manualText": "",
+      "sendToInvoice": false,
+      "sendToVehicle": false,
+      "sendToOperator": true,
+      "vehicleConfirmation": false
+    },
+    "resourceValidation": {
+      "validationType": "bky",
+      "validationMethod": "system",
+      "validationTime": {
+        "timeType": "actual",
+        "time": "2020-09-09T04:10:02Z"
+      }
+    }
+  }
+}

@@ -76,41 +76,41 @@
       "times": [
         {
           "timeType": "scheduled",
-          "time": "2015-08-10T08:00:00"
+          "time": "2015-08-10T08:00:00Z"
         },
         {
           "timeType": "promised",
-          "time": "2015-08-10T08:00:00",
+          "time": "2015-08-10T08:00:00Z",
           "dwellTime": 600
         },
         {
           "timeType": "estimated",
-          "time": "2015-08-10T08:00:00",
+          "time": "2015-08-10T08:00:00Z",
           "dwellTime": 600
         },
         {
           "timeType": "actual",
-          "time": "2015-08-10T08:00:00",
+          "time": "2015-08-10T08:00:00Z",
           "dwellTime": 600
         }
       ],
       "contents": [
         {
           "contentType": "traveller",
-          "nameContent": "John Doe",
-          "idContent": {
+          "name": "John Doe",
+          "id": {
             "src": "systemclient_clientsite_0009:idContentId",
             "id": "5319397",
             "unique": true
           },
-          "attributeListContent": [
+          "attributes": [
             {
               "src": "SUTI:idAttribute",
               "id": "1001",
               "unique": true
             }
           ],
-          "resourceContent": {
+          "resource": {
             "vehicle": {
               "capacity": {
                 "seats": {
@@ -118,7 +118,7 @@
                   "noOfItems": 1
                 }
               },
-              "attributeListVehicle": [
+              "attributes": [
                 {
                   "src": "SUTI:idLink",
                   "id": "1628",
@@ -127,14 +127,14 @@
               ]
             }
           },
-          "contactInfoListContent": [
+          "contactInfo": [
             {
               "contactType": "phone",
-              "contactInfo": "0431-74700"
+              "contactValue": "0431-74700"
             }
           ],
-          "subOrderContent": {
-            "idOrderList": [
+          "subOrder": {
+            "orderIds": [
               {
                 "src": "systemclient_clientsite_0009:idSubOrder",
                 "id": "11183750",

@@ -35,9 +35,9 @@
   },
   "messageTo": {
     "manualText": "The message here",
-    "sendtoInvoice": false,
-    "sendtoOperator": true,
-    "sendtoVehicle": true,
+    "sendToInvoice": false,
+    "sendToOperator": true,
+    "sendToVehicle": true,
     "vehicleConfirmation": false
   }
 }

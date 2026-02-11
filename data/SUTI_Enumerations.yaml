@@ -1533,21 +1533,21 @@ enumerations:
         fi: osoitetieto ei riittävä
         'no': adresseinfo ikke tilstrekkelig
         sv: otillräcklig adressinfo hos Client/Provider
-    OrderCancelled:
+    orderCancelled:
       id: 2515
       description: Ogiltig operation då ordern är avbokad
       translations:
-        en: OrderCancelled
-    OrderNoShow:
+        en: orderCancelled
+    orderNoShow:
       id: 2516
       description: Ogiltig operation då ordern är bomad
       translations:
-        en: OrderNoShow
-    OrderCompleted:
+        en: orderNoShow
+    orderCompleted:
       id: 2517
       description: Ogiltig operation då ordern redan är avslutad
       translations:
-        en: OrderCompleted
+        en: orderCompleted
     Customer not picked up:
       id: 2518
       description: Ogiltig operation då kund inte är hämtad
@@ -1812,20 +1812,20 @@ enumerations:
         fi: matkustusasiakirja
         'no': reisebevis
         sv: resehandling
-    socialservicefee:
+    socialServiceFee:
       id: 1306
       description: Amount that the traveller pay of the total fare. The remaining fare are paid by account or invoice.
       translations:
-        en: socialservicefee
+        en: socialServiceFee
         da: egenandel
         fi: omamaksu
         'no': egenandel
         sv: egenavgift
-    prepaidSocialfee:
+    prepaidSocialFee:
       id: 1307
-      description: A card or document that indicates that traveller do not need to pay socialservicefee.
+      description: A card or document that indicates that traveller do not need to pay socialServiceFee.
       translations:
-        en: prepaidSocialfee
+        en: prepaidSocialFee
         da: frikort
         fi: vapaakortti
         'no': frikort
@@ -1839,11 +1839,11 @@ enumerations:
         fi: vaatimus
         'no': krav
         sv: fordran
-    NoShow:
+    noShow:
       id: 1309
-      description: Initiated by driver specifiying a special accountpayment in case of noshow
+      description: Initiated by driver specifiying a special accountpayment in case of noShow
       translations:
-        en: NoShow
+        en: noShow
     providerCompensation:
       id: 1310
       description: Initiated by driver specifiying a special accountpayment in case special compensation for external cost occured
@@ -2371,16 +2371,16 @@ enumerations:
         fi: mahdollisimman pian
         'no': så snart som mulig
         sv: så snart som möjligt
-    estimatedStarttime:
+    estimatedStartTime:
       id: 2109
-      description: Estimated starttime for a session for the vehicle/driver
+      description: Estimated start time for a session for the vehicle/driver
       translations:
-        en: estimatedStarttime
-    estimatedEndtime:
+        en: estimatedStartTime
+    estimatedEndTime:
       id: 2110
-      description: Estimated endtime for a session for the vehicle/driver
+      description: Estimated end time for a session for the vehicle/driver
       translations:
-        en: estimatedEndtime
+        en: estimatedEndTime
     requestedlatetime:
       id: 2111
       description: requested  latest endtime for a dropoff-node for the vehicle/driver

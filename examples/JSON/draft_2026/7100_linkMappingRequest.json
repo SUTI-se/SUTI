@@ -1,0 +1,103 @@
+{
+  "msg": {
+    "msgType": "7100",
+    "msgTimeStamp": "2025-09-15T14:50:00.000Z",
+    "orgSender": {
+      "name": "clientOwnerId",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "providerOwnerId",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+      "id": "2025091514795234",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idOrder": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+          "id": "LINK-001",
+          "unique": true
+        }
+      },
+      {
+        "idNode": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idNode",
+          "id": "NODE-001",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "order": {
+    "idOrder": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+      "id": "LINK-001",
+      "unique": true
+    },
+    "agreement": {
+      "idAgreement": {
+        "src": "systemsupplierId_clientOwnerId_uniqueId:idAgreement",
+        "id": "AGR-001",
+        "unique": true
+      }
+    },
+    "resourceOrder": {
+      "vehicle": {
+        "attributes": [
+          {
+            "src": "SUTI:idAttribute",
+            "id": "1101",
+            "unique": true
+          }
+        ]
+      },
+      "driver": {
+        "attributes": [
+          {
+            "src": "SUTI:idAttribute",
+            "id": "1201",
+            "unique": true
+          }
+        ]
+      }
+    },
+    "route": {
+      "nodes": [
+        {
+          "nodeSeqNo": 1,
+          "nodeType": "pickup",
+          "contents": [
+            {
+              "contentType": "traveller",
+              "name": "John Doe",
+              "id": {
+                "src": "systemsupplierId_clientOwnerId_uniqueId:idContent",
+                "id": "CONTENT-001",
+                "unique": true
+              },
+              "attributes": [
+                {
+                  "src": "SUTI:idAttribute",
+                  "id": "1301",
+                  "unique": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "msg": {
+    "msgType": "7030",
+    "msgTimeStamp": "2015-12-14T14:00:00.000Z",
+    "orgSender": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+      "id": "2015121414795235",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+          "id": "2015121414795234",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "messageTo": {
+    "manualText": "Error message text",
+    "sendToInvoice": false,
+    "sendToOperator": false,
+    "sendToVehicle": false,
+    "vehicleConfirmation": false
+  }
+}
