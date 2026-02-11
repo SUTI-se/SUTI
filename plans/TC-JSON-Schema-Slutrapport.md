@@ -209,22 +209,23 @@ message_types:
 
 ## 7. Föreslagna nästa steg
 
-### Kortsiktigt (Q1 2026)
+### Kortsiktigt
 
 1. **TK-godkännande** av JSON Schema och mappningsdokumentation
-2. **Pilot-implementation** hos minst två leverantörer
-3. **Konverteringsverktyg** för XML↔JSON
+2. **Presentation** vid seminarium 19 mars 2026
+3. **Revidering** utifrån feedback vid seminariet
+4. **Konverteringsverktyg** för XML↔JSON
 
-### Medelsiktigt (Q2-Q3 2026)
+### Medelsiktigt
+4. **Pilot-implementation** hos minst två leverantörer
+5. **Profilbaserade scheman** (Basic, Standard, Full)
+6. **CI/CD-integration** för automatisk validering
+7. **Utökade exempel** för alla edge cases
 
-4. **Profilbaserade scheman** (Basic, Standard, Full)
-5. **CI/CD-integration** för automatisk validering
-6. **Utökade exempel** för alla edge cases
+### Långsiktigt
 
-### Långsiktigt (2027)
-
-7. **XSD v2.0** med synkroniserade förbättringar
-8. **JSON-first** för nya meddelandetyper
+8. **XSD v2.0** med synkroniserade förbättringar och harmonisering med Transmodelbegrepp
+9. **JSON-first** för nya meddelandetyper
 
 ---
 
