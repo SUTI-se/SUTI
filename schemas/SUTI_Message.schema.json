@@ -6,9 +6,23 @@
   "version": "2026.1",
   "type": "object",
   "properties": {
-    "msg": { "$ref": "#/$defs/msg" }
+    "$schema": { "type": "string", "format": "uri", "description": "Reference to the JSON Schema for validation" },
+    "msg": { "$ref": "#/$defs/msg" },
+    "sutiMessages": {
+      "type": "array",
+      "description": "Array of complete SUTI messages for batch transmission",
+      "items": { "$ref": "#" },
+      "minItems": 1
+    }
   },
-  "required": ["msg"],
+  "oneOf": [
+    { "required": ["msg"], "not": { "required": ["sutiMessages"] } },
+    {
+      "required": ["sutiMessages"], "not": { "required": ["msg"] },
+      "properties": { "$schema": true, "sutiMessages": true },
+      "unevaluatedProperties": false
+    }
+  ],
 
   "allOf": [
     {
@@ -19,7 +33,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "resourceReservation": { "$ref": "#/$defs/resourceReservation" }
+          "resourceReservation": { "$ref": "#/$defs/resourceReservation" },
+          "$schema": true
         },
         "unevaluatedProperties": false
       }
@@ -32,7 +47,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "ratings": { "$ref": "#/$defs/ratingList" }
+          "ratings": { "$ref": "#/$defs/ratingList" },
+          "$schema": true
         },
         "unevaluatedProperties": false
       }
@@ -45,7 +61,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "bulkLocationRequest": { "$ref": "#/$defs/bulkLocationRequest" }
+          "bulkLocationRequest": { "$ref": "#/$defs/bulkLocationRequest" },
+          "$schema": true
         },
         "required": ["msg", "bulkLocationRequest"],
         "unevaluatedProperties": false
@@ -59,7 +76,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "bulkLocationList": { "$ref": "#/$defs/bulkLocationList" }
+          "bulkLocationList": { "$ref": "#/$defs/bulkLocationList" },
+          "$schema": true
         },
         "required": ["msg", "bulkLocationList"],
         "unevaluatedProperties": false
@@ -73,7 +91,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "infoRequest": { "$ref": "#/$defs/infoRequest" }
+          "infoRequest": { "$ref": "#/$defs/infoRequest" },
+          "$schema": true
         },
         "unevaluatedProperties": false
       }
@@ -86,7 +105,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "infoResponse": { "$ref": "#/$defs/infoResponse" }
+          "infoResponse": { "$ref": "#/$defs/infoResponse" },
+          "$schema": true
         },
         "unevaluatedProperties": false
       }
@@ -99,7 +119,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "resourceAllocation": { "$ref": "#/$defs/resourceAllocation" }
+          "resourceAllocation": { "$ref": "#/$defs/resourceAllocation" },
+          "$schema": true
         },
         "required": ["msg", "resourceAllocation"],
         "unevaluatedProperties": false
@@ -113,7 +134,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "order": { "$ref": "#/$defs/order" }
+          "order": { "$ref": "#/$defs/order" },
+          "$schema": true
         },
         "required": ["msg", "order"],
         "unevaluatedProperties": false
@@ -125,7 +147,7 @@
         "required": ["msg"]
       },
       "then": {
-        "properties": { "msg": true },
+        "properties": { "msg": true, "$schema": true },
         "unevaluatedProperties": false
       }
     },
@@ -137,7 +159,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "orderReject": { "$ref": "#/$defs/orderReject" }
+          "orderReject": { "$ref": "#/$defs/orderReject" },
+          "$schema": true
         },
         "required": ["msg", "orderReject"],
         "unevaluatedProperties": false
@@ -151,7 +174,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "cancellationConsequence": { "$ref": "#/$defs/cancellationConsequence" }
+          "cancellationConsequence": { "$ref": "#/$defs/cancellationConsequence" },
+          "$schema": true
         },
         "required": ["msg", "cancellationConsequence"],
         "unevaluatedProperties": false
@@ -165,7 +189,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "nodeCancellation": { "$ref": "#/$defs/nodeCancellation" }
+          "nodeCancellation": { "$ref": "#/$defs/nodeCancellation" },
+          "$schema": true
         },
         "unevaluatedProperties": false
       }
@@ -178,7 +203,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "orderForward": { "$ref": "#/$defs/orderForward" }
+          "orderForward": { "$ref": "#/$defs/orderForward" },
+          "$schema": true
         },
         "required": ["msg", "orderForward"],
         "unevaluatedProperties": false
@@ -192,7 +218,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "driverSession": { "$ref": "#/$defs/driverSession" }
+          "driverSession": { "$ref": "#/$defs/driverSession" },
+          "$schema": true
         },
         "required": ["msg", "driverSession"],
         "unevaluatedProperties": false
@@ -206,7 +233,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "providerOrderUpdate": { "$ref": "#/$defs/providerOrderUpdate" }
+          "providerOrderUpdate": { "$ref": "#/$defs/providerOrderUpdate" },
+          "$schema": true
         },
         "unevaluatedProperties": false
       }
@@ -219,7 +247,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "driverSessionReject": { "$ref": "#/$defs/driverSessionReject" }
+          "driverSessionReject": { "$ref": "#/$defs/driverSessionReject" },
+          "$schema": true
         },
         "required": ["msg", "driverSessionReject"],
         "unevaluatedProperties": false
@@ -233,7 +262,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "orderTemplate": { "$ref": "#/$defs/orderTemplate" }
+          "orderTemplate": { "$ref": "#/$defs/orderTemplate" },
+          "$schema": true
         },
         "required": ["msg", "orderTemplate"],
         "unevaluatedProperties": false
@@ -247,7 +277,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "scheduleElementOrderList": { "$ref": "#/$defs/scheduleElementOrderList" }
+          "scheduleElementOrderList": { "$ref": "#/$defs/scheduleElementOrderList" },
+          "$schema": true
         },
         "required": ["msg", "scheduleElementOrderList"],
         "unevaluatedProperties": false
@@ -261,7 +292,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "resource": { "$ref": "#/$defs/resource" }
+          "resource": { "$ref": "#/$defs/resource" },
+          "$schema": true
         },
         "unevaluatedProperties": false
       }
@@ -274,7 +306,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "order": { "$ref": "#/$defs/order" }
+          "order": { "$ref": "#/$defs/order" },
+          "$schema": true
         },
         "required": ["msg", "order"],
         "unevaluatedProperties": false
@@ -288,7 +321,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "event": { "$ref": "#/$defs/event" }
+          "event": { "$ref": "#/$defs/event" },
+          "$schema": true
         },
         "required": ["msg", "event"],
         "unevaluatedProperties": false
@@ -302,7 +336,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "actionRequest": { "$ref": "#/$defs/actionRequest" }
+          "actionRequest": { "$ref": "#/$defs/actionRequest" },
+          "$schema": true
         },
         "required": ["msg", "actionRequest"],
         "unevaluatedProperties": false
@@ -316,7 +351,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "messageTo": { "$ref": "#/$defs/messageTo" }
+          "messageTo": { "$ref": "#/$defs/messageTo" },
+          "$schema": true
         },
         "required": ["msg", "messageTo"],
         "unevaluatedProperties": false
@@ -330,7 +366,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "locationRequest": { "$ref": "#/$defs/locationRequest" }
+          "locationRequest": { "$ref": "#/$defs/locationRequest" },
+          "$schema": true
         },
         "unevaluatedProperties": false
       }
@@ -343,7 +380,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "geographicLocation": { "$ref": "#/$defs/geographicLocation" }
+          "geographicLocation": { "$ref": "#/$defs/geographicLocation" },
+          "$schema": true
         },
         "required": ["msg", "geographicLocation"],
         "unevaluatedProperties": false
@@ -357,7 +395,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "orderReport": { "$ref": "#/$defs/orderReport" }
+          "orderReport": { "$ref": "#/$defs/orderReport" },
+          "$schema": true
         },
         "required": ["msg", "orderReport"],
         "unevaluatedProperties": false
@@ -371,7 +410,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "deliveryNote": { "$ref": "#/$defs/deliveryNote" }
+          "deliveryNote": { "$ref": "#/$defs/deliveryNote" },
+          "$schema": true
         },
         "required": ["msg", "deliveryNote"],
         "unevaluatedProperties": false
@@ -383,7 +423,7 @@
         "required": ["msg"]
       },
       "then": {
-        "properties": { "msg": true },
+        "properties": { "msg": true, "$schema": true },
         "unevaluatedProperties": false
       }
     },
@@ -395,7 +435,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "accounting": { "$ref": "#/$defs/accounting" }
+          "accounting": { "$ref": "#/$defs/accounting" },
+          "$schema": true
         },
         "required": ["msg", "accounting"],
         "unevaluatedProperties": false
@@ -409,7 +450,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "resourceDispatch": { "$ref": "#/$defs/resourceDispatch" }
+          "resourceDispatch": { "$ref": "#/$defs/resourceDispatch" },
+          "$schema": true
         },
         "unevaluatedProperties": false
       }
@@ -420,7 +462,7 @@
         "required": ["msg"]
       },
       "then": {
-        "properties": { "msg": true },
+        "properties": { "msg": true, "$schema": true },
         "unevaluatedProperties": false
       }
     },
@@ -430,7 +472,7 @@
         "required": ["msg"]
       },
       "then": {
-        "properties": { "msg": true },
+        "properties": { "msg": true, "$schema": true },
         "unevaluatedProperties": false
       }
     },
@@ -442,7 +484,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "event": { "$ref": "#/$defs/event" }
+          "event": { "$ref": "#/$defs/event" },
+          "$schema": true
         },
         "unevaluatedProperties": false
       }
@@ -455,7 +498,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "order": { "$ref": "#/$defs/order" }
+          "order": { "$ref": "#/$defs/order" },
+          "$schema": true
         },
         "unevaluatedProperties": false
       }
@@ -466,7 +510,7 @@
         "required": ["msg"]
       },
       "then": {
-        "properties": { "msg": true },
+        "properties": { "msg": true, "$schema": true },
         "unevaluatedProperties": false
       }
     },
@@ -478,7 +522,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "messageTo": { "$ref": "#/$defs/messageTo" }
+          "messageTo": { "$ref": "#/$defs/messageTo" },
+          "$schema": true
         },
         "unevaluatedProperties": false
       }

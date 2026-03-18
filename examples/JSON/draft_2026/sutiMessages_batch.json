@@ -1,0 +1,216 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "sutiMessages": [
+    {
+      "msg": {
+        "msgType": "2000",
+        "msgTimeStamp": "2026-03-15T08:30:00.000Z",
+        "orgSender": {
+          "name": "Region Skåne Sjukresor",
+          "idOrg": {
+            "src": "SUTI:idLink",
+            "id": "sysvendor_regionskane_001",
+            "unique": true
+          }
+        },
+        "orgReceiver": {
+          "name": "Taxi Syd AB",
+          "idOrg": {
+            "src": "SUTI:idLink",
+            "id": "sysvendor_taxisyd_002",
+            "unique": true
+          }
+        },
+        "idMsg": {
+          "src": "sysvendor_regionskane_001:idMsg",
+          "id": "20260315083000001",
+          "unique": true
+        }
+      },
+      "order": {
+        "idOrder": {
+          "src": "sysvendor_regionskane_001:idOrder",
+          "id": "ORD-2026-88401",
+          "unique": true
+        },
+        "process": {
+          "allowRouting": true,
+          "dispatchResponsible": "provider",
+          "dispatch": true
+        },
+        "route": {
+          "nodes": [
+            {
+              "nodeSeqNo": 1,
+              "nodeType": "pickup",
+              "addressNode": {
+                "addressName": "Universitetssjukhuset",
+                "street": "Getingevägen",
+                "streetNo": 4,
+                "community": "Lund",
+                "geographicLocation": {
+                  "lat": 55.7107,
+                  "lon": 13.2106
+                }
+              },
+              "times": [
+                {
+                  "timeType": "scheduled",
+                  "time": "2026-03-15T09:00:00Z"
+                }
+              ],
+              "contents": [
+                {
+                  "contentType": "traveller",
+                  "name": "Anna Svensson",
+                  "id": {
+                    "src": "sysvendor_regionskane_001:idContent",
+                    "id": "PAX-550192",
+                    "unique": true
+                  }
+                }
+              ]
+            },
+            {
+              "nodeSeqNo": 2,
+              "nodeType": "destination",
+              "addressNode": {
+                "addressName": "Lunds Centralstation",
+                "community": "Lund",
+                "geographicLocation": {
+                  "lat": 55.708,
+                  "lon": 13.187
+                }
+              },
+              "times": [
+                {
+                  "timeType": "scheduled",
+                  "time": "2026-03-15T09:15:00Z"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "msg": {
+        "msgType": "2000",
+        "msgTimeStamp": "2026-03-15T08:30:01.000Z",
+        "orgSender": {
+          "name": "Region Skåne Sjukresor",
+          "idOrg": {
+            "src": "SUTI:idLink",
+            "id": "sysvendor_regionskane_001",
+            "unique": true
+          }
+        },
+        "orgReceiver": {
+          "name": "Taxi Syd AB",
+          "idOrg": {
+            "src": "SUTI:idLink",
+            "id": "sysvendor_taxisyd_002",
+            "unique": true
+          }
+        },
+        "idMsg": {
+          "src": "sysvendor_regionskane_001:idMsg",
+          "id": "20260315083000002",
+          "unique": true
+        }
+      },
+      "order": {
+        "idOrder": {
+          "src": "sysvendor_regionskane_001:idOrder",
+          "id": "ORD-2026-88402",
+          "unique": true
+        },
+        "process": {
+          "allowRouting": true,
+          "dispatchResponsible": "provider",
+          "dispatch": true
+        },
+        "route": {
+          "nodes": [
+            {
+              "nodeSeqNo": 1,
+              "nodeType": "pickup",
+              "addressNode": {
+                "addressName": "Malmö C",
+                "community": "Malmö",
+                "geographicLocation": {
+                  "lat": 55.6093,
+                  "lon": 13.0007
+                }
+              },
+              "times": [
+                {
+                  "timeType": "scheduled",
+                  "time": "2026-03-15T10:00:00Z"
+                }
+              ],
+              "contents": [
+                {
+                  "contentType": "traveller",
+                  "name": "Erik Lindström",
+                  "id": {
+                    "src": "sysvendor_regionskane_001:idContent",
+                    "id": "PAX-550193",
+                    "unique": true
+                  }
+                }
+              ]
+            },
+            {
+              "nodeSeqNo": 2,
+              "nodeType": "destination",
+              "addressNode": {
+                "addressName": "SUS Malmö",
+                "street": "Jan Waldenströms gata",
+                "streetNo": 18,
+                "community": "Malmö",
+                "geographicLocation": {
+                  "lat": 55.5928,
+                  "lon": 13.0014
+                }
+              },
+              "times": [
+                {
+                  "timeType": "scheduled",
+                  "time": "2026-03-15T10:20:00Z"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "msg": {
+        "msgType": "7000",
+        "msgTimeStamp": "2026-03-15T08:30:02.000Z",
+        "orgSender": {
+          "name": "Region Skåne Sjukresor",
+          "idOrg": {
+            "src": "SUTI:idLink",
+            "id": "sysvendor_regionskane_001",
+            "unique": true
+          }
+        },
+        "orgReceiver": {
+          "name": "Taxi Syd AB",
+          "idOrg": {
+            "src": "SUTI:idLink",
+            "id": "sysvendor_taxisyd_002",
+            "unique": true
+          }
+        },
+        "idMsg": {
+          "src": "sysvendor_regionskane_001:idMsg",
+          "id": "20260315083000003",
+          "unique": true
+        }
+      }
+    }
+  ]
+}

@@ -1,4 +1,5 @@
 {
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
   "msg": {
     "msgType": "4031",
     "msgTimeStamp": "2022-03-08T15:37:00.000Z",
