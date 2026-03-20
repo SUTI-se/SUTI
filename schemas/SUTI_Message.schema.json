@@ -1198,6 +1198,7 @@
         "ids": { "type": "array", "items": { "$ref": "#/$defs/id" } },
         "noOfVehicle": { "type": "integer", "minimum": 1 },
         "taximeterType": { "type": "string" },
+        "taximeterSoftware": { "type": "string" },
         "description": { "type": "string" },
         "capacity": { "$ref": "#/$defs/capacity" },
         "attributes": { "type": "array", "items": { "$ref": "#/$defs/id" } },
