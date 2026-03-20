@@ -1650,6 +1650,15 @@
       "additionalProperties": false
     },
 
+    "date": {
+      "type": "object",
+      "properties": {
+        "date": { "type": "string", "format": "date" }
+      },
+      "required": ["date"],
+      "additionalProperties": false
+    },
+
     "weekdays": {
       "type": "object",
       "properties": {
