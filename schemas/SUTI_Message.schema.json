@@ -643,18 +643,87 @@
       "additionalProperties": false
     },
 
+    "idMsgRef": {
+      "type": "object",
+      "description": "Reference to a specific message with message metadata",
+      "properties": {
+        "src": { "type": "string" },
+        "idOrder": { "type": "string" },
+        "idMsg": { "type": "string" },
+        "msgType": { "type": "string" },
+        "unique": { "type": "boolean" }
+      },
+      "required": ["src", "idMsg", "msgType"],
+      "additionalProperties": false
+    },
+
+    "idOrderForwardRef": {
+      "type": "object",
+      "description": "References used when an order is forwarded",
+      "properties": {
+        "idOrderForwarderClient": { "$ref": "#/$defs/id" },
+        "orgClientForwarder": { "$ref": "#/$defs/org" },
+        "idOrderForwardProvider": { "$ref": "#/$defs/id" },
+        "orgForwardProvider": { "$ref": "#/$defs/org" }
+      },
+      "additionalProperties": false
+    },
+
     "referenceToMsg": {
       "type": "object",
       "description": "Reference to another message (must have at least one identifier)",
       "properties": {
+        "idDriverSession": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" }
+        },
         "idMsg": { "$ref": "#/$defs/id" },
         "idOrder": { "$ref": "#/$defs/id" },
-        "idNode": { "$ref": "#/$defs/id" }
+        "idVehicle": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "idDriver": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "idSuborder": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" }
+        },
+        "idNode": { "$ref": "#/$defs/id" },
+        "idMsgRef": { "$ref": "#/$defs/idMsgRef" },
+        "idPassword": { "$ref": "#/$defs/id" },
+        "idRejectReason": { "$ref": "#/$defs/id" },
+        "idReceipt": { "$ref": "#/$defs/id" },
+        "idAuthorization": { "$ref": "#/$defs/id" },
+        "idOrderStatus": { "$ref": "#/$defs/id" },
+        "idOrderTemplate": { "$ref": "#/$defs/id" },
+        "idResponse": { "$ref": "#/$defs/id" },
+        "idOrderForward": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/idOrderForwardRef" }
+        },
+        "idRunoffGroup": { "$ref": "#/$defs/id" }
       },
       "anyOf": [
+        { "required": ["idDriverSession"] },
         { "required": ["idMsg"] },
         { "required": ["idOrder"] },
-        { "required": ["idNode"] }
+        { "required": ["idVehicle"] },
+        { "required": ["idDriver"] },
+        { "required": ["idSuborder"] },
+        { "required": ["idNode"] },
+        { "required": ["idMsgRef"] },
+        { "required": ["idPassword"] },
+        { "required": ["idRejectReason"] },
+        { "required": ["idReceipt"] },
+        { "required": ["idAuthorization"] },
+        { "required": ["idOrderStatus"] },
+        { "required": ["idOrderTemplate"] },
+        { "required": ["idResponse"] },
+        { "required": ["idOrderForward"] },
+        { "required": ["idRunoffGroup"] }
       ],
       "additionalProperties": false
     },
@@ -670,6 +739,7 @@
         "postalNo": { "type": "string" },
         "community": { "type": "string" },
         "country": { "type": "string" },
+        "mapPage": { "type": "string" },
         "location": { "type": "string" },
         "url": { "type": "string", "format": "uri" },
         "geographicLocation": { "$ref": "#/$defs/geographicLocation" },
@@ -679,6 +749,10 @@
         "idPostalCode": { "$ref": "#/$defs/id" },
         "idStreet": { "$ref": "#/$defs/id" },
         "idZone": { "$ref": "#/$defs/id" },
+        "idMap": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" }
+        },
         "manualDescriptions": {
           "type": "array",
           "items": { "$ref": "#/$defs/manualDescription" }
@@ -691,9 +765,13 @@
       "type": "object",
       "description": "Geographic coordinates",
       "properties": {
+        "zone": {
+          "type": "string",
+          "description": "Description of a geographic area agreed between client and provider"
+        },
         "typeOfCoordinate": {
           "type": "string",
-          "enum": ["WGS-84", "RT90", "SWEREF99"],
+          "enum": ["3301", "WGS84", "WGS-84", "3302", "RT90", "SWEREF99"],
           "default": "WGS-84"
         },
         "lat": {
@@ -709,8 +787,22 @@
           "maximum": 180
         },
         "precision": { "type": "integer", "description": "Coordinate precision in meters" }
+        ,
+        "speed": { "type": "number", "description": "Speed in meters per second" },
+        "speedSource": {
+          "type": "string",
+          "enum": ["3310", "gpsunit", "3311", "taximeter", "3312", "canbus"]
+        },
+        "direction": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 360,
+          "description": "Direction in degrees"
+        },
+        "height": { "type": "number", "description": "Height in meters" },
+        "deviationSpeed": { "type": "number", "description": "Speed deviation" }
       },
-      "required": ["lat", "lon"],
+      "required": ["lat", "lon", "precision"],
       "additionalProperties": false
     },
 
@@ -800,15 +892,15 @@
       "properties": {
         "sendInformationArrival": {
           "type": "string",
-          "enum": ["alwaysSend", "neverSend", "allowSend"]
+          "enum": ["3122", "alwayssend", "alwaysSend", "3121", "neversend", "neverSend", "3120", "allowsend", "allowSend"]
         },
         "sendInformationDelay": {
           "type": "string",
-          "enum": ["alwaysSend", "neverSend", "allowSend"]
+          "enum": ["3122", "alwayssend", "alwaysSend", "3121", "neversend", "neverSend", "3120", "allowsend", "allowSend"]
         },
         "sendInformationDispatch": {
           "type": "string",
-          "enum": ["alwaysSend", "neverSend", "allowSend"]
+          "enum": ["3122", "alwayssend", "alwaysSend", "3121", "neversend", "neverSend", "3120", "allowsend", "allowSend"]
         },
         "sendInformationContent": { "$ref": "#/$defs/contactInfo" }
       },
@@ -826,10 +918,18 @@
         "contentSeqNo": { "type": "integer", "minimum": 1 },
         "id": { "$ref": "#/$defs/id" },
         "name": { "type": "string" },
+        "maxTravelDuration": {
+          "type": ["string", "number", "integer", "boolean", "null"]
+        },
+        "gender": {
+          "type": "string",
+          "enum": ["female", "male", "child"]
+        },
         "contactInfo": {
           "type": "array",
           "items": { "$ref": "#/$defs/contactInfo" }
         },
+        "connection": { "$ref": "#/$defs/connection" },
         "mobilityAids": {
           "type": "array",
           "items": { "$ref": "#/$defs/mobilityAid" }
@@ -840,8 +940,46 @@
         },
         "economy": { "$ref": "#/$defs/economy" },
         "resource": { "$ref": "#/$defs/resourceSpec" },
+        "product": { "$ref": "#/$defs/product" },
         "subOrder": { "$ref": "#/$defs/subOrder" }
       },
+      "additionalProperties": false
+    },
+
+    "associatedReservation": {
+      "type": "object",
+      "properties": {
+        "addressReservation": { "$ref": "#/$defs/address" },
+        "timesReservation": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/time" }
+        },
+        "orgReservation": { "$ref": "#/$defs/org" },
+        "idReservation": { "$ref": "#/$defs/id" },
+        "contactInfosReservation": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/contactInfo" }
+        }
+      },
+      "required": ["addressReservation", "timesReservation", "contactInfosReservation"],
+      "additionalProperties": false
+    },
+
+    "connection": {
+      "type": "object",
+      "properties": {
+        "associatedReservation": { "$ref": "#/$defs/associatedReservation" },
+        "connectionType": {
+          "type": "string",
+          "enum": ["1101", "flight", "1102", "train", "1103", "boat", "1104", "meeting"]
+        },
+        "connectionName": { "type": "string" },
+        "connectionArrDep": {
+          "type": "string",
+          "enum": ["A", "D"]
+        }
+      },
+      "required": ["connectionType", "connectionArrDep"],
       "additionalProperties": false
     },
 
@@ -850,7 +988,7 @@
       "properties": {
         "contactType": {
           "type": "string",
-          "enum": ["phone", "mobile", "email", "sms", "fax"]
+          "enum": ["traveller", "parcel", "goods", "action", "navigation", "companion", "coTraveller", "child", "animal"]
         },
         "contactValue": { "type": "string" }
       },
@@ -910,7 +1048,7 @@
         "orderAlteration": { "type": "boolean" },
         "pickupConfirmation": {
           "type": "string",
-          "enum": ["notRequested", "standard", "extended"]
+          "enum": ["3110", "notrequested", "3111", "standard", "3112", "extended"]
         },
         "preOrder": { "type": "string" },
         "preorderedVehicle": { "type": "boolean" },
