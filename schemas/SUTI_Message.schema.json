@@ -1239,6 +1239,9 @@
         "timeAccuracy": {
           "type": "string"
         },
+        "timeZone": {
+          "type": "integer"
+        },
         "dwellTime": {
           "type": "integer",
           "minimum": 0,
