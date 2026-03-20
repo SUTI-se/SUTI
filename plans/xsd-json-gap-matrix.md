@@ -77,7 +77,7 @@ Recommended action values:
 | 59 | `/xs:schema/xs:complexType[@name='resourceType']/xs:sequence/xs:element[@name='resourceValidation']` | `#/$defs/resource/properties/resourceValidation` | exact | add | done | added optional resourceValidation array with XSD validation fields/enums |
 | 60 | `/xs:schema/xs:complexType[@name='resourceType']/xs:attribute[@name='MethodDispatch']` | `#/$defs/resource/properties/MethodDispatch` | exact | add | done | added optional MethodDispatch enum (`normal|change`) |
 | 61 | `/xs:schema/xs:complexType[@name='vehicle']/xs:attribute[@name='noOfVehicle']` | `#/$defs/vehicleResource/properties/noOfVehicle` | exact | add | done | added optional noOfVehicle as integer with minimum 1 |
-| 62 | `/xs:schema/xs:complexType[@name='vehicle']/xs:attribute[@name='taximeterType']` | *(none)* | missing | add | not-started | none yet |
+| 62 | `/xs:schema/xs:complexType[@name='vehicle']/xs:attribute[@name='taximeterType']` | `#/$defs/vehicleResource/properties/taximeterType` | exact | add | done | added optional taximeterType as string |
 | 63 | `/xs:schema/xs:complexType[@name='vehicle']/xs:attribute[@name='taximeterSoftware']` | *(none)* | missing | add | not-started | none yet |
 | 64 | `/xs:schema/xs:complexType[@name='vehicle']/xs:attribute[@name='vehicleLink']` | *(none)* | missing | add | not-started | none yet |
 | 65 | `/xs:schema/xs:complexType[@name='vehicle']/xs:sequence/xs:element[@name='environmentalinfoVehicle']` | *(none)* | missing | add | not-started | none yet |
