@@ -1438,9 +1438,23 @@
     "manualDescription": {
       "type": "object",
       "properties": {
+        "idActionText": { "$ref": "#/$defs/id" },
+        "textTimestamp": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/time" }
+        },
+        "sendtoInvoice": { "type": "boolean" },
+        "sendtoVehicle": { "type": "boolean" },
+        "sendtoOperator": { "type": "boolean" },
+        "manualText": { "type": "string" },
+        "vehicleConfirmation": { "type": "boolean" },
+        "sendingOperator": { "type": "string" },
+        "sendtoContent": { "type": "boolean" },
+        "contentConfirmation": { "type": "boolean" },
         "language": { "type": "string" },
         "text": { "type": "string" }
       },
+      "required": ["sendtoInvoice", "sendtoVehicle", "sendtoOperator", "manualText", "vehicleConfirmation"],
       "additionalProperties": false
     },
 
