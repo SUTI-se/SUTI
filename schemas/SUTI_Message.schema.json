@@ -1174,6 +1174,13 @@
       "type": "object",
       "properties": {
         "seats": { "$ref": "#/$defs/capacityItem" },
+        "luggage": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/luggage" }
+        },
+        "luggageArea": { "type": "number" },
+        "fullArea": { "type": "number" },
+        "stretcherArea": { "type": "number" },
         "wheelchairs": { "$ref": "#/$defs/capacityItem" },
         "stretchers": { "$ref": "#/$defs/capacityItem" },
         "animals": { "$ref": "#/$defs/capacityItem" }
@@ -1185,8 +1192,140 @@
       "type": "object",
       "properties": {
         "noOfSeats": { "type": "integer", "minimum": 0 },
+        "noOfSeatsMax": { "type": "integer", "minimum": 0 },
+        "position": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/position" }
+        },
         "noOfItems": { "type": "integer", "minimum": 0 }
       },
+      "additionalProperties": false
+    },
+
+    "luggage": {
+      "type": "object",
+      "properties": {
+        "luggageType": {
+          "type": "string",
+          "enum": ["3201", "checked", "3202", "cabin", "3203", "special"]
+        },
+        "pcs": { "type": "integer" }
+      },
+      "additionalProperties": false
+    },
+
+    "position": {
+      "type": "object",
+      "properties": {
+        "row": { "type": "integer", "minimum": 1 },
+        "seat": { "type": "string" },
+        "direction": {
+          "type": "string",
+          "enum": ["1201", "forward", "1202", "backward"]
+        },
+        "legSpace": {
+          "type": "string",
+          "enum": ["1211", "comfort", "1212", "normal", "1213", "poor"]
+        },
+        "access": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+
+    "attribute": {
+      "type": "object",
+      "properties": {
+        "idAttribute": { "$ref": "#/$defs/id" }
+      },
+      "required": ["idAttribute"],
+      "additionalProperties": false
+    },
+
+    "attributesType": {
+      "type": "object",
+      "properties": {
+        "attribute": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/attribute" }
+        }
+      },
+      "required": ["attribute"],
+      "additionalProperties": false
+    },
+
+    "vehicleDescription": {
+      "type": "object",
+      "properties": {
+        "manufacturedYear": { "type": "integer" },
+        "manufacturerBrand": { "type": "string" },
+        "carrierBrand": { "type": "string" },
+        "otherSign": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+
+    "environmentalInformationFuelConsumption": {
+      "type": "object",
+      "properties": {
+        "fuelType": {
+          "type": "string",
+          "enum": ["3501", "Gasoline", "3502", "Diesel", "3503", "Ethanol", "3504", "Electric", "3505", "Gas", "3506", "Hydrogen"]
+        },
+        "unit": {
+          "type": "string",
+          "enum": ["3510", "Liter", "3511", "Kwh", "3512", "Kg"]
+        },
+        "consumption": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+
+    "environmentalInformationFuelConsumptions": {
+      "type": "object",
+      "properties": {
+        "fuelConsumption": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/environmentalInformationFuelConsumption" }
+        }
+      },
+      "required": ["fuelConsumption"],
+      "additionalProperties": false
+    },
+
+    "environmentalInformation": {
+      "type": "object",
+      "properties": {
+        "fuelConsumptions": { "$ref": "#/$defs/environmentalInformationFuelConsumptions" },
+        "emptydrivingFactor": { "type": "number" }
+      },
+      "required": ["fuelConsumptions"],
+      "additionalProperties": false
+    },
+
+    "ratingIdType": {
+      "type": "object",
+      "properties": {
+        "ratingId": { "$ref": "#/$defs/id" },
+        "ratingComment": { "$ref": "#/$defs/manualDescription" },
+        "ratingValue": { "type": "number" }
+      },
+      "required": ["ratingId"],
+      "additionalProperties": false
+    },
+
+    "ratingType": {
+      "type": "object",
+      "properties": {
+        "rating": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/ratingIdType" }
+        },
+        "ratingTimeFrom": { "$ref": "#/$defs/time" },
+        "ratingTimeTo": { "$ref": "#/$defs/time" },
+        "manualRatingCommon": { "$ref": "#/$defs/manualDescription" },
+        "valueCnt": { "type": "integer" }
+      },
+      "required": ["rating"],
       "additionalProperties": false
     },
 
@@ -1199,6 +1338,12 @@
         "noOfVehicle": { "type": "integer", "minimum": 1 },
         "taximeterType": { "type": "string" },
         "taximeterSoftware": { "type": "string" },
+        "vehicleLink": {
+          "type": ["string", "number", "integer", "boolean", "null"]
+        },
+        "environmentalinfoVehicle": { "$ref": "#/$defs/environmentalInformation" },
+        "ratingsVehicle": { "$ref": "#/$defs/ratingType" },
+        "descriptionVehicle": { "$ref": "#/$defs/vehicleDescription" },
         "description": { "type": "string" },
         "capacity": { "$ref": "#/$defs/capacity" },
         "attributes": { "type": "array", "items": { "$ref": "#/$defs/id" } },

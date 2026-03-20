@@ -79,19 +79,19 @@ Recommended action values:
 | 61 | `/xs:schema/xs:complexType[@name='vehicle']/xs:attribute[@name='noOfVehicle']` | `#/$defs/vehicleResource/properties/noOfVehicle` | exact | add | done | added optional noOfVehicle as integer with minimum 1 |
 | 62 | `/xs:schema/xs:complexType[@name='vehicle']/xs:attribute[@name='taximeterType']` | `#/$defs/vehicleResource/properties/taximeterType` | exact | add | done | added optional taximeterType as string |
 | 63 | `/xs:schema/xs:complexType[@name='vehicle']/xs:attribute[@name='taximeterSoftware']` | `#/$defs/vehicleResource/properties/taximeterSoftware` | exact | add | done | added optional taximeterSoftware as string |
-| 64 | `/xs:schema/xs:complexType[@name='vehicle']/xs:attribute[@name='vehicleLink']` | *(none)* | missing | add | not-started | none yet |
-| 65 | `/xs:schema/xs:complexType[@name='vehicle']/xs:sequence/xs:element[@name='environmentalinfoVehicle']` | *(none)* | missing | add | not-started | none yet |
-| 66 | `/xs:schema/xs:complexType[@name='vehicle']/xs:sequence/xs:element[@name='ratingsVehicle']` | *(none)* | missing | add | not-started | none yet |
-| 67 | `/xs:schema/xs:complexType[@name='vehicle']/xs:sequence/xs:element[@name='descriptionVehicle']` | *(none)* | missing | add | not-started | none yet |
-| 68 | `/xs:schema/xs:complexType[@name='capacity']/xs:sequence/xs:element[@name='luggage']` | *(none)* | missing | add | not-started | none yet |
-| 69 | `/xs:schema/xs:complexType[@name='capacity']/xs:attribute[@name='luggageArea']` | *(none)* | missing | add | not-started | none yet |
-| 70 | `/xs:schema/xs:complexType[@name='capacity']/xs:attribute[@name='fullArea']` | *(none)* | missing | add | not-started | none yet |
-| 71 | `/xs:schema/xs:complexType[@name='capacity']/xs:attribute[@name='stretcherArea']` | *(none)* | missing | add | not-started | none yet |
-| 72 | `/xs:schema/xs:complexType[@name='seats']/xs:attribute[@name='noOfSeatsMax']` | *(none)* | missing | add | not-started | none yet |
-| 73 | `/xs:schema/xs:complexType[@name='seats']/xs:sequence/xs:element[@name='position']` | *(none)* | missing | add | not-started | none yet |
-| 74 | `/xs:schema/xs:complexType[@name='position']` | *(none)* | missing | add | not-started | none yet |
-| 75 | `/xs:schema/xs:complexType[@name='attributesType']` | *(none)* | missing | add | not-started | none yet |
-| 76 | `/xs:schema/xs:complexType[@name='attribute']` | *(none)* | missing | add | not-started | none yet |
+| 64 | `/xs:schema/xs:complexType[@name='vehicle']/xs:attribute[@name='vehicleLink']` | `#/$defs/vehicleResource/properties/vehicleLink` | exact | add | done | added optional vehicleLink as open any-simple-style value |
+| 65 | `/xs:schema/xs:complexType[@name='vehicle']/xs:sequence/xs:element[@name='environmentalinfoVehicle']` | `#/$defs/vehicleResource/properties/environmentalinfoVehicle` | exact | add | done | added environmentalinfoVehicle mapped to new environmentalInformation defs |
+| 66 | `/xs:schema/xs:complexType[@name='vehicle']/xs:sequence/xs:element[@name='ratingsVehicle']` | `#/$defs/vehicleResource/properties/ratingsVehicle` | exact | add | done | added ratingsVehicle mapped to new ratingType def |
+| 67 | `/xs:schema/xs:complexType[@name='vehicle']/xs:sequence/xs:element[@name='descriptionVehicle']` | `#/$defs/vehicleResource/properties/descriptionVehicle` | exact | add | done | added descriptionVehicle mapped to vehicleDescription def |
+| 68 | `/xs:schema/xs:complexType[@name='capacity']/xs:sequence/xs:element[@name='luggage']` | `#/$defs/capacity/properties/luggage` | exact | add | done | added luggage array with luggageType/pcs |
+| 69 | `/xs:schema/xs:complexType[@name='capacity']/xs:attribute[@name='luggageArea']` | `#/$defs/capacity/properties/luggageArea` | exact | add | done | added luggageArea as number |
+| 70 | `/xs:schema/xs:complexType[@name='capacity']/xs:attribute[@name='fullArea']` | `#/$defs/capacity/properties/fullArea` | exact | add | done | added fullArea as number |
+| 71 | `/xs:schema/xs:complexType[@name='capacity']/xs:attribute[@name='stretcherArea']` | `#/$defs/capacity/properties/stretcherArea` | exact | add | done | added stretcherArea as number |
+| 72 | `/xs:schema/xs:complexType[@name='seats']/xs:attribute[@name='noOfSeatsMax']` | `#/$defs/capacityItem/properties/noOfSeatsMax` | exact | add | done | added noOfSeatsMax as non-negative integer |
+| 73 | `/xs:schema/xs:complexType[@name='seats']/xs:sequence/xs:element[@name='position']` | `#/$defs/capacityItem/properties/position` | exact | add | done | added position array on seat-like capacity item |
+| 74 | `/xs:schema/xs:complexType[@name='position']` | `#/$defs/position` | exact | add | done | added position def with row/seat/direction/legSpace/access |
+| 75 | `/xs:schema/xs:complexType[@name='attributesType']` | `#/$defs/attributesType` | exact | add | done | added attributesType def with attribute array |
+| 76 | `/xs:schema/xs:complexType[@name='attribute']` | `#/$defs/attribute` | exact | add | done | added attribute def with required idAttribute |
 | 77 | `/xs:schema/xs:complexType[@name='manualDescriptionType']` | `#/$defs/manualDescription` | narrowed | add | not-started | none yet |
 | 78 | `/xs:schema/xs:complexType[@name='driver']` | `#/$defs/driverResource` | narrowed | add | not-started | none yet |
 | 79 | `/xs:schema/xs:complexType[@name='timesType']` | *(none)* | missing | add | not-started | none yet |
