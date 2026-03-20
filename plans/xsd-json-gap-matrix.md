@@ -67,7 +67,7 @@ Recommended action values:
 | 49 | `/xs:schema/xs:complexType[@name='contactInfo']/xs:attribute[@name='contactType']/xs:simpleType/xs:restriction/xs:enumeration[@value='bookingagent']` | `#/$defs/contactInfo/properties/contactType` | exact | broaden enum | done | covered by broadened contactType enum |
 | 50 | `/xs:schema/xs:complexType[@name='contactInfo']/xs:attribute[@name='contactType']/xs:simpleType/xs:restriction/xs:enumeration[@value='web']` | `#/$defs/contactInfo/properties/contactType` | exact | broaden enum | done | covered by broadened contactType enum |
 | 51 | `/xs:schema/xs:complexType[@name='time']/xs:attribute[@name='timeType' and @use='optional']` | `#/$defs/time/required` | exact | adjust requiredness | done | removed `timeType` from required; only `time` remains required |
-| 52 | `/xs:schema/xs:complexType[@name='time']/xs:attribute[@name='timeAccuracy']` | *(none)* | missing | add | not-started | none yet |
+| 52 | `/xs:schema/xs:complexType[@name='time']/xs:attribute[@name='timeAccuracy']` | `#/$defs/time/properties/timeAccuracy` | exact | add | done | added optional `timeAccuracy` as string |
 | 53 | `/xs:schema/xs:complexType[@name='time']/xs:attribute[@name='timeZone']` | *(none)* | missing | add | not-started | none yet |
 | 54 | `/xs:schema/xs:complexType[@name='resourceType']` | `#/$defs/resource` | narrowed | add | not-started | none yet |
 | 55 | `/xs:schema/xs:complexType[@name='resourceType']/xs:sequence/xs:element[@name='manualDescriptionResource']` | *(none)* | missing | add | not-started | none yet |

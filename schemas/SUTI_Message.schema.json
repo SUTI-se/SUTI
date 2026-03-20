@@ -1236,6 +1236,9 @@
           "type": "string",
           "format": "date-time"
         },
+        "timeAccuracy": {
+          "type": "string"
+        },
         "dwellTime": {
           "type": "integer",
           "minimum": 0,
