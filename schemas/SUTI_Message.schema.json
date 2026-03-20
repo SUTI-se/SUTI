@@ -988,7 +988,7 @@
       "properties": {
         "contactType": {
           "type": "string",
-          "enum": ["traveller", "parcel", "goods", "action", "navigation", "companion", "coTraveller", "child", "animal"]
+          "enum": ["2201", "mail", "2202", "phone", "2203", "fax", "2204", "otherInfo", "2205", "sms", "2206", "bookingagent", "2207", "web"]
         },
         "contactValue": { "type": "string" }
       },
