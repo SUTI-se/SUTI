@@ -93,7 +93,7 @@ Recommended action values:
 | 75 | `/xs:schema/xs:complexType[@name='attributesType']` | `#/$defs/attributesType` | exact | add | done | added attributesType def with attribute array |
 | 76 | `/xs:schema/xs:complexType[@name='attribute']` | `#/$defs/attribute` | exact | add | done | added attribute def with required idAttribute |
 | 77 | `/xs:schema/xs:complexType[@name='manualDescriptionType']` | `#/$defs/manualDescription` | exact | add | done | expanded manualDescription with XSD-required fields and kept legacy `text` for compatibility |
-| 78 | `/xs:schema/xs:complexType[@name='driver']` | `#/$defs/driverResource` | narrowed | add | not-started | none yet |
+| 78 | `/xs:schema/xs:complexType[@name='driver']` | `#/$defs/driverResource` | renamed | add | done | added `ratingsDriver` and `driverLink`; kept canonical JSON names without alias parity |
 | 79 | `/xs:schema/xs:complexType[@name='timesType']` | *(none)* | missing | add | not-started | none yet |
 | 80 | `/xs:schema/xs:complexType[@name='date']` | *(none)* | missing | add | not-started | none yet |
 | 81 | `/xs:schema/xs:complexType[@name='contents']` | *(none)* | missing | add | not-started | none yet |

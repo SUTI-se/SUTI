@@ -1359,7 +1359,11 @@
         "id": { "$ref": "#/$defs/id" },
         "name": { "type": "string" },
         "attributes": { "type": "array", "items": { "$ref": "#/$defs/id" } },
-        "contactInfo": { "type": "array", "items": { "$ref": "#/$defs/contactInfo" } }
+        "contactInfo": { "type": "array", "items": { "$ref": "#/$defs/contactInfo" } },
+        "ratingsDriver": { "$ref": "#/$defs/ratingType" },
+        "driverLink": {
+          "type": ["string", "number", "integer", "boolean", "null"]
+        }
       },
       "additionalProperties": false
     },
