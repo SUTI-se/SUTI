@@ -1242,7 +1242,7 @@
           "description": "Dwell time in seconds"
         }
       },
-      "required": ["timeType", "time"],
+      "required": ["time"],
       "additionalProperties": false
     },
 
