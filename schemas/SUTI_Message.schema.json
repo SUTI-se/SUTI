@@ -1129,8 +1129,43 @@
       "description": "Dispatched vehicle/driver resource",
       "properties": {
         "vehicle": { "$ref": "#/$defs/vehicleResource" },
+        "manualDescriptionResource": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/manualDescription" }
+        },
+        "idOrg": { "$ref": "#/$defs/id" },
         "driver": { "$ref": "#/$defs/driverResource" },
-        "startLocation": { "$ref": "#/$defs/geographicLocation" }
+        "startLocation": { "$ref": "#/$defs/geographicLocation" },
+        "resourceTime": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/time" }
+        },
+        "resourceValidation": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "validationTime": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/time" }
+              },
+              "validationDescription": { "$ref": "#/$defs/manualDescription" },
+              "validationType": {
+                "type": "string",
+                "enum": ["3801", "logindriver", "3802", "bky", "3803", "taxidriverlicense"]
+              },
+              "validationMethod": {
+                "type": "string",
+                "enum": ["3810", "manual", "3811", "card", "3812", "system"]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "MethodDispatch": {
+          "type": "string",
+          "enum": ["normal", "change"]
+        }
       },
       "additionalProperties": false
     },

@@ -69,13 +69,13 @@ Recommended action values:
 | 51 | `/xs:schema/xs:complexType[@name='time']/xs:attribute[@name='timeType' and @use='optional']` | `#/$defs/time/required` | exact | adjust requiredness | done | removed `timeType` from required; only `time` remains required |
 | 52 | `/xs:schema/xs:complexType[@name='time']/xs:attribute[@name='timeAccuracy']` | `#/$defs/time/properties/timeAccuracy` | exact | add | done | added optional `timeAccuracy` as string |
 | 53 | `/xs:schema/xs:complexType[@name='time']/xs:attribute[@name='timeZone']` | `#/$defs/time/properties/timeZone` | exact | add | done | added optional `timeZone` as integer |
-| 54 | `/xs:schema/xs:complexType[@name='resourceType']` | `#/$defs/resource` | narrowed | add | not-started | none yet |
-| 55 | `/xs:schema/xs:complexType[@name='resourceType']/xs:sequence/xs:element[@name='manualDescriptionResource']` | *(none)* | missing | add | not-started | none yet |
-| 56 | `/xs:schema/xs:complexType[@name='resourceType']/xs:sequence/xs:element[@name='idOrg']` | *(none)* | missing | add | not-started | none yet |
-| 57 | `/xs:schema/xs:complexType[@name='resourceType']/xs:sequence/xs:element[@name='vehiclestartLocation']` | `#/$defs/resource/properties/startLocation` | renamed | rename alias | not-started | none yet |
-| 58 | `/xs:schema/xs:complexType[@name='resourceType']/xs:sequence/xs:element[@name='resourceTime']` | *(none)* | missing | add | not-started | none yet |
-| 59 | `/xs:schema/xs:complexType[@name='resourceType']/xs:sequence/xs:element[@name='resourceValidation']` | *(none)* | missing | add | not-started | none yet |
-| 60 | `/xs:schema/xs:complexType[@name='resourceType']/xs:attribute[@name='MethodDispatch']` | *(none)* | missing | add | not-started | none yet |
+| 54 | `/xs:schema/xs:complexType[@name='resourceType']` | `#/$defs/resource` | exact | add | done | expanded resource with missing XSD-mapped fields while keeping canonical JSON naming |
+| 55 | `/xs:schema/xs:complexType[@name='resourceType']/xs:sequence/xs:element[@name='manualDescriptionResource']` | `#/$defs/resource/properties/manualDescriptionResource` | exact | add | done | added optional manualDescriptionResource array |
+| 56 | `/xs:schema/xs:complexType[@name='resourceType']/xs:sequence/xs:element[@name='idOrg']` | `#/$defs/resource/properties/idOrg` | exact | add | done | added optional idOrg |
+| 57 | `/xs:schema/xs:complexType[@name='resourceType']/xs:sequence/xs:element[@name='vehiclestartLocation']` | `#/$defs/resource/properties/startLocation` | renamed | rename alias | done | kept canonical startLocation and intentionally did not add vehiclestartLocation alias |
+| 58 | `/xs:schema/xs:complexType[@name='resourceType']/xs:sequence/xs:element[@name='resourceTime']` | `#/$defs/resource/properties/resourceTime` | exact | add | done | added optional resourceTime as array of time |
+| 59 | `/xs:schema/xs:complexType[@name='resourceType']/xs:sequence/xs:element[@name='resourceValidation']` | `#/$defs/resource/properties/resourceValidation` | exact | add | done | added optional resourceValidation array with XSD validation fields/enums |
+| 60 | `/xs:schema/xs:complexType[@name='resourceType']/xs:attribute[@name='MethodDispatch']` | `#/$defs/resource/properties/MethodDispatch` | exact | add | done | added optional MethodDispatch enum (`normal|change`) |
 | 61 | `/xs:schema/xs:complexType[@name='vehicle']/xs:attribute[@name='noOfVehicle']` | *(none)* | missing | add | not-started | none yet |
 | 62 | `/xs:schema/xs:complexType[@name='vehicle']/xs:attribute[@name='taximeterType']` | *(none)* | missing | add | not-started | none yet |
 | 63 | `/xs:schema/xs:complexType[@name='vehicle']/xs:attribute[@name='taximeterSoftware']` | *(none)* | missing | add | not-started | none yet |
