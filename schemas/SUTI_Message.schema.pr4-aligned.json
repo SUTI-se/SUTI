@@ -499,7 +499,7 @@
       "then": {
         "properties": {
           "msg": true,
-          "messageTo": { "$ref": "#/$defs/messageTo" },
+          "messageTo": { "$ref": "#/$defs/manualDescription" },
           "$schema": true
         },
         "required": [
@@ -813,7 +813,7 @@
       "then": {
         "properties": {
           "msg": true,
-          "messageTo": { "$ref": "#/$defs/messageTo" },
+          "messageTo": { "$ref": "#/$defs/manualDescription" },
           "$schema": true
         },
         "unevaluatedProperties": false
@@ -1353,7 +1353,6 @@
           "enum": [
             "traveller",
             "parcel",
-            "goods",
             "action",
             "navigation",
             "companion",
@@ -1368,6 +1367,10 @@
         },
         "id": { "$ref": "#/$defs/id" },
         "name": { "type": "string" },
+        "maxTravelDuration": {
+          "type": "integer",
+          "description": "Maximum travel duration in minutes"
+        },
         "contactInfo": {
           "type": "array",
           "items": { "$ref": "#/$defs/contactInfo" }
@@ -1402,11 +1405,13 @@
         "contactType": {
           "type": "string",
           "enum": [
+            "mail",
             "phone",
-            "mobile",
-            "email",
+            "fax",
+            "otherInfo",
             "sms",
-            "fax"
+            "bookingAgent",
+            "web"
           ]
         },
         "contactValue": { "type": "string" }
@@ -1633,6 +1638,10 @@
         "manualDescriptionResource": {
           "type": "array",
           "items": { "$ref": "#/$defs/manualDescription" }
+        },
+        "methodDispatch": {
+          "type": "string",
+          "enum": ["normal", "change"]
         }
       },
       "additionalProperties": false
@@ -1700,7 +1709,8 @@
         "taximeterSoftware": { "type": "string" },
         "environmentalinfoVehicle": { "$ref": "#/$defs/environmentalInformation" },
         "ratingsVehicle": { "$ref": "#/$defs/ratingType" },
-        "descriptionVehicle": { "$ref": "#/$defs/vehicleDescription" }
+        "descriptionVehicle": { "$ref": "#/$defs/vehicleDescription" },
+        "vehicleLink": { "type": "string" }
       },
       "additionalProperties": false
     },
@@ -1718,7 +1728,8 @@
           "type": "array",
           "items": { "$ref": "#/$defs/contactInfo" }
         },
-        "ratingsDriver": { "$ref": "#/$defs/ratingType" }
+        "ratingsDriver": { "$ref": "#/$defs/ratingType" },
+        "driverLink": { "type": "string" }
       },
       "additionalProperties": false
     },
@@ -1801,7 +1812,20 @@
       "type": "object",
       "properties": {
         "language": { "type": "string" },
-        "text": { "type": "string" }
+        "text": { "type": "string" },
+        "manualText": { "type": "string" },
+        "sendToInvoice": { "type": "boolean" },
+        "sendToVehicle": { "type": "boolean" },
+        "sendToOperator": { "type": "boolean" },
+        "sendToContent": { "type": "boolean" },
+        "vehicleConfirmation": { "type": "boolean" },
+        "contentConfirmation": { "type": "boolean" },
+        "sendingOperator": { "type": "string" },
+        "idActionText": { "$ref": "#/$defs/id" },
+        "textTimestamp": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/time" }
+        }
       },
       "additionalProperties": false
     },
@@ -2077,27 +2101,6 @@
       },
       "additionalProperties": false
     },
-    "messageTo": {
-      "type": "object",
-      "properties": {
-        "manualText": { "type": "string" },
-        "sendingOperator": { "type": "string" },
-        "sendToContent": { "type": "boolean" },
-        "sendToInvoice": { "type": "boolean" },
-        "sendToOperator": { "type": "boolean" },
-        "sendToVehicle": { "type": "boolean" },
-        "vehicleConfirmation": { "type": "boolean" },
-        "idActionText": { "$ref": "#/$defs/id" },
-        "timestamps": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/time" }
-        }
-      },
-      "required": [
-        "manualText"
-      ],
-      "additionalProperties": false
-    },
     "orderReport": {
       "type": "object",
       "properties": {
@@ -2288,7 +2291,7 @@
       "properties": {
         "vehicle": { "$ref": "#/$defs/vehicleResource" },
         "driver": { "$ref": "#/$defs/driverResource" },
-        "manualDescription": { "$ref": "#/$defs/messageTo" },
+        "manualDescription": { "$ref": "#/$defs/manualDescription" },
         "resourceValidation": {
           "type": "object",
           "properties": {

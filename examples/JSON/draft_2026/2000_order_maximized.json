@@ -219,7 +219,7 @@
         ],
         "contactInfo": [
           {
-            "contactType": "mobile",
+            "contactType": "phone",
             "contactValue": "+46701234567"
           }
         ]
@@ -328,7 +328,7 @@
               "name": "Anna Svensson",
               "contactInfo": [
                 {
-                  "contactType": "mobile",
+                  "contactType": "phone",
                   "contactValue": "+46709876543"
                 },
                 {
@@ -336,7 +336,7 @@
                   "contactValue": "046-171000"
                 },
                 {
-                  "contactType": "email",
+                  "contactType": "mail",
                   "contactValue": "anna.svensson@example.se"
                 }
               ],
