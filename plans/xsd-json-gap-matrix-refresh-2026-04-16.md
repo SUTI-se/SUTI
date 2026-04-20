@@ -1,0 +1,82 @@
+# Refreshed XSD to JSON Schema Gap Matrix
+
+Purpose: Fresh tracking matrix for the current remaining discrepancies where XSD is master.
+
+Scope notes:
+- This refresh lists only discrepancies that still appear to be open in the current files.
+- Previously resolved rows from the earlier matrix are intentionally omitted.
+- Rows can represent grouped discrepancies when a single JSON shape or message branch diverges from multiple closely related XSD structures.
+
+Status values:
+- exact: equivalent coverage
+- renamed: semantic match but naming/path or wrapper shape differs
+- narrowed: JSON accepts fewer values or less structure than XSD
+- missing: no equivalent coverage in JSON
+
+Recommended action values:
+- add
+- broaden enum
+- rename alias
+- adjust requiredness
+
+| # | XSD path | JSON path | Status | Observed discrepancy | Recommended action | Progress | Action taken |
+|---:|---|---|---|---|---|---|---|
+| 1 | `/xs:schema/xs:complexType[@name='process']/xs:attribute[@name='manualDispatch' and @use='required']` | `#/$defs/process/properties/manualDispatch` | narrowed | XSD requires `manualDispatch` on every `process`, but JSON allows `process` objects without it. | adjust requiredness | not-started | none yet |
+| 2 | `/xs:schema/xs:complexType[@name='process']/xs:attribute[@name='dispatch' and @use='required']` | `#/$defs/process/properties/dispatch` | narrowed | XSD requires `dispatch`, while JSON leaves it optional. | adjust requiredness | not-started | none yet |
+| 3 | `/xs:schema/xs:complexType[@name='process']/xs:attribute[@name='trafficControl' and @use='required']` | `#/$defs/process/properties/trafficControl` | narrowed | XSD requires `trafficControl`, but JSON does not. | adjust requiredness | not-started | none yet |
+| 4 | `/xs:schema/xs:complexType[@name='process']/xs:attribute[@name='report' and @use='required']` | `#/$defs/process/properties/report` | narrowed | XSD requires `report`, but JSON allows `process` without it. | adjust requiredness | not-started | none yet |
+| 5 | `/xs:schema/xs:complexType[@name='process']/xs:attribute[@name='preorderedVehicle' and @use='required']` | `#/$defs/process/properties/preorderedVehicle` | narrowed | XSD requires `preorderedVehicle`, but JSON treats it as optional. | adjust requiredness | not-started | none yet |
+| 6 | `/xs:schema/xs:complexType[@name='content']/xs:attribute[@name='name' and @use='required']` | `#/$defs/content/properties/name` | narrowed | XSD requires each `content` to have a `name`, while JSON allows unnamed `content` objects. | adjust requiredness | not-started | none yet |
+| 7 | `/xs:schema/xs:complexType[@name='contactInfo']/xs:attribute[@name='contactInfo']` | `#/$defs/contactInfo/properties/contactValue` | renamed | The value field was renamed from XML `contactInfo` to JSON `contactValue`, and there is no alias or explicit mapping note in schema. | rename alias | not-started | none yet |
+| 8 | `/xs:schema/xs:complexType[@name='timesType']` | `#/$defs/time` (flattened array usage) | renamed | XSD uses a named `timesType` wrapper around time entries, but JSON only flattens time arrays into parent objects and has no standalone wrapper. | add | not-started | none yet |
+| 9 | `/xs:schema/xs:complexType[@name='msg']/xs:choice/xs:element[@name='resourceDispatch' and @type='resourceType']` | `allOf[msg.msgType in 1020,1023] -> #/$defs/resourceDispatch` | renamed | XSD `resourceDispatch` reuses generic `resourceType`, but JSON routes to a dedicated message-specific `resourceDispatch` shape and also includes msg type `1023` in that branch. | rename alias | not-started | none yet |
+| 10 | `/xs:schema/xs:complexType[@name='msg']/xs:choice/xs:element[@name='resourceAllocation']` | `#/$defs/resourceAllocation` | narrowed | XSD `resourceAllocation` contains order id, capacity, start/end times, and address; JSON instead models `idAllocation`, `resource`, and `orders`. | add | not-started | none yet |
+| 11 | `/xs:schema/xs:complexType[@name='msg']/xs:choice/xs:element[@name='infoRequest']` | `#/$defs/infoRequest` | narrowed | XSD `infoRequest` requires a structured `requestItem` and may include calendar and product, while JSON collapses this to `requestType` and `idRequest`. | add | not-started | none yet |
+| 12 | `/xs:schema/xs:complexType[@name='msg']/xs:choice/xs:element[@name='infoResponse']` | `#/$defs/infoResponse` | narrowed | XSD `infoResponse` can return nodes, prices, and organizations; JSON `infoResponse` only exposes a generic type plus nodes. | add | not-started | none yet |
+| 13 | `/xs:schema/xs:complexType[@name='resourceReservation']` | `#/$defs/resourceReservation` | narrowed | XSD models requested resource, address, mission begin time, and mission end time; JSON reduces this to `idReservation`, `resource`, and `period`. | add | not-started | none yet |
+| 14 | `/xs:schema/xs:complexType[@name='pickupConfirmation']` | `#/$defs/event` | renamed | XSD has a dedicated pickup confirmation type with optional `nodeConfirmed` and its own event enum, while JSON reuses generic `event` with required `eventType` and different field names. | add | not-started | none yet |
+| 15 | `/xs:schema/xs:complexType[@name='msg']/xs:choice/xs:element[@name='pickupConfirmation']` | `allOf[msg.msgType=4040] -> *(none)*` | missing | XSD says msg `4040` uses `pickupConfirmation`, but JSON has no routing branch for `4040`. | add | not-started | none yet |
+| 16 | `/xs:schema/xs:complexType[@name='subOrderType']` | `#/$defs/subOrder` | narrowed | XSD `subOrderType` requires at least one `idOrder`; JSON `subOrder` renames this to `orderIds` and allows an empty object. | adjust requiredness | not-started | none yet |
+| 17 | `/xs:schema/xs:complexType[@name='eventReport']` | `#/$defs/orderReport/properties/events` | renamed | XSD defines `eventReport` as a named wrapper around repeated `event` elements, but JSON only embeds `events` inside `orderReport`. | add | not-started | none yet |
+| 18 | `/xs:schema/xs:complexType[@name='orderReport']` | `#/$defs/orderReport` | narrowed | XSD `orderReport` includes `eventReport`, `summaryReport`, `economyReport`, `orderStatus`, and `resourceReport`; JSON keeps only `summaryReports`, `economyReports`, and `events`. | add | not-started | none yet |
+| 19 | `/xs:schema/xs:complexType[@name='economyReport']` | `#/$defs/economyReport` | narrowed | XSD `economyReport` includes `formOfPayment`, optional `subOrderEconomy`, and `nodeSeqno`; JSON only models amount, distance, and duration. | add | not-started | none yet |
+| 20 | `/xs:schema/xs:complexType[@name='summaryReport']` | `#/$defs/summaryReport` | narrowed | XSD `summaryReport` carries vehicle, duration, distance, and completion state plus optional suborder data; JSON uses a different summary shape based on node/content sequence and times. | add | not-started | none yet |
+| 21 | `/xs:schema/xs:complexType[@name='orderLink']` | *(none)* | missing | XSD defines a dedicated `orderLink` type for combined orders and suborders, but JSON has no equivalent definition. | add | not-started | none yet |
+| 22 | `/xs:schema/xs:complexType[@name='msg']/xs:choice/xs:element[@name='orderLink']` | `allOf[msg.msgType=2040] -> driverSession` | renamed | XSD routes msg `2040` to `orderLink`, but JSON routes the same msg type to `driverSession`. | add | not-started | none yet |
+| 23 | `/xs:schema/xs:complexType[@name='authorizationAcceptType']` | *(none)* | missing | XSD `authorizationAcceptType` requires `idAuthorization`, `process`, `restrictions`, and `contents`; JSON has no matching definition. | add | not-started | none yet |
+| 24 | `/xs:schema/xs:complexType[@name='msg']/xs:choice/xs:element[@name='authorizationAccept']` | `allOf[msg.msgType=2901] -> resource` | renamed | XSD says msg `2901` uses `authorizationAccept`, but JSON groups `2901` with `3003` and `4000` under `resource`. | add | not-started | none yet |
+| 25 | `/xs:schema/xs:complexType[@name='amountType']` | `#/$defs/amount` | narrowed | XSD `amountType` requires `amountInclVat` and `amountVat` and also supports `idAmount`, `distance`, and `duration`; JSON `amount` only requires `amountInclVat`. | add | not-started | none yet |
+| 26 | `/xs:schema/xs:complexType[@name='restrictionsType']` | *(none)* | missing | XSD defines `restrictionsType` with `priceRestriction`, optional address restrictions, and `distance`, but JSON has no equivalent type. | add | not-started | none yet |
+| 27 | `/xs:schema/xs:complexType[@name='deliveryNote']` | `#/$defs/deliveryNote` | narrowed | XSD `deliveryNote` contains receipt id, agreement, event report, summary report, and economy reports; JSON keeps only delivery note id, type, order, and resource. | add | not-started | none yet |
+| 28 | `/xs:schema/xs:complexType[@name='vatAmountSpecificationType']` | *(none)* | missing | XSD defines a VAT breakdown structure with total and detailed amounts; JSON has no equivalent type. | add | not-started | none yet |
+| 29 | `/xs:schema/xs:complexType[@name='nodeCancelationType'] and /xs:schema/xs:complexType[@name='nodeCancellationType']` | `#/$defs/nodeCancellation` | renamed | XSD exposes both the legacy misspelling and the corrected node cancellation type, while JSON keeps only the corrected name. | rename alias | not-started | none yet |
+| 30 | `/xs:schema/xs:complexType[@name='vehicleDistance']` | *(none)* | missing | XSD `vehicleDistance` defines start and stop times plus `range` and `rangeUnit`; JSON has no equivalent structure. | add | not-started | none yet |
+| 31 | `/xs:schema/xs:complexType[@name='calendarType']` | `#/$defs/calendar` | narrowed | XSD calendar uses `validFrom` and `validTo` dateTime fields, `weekType`, and wrapped additional or exception dates; JSON simplifies this to date-only period fields and flattened date arrays. | add | not-started | none yet |
+| 32 | `/xs:schema/xs:complexType[@name='suborderTourType']` | *(none)* | missing | XSD defines a suborder tour structure with events, ids, summary, and economy report; JSON has no equivalent type. | add | not-started | none yet |
+| 33 | `/xs:schema/xs:complexType[@name='calculationFareType']` | *(none)* | missing | XSD defines detailed fare-calculation structures for fixed and taximeter-based prices; JSON has no equivalent type. | add | not-started | none yet |
+| 34 | `/xs:schema/xs:complexType[@name='organizationType']` | `#/$defs/organization` | narrowed | XSD organization uses repeated `idOrg` and optional payment, address, and contact wrapper elements; JSON `organization` uses renamed fields and a materially different shape. | add | not-started | none yet |
+| 35 | `/xs:schema/xs:complexType[@name='orgPaymentType']` | `#/$defs/orgPayment` | renamed | XSD uses XML names `IdPayment`, `ClearingNo`, and `nameofBank`; JSON renames these to `idPayment`, `clearingNo`, and `nameOfBank`. | rename alias | not-started | none yet |
+| 36 | `/xs:schema/xs:complexType[@name='gpsType']` | `#/$defs/geographicLocation` | renamed | XSD has a dedicated GPS attribute group and includes `deviationPosition`; JSON reuses `geographicLocation` and does not expose a standalone GPS wrapper. | add | not-started | none yet |
+| 37 | `/xs:schema/xs:complexType[@name='errorType']` | *(none)* | missing | XSD `errorType` contains `idError` and `manualDescriptionError`; JSON has no equivalent type. | add | not-started | none yet |
+| 38 | `/xs:schema/xs:complexType[@name='providerorderUpdate']` | `#/$defs/providerOrderUpdate` | narrowed | XSD provider order update includes numeric enum aliases and the XML spelling `cancelation`; JSON keeps only text values and uses `cancellation`. | broaden enum | not-started | none yet |
+| 39 | `/xs:schema/xs:complexType[@name='driverSession']` | `#/$defs/driverSession` | narrowed | XSD `driverSession` can include `changelog` and `sessionNodes`; JSON `driverSession` currently stops at id, orders, process, and resource. | add | not-started | none yet |
+| 40 | `/xs:schema/xs:complexType[@name='driverSessionReject']` | `#/$defs/driverSessionReject` | narrowed | XSD `driverSessionReject` includes a nested driver session, rejected attributes, and changelog; JSON only has `idDriverSession` and `rejectReason`. | add | not-started | none yet |
+| 41 | `/xs:schema/xs:complexType[@name='Validation']` | `#/$defs/resource/properties/resourceValidation/items` | renamed | XSD `Validation` is a reusable named type with its own time and description shapes; JSON only inlines a simplified anonymous object under `resourceValidation`. | add | not-started | none yet |
+| 42 | `/xs:schema/xs:complexType[@name='exchangeRates'] and /xs:schema/xs:complexType[@name='exhangeRate']` | *(none)* | missing | XSD defines explicit exchange rate wrappers for currency conversion; JSON has no exchange-rate structure. | add | not-started | none yet |
+| 43 | `/xs:schema/xs:complexType[@name='taxiMeter']` | *(none)* | missing | XSD defines a `taxiMeter` type with `idTaxa` and required `activate`; JSON has no equivalent type. | add | not-started | none yet |
+| 44 | `/xs:schema/xs:complexType[@name='priceCalculation']` | *(none)* | missing | XSD defines tariff formula parameters such as start fee, km fee, minute fee, and formula type; JSON has no equivalent type. | add | not-started | none yet |
+| 45 | `/xs:schema/xs:complexType[@name='formOfPayment']` | `#/$defs/economy/properties/payments` | renamed | XSD wraps one or more `payment` entries in a named `formOfPayment` container; JSON flattens this directly to a `payments` array under `economy`. | add | not-started | none yet |
+| 46 | `/xs:schema/xs:complexType[@name='payment']/xs:attribute[@name='paymentType']` | `#/$defs/payment/properties/paymentType` | narrowed | XSD payment type includes numeric aliases and values like `document`, `socialservicefee`, `claim`, `NoShow`, `providerCompensation`, and `creditcardfee`; JSON omits those and adds `voucher`, `app`, and `invoice`. | broaden enum | not-started | none yet |
+| 47 | `/xs:schema/xs:complexType[@name='payment']/xs:attribute[@name='paymentType' and @use='required']` | `#/$defs/payment` | narrowed | XSD requires `paymentType` on every payment, but JSON allows payment objects without it. | adjust requiredness | not-started | none yet |
+| 48 | `/xs:schema/xs:complexType[@name='payment']/xs:sequence/xs:element[@name='idEkInfo']` | *(none)* | missing | XSD payment can contain repeated `idEkInfo` values for extra economic identifiers; JSON has no equivalent field. | add | not-started | none yet |
+| 49 | `/xs:schema/xs:complexType[@name='bulkLocationList']` | `#/$defs/bulkLocationList` | narrowed | XSD bulk location list uses a `locationList` payload plus metadata attributes; JSON expects a structured `locations` array and different field semantics. | add | not-started | none yet |
+| 50 | `/xs:schema/xs:complexType[@name='vehicleLocation']` | `#/$defs/vehicleLocation` | narrowed | XSD vehicle location uses `idVehicle`, `time`, and nested `geographicLocation`; JSON flattens this to `vehicleIdProvider`, lat/lon, speed, direction, and status. | add | not-started | none yet |
+| 51 | `/xs:schema/xs:complexType[@name='msg']/xs:choice/xs:element[@name='addressLocation']` | `allOf[msg.msgType=4003] -> *(none)*` | missing | XSD says msg `4003` uses `addressLocation`, but JSON has no dedicated branch for `4003`. | add | not-started | none yet |
+| 52 | `/xs:schema/xs:complexType[@name='msg']/xs:choice/xs:element[@name='addressLocation']` | `allOf[msg.msgType=5021] -> geographicLocation` | renamed | XSD msg `5021` uses full `addressType`, but JSON routes `5021` only to `geographicLocation`, dropping address fields. | add | not-started | none yet |
+| 53 | `/xs:schema/xs:complexType[@name='msg']/xs:choice/xs:element[@name='manualDescriptionMsg']` | `allOf[msg.msgType in 5000,5010,7030,7031] -> #/$defs/messageTo` | renamed | XSD uses `manualDescriptionType` directly for `manualDescriptionMsg`, while JSON routes these messages to a different `messageTo` shape with renamed fields. | rename alias | not-started | none yet |
+
+## Notes
+
+- This refresh is intentionally conservative and focuses on high-confidence structural discrepancies that are directly visible in the current XSD and JSON schema files.
+- Broader-JSON-than-XSD cases are only listed when they create a clear XSD-master alignment problem or materially divergent message routing.
+- Some rows group closely related discrepancies to keep the refreshed plan actionable rather than duplicating the same recommendation across multiple near-identical paths.
