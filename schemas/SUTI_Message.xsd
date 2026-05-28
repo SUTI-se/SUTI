@@ -983,7 +983,7 @@ extended = actualtime used for all types and estimated time used in vehicleatnod
 			<xs:annotation>
 				<xs:documentation>Possibility to set different options for preeOrders (pree booked oreders or pree planded orders). Values:  
 
-PROVIDER= the Provder may transform a preeOrder into an order by sending MSG  2050 to confirm that the preeOrder from that moment will be treated as an Order.
+PROVIDER= the Provder may transform a preeOrder into an order by sending MSG 2050 to confirm that the preeOrder from that moment will be treated as an Order.
 
 CLIENTCONFIRM=The Client shall confirm with Msg 2000 or delete the preeOrder with MSG 2010. If the Client hasn't confirmed the preeOrder will be transformed into an order and will be sent ot on dispatch.
 

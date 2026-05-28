@@ -1,0 +1,51 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "4012",
+    "msgTimeStamp": "2020-09-09T15:28:00.000Z",
+    "orgSender": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+      "id": "2020090915823001",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idOrder": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+          "id": "482",
+          "unique": true
+        }
+      },
+      {
+        "idOrder": {
+          "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+          "id": "2068608",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "event": {
+    "eventType": "passengerDropped",
+    "eventNode": {
+      "nodeSeqNo": 2,
+      "nodeType": "destination"
+    }
+  }
+}

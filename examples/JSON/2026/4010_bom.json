@@ -1,0 +1,90 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "4010",
+    "msgTimeStamp": "2020-09-09T13:20:04.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2020090913365726",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idOrder": {
+          "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+          "id": "2067907",
+          "unique": true
+        }
+      },
+      {
+        "idOrder": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+          "id": "479",
+          "unique": true
+        }
+      },
+      {
+        "idMsg": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+          "id": "2020090913761991",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "event": {
+    "eventType": "noShow",
+    "eventNode": {
+      "nodeSeqNo": 1,
+      "nodeType": "pickup",
+      "addressNode": {
+        "geographicLocation": {
+          "typeOfCoordinate": "WGS-84",
+          "lat": 0.0,
+          "lon": 0.0,
+          "precision": 6
+        }
+      },
+      "times": [
+        {
+          "timeType": "estimated",
+          "time": "2020-09-09T13:20:04Z"
+        }
+      ],
+      "contents": [
+        {
+          "contentType": "traveller",
+          "name": "Nils Testsson",
+          "id": {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idContentId",
+            "id": "9999"
+          },
+          "subOrder": {
+            "orderIds": [
+              {
+                "src": "systemsupplierId_clientOwnerId_uniqueId:IdSubOrder",
+                "id": "18555470"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

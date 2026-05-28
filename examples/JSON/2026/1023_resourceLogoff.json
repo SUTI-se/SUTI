@@ -1,0 +1,44 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "1023",
+    "msgTimeStamp": "2020-09-09T14:37:00.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2020090914379104",
+      "unique": true
+    }
+  },
+  "resourceDispatch": {
+    "vehicle": {
+      "capacity": {
+        "seats": {
+          "noOfSeats": 4
+        }
+      }
+    },
+    "driver": {
+      "id": {
+        "src": "SE:idDriver",
+        "id": "123456",
+        "unique": true
+      }
+    }
+  }
+}

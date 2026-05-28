@@ -1,0 +1,104 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "7101",
+    "msgTimeStamp": "2025-09-15T14:52:00.000Z",
+    "orgSender": {
+      "name": "providerOwnerId",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "clientOwnerId",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2025091514795235",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+          "id": "2025091514795234",
+          "unique": true
+        }
+      },
+      {
+        "idOrder": {
+          "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+          "id": "PROV-LINK-001",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "order": {
+    "idOrder": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+      "id": "PROV-LINK-001",
+      "unique": true
+    },
+    "agreement": {
+      "idAgreement": {
+        "src": "systemsupplierId_providerOwnerId_uniqueId:idAgreement",
+        "id": "PROV-AGR-001",
+        "unique": true
+      }
+    },
+    "resourceOrder": {
+      "vehicle": {
+        "attributes": [
+          {
+            "src": "SUTI:idAttribute",
+            "id": "1101",
+            "unique": true
+          }
+        ]
+      },
+      "driver": {
+        "attributes": [
+          {
+            "src": "SUTI:idAttribute",
+            "id": "1201",
+            "unique": true
+          }
+        ]
+      }
+    },
+    "route": {
+      "nodes": [
+        {
+          "nodeSeqNo": 1,
+          "nodeType": "pickup",
+          "contents": [
+            {
+              "contentType": "traveller",
+              "name": "John Doe",
+              "id": {
+                "src": "systemsupplierId_providerOwnerId_uniqueId:idContent",
+                "id": "PROV-CONTENT-001",
+                "unique": true
+              },
+              "attributes": [
+                {
+                  "src": "SUTI:idAttribute",
+                  "id": "1301",
+                  "unique": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

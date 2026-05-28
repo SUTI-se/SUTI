@@ -1,0 +1,405 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "2000",
+    "msgTimeStamp": "2015-12-18T09:00:00.000Z",
+    "orgSender": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+      "id": "2015121809865469",
+      "unique": true
+    }
+  },
+  "order": {
+    "idOrder": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+      "id": "11183742",
+      "unique": true
+    },
+    "agreement": {
+      "idAgreement": {
+        "src": "systemsupplierId_clientOwnerId_uniqueId:idAgreement",
+        "id": "123456"
+      }
+    },
+    "process": {
+      "allowRouting": false,
+      "trafficControl": true,
+      "pickupConfirmation": "standard",
+      "orderAlteration": false,
+      "dispatchResponsible": "provider",
+      "report": false,
+      "preorderedVehicle": false,
+      "dispatch": true,
+      "manualDispatch": false
+    },
+    "resourceOrder": {
+      "vehicle": {
+        "ids": [
+          {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idVehicle",
+            "id": "51006P"
+          }
+        ]
+      }
+    },
+    "route": {
+      "nodes": [
+        {
+          "nodeSeqNo": 1,
+          "nodeType": "pickup",
+          "addressNode": {
+            "addressName": "",
+            "street": "Baravägen",
+            "streetNo": 1,
+            "streetNoLetter": "",
+            "community": "Lund",
+            "postalNo": "22240",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.718095,
+              "lon": 13.190738,
+              "precision": 6
+            }
+          },
+          "times": [
+            {
+              "timeType": "estimated",
+              "time": "2015-08-10T08:00:18Z"
+            },
+            {
+              "timeType": "scheduled",
+              "time": "2015-08-10T08:00:00Z"
+            }
+          ],
+          "contents": [
+            {
+              "contentType": "traveller",
+              "name": "John Doe",
+              "id": {
+                "src": "systemsupplierId_clientOwnerId_uniqueId:ContentId",
+                "id": "5319397",
+                "unique": true
+              },
+              "attributes": [
+                {
+                  "src": "SUTI:idAttribute",
+                  "id": "2313",
+                  "unique": true
+                }
+              ],
+              "economy": {
+                "payments": [
+                  {
+                    "amount": {
+                      "amountInclVat": 0.0
+                    },
+                    "paymentType": "prepaidSocialFee"
+                  }
+                ]
+              },
+              "resource": {
+                "vehicle": {
+                  "capacity": {
+                    "seats": {
+                      "noOfSeats": 1,
+                      "noOfItems": 1
+                    }
+                  },
+                  "attributes": [
+                    {
+                      "src": "SUTI:idLink",
+                      "id": "1628",
+                      "unique": true
+                    }
+                  ]
+                },
+                "driver": {
+                  "attributes": [
+                    {
+                      "src": "SUTI:idAttribute",
+                      "id": "1510",
+                      "unique": true
+                    }
+                  ]
+                }
+              },
+              "contactInfo": [
+                {
+                  "contactType": "phone",
+                  "contactValue": "0431-74700"
+                }
+              ],
+              "subOrder": {
+                "orderIds": [
+                  {
+                    "src": "systemsupplierId_clientOwnerId_uniqueId:idSubOrder",
+                    "id": "11183750",
+                    "unique": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "nodeSeqNo": 2,
+          "nodeType": "destination",
+          "addressNode": {
+            "addressName": "",
+            "street": "Kalkstensvägen",
+            "streetNo": 14,
+            "streetNoLetter": "",
+            "community": "Lund",
+            "postalNo": "22240",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.690147,
+              "lon": 13.21533,
+              "precision": 6
+            }
+          },
+          "times": [
+            {
+              "timeType": "estimated",
+              "time": "2015-08-10T08:07:18Z"
+            },
+            {
+              "timeType": "scheduled",
+              "time": "2015-08-10T08:07:00Z"
+            }
+          ],
+          "contents": [
+            {
+              "contentType": "traveller",
+              "name": "John Doe",
+              "id": {
+                "src": "systemsupplierId_clientOwnerId_uniqueId:ContentId",
+                "id": "5319397",
+                "unique": true
+              },
+              "attributes": [
+                {
+                  "src": "SUTI:idLink",
+                  "id": "1001",
+                  "unique": true
+                }
+              ],
+              "economy": {
+                "payments": [
+                  {
+                    "amount": {
+                      "amountInclVat": 0.0
+                    },
+                    "paymentType": "prepaidSocialFee"
+                  }
+                ]
+              },
+              "subOrder": {
+                "orderIds": [
+                  {
+                    "src": "systemsupplierId_clientOwnerId_uniqueId:idSubOrder",
+                    "id": "11183750",
+                    "unique": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "nodeSeqNo": 3,
+          "nodeType": "action",
+          "subnodeType": "break",
+          "addressNode": {
+            "addressName": "",
+            "street": "",
+            "streetNoLetter": "",
+            "community": "",
+            "postalNo": "",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.718095,
+              "lon": 13.190738,
+              "precision": 6
+            }
+          },
+          "times": [
+            {
+              "timeType": "estimated",
+              "time": "2015-08-10T08:00:18Z"
+            },
+            {
+              "timeType": "scheduled",
+              "time": "2015-08-10T08:00:00Z"
+            }
+          ],
+          "contents": []
+        },
+        {
+          "nodeSeqNo": 4,
+          "nodeType": "pickup",
+          "addressNode": {
+            "addressName": "",
+            "street": "Vikingavägen",
+            "streetNo": 17,
+            "streetNoLetter": "",
+            "community": "Lund",
+            "postalNo": "22240",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.695565,
+              "lon": 13.24272,
+              "precision": 6
+            }
+          },
+          "times": [
+            {
+              "timeType": "estimated",
+              "time": "2015-08-10T08:12:18Z"
+            },
+            {
+              "timeType": "scheduled",
+              "time": "2015-08-10T08:12:00Z"
+            }
+          ],
+          "contents": [
+            {
+              "contentType": "traveller",
+              "name": "Jane Doe",
+              "id": {
+                "src": "systemsupplierId_clientOwnerId_uniqueId:ContentId",
+                "id": "446699",
+                "unique": true
+              },
+              "economy": {
+                "payments": [
+                  {
+                    "amount": {
+                      "amountInclVat": 0.0
+                    },
+                    "paymentType": "prepaidSocialFee"
+                  }
+                ]
+              },
+              "resource": {
+                "vehicle": {
+                  "capacity": {
+                    "seats": {
+                      "noOfSeats": 1,
+                      "noOfItems": 1
+                    }
+                  },
+                  "attributes": [
+                    {
+                      "src": "SUTI:idLink",
+                      "id": "1611",
+                      "unique": true
+                    }
+                  ]
+                },
+                "driver": {
+                  "attributes": [
+                    {
+                      "src": "SUTI:idAttribute",
+                      "id": "1510",
+                      "unique": true
+                    }
+                  ]
+                }
+              },
+              "contactInfo": [
+                {
+                  "contactType": "phone",
+                  "contactValue": "0431-74700"
+                }
+              ],
+              "subOrder": {
+                "orderIds": [
+                  {
+                    "src": "systemsupplierId_clientOwnerId_uniqueId:idSubOrder",
+                    "id": "11183751",
+                    "unique": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "nodeSeqNo": 5,
+          "nodeType": "destination",
+          "addressNode": {
+            "addressName": "",
+            "street": "Latinlinjen",
+            "streetNo": 11,
+            "streetNoLetter": "",
+            "community": "Lund",
+            "postalNo": "22240",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.708449,
+              "lon": 13.244673,
+              "precision": 6
+            }
+          },
+          "times": [
+            {
+              "timeType": "estimated",
+              "time": "2015-08-10T08:20:18Z"
+            },
+            {
+              "timeType": "scheduled",
+              "time": "2015-08-10T08:20:00Z"
+            }
+          ],
+          "contents": [
+            {
+              "contentType": "traveller",
+              "name": "Jane Doe",
+              "id": {
+                "src": "systemsupplierId_clientOwnerId_uniqueId:ContentId",
+                "id": "446699",
+                "unique": true
+              },
+              "economy": {
+                "payments": [
+                  {
+                    "amount": {
+                      "amountInclVat": 0.0
+                    },
+                    "paymentType": "prepaidSocialFee"
+                  }
+                ]
+              },
+              "subOrder": {
+                "orderIds": [
+                  {
+                    "src": "systemsupplierId_clientOwnerId_uniqueId:idSubOrder",
+                    "id": "11183751",
+                    "unique": true
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

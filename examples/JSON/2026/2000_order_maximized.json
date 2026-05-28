@@ -1,0 +1,771 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "2000",
+    "msgTimeStamp": "2026-03-15T08:30:00.000Z",
+    "infoTimeStamp": "2026-03-15T08:29:55.000Z",
+    "orgSender": {
+      "name": "Region Skåne Sjukresor",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "sysvendor_regionskane_001",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Taxi Syd AB",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "sysvendor_taxisyd_002",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "sysvendor_regionskane_001:idMsg",
+      "id": "20260315083000001",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "sysvendor_regionskane_001:idMsg",
+          "id": "20260314160000042",
+          "unique": true
+        }
+      },
+      {
+        "idOrder": {
+          "src": "sysvendor_regionskane_001:idOrder",
+          "id": "ORD-2026-88401",
+          "unique": true
+        }
+      },
+      {
+        "idNode": {
+          "src": "sysvendor_regionskane_001:idNode",
+          "id": "NODE-001",
+          "unique": false
+        }
+      }
+    ],
+    "idVersion": {
+      "src": "SUTI:version",
+      "id": "2026.1"
+    }
+  },
+  "order": {
+    "idOrder": {
+      "src": "sysvendor_regionskane_001:idOrder",
+      "id": "ORD-2026-88401",
+      "unique": true
+    },
+    "orderStatus": {
+      "status": "confirmed"
+    },
+    "agreement": {
+      "nameAgreement": "Sjukresor Skåne 2025-2028",
+      "idAgreement": {
+        "src": "sysvendor_regionskane_001:idAgreement",
+        "id": "AVT-2025-001"
+      },
+      "product": {
+        "nameProduct": "Sjukresa rullstol",
+        "idProduct": {
+          "src": "sysvendor_regionskane_001:idProduct",
+          "id": "PROD-SJR-WC"
+        }
+      }
+    },
+    "economyOrder": {
+      "priceEstimate": {
+        "amountInclVat": 625.0,
+        "amountExclVat": 500.0,
+        "amountVat": 125.0,
+        "vatPercent": 25.0,
+        "idCurrency": {
+          "src": "ISO:4217",
+          "id": "SEK"
+        }
+      },
+      "priceFixed": {
+        "amountInclVat": 580.0,
+        "amountExclVat": 464.0,
+        "amountVat": 116.0,
+        "vatPercent": 25.0,
+        "idCurrency": {
+          "src": "ISO:4217",
+          "id": "SEK"
+        }
+      },
+      "payments": [
+        {
+          "paymentType": "account",
+          "amount": {
+            "amountInclVat": 480.0,
+            "amountExclVat": 384.0,
+            "amountVat": 96.0,
+            "vatPercent": 25.0,
+            "idCurrency": {
+              "src": "ISO:4217",
+              "id": "SEK"
+            }
+          },
+          "documentType": "faktura",
+          "noOfDocuments": 1
+        },
+        {
+          "paymentType": "prepaidSocialFee",
+          "amount": {
+            "amountInclVat": 100.0
+          }
+        }
+      ]
+    },
+    "orgProvider": {
+      "name": "Taxi Syd AB",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "sysvendor_taxisyd_002",
+        "unique": true
+      }
+    },
+    "process": {
+      "allowForward": false,
+      "allowRouting": true,
+      "automaticStatus": true,
+      "deliveryNote": true,
+      "dispatch": true,
+      "dispatchResponsible": "provider",
+      "manualDispatch": false,
+      "multiDispatch": false,
+      "orderAlteration": true,
+      "pickupConfirmation": "extended",
+      "preOrder": "2026-03-14",
+      "preorderedVehicle": true,
+      "report": true,
+      "statusDistance": 500,
+      "trafficControl": true
+    },
+    "resourceOrder": {
+      "vehicle": {
+        "id": {
+          "src": "sysvendor_taxisyd_002:idVehicle",
+          "id": "VEH-4711",
+          "unique": true
+        },
+        "ids": [
+          {
+            "src": "sysvendor_taxisyd_002:idVehicle",
+            "id": "VEH-4711",
+            "unique": true
+          },
+          {
+            "src": "Transportstyrelsen:regNo",
+            "id": "ABC123"
+          }
+        ],
+        "description": "Mercedes Vito rullstolsanpassad",
+        "capacity": {
+          "seats": {
+            "noOfSeats": 6,
+            "noOfItems": 1
+          },
+          "wheelchairs": {
+            "noOfSeats": 2,
+            "noOfItems": 1
+          },
+          "stretchers": {
+            "noOfSeats": 0,
+            "noOfItems": 0
+          },
+          "animals": {
+            "noOfSeats": 0,
+            "noOfItems": 0
+          }
+        },
+        "attributes": [
+          {
+            "src": "SUTI:idLink",
+            "id": "1628"
+          },
+          {
+            "src": "SUTI:idLink",
+            "id": "1640"
+          }
+        ],
+        "location": {
+          "typeOfCoordinate": "WGS-84",
+          "lat": 55.605,
+          "lon": 13.0038,
+          "precision": 15
+        }
+      },
+      "driver": {
+        "id": {
+          "src": "sysvendor_taxisyd_002:idDriver",
+          "id": "DRV-301",
+          "unique": true
+        },
+        "name": "Erik Lindqvist",
+        "attributes": [
+          {
+            "src": "SUTI:idAttribute",
+            "id": "1510"
+          },
+          {
+            "src": "SUTI:idAttribute",
+            "id": "2313"
+          }
+        ],
+        "contactInfo": [
+          {
+            "contactType": "phone",
+            "contactValue": "+46701234567"
+          }
+        ]
+      },
+      "startLocation": {
+        "typeOfCoordinate": "WGS-84",
+        "lat": 55.6059,
+        "lon": 13.0007,
+        "precision": 10
+      }
+    },
+    "route": {
+      "nodes": [
+        {
+          "nodeSeqNo": 1,
+          "nodeType": "pickup",
+          "addressNode": {
+            "addressName": "Universitetssjukhuset",
+            "street": "Getingevägen",
+            "streetNo": 4,
+            "streetNoLetter": "B",
+            "postalNo": "22185",
+            "community": "Lund",
+            "country": "SE",
+            "location": "Entré 3, våning 2",
+            "url": "https://www.skane.se/sus",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.7107,
+              "lon": 13.2106,
+              "precision": 5
+            },
+            "idAddressName": {
+              "src": "sysvendor_regionskane_001:idAddressName",
+              "id": "ADDR-SUS-001"
+            },
+            "idCommunity": {
+              "src": "SCB:kommun",
+              "id": "1281"
+            },
+            "idCountry": {
+              "src": "ISO:3166-1",
+              "id": "SE"
+            },
+            "idPostalCode": {
+              "src": "PostNord:postnr",
+              "id": "22185"
+            },
+            "idStreet": {
+              "src": "Lantmäteriet:gatuId",
+              "id": "STR-LU-2045"
+            },
+            "idZone": {
+              "src": "sysvendor_regionskane_001:idZone",
+              "id": "ZONE-LUND-C"
+            },
+            "manualDescriptions": [
+              {
+                "language": "sv",
+                "text": "Hämtas vid huvudentré 3, andra våningen. Ring porttelefon 2345."
+              },
+              {
+                "language": "en",
+                "text": "Pick up at main entrance 3, second floor. Call intercom 2345."
+              }
+            ]
+          },
+          "times": [
+            {
+              "timeType": "scheduled",
+              "time": "2026-03-15T09:00:00Z",
+              "dwellTime": 600
+            },
+            {
+              "timeType": "earliest",
+              "time": "2026-03-15T08:50:00Z"
+            },
+            {
+              "timeType": "latest",
+              "time": "2026-03-15T09:15:00Z"
+            },
+            {
+              "timeType": "promised",
+              "time": "2026-03-15T09:00:00Z",
+              "dwellTime": 900
+            }
+          ],
+          "nodeProcess": {
+            "sendInformationArrival": "alwaysSend",
+            "sendInformationDelay": "alwaysSend",
+            "sendInformationDispatch": "allowSend",
+            "sendInformationContent": {
+              "contactType": "sms",
+              "contactValue": "+46709876543"
+            }
+          },
+          "contents": [
+            {
+              "contentType": "traveller",
+              "contentSeqNo": 1,
+              "id": {
+                "src": "sysvendor_regionskane_001:idContent",
+                "id": "PAX-550192",
+                "unique": true
+              },
+              "name": "Anna Svensson",
+              "contactInfo": [
+                {
+                  "contactType": "phone",
+                  "contactValue": "+46709876543"
+                },
+                {
+                  "contactType": "phone",
+                  "contactValue": "046-171000"
+                },
+                {
+                  "contactType": "mail",
+                  "contactValue": "anna.svensson@example.se"
+                }
+              ],
+              "mobilityAids": [
+                {
+                  "mobilityAidType": "wheelchair",
+                  "quantity": 1
+                },
+                {
+                  "mobilityAidType": "visualAid",
+                  "quantity": 1
+                }
+              ],
+              "attributes": [
+                {
+                  "src": "SUTI:idLink",
+                  "id": "1001",
+                  "unique": true
+                },
+                {
+                  "src": "SUTI:idLink",
+                  "id": "1003"
+                }
+              ],
+              "economy": {
+                "priceEstimate": {
+                  "amountInclVat": 312.5,
+                  "amountExclVat": 250.0,
+                  "amountVat": 62.5,
+                  "vatPercent": 25.0,
+                  "idCurrency": {
+                    "src": "ISO:4217",
+                    "id": "SEK"
+                  }
+                },
+                "priceFixed": {
+                  "amountInclVat": 290.0
+                },
+                "payments": [
+                  {
+                    "paymentType": "prepaidSocialFee",
+                    "amount": {
+                      "amountInclVat": 50.0
+                    }
+                  },
+                  {
+                    "paymentType": "card",
+                    "amount": {
+                      "amountInclVat": 240.0,
+                      "amountExclVat": 192.0,
+                      "amountVat": 48.0,
+                      "vatPercent": 25.0
+                    },
+                    "documentType": "kvitto",
+                    "noOfDocuments": 1
+                  }
+                ]
+              },
+              "resource": {
+                "vehicle": {
+                  "capacity": {
+                    "seats": {
+                      "noOfSeats": 1,
+                      "noOfItems": 1
+                    },
+                    "wheelchairs": {
+                      "noOfSeats": 1,
+                      "noOfItems": 1
+                    }
+                  },
+                  "attributes": [
+                    {
+                      "src": "SUTI:idLink",
+                      "id": "1628"
+                    }
+                  ]
+                },
+                "driver": {
+                  "attributes": [
+                    {
+                      "src": "SUTI:idAttribute",
+                      "id": "1510"
+                    }
+                  ]
+                }
+              },
+              "subOrder": {
+                "orderIds": [
+                  {
+                    "src": "sysvendor_regionskane_001:idSubOrder",
+                    "id": "SUB-2026-88401-A",
+                    "unique": true
+                  }
+                ]
+              }
+            },
+            {
+              "contentType": "parcel",
+              "contentSeqNo": 2,
+              "id": {
+                "src": "sysvendor_regionskane_001:idContent",
+                "id": "PKG-330045",
+                "unique": true
+              },
+              "name": "Medicinsk utrustning",
+              "economy": {
+                "payments": [
+                  {
+                    "paymentType": "account",
+                    "amount": {
+                      "amountInclVat": 0.0
+                    }
+                  }
+                ]
+              },
+              "subOrder": {
+                "orderIds": [
+                  {
+                    "src": "sysvendor_regionskane_001:idSubOrder",
+                    "id": "SUB-2026-88401-B",
+                    "unique": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "nodeSeqNo": 2,
+          "nodeType": "action",
+          "subnodeType": "driverAssist",
+          "addressNode": {
+            "addressName": "Universitetssjukhuset",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.7107,
+              "lon": 13.2106
+            },
+            "manualDescriptions": [
+              {
+                "language": "sv",
+                "text": "Förare hjälper resenär med rullstol från vårdavdelning till fordon."
+              }
+            ]
+          },
+          "times": [
+            {
+              "timeType": "calculated",
+              "time": "2026-03-15T09:02:00Z",
+              "dwellTime": 300
+            }
+          ]
+        },
+        {
+          "nodeSeqNo": 3,
+          "nodeType": "navigation",
+          "subnodeType": "ferryDeparture",
+          "addressNode": {
+            "addressName": "Ven färjeläge",
+            "community": "Landskrona",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.87,
+              "lon": 12.825
+            },
+            "idZone": {
+              "src": "sysvendor_regionskane_001:idZone",
+              "id": "ZONE-LKRN"
+            }
+          },
+          "times": [
+            {
+              "timeType": "scheduled",
+              "time": "2026-03-15T09:45:00Z"
+            },
+            {
+              "timeType": "estimated",
+              "time": "2026-03-15T09:42:00Z"
+            }
+          ]
+        },
+        {
+          "nodeSeqNo": 4,
+          "nodeType": "navigation",
+          "subnodeType": "ferryArrival",
+          "addressNode": {
+            "addressName": "Ven Bäckviken",
+            "community": "Landskrona",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.905,
+              "lon": 12.72
+            }
+          },
+          "times": [
+            {
+              "timeType": "scheduled",
+              "time": "2026-03-15T10:15:00Z"
+            }
+          ]
+        },
+        {
+          "nodeSeqNo": 5,
+          "nodeType": "action",
+          "subnodeType": "break",
+          "addressNode": {
+            "addressName": "Rastplats Ven",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.906,
+              "lon": 12.718
+            }
+          },
+          "times": [
+            {
+              "timeType": "scheduled",
+              "time": "2026-03-15T10:20:00Z",
+              "dwellTime": 900
+            }
+          ]
+        },
+        {
+          "nodeSeqNo": 6,
+          "nodeType": "destination",
+          "addressNode": {
+            "addressName": "Backafallsbyn",
+            "street": "Landsvägen",
+            "streetNo": 52,
+            "postalNo": "26033",
+            "community": "Ven",
+            "country": "SE",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.909,
+              "lon": 12.71,
+              "precision": 10
+            },
+            "idCommunity": {
+              "src": "SCB:kommun",
+              "id": "1282"
+            },
+            "idCountry": {
+              "src": "ISO:3166-1",
+              "id": "SE"
+            }
+          },
+          "times": [
+            {
+              "timeType": "scheduled",
+              "time": "2026-03-15T10:40:00Z"
+            },
+            {
+              "timeType": "latest",
+              "time": "2026-03-15T11:00:00Z"
+            }
+          ],
+          "nodeProcess": {
+            "sendInformationArrival": "neverSend",
+            "sendInformationDelay": "neverSend",
+            "sendInformationDispatch": "neverSend"
+          },
+          "contents": [
+            {
+              "contentType": "parcel",
+              "contentSeqNo": 2,
+              "id": {
+                "src": "sysvendor_regionskane_001:idContent",
+                "id": "PKG-330045",
+                "unique": true
+              },
+              "name": "Medicinsk utrustning"
+            }
+          ]
+        },
+        {
+          "nodeSeqNo": 7,
+          "nodeType": "action",
+          "subnodeType": "mobAidDropoff",
+          "addressNode": {
+            "addressName": "Tycho Brahes museum",
+            "street": "Landsvägen",
+            "streetNo": 182,
+            "community": "Ven",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.912,
+              "lon": 12.698
+            },
+            "manualDescriptions": [
+              {
+                "language": "sv",
+                "text": "Förare hjälper resenär ur rullstol vid entrén."
+              }
+            ]
+          },
+          "times": [
+            {
+              "timeType": "calculated",
+              "time": "2026-03-15T10:48:00Z",
+              "dwellTime": 300
+            }
+          ]
+        },
+        {
+          "nodeSeqNo": 8,
+          "nodeType": "destination",
+          "addressNode": {
+            "addressName": "Tycho Brahes museum",
+            "street": "Landsvägen",
+            "streetNo": 182,
+            "postalNo": "26033",
+            "community": "Ven",
+            "country": "SE",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.912,
+              "lon": 12.698,
+              "precision": 8
+            },
+            "idPostalCode": {
+              "src": "PostNord:postnr",
+              "id": "26033"
+            },
+            "idZone": {
+              "src": "sysvendor_regionskane_001:idZone",
+              "id": "ZONE-VEN"
+            }
+          },
+          "times": [
+            {
+              "timeType": "scheduled",
+              "time": "2026-03-15T10:50:00Z"
+            },
+            {
+              "timeType": "actual",
+              "time": "2026-03-15T10:52:00Z"
+            }
+          ],
+          "nodeProcess": {
+            "sendInformationArrival": "alwaysSend",
+            "sendInformationDelay": "allowSend",
+            "sendInformationDispatch": "neverSend",
+            "sendInformationContent": {
+              "contactType": "sms",
+              "contactValue": "+46709876543"
+            }
+          },
+          "contents": [
+            {
+              "contentType": "traveller",
+              "contentSeqNo": 1,
+              "id": {
+                "src": "sysvendor_regionskane_001:idContent",
+                "id": "PAX-550192",
+                "unique": true
+              },
+              "name": "Anna Svensson",
+              "contactInfo": [
+                {
+                  "contactType": "sms",
+                  "contactValue": "+46709876543"
+                },
+                {
+                  "contactType": "fax",
+                  "contactValue": "046-171099"
+                }
+              ],
+              "mobilityAids": [
+                {
+                  "mobilityAidType": "wheelchair",
+                  "quantity": 1
+                }
+              ],
+              "attributes": [
+                {
+                  "src": "SUTI:idLink",
+                  "id": "1001",
+                  "unique": true
+                }
+              ],
+              "economy": {
+                "payments": [
+                  {
+                    "paymentType": "cash",
+                    "amount": {
+                      "amountInclVat": 50.0
+                    }
+                  },
+                  {
+                    "paymentType": "voucher",
+                    "amount": {
+                      "amountInclVat": 100.0
+                    },
+                    "documentType": "resecheck",
+                    "noOfDocuments": 2
+                  },
+                  {
+                    "paymentType": "ticket",
+                    "amount": {
+                      "amountInclVat": 0.0
+                    }
+                  },
+                  {
+                    "paymentType": "app",
+                    "amount": {
+                      "amountInclVat": 140.0
+                    }
+                  },
+                  {
+                    "paymentType": "invoice",
+                    "amount": {
+                      "amountInclVat": 0.0
+                    }
+                  }
+                ]
+              },
+              "subOrder": {
+                "orderIds": [
+                  {
+                    "src": "sysvendor_regionskane_001:idSubOrder",
+                    "id": "SUB-2026-88401-A",
+                    "unique": true
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

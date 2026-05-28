@@ -1,0 +1,90 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "4010",
+    "msgTimeStamp": "2020-09-09T14:10:44.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2020090914378971",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idOrder": {
+          "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+          "id": "2068244",
+          "unique": true
+        }
+      },
+      {
+        "idOrder": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+          "id": "480",
+          "unique": true
+        }
+      },
+      {
+        "idMsg": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+          "id": "2020090914822982",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "event": {
+    "eventType": "passengerDropped",
+    "eventNode": {
+      "nodeSeqNo": 2,
+      "nodeType": "destination",
+      "addressNode": {
+        "geographicLocation": {
+          "typeOfCoordinate": "WGS-84",
+          "lat": 56.156337,
+          "lon": 13.765955,
+          "precision": 6
+        }
+      },
+      "times": [
+        {
+          "timeType": "estimated",
+          "time": "2020-09-09T14:10:44Z"
+        }
+      ],
+      "contents": [
+        {
+          "contentType": "traveller",
+          "name": "Nils Testsson",
+          "id": {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idContentId",
+            "id": "1212"
+          },
+          "subOrder": {
+            "orderIds": [
+              {
+                "src": "systemsupplierId_clientOwnerId_uniqueId:IdSubOrder",
+                "id": "18555472"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
