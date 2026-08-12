@@ -1,0 +1,73 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "2900",
+    "msgName": "AuthorizationRequest",
+    "msgTimeStamp": "2026-01-15T16:00:00.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026011516002900",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idAuthorization": {
+          "src": "systemsupplierId_providerOwnerId_uniqueId:idAuthorization",
+          "id": "AUTH-2026-0001",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "order": {
+    "idOrder": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+      "id": "LOC-8842",
+      "unique": true
+    },
+    "route": {
+      "nodes": [
+        {
+          "nodeSeqNo": 1,
+          "nodeType": "pickup",
+          "subnodeType": "flagStop",
+          "addressNode": {
+            "addressName": "Flag stop 12, Route 840",
+            "community": "Lund",
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.698,
+              "lon": 13.205
+            }
+          }
+        },
+        {
+          "nodeSeqNo": 2,
+          "nodeType": "destination",
+          "addressNode": {
+            "street": "Stortorget",
+            "streetNo": 1,
+            "community": "Lund",
+            "postalNo": "22222"
+          }
+        }
+      ]
+    }
+  }
+}

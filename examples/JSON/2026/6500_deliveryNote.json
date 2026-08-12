@@ -1,0 +1,79 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "6500",
+    "msgName": "DeliveryNote",
+    "msgTimeStamp": "2026-01-15T20:00:00.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026011520006500",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idOrder": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+          "id": "11183742",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "deliveryNote": {
+    "idReceipt": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idReceipt",
+      "id": "R-2026-0004711",
+      "unique": true
+    },
+    "deliveryNoteType": "debit",
+    "agreement": {
+      "idAgreement": {
+        "src": "systemsupplierId_clientOwnerId_uniqueId:idAgreement",
+        "id": "AG-2026-001",
+        "unique": true
+      }
+    },
+    "summaryReport": {
+      "vehicle": "3110",
+      "durationStart": 1500,
+      "distanceStart": 12400,
+      "orderEnded": true
+    },
+    "economyReports": [
+      {
+        "payments": [
+          {
+            "paymentType": "account",
+            "amount": {
+              "amountInclVat": 245.0,
+              "amountExclVat": 231.13,
+              "amountVat": 13.87,
+              "vatPercent": 6.0,
+              "idCurrency": {
+                "src": "ISO:4217",
+                "id": "SEK",
+                "unique": true
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

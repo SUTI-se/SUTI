@@ -1,0 +1,89 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "1501",
+    "msgName": "PriceRequest",
+    "msgTimeStamp": "2026-01-15T10:00:00.000Z",
+    "orgSender": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+      "id": "2026011510001501",
+      "unique": true
+    }
+  },
+  "infoRequest": {
+    "requests": [
+      {
+        "requestPrice": {
+          "idOrder": {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+            "id": "PRICE-CHECK-1",
+            "unique": false
+          },
+          "route": {
+            "nodes": [
+              {
+                "nodeSeqNo": 1,
+                "nodeType": "pickup",
+                "addressNode": {
+                  "street": "Baravägen",
+                  "streetNo": 1,
+                  "community": "Lund",
+                  "postalNo": "22240",
+                  "geographicLocation": {
+                    "typeOfCoordinate": "WGS-84",
+                    "lat": 55.718095,
+                    "lon": 13.190738
+                  }
+                },
+                "times": [
+                  {
+                    "timeType": "scheduled",
+                    "time": "2026-01-16T08:00:00Z"
+                  }
+                ]
+              },
+              {
+                "nodeSeqNo": 2,
+                "nodeType": "destination",
+                "addressNode": {
+                  "street": "Stortorget",
+                  "streetNo": 1,
+                  "community": "Lund",
+                  "postalNo": "22222",
+                  "geographicLocation": {
+                    "typeOfCoordinate": "WGS-84",
+                    "lat": 55.704722,
+                    "lon": 13.191944
+                  }
+                }
+              }
+            ]
+          }
+        },
+        "requestProduct": {
+          "idProduct": {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idProduct",
+            "id": "STANDARD-CAR",
+            "unique": true
+          }
+        }
+      }
+    ]
+  }
+}

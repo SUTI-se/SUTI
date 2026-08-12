@@ -1,0 +1,82 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "1010",
+    "msgName": "SingleResourceResponse",
+    "msgTimeStamp": "2026-01-15T08:00:05.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026011508000510",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+          "id": "2026011508000001",
+          "unique": true
+        }
+      },
+      {
+        "idVehicle": [
+          {
+            "src": "SE:idVehicle",
+            "id": "ABC123",
+            "unique": true
+          }
+        ]
+      }
+    ]
+  },
+  "resourceInformation": {
+    "vehicle": {
+      "ids": [
+        {
+          "src": "SE:idVehicle",
+          "id": "ABC123",
+          "unique": true
+        },
+        {
+          "src": "systemsupplierId_providerOwnerId_uniqueId:idVehicle",
+          "id": "77777",
+          "unique": true
+        }
+      ],
+      "capacity": {
+        "seats": {
+          "noOfSeats": 4
+        }
+      },
+      "descriptionVehicle": {
+        "manufacturedYear": 2022,
+        "manufacturerBrand": "Volvo V60",
+        "carrierBrand": "Sverigetaxi",
+        "otherSign": "Yellow"
+      }
+    },
+    "driver": {
+      "id": {
+        "src": "SE:idDriver",
+        "id": "123456",
+        "unique": true
+      },
+      "name": "Jane Driver"
+    }
+  }
+}

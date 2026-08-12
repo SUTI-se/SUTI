@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "$schema": "../../../schemas/SUTI_BulkLocation_legacy.schema.json",
   "SUTI_1111_bulkLocationResponse": {
     "msg": {
       "msgType": "1111",

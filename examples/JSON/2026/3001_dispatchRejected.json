@@ -1,0 +1,73 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "3001",
+    "msgName": "Dispatch Rejected",
+    "msgTimeStamp": "2026-01-15T17:01:00.000Z",
+    "orgSender": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+      "id": "2026011517013001",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+          "id": "2026011517003000",
+          "unique": true
+        }
+      },
+      {
+        "idOrder": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+          "id": "11183742",
+          "unique": true
+        }
+      },
+      {
+        "idRejectReason": {
+          "src": "SUTI:idRejectReason",
+          "id": "9003",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "resource": {
+    "vehicle": {
+      "capacity": {
+        "seats": {
+          "noOfSeats": 8
+        },
+        "wheelchairs": {
+          "noOfItems": 1
+        }
+      }
+    },
+    "manualDescriptionResource": [
+      {
+        "manualText": "Suggested vehicle lacks wheelchair capacity required by the order.",
+        "sendToInvoice": false,
+        "sendToVehicle": false,
+        "sendToOperator": true,
+        "vehicleConfirmation": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "3013",
+    "msgName": "Dispatch Reservation",
+    "msgTimeStamp": "2026-01-15T17:20:00.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026011517203013",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idOrder": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+          "id": "11183742",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "resource": {
+    "vehicle": {
+      "ids": [
+        {
+          "src": "systemsupplierId_providerOwnerId_uniqueId:idVehicle",
+          "id": "3110",
+          "unique": true
+        }
+      ],
+      "capacity": {
+        "seats": {
+          "noOfSeats": 4
+        }
+      }
+    },
+    "driver": {
+      "id": {
+        "src": "SE:idDriver",
+        "id": "123456",
+        "unique": true
+      }
+    },
+    "resourceTime": [
+      {
+        "timeType": "scheduled",
+        "time": "2026-01-16T06:00:00Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "1121",
+    "msgTimeStamp": "2026-01-15T12:00:00.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026011512001121",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+          "id": "2026011500000000",
+          "unique": true
+        }
+      }
+    ]
+  }
+}

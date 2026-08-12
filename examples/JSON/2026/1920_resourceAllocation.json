@@ -1,0 +1,71 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "1920",
+    "msgName": "Resource Allocation",
+    "msgTimeStamp": "2026-01-15T11:00:00.000Z",
+    "orgSender": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+      "id": "2026011511001920",
+      "unique": true
+    }
+  },
+  "resourceAllocation": {
+    "resourceOrderId": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+      "id": "TASK-4711",
+      "unique": true
+    },
+    "resourceCapacity": {
+      "vehicle": {
+        "capacity": {
+          "seats": {
+            "noOfSeats": 8
+          },
+          "wheelchairs": {
+            "noOfItems": 1
+          }
+        }
+      }
+    },
+    "resourceStartTime": [
+      {
+        "timeType": "scheduled",
+        "time": "2026-01-16T06:00:00Z"
+      }
+    ],
+    "resourceEndTime": [
+      {
+        "timeType": "scheduled",
+        "time": "2026-01-16T14:00:00Z"
+      }
+    ],
+    "resourceAddress": {
+      "street": "Baravägen",
+      "streetNo": 1,
+      "community": "Lund",
+      "postalNo": "22240",
+      "geographicLocation": {
+        "typeOfCoordinate": "WGS-84",
+        "lat": 55.718095,
+        "lon": 13.190738
+      }
+    }
+  }
+}

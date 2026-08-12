@@ -1,0 +1,102 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "6800",
+    "msgName": "RequestedOrderInformation",
+    "msgTimeStamp": "2026-01-15T21:00:00.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026011521006800",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+          "id": "2026011520596810",
+          "unique": true
+        }
+      },
+      {
+        "idOrderTemplate": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrderTemplate",
+          "id": "OT-4711",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "orderTemplate": {
+    "idOrderTemplate": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idOrderTemplate",
+      "id": "OT-4711",
+      "unique": true
+    },
+    "orderTemplateCalendar": {
+      "validPeriod": {
+        "validFrom": "2026-02-01T00:00:00Z",
+        "validTo": "2026-12-31T23:59:59Z"
+      },
+      "validWeekdays": {
+        "monday": true,
+        "wednesday": true,
+        "friday": true
+      }
+    },
+    "scheduleElements": [
+      {
+        "sequenceNo": 1,
+        "weekday": {
+          "monday": true,
+          "wednesday": true,
+          "friday": true
+        },
+        "route": {
+          "nodes": [
+            {
+              "nodeSeqNo": 1,
+              "nodeType": "pickup",
+              "addressNode": {
+                "street": "Baravägen",
+                "streetNo": 1,
+                "community": "Lund",
+                "postalNo": "22240"
+              },
+              "times": [
+                {
+                  "timeType": "scheduled",
+                  "time": "2026-02-02T07:30:00Z"
+                }
+              ]
+            },
+            {
+              "nodeSeqNo": 2,
+              "nodeType": "destination",
+              "addressNode": {
+                "addressName": "Lund Hospital",
+                "community": "Lund",
+                "postalNo": "22185"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

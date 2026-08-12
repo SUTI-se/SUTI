@@ -1,0 +1,51 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "4040",
+    "msgName": "Client Event Confirmation",
+    "msgTimeStamp": "2026-01-15T18:00:00.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026011518004040",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idOrder": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+          "id": "11183742",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "event": {
+    "eventType": "vehicleAtNode",
+    "eventNode": {
+      "nodeSeqNo": 1,
+      "nodeType": "pickup",
+      "times": [
+        {
+          "timeType": "estimated",
+          "time": "2026-01-15T18:02:00Z"
+        }
+      ]
+    }
+  }
+}
