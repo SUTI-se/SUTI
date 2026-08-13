@@ -1,9 +1,39 @@
 # JSON Schema Completion Plan — Missing SUTI Message Types
 
-Date: 2026-08-12
-Status: Plan approved for implementation
+Date: 2026-08-12 (implemented and corrected 2026-08-13)
+Status: Implemented
 Master: [schemas/SUTI_Message.xsd](../schemas/SUTI_Message.xsd)
 Target: [schemas/SUTI_Message.schema.json](../schemas/SUTI_Message.schema.json)
+
+> ## Implementation decisions applied (Technical Board senior advisor, 2026-08-13)
+>
+> Guiding rule: **the JSON schema must never be stricter or more specific than the
+> XSD; the XSD is the master.** The following decisions were applied to the
+> implementation and supersede any conflicting "required payload" or "kept deviation"
+> language elsewhere in this document:
+>
+> 1. **No payload is required.** Every XSD `msg` choice element is optional
+>    (`minOccurs="0"`), so no JSON branch requires its payload. Examples and
+>    documentation show the recommended shape; the schema never rejects an XSD-valid
+>    message for omitting a payload.
+> 2. **Deviations from the XSD are errors, not aliases.** Corrected: `2030` is
+>    references-only (the invented `orderForward` payload was removed); `1023` is
+>    references-only (removed `resourceDispatch`); `4012` uses `messageTo`
+>    (XSD `manualDescriptionMsg`) instead of `event`; `4041`/`4042` are
+>    references-only; `4000` is references-only (removed from the `resource` branch);
+>    `5021` gained the XSD-correct `addressLocation` payload alongside
+>    `geographicLocation`.
+> 3. **1120–1122 remain supported as references-only.** They are in the XSD enum and
+>    the XSD states that messages not named in the choice "only use referencesTo";
+>    rejecting them would make the JSON stricter than the master. They are documented
+>    as reserved/undocumented.
+> 4. **Examples are schema samples, not full protocol fixtures.** Reference IDs are
+>    unique per flow (no shared `2026011500000000` placeholder) but examples are not a
+>    complete resolvable scenario web.
+> 5. **Coverage is per payload family**, not one-example-per-message. 113 of 136 codes
+>    have an example; the remainder are covered by their shared payload-family examples.
+> 6. **The legacy bulk-location `$schema` fix stays** — it is a pure bug fix (the
+>    legacy schema rejected its own example) and makes the JSON no stricter.
 
 ## 1. Method
 
@@ -11,13 +41,13 @@ The XSD `msgType` enumeration (the master list of all SUTI message types) was co
 against `msgTypeEnum` in the JSON schema. Message names were verified against
 `docs/SUTI_Messages.pdf` and the `msgName` attributes in the XML examples.
 
-- XSD defines **128** message type codes.
-- The JSON schema currently covers **51**.
-- **77 message types are missing** from the JSON schema and are planned below.
+- XSD defines **136** message type codes.
+- The JSON schema now covers all **136** codes (each has a matching conditional branch).
 - `8182` (Accounting Revaluate Client Fines) exists in the PDF documentation but **not**
   in the XSD enumeration — it is excluded (XSD is master).
 - `1120`, `1121`, `1122` exist in the XSD enumeration but are **not documented** in
-  SUTI_Messages.pdf — they are included as references-only messages (see HC-12).
+  SUTI_Messages.pdf — they are included as references-only messages (see HC-12 and the
+  decisions above).
 
 ## 2. Established JSON conventions (to keep applying)
 
@@ -355,7 +385,7 @@ def — cheap parity with the master, no impact on existing examples.
 - `orderReport` (required): +2531.
 - `orderTemplate` (required): +2801, +2541, +6800.
 - `accounting` (required): +8010, +8101, +8102, +8111, +8181, +8199.
-- `msgTypeEnum`: extended to all 128 XSD codes (8182 excluded, HC-15).
+- `msgTypeEnum`: extended to all 136 XSD codes (8182 excluded, HC-15).
 
 ## 6. Examples plan
 
@@ -382,10 +412,11 @@ Location: `examples/JSON/2026/`, naming `<msgType>_<camelCaseName>.json`, each w
 ## 7. Execution checklist
 
 1. ✅ Analysis (this document)
-2. ☐ `$defs`: add new + realign existing (section 5)
-3. ☐ `msgTypeEnum`: extend to full XSD list
-4. ☐ Branches: add/rework per section 5, block by block (10, 11, 15/16, 19, 20, 21, 25,
-   28, 29, 30, 40, 41, 50, 60, 65, 68, 70, 80)
-5. ☐ Hand-written examples (payload messages)
-6. ☐ Generated references-only examples
-7. ☐ Validate every example in `examples/JSON/2026/` against the updated schema
+2. ✅ `$defs`: add new + realign existing (section 5)
+3. ✅ `msgTypeEnum`: extended to all 136 XSD codes
+4. ✅ Branches: added/reworked per section 5, then corrected per the 2026-08-13
+   decisions (payloads made optional; XSD deviations removed)
+5. ✅ Hand-written examples (payload messages)
+6. ✅ Generated references-only examples
+7. ✅ Validated every example in `examples/JSON/2026/` against the updated schema
+   (122/122 non-legacy examples pass; the legacy example passes its own schema)

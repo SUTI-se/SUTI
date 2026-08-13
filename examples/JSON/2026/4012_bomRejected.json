@@ -41,11 +41,11 @@
       }
     ]
   },
-  "event": {
-    "eventType": "noShow",
-    "eventNode": {
-      "nodeSeqNo": 1,
-      "nodeType": "pickup"
-    }
+  "messageTo": {
+    "manualText": "NoShow event at node 1 rejected: traveller was not present at the agreed pickup address.",
+    "sendToInvoice": false,
+    "sendToVehicle": true,
+    "sendToOperator": true,
+    "vehicleConfirmation": false
   }
 }

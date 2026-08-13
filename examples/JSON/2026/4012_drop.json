@@ -41,11 +41,11 @@
       }
     ]
   },
-  "event": {
-    "eventType": "passengerDropped",
-    "eventNode": {
-      "nodeSeqNo": 2,
-      "nodeType": "destination"
-    }
+  "messageTo": {
+    "manualText": "PassengerDropped event at node 2 rejected: drop-off location does not match the order destination.",
+    "sendToInvoice": false,
+    "sendToVehicle": true,
+    "sendToOperator": true,
+    "vehicleConfirmation": false
   }
 }

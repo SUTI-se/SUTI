@@ -41,12 +41,5 @@
         }
       }
     ]
-  },
-  "event": {
-    "eventType": "vehicleAtNode",
-    "eventNode": {
-      "nodeSeqNo": 1,
-      "nodeType": "pickup"
-    }
   }
 }

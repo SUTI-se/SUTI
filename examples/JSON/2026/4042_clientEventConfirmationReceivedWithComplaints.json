@@ -41,24 +41,5 @@
         }
       }
     ]
-  },
-  "event": {
-    "eventType": "vehicleAtNode",
-    "eventNode": {
-      "nodeSeqNo": 1,
-      "nodeType": "pickup",
-      "contents": [
-        {
-          "contentType": "traveller",
-          "name": "John Doe",
-          "contactInfo": [
-            {
-              "contactType": "otherInfo",
-              "contactValue": "Traveller reports vehicle arrived 10 minutes late"
-            }
-          ]
-        }
-      ]
-    }
   }
 }

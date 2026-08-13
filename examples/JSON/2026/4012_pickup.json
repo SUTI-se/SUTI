@@ -41,11 +41,11 @@
       }
     ]
   },
-  "event": {
-    "eventType": "pickup",
-    "eventNode": {
-      "nodeSeqNo": 1,
-      "nodeType": "pickup"
-    }
+  "messageTo": {
+    "manualText": "Pickup event at node 1 rejected: reported pickup time is outside the agreed time window.",
+    "sendToInvoice": false,
+    "sendToVehicle": true,
+    "sendToOperator": true,
+    "vehicleConfirmation": false
   }
 }

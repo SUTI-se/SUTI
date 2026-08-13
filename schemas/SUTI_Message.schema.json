@@ -109,8 +109,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "resourceInformation"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -172,8 +171,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "bulkLocationRequest"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -206,8 +204,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "bulkLocationList"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -239,8 +236,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "infoRequest"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -272,8 +268,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "infoResponse"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -302,8 +297,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "resourceAllocation"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -335,8 +329,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "order"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -394,8 +387,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "orderReject"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -458,8 +450,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "cancellationConsequence"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -508,15 +499,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "orderForward": {
-            "$ref": "#/$defs/orderForward"
-          },
           "$schema": true
         },
-        "required": [
-          "msg",
-          "orderForward"
-        ],
         "unevaluatedProperties": false
       }
     },
@@ -547,8 +531,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "driverSession"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -603,8 +586,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "driverSessionReject"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -638,8 +620,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "orderTemplate"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -668,8 +649,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "scheduleElementOrderList"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -685,8 +665,7 @@
                   "3001",
                   "3003",
                   "3004",
-                  "3013",
-                  "4000"
+                  "3013"
                 ]
               }
             }
@@ -731,8 +710,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "order"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -764,8 +742,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "event"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -794,8 +771,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "actionRequest"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -824,8 +800,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "messageTo"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -877,11 +852,13 @@
           "geographicLocation": {
             "$ref": "#/$defs/geographicLocation"
           },
+          "addressLocation": {
+            "$ref": "#/$defs/address"
+          },
           "$schema": true
         },
         "required": [
-          "msg",
-          "geographicLocation"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -913,8 +890,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "orderReport"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -943,8 +919,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "deliveryNote"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -1007,8 +982,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "accounting"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -1019,10 +993,7 @@
           "msg": {
             "properties": {
               "msgType": {
-                "enum": [
-                  "1020",
-                  "1023"
-                ]
+                "const": "1020"
               }
             }
           }
@@ -1050,6 +1021,7 @@
               "msgType": {
                 "enum": [
                   "1021",
+                  "1023",
                   "1024"
                 ]
               }
@@ -1076,7 +1048,8 @@
               "msgType": {
                 "enum": [
                   "1022",
-                  "1025"
+                  "1025",
+                  "4012"
                 ]
               }
             }
@@ -1130,12 +1103,7 @@
           "msg": {
             "properties": {
               "msgType": {
-                "enum": [
-                  "4011",
-                  "4012",
-                  "4041",
-                  "4042"
-                ]
+                "const": "4011"
               }
             }
           }
@@ -1193,6 +1161,8 @@
               "msgType": {
                 "enum": [
                   "4031",
+                  "4041",
+                  "4042",
                   "5011"
                 ]
               }
@@ -1374,8 +1344,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "orderLink"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -1462,8 +1431,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "authorizationAccept"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -1501,6 +1469,7 @@
             "properties": {
               "msgType": {
                 "enum": [
+                  "4000",
                   "4002",
                   "4021"
                 ]

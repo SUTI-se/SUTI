@@ -23,22 +23,26 @@
       "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
       "id": "2020090914379104",
       "unique": true
-    }
-  },
-  "resourceDispatch": {
-    "vehicle": {
-      "capacity": {
-        "seats": {
-          "noOfSeats": 4
-        }
-      }
     },
-    "driver": {
-      "id": {
-        "src": "SE:idDriver",
-        "id": "123456",
-        "unique": true
+    "referencesTo": [
+      {
+        "idVehicle": [
+          {
+            "src": "SE:idVehicle",
+            "id": "ABC123",
+            "unique": true
+          }
+        ]
+      },
+      {
+        "idDriver": [
+          {
+            "src": "SE:idDriver",
+            "id": "123456",
+            "unique": true
+          }
+        ]
       }
-    }
+    ]
   }
 }
