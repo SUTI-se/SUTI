@@ -82,11 +82,13 @@
       {
         "referencesTo": [
           {
-            "idOrder": {
-              "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
-              "id": "11183742",
-              "unique": true
-            }
+            "idOrder": [
+              {
+                "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+                "id": "11183742",
+                "unique": true
+              }
+            ]
           }
         ],
         "status": {
@@ -134,16 +136,16 @@
               "unique": true
             },
             "taximeterAmount": {
-              "startPrice": 45.0,
+              "startPrice": 45,
               "distanceTotalPrice": {
                 "distanceCount": 12.4,
                 "distanceUnitPrice": 13.5
               },
               "durationTotalPrice": {
-                "durationCount": 25.0,
+                "durationCount": 25,
                 "durationUnitPrice": 1.2
               },
-              "taximeterTotalPrice": 245.0
+              "taximeterTotalPrice": 245
             }
           }
         ],
@@ -159,10 +161,10 @@
               {
                 "paymentType": "account",
                 "amount": {
-                  "amountInclVat": 245.0,
+                  "amountInclVat": 245,
                   "amountExclVat": 231.13,
                   "amountVat": 13.87,
-                  "vatPercent": 6.0,
+                  "vatPercent": 6,
                   "idCurrency": {
                     "src": "ISO:4217",
                     "id": "SEK",
@@ -201,7 +203,8 @@
             "geographicLocation": {
               "typeOfCoordinate": "WGS-84",
               "lat": 55.705,
-              "lon": 13.193
+              "lon": 13.193,
+              "precision": 6
             }
           },
           {
@@ -213,7 +216,8 @@
             "geographicLocation": {
               "typeOfCoordinate": "WGS-84",
               "lat": 55.704722,
-              "lon": 13.191944
+              "lon": 13.191944,
+              "precision": 6
             }
           }
         ]
@@ -224,10 +228,10 @@
         {
           "paymentType": "account",
           "amount": {
-            "amountInclVat": 245.0,
+            "amountInclVat": 245,
             "amountExclVat": 231.13,
             "amountVat": 13.87,
-            "vatPercent": 6.0,
+            "vatPercent": 6,
             "idCurrency": {
               "src": "ISO:4217",
               "id": "SEK",

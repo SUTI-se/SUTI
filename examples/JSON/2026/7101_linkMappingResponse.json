@@ -33,11 +33,13 @@
         }
       },
       {
-        "idOrder": {
-          "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
-          "id": "PROV-LINK-001",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+            "id": "PROV-LINK-001",
+            "unique": true
+          }
+        ]
       }
     ]
   },

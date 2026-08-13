@@ -736,8 +736,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "event": {
-            "$ref": "#/$defs/event"
+          "pickupConfirmation": {
+            "$ref": "#/$defs/pickupConfirmation"
           },
           "$schema": true
         },
@@ -1904,7 +1904,10 @@
           "$ref": "#/$defs/id"
         },
         "idOrder": {
-          "$ref": "#/$defs/id"
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          }
         },
         "idVehicle": {
           "type": "array",
@@ -2184,7 +2187,9 @@
       },
       "required": [
         "lat",
-        "lon"
+        "lon",
+        "precision",
+        "typeOfCoordinate"
       ],
       "additionalProperties": false
     },
@@ -2218,9 +2223,6 @@
           "$ref": "#/$defs/route"
         }
       },
-      "required": [
-        "idOrder"
-      ],
       "additionalProperties": false
     },
     "orderStatus": {
@@ -2475,7 +2477,7 @@
     },
     "event": {
       "type": "object",
-      "description": "Traffic event (pickup confirmation, etc.)",
+      "description": "Event report item",
       "properties": {
         "eventType": {
           "type": "string",
@@ -2509,6 +2511,41 @@
       "required": [
         "eventType"
       ],
+      "additionalProperties": false
+    },
+    "pickupConfirmation": {
+      "type": "object",
+      "description": "Node-event confirmation used by messages 4010 and 4040",
+      "properties": {
+        "eventType": {
+          "type": "string",
+          "enum": [
+            "passengerInVehicle",
+            "passengerDropped",
+            "noShow",
+            "parcelInVehicle",
+            "parcelDropped",
+            "actionDone",
+            "navigationDone",
+            "cancelAtDoor",
+            "vehicleAtNode",
+            "infoToContent",
+            "dispatchConfirmationSent",
+            "delayConfirmationSent",
+            "arrivalConfirmationSent",
+            "start",
+            "stop",
+            "acceptOrder",
+            "vehicleExitNode",
+            "noContentAtNode",
+            "contentAtNode",
+            "contentNoShow"
+          ]
+        },
+        "nodeConfirmed": {
+          "$ref": "#/$defs/node"
+        }
+      },
       "additionalProperties": false
     },
     "process": {
@@ -3025,6 +3062,13 @@
           }
         }
       },
+      "required": [
+        "manualText",
+        "sendToInvoice",
+        "sendToVehicle",
+        "sendToOperator",
+        "vehicleConfirmation"
+      ],
       "additionalProperties": false
     },
     "bulkLocationRequest": {
@@ -3147,7 +3191,8 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/id"
-          }
+          },
+          "minItems": 1
         },
         "orderSentBefore": {
           "type": "object",
@@ -3241,6 +3286,15 @@
         },
         "resourceDriverSession": {
           "$ref": "#/$defs/resource"
+        },
+        "changelog": {
+          "$ref": "#/$defs/changelog"
+        },
+        "sessionNodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sessionNode"
+          }
         }
       },
       "additionalProperties": false
@@ -3248,13 +3302,79 @@
     "driverSessionReject": {
       "type": "object",
       "properties": {
-        "idDriverSession": {
-          "$ref": "#/$defs/id"
+        "driverSession": {
+          "$ref": "#/$defs/driverSession"
         },
-        "rejectReason": {
-          "type": "string"
+        "attributesReject": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "changelog": {
+          "$ref": "#/$defs/changelog"
         }
       },
+      "required": [
+        "driverSession",
+        "attributesReject",
+        "changelog"
+      ],
+      "additionalProperties": false
+    },
+    "changelog": {
+      "type": "object",
+      "properties": {
+        "logs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/changeLogEntry"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "changeLogEntry": {
+      "type": "object",
+      "properties": {
+        "orderIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "maxItems": 2
+        },
+        "change": {
+          "type": "string",
+          "enum": [
+            "updated",
+            "moved",
+            "added",
+            "cancelled"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "sessionNode": {
+      "type": "object",
+      "properties": {
+        "orderIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 2
+        },
+        "node": {
+          "$ref": "#/$defs/node"
+        }
+      },
+      "required": [
+        "orderIds",
+        "node"
+      ],
       "additionalProperties": false
     },
     "providerOrderUpdate": {
@@ -3266,7 +3386,7 @@
             "timeUpdate",
             "addressUpdate",
             "contentUpdate",
-            "cancellation"
+            "cancelation"
           ]
         },
         "nodeUpdated": {
@@ -3653,7 +3773,8 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/id"
-          }
+          },
+          "minItems": 1
         },
         "orgPayment": {
           "$ref": "#/$defs/orgPayment"
@@ -4069,8 +4190,7 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/content"
-          },
-          "minItems": 1
+          }
         }
       },
       "required": [
@@ -4149,33 +4269,6 @@
           "$ref": "#/$defs/product"
         }
       },
-      "oneOf": [
-        {
-          "required": [
-            "requestContent"
-          ]
-        },
-        {
-          "required": [
-            "requestVehicle"
-          ]
-        },
-        {
-          "required": [
-            "requestPrice"
-          ]
-        },
-        {
-          "required": [
-            "requestCustomer"
-          ]
-        },
-        {
-          "required": [
-            "requestOrg"
-          ]
-        }
-      ],
       "additionalProperties": false
     },
     "infoResponse": {

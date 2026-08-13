@@ -49,8 +49,10 @@
                 "streetNo": 4,
                 "community": "Lund",
                 "geographicLocation": {
+                  "typeOfCoordinate": "WGS-84",
                   "lat": 55.7107,
-                  "lon": 13.2106
+                  "lon": 13.2106,
+                  "precision": 6
                 }
               },
               "times": [
@@ -78,8 +80,10 @@
                 "addressName": "Lunds Centralstation",
                 "community": "Lund",
                 "geographicLocation": {
+                  "typeOfCoordinate": "WGS-84",
                   "lat": 55.708,
-                  "lon": 13.187
+                  "lon": 13.187,
+                  "precision": 6
                 }
               },
               "times": [
@@ -139,8 +143,10 @@
                 "addressName": "Malmö C",
                 "community": "Malmö",
                 "geographicLocation": {
+                  "typeOfCoordinate": "WGS-84",
                   "lat": 55.6093,
-                  "lon": 13.0007
+                  "lon": 13.0007,
+                  "precision": 6
                 }
               },
               "times": [
@@ -170,8 +176,10 @@
                 "streetNo": 18,
                 "community": "Malmö",
                 "geographicLocation": {
+                  "typeOfCoordinate": "WGS-84",
                   "lat": 55.5928,
-                  "lon": 13.0014
+                  "lon": 13.0014,
+                  "precision": 6
                 }
               },
               "times": [

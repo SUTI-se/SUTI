@@ -68,11 +68,13 @@
       {
         "referencesTo": [
           {
-            "idOrder": {
-              "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
-              "id": "11183742",
-              "unique": true
-            }
+            "idOrder": [
+              {
+                "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+                "id": "11183742",
+                "unique": true
+              }
+            ]
           }
         ],
         "status": {
@@ -105,10 +107,10 @@
         {
           "paymentType": "account",
           "amount": {
-            "amountInclVat": 245.0,
+            "amountInclVat": 245,
             "amountExclVat": 231.13,
             "amountVat": 13.87,
-            "vatPercent": 6.0,
+            "vatPercent": 6,
             "idCurrency": {
               "src": "ISO:4217",
               "id": "SEK",

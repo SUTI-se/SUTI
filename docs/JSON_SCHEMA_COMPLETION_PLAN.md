@@ -34,6 +34,11 @@ Target: [schemas/SUTI_Message.schema.json](../schemas/SUTI_Message.schema.json)
 >    have an example; the remainder are covered by their shared payload-family examples.
 > 6. **The legacy bulk-location `$schema` fix stays** — it is a pure bug fix (the
 >    legacy schema rejected its own example) and makes the JSON no stricter.
+> 7. **Nested constraints follow the XSD where JSON can express them.** Required
+>    fields, arrays, and enum values mirror XSD `use`, `minOccurs`/`maxOccurs`, and
+>    enumerations without adding extra constraints. This includes repeatable
+>    `referencesTo.idOrder`, `pickupConfirmation`, `driverSessionReject`, and the
+>    XSD spelling `cancelation` for 2060.
 
 ## 1. Method
 

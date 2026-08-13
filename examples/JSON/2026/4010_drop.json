@@ -26,18 +26,22 @@
     },
     "referencesTo": [
       {
-        "idOrder": {
-          "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
-          "id": "2068244",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+            "id": "2068244",
+            "unique": true
+          }
+        ]
       },
       {
-        "idOrder": {
-          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
-          "id": "480",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+            "id": "480",
+            "unique": true
+          }
+        ]
       },
       {
         "idMsg": {
@@ -48,9 +52,9 @@
       }
     ]
   },
-  "event": {
+  "pickupConfirmation": {
     "eventType": "passengerDropped",
-    "eventNode": {
+    "nodeConfirmed": {
       "nodeSeqNo": 2,
       "nodeType": "destination",
       "addressNode": {

@@ -48,7 +48,8 @@
                   "geographicLocation": {
                     "typeOfCoordinate": "WGS-84",
                     "lat": 55.718095,
-                    "lon": 13.190738
+                    "lon": 13.190738,
+                    "precision": 6
                   }
                 },
                 "times": [
@@ -69,7 +70,8 @@
                   "geographicLocation": {
                     "typeOfCoordinate": "WGS-84",
                     "lat": 55.704722,
-                    "lon": 13.191944
+                    "lon": 13.191944,
+                    "precision": 6
                   }
                 }
               }

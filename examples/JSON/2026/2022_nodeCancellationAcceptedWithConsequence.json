@@ -34,11 +34,13 @@
         }
       },
       {
-        "idOrder": {
-          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
-          "id": "11183742",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+            "id": "11183742",
+            "unique": true
+          }
+        ]
       }
     ]
   },
@@ -47,9 +49,9 @@
     "cancellationConsequence": true,
     "economyCancellation": {
       "priceFixed": {
-        "amountInclVat": 150.0,
+        "amountInclVat": 150,
         "amountVat": 8.49,
-        "vatPercent": 6.0,
+        "vatPercent": 6,
         "idCurrency": {
           "src": "ISO:4217",
           "id": "SEK",

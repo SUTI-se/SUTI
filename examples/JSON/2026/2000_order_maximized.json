@@ -34,11 +34,13 @@
         }
       },
       {
-        "idOrder": {
-          "src": "sysvendor_regionskane_001:idOrder",
-          "id": "ORD-2026-88401",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "sysvendor_regionskane_001:idOrder",
+            "id": "ORD-2026-88401",
+            "unique": true
+          }
+        ]
       },
       {
         "idNode": {
@@ -78,20 +80,20 @@
     },
     "economyOrder": {
       "priceEstimate": {
-        "amountInclVat": 625.0,
-        "amountExclVat": 500.0,
-        "amountVat": 125.0,
-        "vatPercent": 25.0,
+        "amountInclVat": 625,
+        "amountExclVat": 500,
+        "amountVat": 125,
+        "vatPercent": 25,
         "idCurrency": {
           "src": "ISO:4217",
           "id": "SEK"
         }
       },
       "priceFixed": {
-        "amountInclVat": 580.0,
-        "amountExclVat": 464.0,
-        "amountVat": 116.0,
-        "vatPercent": 25.0,
+        "amountInclVat": 580,
+        "amountExclVat": 464,
+        "amountVat": 116,
+        "vatPercent": 25,
         "idCurrency": {
           "src": "ISO:4217",
           "id": "SEK"
@@ -101,10 +103,10 @@
         {
           "paymentType": "account",
           "amount": {
-            "amountInclVat": 480.0,
-            "amountExclVat": 384.0,
-            "amountVat": 96.0,
-            "vatPercent": 25.0,
+            "amountInclVat": 480,
+            "amountExclVat": 384,
+            "amountVat": 96,
+            "vatPercent": 25,
             "idCurrency": {
               "src": "ISO:4217",
               "id": "SEK"
@@ -116,7 +118,7 @@
         {
           "paymentType": "prepaidSocialFee",
           "amount": {
-            "amountInclVat": 100.0
+            "amountInclVat": 100
           }
         }
       ]
@@ -279,11 +281,21 @@
             "manualDescriptions": [
               {
                 "language": "sv",
-                "text": "Hämtas vid huvudentré 3, andra våningen. Ring porttelefon 2345."
+                "text": "Hämtas vid huvudentré 3, andra våningen. Ring porttelefon 2345.",
+                "manualText": "Hämtas vid huvudentré 3, andra våningen. Ring porttelefon 2345.",
+                "sendToInvoice": false,
+                "sendToVehicle": true,
+                "sendToOperator": true,
+                "vehicleConfirmation": false
               },
               {
                 "language": "en",
-                "text": "Pick up at main entrance 3, second floor. Call intercom 2345."
+                "text": "Pick up at main entrance 3, second floor. Call intercom 2345.",
+                "manualText": "Pick up at main entrance 3, second floor. Call intercom 2345.",
+                "sendToInvoice": false,
+                "sendToVehicle": true,
+                "sendToOperator": true,
+                "vehicleConfirmation": false
               }
             ]
           },
@@ -364,31 +376,31 @@
               "economy": {
                 "priceEstimate": {
                   "amountInclVat": 312.5,
-                  "amountExclVat": 250.0,
+                  "amountExclVat": 250,
                   "amountVat": 62.5,
-                  "vatPercent": 25.0,
+                  "vatPercent": 25,
                   "idCurrency": {
                     "src": "ISO:4217",
                     "id": "SEK"
                   }
                 },
                 "priceFixed": {
-                  "amountInclVat": 290.0
+                  "amountInclVat": 290
                 },
                 "payments": [
                   {
                     "paymentType": "prepaidSocialFee",
                     "amount": {
-                      "amountInclVat": 50.0
+                      "amountInclVat": 50
                     }
                   },
                   {
                     "paymentType": "card",
                     "amount": {
-                      "amountInclVat": 240.0,
-                      "amountExclVat": 192.0,
-                      "amountVat": 48.0,
-                      "vatPercent": 25.0
+                      "amountInclVat": 240,
+                      "amountExclVat": 192,
+                      "amountVat": 48,
+                      "vatPercent": 25
                     },
                     "documentType": "kvitto",
                     "noOfDocuments": 1
@@ -447,7 +459,7 @@
                   {
                     "paymentType": "account",
                     "amount": {
-                      "amountInclVat": 0.0
+                      "amountInclVat": 0
                     }
                   }
                 ]
@@ -473,12 +485,18 @@
             "geographicLocation": {
               "typeOfCoordinate": "WGS-84",
               "lat": 55.7107,
-              "lon": 13.2106
+              "lon": 13.2106,
+              "precision": 6
             },
             "manualDescriptions": [
               {
                 "language": "sv",
-                "text": "Förare hjälper resenär med rullstol från vårdavdelning till fordon."
+                "text": "Förare hjälper resenär med rullstol från vårdavdelning till fordon.",
+                "manualText": "Förare hjälper resenär med rullstol från vårdavdelning till fordon.",
+                "sendToInvoice": false,
+                "sendToVehicle": true,
+                "sendToOperator": true,
+                "vehicleConfirmation": false
               }
             ]
           },
@@ -500,7 +518,8 @@
             "geographicLocation": {
               "typeOfCoordinate": "WGS-84",
               "lat": 55.87,
-              "lon": 12.825
+              "lon": 12.825,
+              "precision": 6
             },
             "idZone": {
               "src": "sysvendor_regionskane_001:idZone",
@@ -528,7 +547,8 @@
             "geographicLocation": {
               "typeOfCoordinate": "WGS-84",
               "lat": 55.905,
-              "lon": 12.72
+              "lon": 12.72,
+              "precision": 6
             }
           },
           "times": [
@@ -547,7 +567,8 @@
             "geographicLocation": {
               "typeOfCoordinate": "WGS-84",
               "lat": 55.906,
-              "lon": 12.718
+              "lon": 12.718,
+              "precision": 6
             }
           },
           "times": [
@@ -623,12 +644,18 @@
             "geographicLocation": {
               "typeOfCoordinate": "WGS-84",
               "lat": 55.912,
-              "lon": 12.698
+              "lon": 12.698,
+              "precision": 6
             },
             "manualDescriptions": [
               {
                 "language": "sv",
-                "text": "Förare hjälper resenär ur rullstol vid entrén."
+                "text": "Förare hjälper resenär ur rullstol vid entrén.",
+                "manualText": "Förare hjälper resenär ur rullstol vid entrén.",
+                "sendToInvoice": false,
+                "sendToVehicle": true,
+                "sendToOperator": true,
+                "vehicleConfirmation": false
               }
             ]
           },
@@ -722,13 +749,13 @@
                   {
                     "paymentType": "cash",
                     "amount": {
-                      "amountInclVat": 50.0
+                      "amountInclVat": 50
                     }
                   },
                   {
                     "paymentType": "voucher",
                     "amount": {
-                      "amountInclVat": 100.0
+                      "amountInclVat": 100
                     },
                     "documentType": "resecheck",
                     "noOfDocuments": 2
@@ -736,19 +763,19 @@
                   {
                     "paymentType": "ticket",
                     "amount": {
-                      "amountInclVat": 0.0
+                      "amountInclVat": 0
                     }
                   },
                   {
                     "paymentType": "app",
                     "amount": {
-                      "amountInclVat": 140.0
+                      "amountInclVat": 140
                     }
                   },
                   {
                     "paymentType": "invoice",
                     "amount": {
-                      "amountInclVat": 0.0
+                      "amountInclVat": 0
                     }
                   }
                 ]

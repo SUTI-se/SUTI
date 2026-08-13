@@ -53,7 +53,8 @@
             "geographicLocation": {
               "typeOfCoordinate": "WGS-84",
               "lat": 55.698,
-              "lon": 13.205
+              "lon": 13.205,
+              "precision": 6
             }
           }
         },
