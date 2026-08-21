@@ -1,9 +1,17 @@
 # JSON Schema Completion Plan — Missing SUTI Message Types
 
 Date: 2026-08-12 (implemented and corrected 2026-08-13)
-Status: Implemented
+Status: Implemented (decision record; see status note below)
 Master: [schemas/SUTI_Message.xsd](../schemas/SUTI_Message.xsd)
 Target: [schemas/SUTI_Message.schema.json](../schemas/SUTI_Message.schema.json)
+
+> **Status note (2026-08-21):** This document is the decision record for the
+> 2026-08 completion work. Its coverage matrix (§3) and hard-choice sections (§4)
+> describe the state *before* the Technical Board decisions in the box below and
+> are intentionally left unchanged. The normative message mapping, the list of
+> JSON extensions, and the naming rules are maintained in
+> [SUTI_JSON_Mapping.md](SUTI_JSON_Mapping.md) — use that document, not §3/§4,
+> as the reference.
 
 > ## Implementation decisions applied (Technical Board senior advisor, 2026-08-13)
 >

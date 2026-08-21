@@ -195,7 +195,7 @@
         },
         "events": [
           {
-            "eventType": "start",
+            "eventVehicle": "start",
             "time": {
               "timeType": "actual",
               "time": "2026-01-15T18:00:00Z"
@@ -208,7 +208,7 @@
             }
           },
           {
-            "eventType": "stop",
+            "eventVehicle": "stop",
             "time": {
               "timeType": "actual",
               "time": "2026-01-15T18:25:00Z"

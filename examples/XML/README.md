@@ -18,6 +18,10 @@ Directory: `examples/XML/`
 3. **In an IDE:**  
    Open any XML file – validation occurs automatically via the relative schema reference.
 
+## Golden fixtures (XML ↔ JSON)
+
+The files `1501_PriceRequest.xml`, `1601_PriceResponse.xml`, `2531_OrderStatus.xml`, `2901_AuthorizationAccept.xml`, `6500_DeliveryNote.xml` and `8000_AccountingBasicProvider.xml` are XML twins of the JSON examples with the same message type in `examples/JSON/2026/`. They validate against the XSD and carry the same values as the JSON files; see [docs/SUTI_JSON_Mapping.md](../../docs/SUTI_JSON_Mapping.md) §4.
+
 ## Purpose  
 This directory contains XML examples for various SUTI messages.  
 The examples can be validated directly against the official schema file located in the repository’s `schemas/` directory.

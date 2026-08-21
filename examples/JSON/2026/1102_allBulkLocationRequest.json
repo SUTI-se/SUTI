@@ -33,7 +33,17 @@
     "statusBreak": true,
     "statusNotInUse": false,
     "bulkIntervalRequest": {
-      "intervalSeconds": 60
+      "timeFrom": {
+        "timeType": "scheduled",
+        "time": "2026-01-15T08:00:00Z"
+      },
+      "timeTo": {
+        "timeType": "scheduled",
+        "time": "2026-01-15T18:00:00Z"
+      },
+      "interval": {
+        "seconds": 60
+      }
     }
   }
 }

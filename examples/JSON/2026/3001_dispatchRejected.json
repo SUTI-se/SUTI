@@ -51,7 +51,7 @@
       }
     ]
   },
-  "resource": {
+  "resourceDispatch": {
     "vehicle": {
       "capacity": {
         "seats": {

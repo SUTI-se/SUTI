@@ -661,6 +661,7 @@
             "properties": {
               "msgType": {
                 "enum": [
+                  "1020",
                   "3000",
                   "3001",
                   "3003",
@@ -678,8 +679,9 @@
       "then": {
         "properties": {
           "msg": true,
-          "resource": {
-            "$ref": "#/$defs/resource"
+          "resourceDispatch": {
+            "$ref": "#/$defs/resource",
+            "description": "XSD element resourceDispatch (resourceType). Msgs 1020, 3000, 3001, 3003, 3004, 3013."
           },
           "$schema": true
         },
@@ -984,32 +986,6 @@
         "required": [
           "msg"
         ],
-        "unevaluatedProperties": false
-      }
-    },
-    {
-      "if": {
-        "properties": {
-          "msg": {
-            "properties": {
-              "msgType": {
-                "const": "1020"
-              }
-            }
-          }
-        },
-        "required": [
-          "msg"
-        ]
-      },
-      "then": {
-        "properties": {
-          "msg": true,
-          "resourceDispatch": {
-            "$ref": "#/$defs/resourceDispatch"
-          },
-          "$schema": true
-        },
         "unevaluatedProperties": false
       }
     },
@@ -3170,16 +3146,30 @@
     },
     "locationRequest": {
       "type": "object",
+      "description": "XSD locationRequest. Used by msg 5020 and by bulkLocationRequest.bulkIntervalRequest (msgs 1100-1102).",
       "properties": {
-        "intervalSeconds": {
-          "type": "integer",
-          "minimum": 1
+        "timeFrom": {
+          "$ref": "#/$defs/time",
+          "description": "Time to start sending positions to Client"
         },
-        "idVehicle": {
-          "$ref": "#/$defs/id"
+        "timeTo": {
+          "$ref": "#/$defs/time",
+          "description": "Time to stop sending positions to Client"
         },
-        "idDriver": {
-          "$ref": "#/$defs/id"
+        "interval": {
+          "type": "object",
+          "description": "Interval between positions",
+          "properties": {
+            "seconds": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "meter": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false
@@ -3997,14 +3987,15 @@
       "type": "object",
       "description": "Accounting tour event not connected to a specific content (suborder)",
       "properties": {
-        "eventType": {
+        "eventVehicle": {
           "type": "string",
           "enum": [
             "dispatchConfirmationSent",
             "start",
             "stop",
             "acceptOrder"
-          ]
+          ],
+          "description": "XSD attribute eventVehicle (numeric codes dropped, values camelCased)"
         },
         "time": {
           "$ref": "#/$defs/time"
@@ -4014,7 +4005,7 @@
         }
       },
       "required": [
-        "eventType"
+        "eventVehicle"
       ],
       "additionalProperties": false
     },
@@ -4355,37 +4346,6 @@
         },
         "ratingComment": {
           "type": "string"
-        }
-      },
-      "additionalProperties": false
-    },
-    "resourceDispatch": {
-      "type": "object",
-      "description": "Resource dispatch information for vehicle login/logout",
-      "properties": {
-        "vehicle": {
-          "$ref": "#/$defs/vehicleResource"
-        },
-        "driver": {
-          "$ref": "#/$defs/driverResource"
-        },
-        "manualDescription": {
-          "$ref": "#/$defs/manualDescription"
-        },
-        "resourceValidation": {
-          "type": "object",
-          "properties": {
-            "validationType": {
-              "type": "string"
-            },
-            "validationMethod": {
-              "type": "string"
-            },
-            "validationTime": {
-              "$ref": "#/$defs/time"
-            }
-          },
-          "additionalProperties": false
         }
       },
       "additionalProperties": false

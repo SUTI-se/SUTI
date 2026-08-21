@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Golden fixture: XML twin of examples/JSON/2026/2531_orderStatus.json.
+  Validates against schemas/SUTI_Message.xsd and carries the same values as the JSON example
+  (checked value-by-value, see docs/SUTI_JSON_Mapping.md section 4).
+  Known difference: JSON `events[].eventNode.nodeType` ("pickup") has no XSD counterpart (XSD event carries only @nodeSeqNo).
+-->
+<SUTI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
+  <orgSender name="Provider name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Client name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="2531" msgName="OrderStatus">
+    <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2026011514002531" unique="true"/>
+    <msgTimeStamp>
+      <time time="2026-01-15T14:00:00.000Z"/>
+    </msgTimeStamp>
+    <referencesTo>
+      <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idOrder" id="11183742" unique="true"/>
+      <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2026011513592530" unique="true"/>
+    </referencesTo>
+    <orderReport>
+      <eventReport>
+        <event eventType="pickup" nodeSeqNo="1"/>
+      </eventReport>
+      <summaryReport vehicle="77777" durationStart="900" distanceStart="2400" orderEnded="false"/>
+      <orderStatus status="started"/>
+    </orderReport>
+  </msg>
+</SUTI>
