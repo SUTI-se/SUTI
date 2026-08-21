@@ -57,7 +57,11 @@
           "msg": {
             "properties": {
               "msgType": {
-                "const": "1000"
+                "enum": [
+                  "1000",
+                  "1001",
+                  "1002"
+                ]
               }
             }
           }
@@ -69,8 +73,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "resourceReservation": {
-            "$ref": "#/$defs/resourceReservation"
+          "resourceInformation": {
+            "$ref": "#/$defs/resource"
           },
           "$schema": true
         },
@@ -83,7 +87,43 @@
           "msg": {
             "properties": {
               "msgType": {
-                "const": "1061"
+                "enum": [
+                  "1010",
+                  "1011",
+                  "1012"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "resourceInformation": {
+            "$ref": "#/$defs/resource"
+          },
+          "$schema": true
+        },
+        "required": [
+          "msg"
+        ],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "enum": [
+                  "1061",
+                  "6061"
+                ]
               }
             }
           }
@@ -109,7 +149,11 @@
           "msg": {
             "properties": {
               "msgType": {
-                "const": "1100"
+                "enum": [
+                  "1100",
+                  "1101",
+                  "1102"
+                ]
               }
             }
           }
@@ -127,8 +171,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "bulkLocationRequest"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -140,6 +183,7 @@
             "properties": {
               "msgType": {
                 "enum": [
+                  "1110",
                   "1111",
                   "1112"
                 ]
@@ -160,8 +204,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "bulkLocationList"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -172,7 +215,10 @@
           "msg": {
             "properties": {
               "msgType": {
-                "const": "1500"
+                "enum": [
+                  "1500",
+                  "1501"
+                ]
               }
             }
           }
@@ -189,6 +235,9 @@
           },
           "$schema": true
         },
+        "required": [
+          "msg"
+        ],
         "unevaluatedProperties": false
       }
     },
@@ -198,7 +247,10 @@
           "msg": {
             "properties": {
               "msgType": {
-                "const": "1600"
+                "enum": [
+                  "1600",
+                  "1601"
+                ]
               }
             }
           }
@@ -215,6 +267,9 @@
           },
           "$schema": true
         },
+        "required": [
+          "msg"
+        ],
         "unevaluatedProperties": false
       }
     },
@@ -242,8 +297,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "resourceAllocation"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -254,7 +308,10 @@
           "msg": {
             "properties": {
               "msgType": {
-                "const": "2000"
+                "enum": [
+                  "2000",
+                  "2900"
+                ]
               }
             }
           }
@@ -272,8 +329,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "order"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -284,7 +340,13 @@
           "msg": {
             "properties": {
               "msgType": {
-                "const": "2001"
+                "enum": [
+                  "2001",
+                  "2003",
+                  "2005",
+                  "2006",
+                  "2007"
+                ]
               }
             }
           }
@@ -325,8 +387,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "orderReject"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -337,7 +398,41 @@
           "msg": {
             "properties": {
               "msgType": {
-                "const": "2012"
+                "enum": [
+                  "2011",
+                  "2021",
+                  "2111"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "cancellationConsequence": {
+            "$ref": "#/$defs/cancellationConsequence"
+          },
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "enum": [
+                  "2012",
+                  "2022",
+                  "2112"
+                ]
               }
             }
           }
@@ -355,8 +450,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "cancellationConsequence"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -405,15 +499,8 @@
       "then": {
         "properties": {
           "msg": true,
-          "orderForward": {
-            "$ref": "#/$defs/orderForward"
-          },
           "$schema": true
         },
-        "required": [
-          "msg",
-          "orderForward"
-        ],
         "unevaluatedProperties": false
       }
     },
@@ -424,7 +511,6 @@
             "properties": {
               "msgType": {
                 "enum": [
-                  "2040",
                   "2100",
                   "2101"
                 ]
@@ -445,8 +531,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "driverSession"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -501,8 +586,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "driverSessionReject"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -513,7 +597,12 @@
           "msg": {
             "properties": {
               "msgType": {
-                "const": "2800"
+                "enum": [
+                  "2800",
+                  "2801",
+                  "2541",
+                  "6800"
+                ]
               }
             }
           }
@@ -531,8 +620,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "orderTemplate"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -561,8 +649,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "scheduleElementOrderList"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -574,9 +661,12 @@
             "properties": {
               "msgType": {
                 "enum": [
-                  "2901",
+                  "1020",
+                  "3000",
+                  "3001",
                   "3003",
-                  "4000"
+                  "3004",
+                  "3013"
                 ]
               }
             }
@@ -589,8 +679,9 @@
       "then": {
         "properties": {
           "msg": true,
-          "resource": {
-            "$ref": "#/$defs/resource"
+          "resourceDispatch": {
+            "$ref": "#/$defs/resource",
+            "description": "XSD element resourceDispatch (resourceType). Msgs 1020, 3000, 3001, 3003, 3004, 3013."
           },
           "$schema": true
         },
@@ -621,8 +712,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "order"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -633,7 +723,10 @@
           "msg": {
             "properties": {
               "msgType": {
-                "const": "4010"
+                "enum": [
+                  "4010",
+                  "4040"
+                ]
               }
             }
           }
@@ -645,14 +738,13 @@
       "then": {
         "properties": {
           "msg": true,
-          "event": {
-            "$ref": "#/$defs/event"
+          "pickupConfirmation": {
+            "$ref": "#/$defs/pickupConfirmation"
           },
           "$schema": true
         },
         "required": [
-          "msg",
-          "event"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -681,8 +773,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "actionRequest"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -711,8 +802,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "messageTo"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -764,11 +854,13 @@
           "geographicLocation": {
             "$ref": "#/$defs/geographicLocation"
           },
+          "addressLocation": {
+            "$ref": "#/$defs/address"
+          },
           "$schema": true
         },
         "required": [
-          "msg",
-          "geographicLocation"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -779,7 +871,10 @@
           "msg": {
             "properties": {
               "msgType": {
-                "const": "6001"
+                "enum": [
+                  "2531",
+                  "6001"
+                ]
               }
             }
           }
@@ -797,8 +892,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "orderReport"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -827,8 +921,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "deliveryNote"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -865,7 +958,15 @@
           "msg": {
             "properties": {
               "msgType": {
-                "const": "8000"
+                "enum": [
+                  "8000",
+                  "8010",
+                  "8101",
+                  "8102",
+                  "8111",
+                  "8181",
+                  "8199"
+                ]
               }
             }
           }
@@ -883,8 +984,7 @@
           "$schema": true
         },
         "required": [
-          "msg",
-          "accounting"
+          "msg"
         ],
         "unevaluatedProperties": false
       }
@@ -896,8 +996,9 @@
             "properties": {
               "msgType": {
                 "enum": [
-                  "1020",
-                  "1023"
+                  "1021",
+                  "1023",
+                  "1024"
                 ]
               }
             }
@@ -910,8 +1011,35 @@
       "then": {
         "properties": {
           "msg": true,
-          "resourceDispatch": {
-            "$ref": "#/$defs/resourceDispatch"
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "enum": [
+                  "1022",
+                  "1025",
+                  "4012"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "messageTo": {
+            "$ref": "#/$defs/manualDescription"
           },
           "$schema": true
         },
@@ -925,34 +1053,9 @@
             "properties": {
               "msgType": {
                 "enum": [
-                  "1021",
-                  "1022"
-                ]
-              }
-            }
-          }
-        },
-        "required": [
-          "msg"
-        ]
-      },
-      "then": {
-        "properties": {
-          "msg": true,
-          "$schema": true
-        },
-        "unevaluatedProperties": false
-      }
-    },
-    {
-      "if": {
-        "properties": {
-          "msg": {
-            "properties": {
-              "msgType": {
-                "enum": [
                   "2010",
-                  "2011"
+                  "2013",
+                  "2023"
                 ]
               }
             }
@@ -976,10 +1079,7 @@
           "msg": {
             "properties": {
               "msgType": {
-                "enum": [
-                  "4011",
-                  "4012"
-                ]
+                "const": "4011"
               }
             }
           }
@@ -1037,6 +1137,8 @@
               "msgType": {
                 "enum": [
                   "4031",
+                  "4041",
+                  "4042",
                   "5011"
                 ]
               }
@@ -1091,6 +1193,419 @@
           "msg": {
             "properties": {
               "msgType": {
+                "enum": [
+                  "1060",
+                  "1062",
+                  "6060",
+                  "6062"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "enum": [
+                  "1120",
+                  "1121",
+                  "1122"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "enum": [
+                  "1921",
+                  "1922"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "enum": [
+                  "2031",
+                  "2032",
+                  "2050",
+                  "2061"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "const": "2040"
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "orderLink": {
+            "$ref": "#/$defs/orderLink"
+          },
+          "$schema": true
+        },
+        "required": [
+          "msg"
+        ],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "enum": [
+                  "2103",
+                  "2104",
+                  "2105",
+                  "2106",
+                  "2107",
+                  "2110",
+                  "2113"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "enum": [
+                  "2530",
+                  "2532",
+                  "2540"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "const": "2901"
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "authorizationAccept": {
+            "$ref": "#/$defs/authorizationAccept"
+          },
+          "$schema": true
+        },
+        "required": [
+          "msg"
+        ],
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "enum": [
+                  "2902",
+                  "3002"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "enum": [
+                  "4000",
+                  "4002",
+                  "4021"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "enum": [
+                  "4101",
+                  "4102"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "enum": [
+                  "5001",
+                  "5002"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "enum": [
+                  "6501",
+                  "6502",
+                  "6503",
+                  "6510",
+                  "6511"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "const": "6810"
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
+                "enum": [
+                  "7002",
+                  "7010",
+                  "7011",
+                  "7015",
+                  "7020",
+                  "7021",
+                  "7099"
+                ]
+              }
+            }
+          }
+        },
+        "required": [
+          "msg"
+        ]
+      },
+      "then": {
+        "properties": {
+          "msg": true,
+          "$schema": true
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "msg": {
+            "properties": {
+              "msgType": {
                 "not": {
                   "$ref": "#/$defs/msgTypeEnum"
                 }
@@ -1108,59 +1623,144 @@
   "$defs": {
     "msgTypeEnum": {
       "type": "string",
-      "description": "Valid SUTI message type codes (centralized for reuse)",
+      "description": "Valid SUTI message type codes (centralized for reuse). Mirrors the msgType enumeration in SUTI_Message.xsd.",
       "enum": [
         "1000",
+        "1001",
+        "1002",
+        "1010",
+        "1011",
+        "1012",
         "1020",
         "1021",
         "1022",
         "1023",
+        "1024",
+        "1025",
+        "1060",
         "1061",
+        "1062",
         "1100",
+        "1101",
+        "1102",
+        "1110",
         "1111",
         "1112",
+        "1120",
+        "1121",
+        "1122",
         "1500",
+        "1501",
         "1600",
+        "1601",
         "1920",
+        "1921",
+        "1922",
         "2000",
         "2001",
         "2002",
+        "2003",
+        "2005",
+        "2006",
+        "2007",
         "2010",
         "2011",
         "2012",
+        "2013",
         "2020",
+        "2021",
+        "2022",
+        "2023",
         "2030",
+        "2031",
+        "2032",
         "2040",
+        "2050",
         "2060",
+        "2061",
         "2100",
         "2101",
         "2102",
+        "2103",
+        "2104",
+        "2105",
+        "2106",
+        "2107",
+        "2110",
+        "2111",
+        "2112",
+        "2113",
+        "2530",
+        "2531",
+        "2532",
+        "2540",
+        "2541",
         "2800",
+        "2801",
         "2810",
+        "2900",
         "2901",
+        "2902",
+        "3000",
+        "3001",
+        "3002",
         "3003",
+        "3004",
+        "3013",
         "4000",
         "4001",
+        "4002",
         "4010",
         "4011",
         "4012",
         "4020",
+        "4021",
         "4031",
+        "4040",
+        "4041",
+        "4042",
         "4100",
+        "4101",
+        "4102",
         "5000",
+        "5001",
+        "5002",
         "5010",
         "5011",
         "5020",
         "5021",
         "6001",
+        "6060",
+        "6061",
+        "6062",
         "6500",
+        "6501",
+        "6502",
+        "6503",
+        "6510",
+        "6511",
+        "6800",
+        "6810",
         "7000",
         "7001",
+        "7002",
+        "7010",
+        "7011",
+        "7015",
+        "7020",
+        "7021",
         "7030",
         "7031",
+        "7099",
         "7100",
         "7101",
-        "8000"
+        "8000",
+        "8010",
+        "8101",
+        "8102",
+        "8111",
+        "8181",
+        "8199"
       ]
     },
     "msg": {
@@ -1170,6 +1770,10 @@
         "msgType": {
           "$ref": "#/$defs/msgTypeEnum",
           "description": "Message type code (4 digits)"
+        },
+        "msgName": {
+          "type": "string",
+          "description": "SUTI name of this message"
         },
         "msgTimeStamp": {
           "type": "string",
@@ -1203,6 +1807,13 @@
         "idVersion": {
           "$ref": "#/$defs/id",
           "description": "Schema version identifier"
+        },
+        "clientContactReference": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/contactInfo"
+          },
+          "description": "Contact reference information at message level"
         }
       },
       "required": [
@@ -1269,7 +1880,10 @@
           "$ref": "#/$defs/id"
         },
         "idOrder": {
-          "$ref": "#/$defs/id"
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          }
         },
         "idVehicle": {
           "type": "array",
@@ -1549,7 +2163,9 @@
       },
       "required": [
         "lat",
-        "lon"
+        "lon",
+        "precision",
+        "typeOfCoordinate"
       ],
       "additionalProperties": false
     },
@@ -1583,9 +2199,6 @@
           "$ref": "#/$defs/route"
         }
       },
-      "required": [
-        "idOrder"
-      ],
       "additionalProperties": false
     },
     "orderStatus": {
@@ -1840,7 +2453,7 @@
     },
     "event": {
       "type": "object",
-      "description": "Traffic event (pickup confirmation, etc.)",
+      "description": "Event report item",
       "properties": {
         "eventType": {
           "type": "string",
@@ -1874,6 +2487,41 @@
       "required": [
         "eventType"
       ],
+      "additionalProperties": false
+    },
+    "pickupConfirmation": {
+      "type": "object",
+      "description": "Node-event confirmation used by messages 4010 and 4040",
+      "properties": {
+        "eventType": {
+          "type": "string",
+          "enum": [
+            "passengerInVehicle",
+            "passengerDropped",
+            "noShow",
+            "parcelInVehicle",
+            "parcelDropped",
+            "actionDone",
+            "navigationDone",
+            "cancelAtDoor",
+            "vehicleAtNode",
+            "infoToContent",
+            "dispatchConfirmationSent",
+            "delayConfirmationSent",
+            "arrivalConfirmationSent",
+            "start",
+            "stop",
+            "acceptOrder",
+            "vehicleExitNode",
+            "noContentAtNode",
+            "contentAtNode",
+            "contentNoShow"
+          ]
+        },
+        "nodeConfirmed": {
+          "$ref": "#/$defs/node"
+        }
+      },
       "additionalProperties": false
     },
     "process": {
@@ -2390,6 +3038,13 @@
           }
         }
       },
+      "required": [
+        "manualText",
+        "sendToInvoice",
+        "sendToVehicle",
+        "sendToOperator",
+        "vehicleConfirmation"
+      ],
       "additionalProperties": false
     },
     "bulkLocationRequest": {
@@ -2491,16 +3146,30 @@
     },
     "locationRequest": {
       "type": "object",
+      "description": "XSD locationRequest. Used by msg 5020 and by bulkLocationRequest.bulkIntervalRequest (msgs 1100-1102).",
       "properties": {
-        "intervalSeconds": {
-          "type": "integer",
-          "minimum": 1
+        "timeFrom": {
+          "$ref": "#/$defs/time",
+          "description": "Time to start sending positions to Client"
         },
-        "idVehicle": {
-          "$ref": "#/$defs/id"
+        "timeTo": {
+          "$ref": "#/$defs/time",
+          "description": "Time to stop sending positions to Client"
         },
-        "idDriver": {
-          "$ref": "#/$defs/id"
+        "interval": {
+          "type": "object",
+          "description": "Interval between positions",
+          "properties": {
+            "seconds": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "meter": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "additionalProperties": false
         }
       },
       "additionalProperties": false
@@ -2512,7 +3181,8 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/id"
-          }
+          },
+          "minItems": 1
         },
         "orderSentBefore": {
           "type": "object",
@@ -2606,6 +3276,15 @@
         },
         "resourceDriverSession": {
           "$ref": "#/$defs/resource"
+        },
+        "changelog": {
+          "$ref": "#/$defs/changelog"
+        },
+        "sessionNodes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/sessionNode"
+          }
         }
       },
       "additionalProperties": false
@@ -2613,13 +3292,79 @@
     "driverSessionReject": {
       "type": "object",
       "properties": {
-        "idDriverSession": {
-          "$ref": "#/$defs/id"
+        "driverSession": {
+          "$ref": "#/$defs/driverSession"
         },
-        "rejectReason": {
-          "type": "string"
+        "attributesReject": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "changelog": {
+          "$ref": "#/$defs/changelog"
         }
       },
+      "required": [
+        "driverSession",
+        "attributesReject",
+        "changelog"
+      ],
+      "additionalProperties": false
+    },
+    "changelog": {
+      "type": "object",
+      "properties": {
+        "logs": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/changeLogEntry"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "changeLogEntry": {
+      "type": "object",
+      "properties": {
+        "orderIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "maxItems": 2
+        },
+        "change": {
+          "type": "string",
+          "enum": [
+            "updated",
+            "moved",
+            "added",
+            "cancelled"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "sessionNode": {
+      "type": "object",
+      "properties": {
+        "orderIds": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "maxItems": 2
+        },
+        "node": {
+          "$ref": "#/$defs/node"
+        }
+      },
+      "required": [
+        "orderIds",
+        "node"
+      ],
       "additionalProperties": false
     },
     "providerOrderUpdate": {
@@ -2631,7 +3376,7 @@
             "timeUpdate",
             "addressUpdate",
             "contentUpdate",
-            "cancellation"
+            "cancelation"
           ]
         },
         "nodeUpdated": {
@@ -2642,27 +3387,32 @@
     },
     "orderTemplate": {
       "type": "object",
+      "description": "Repetitive order template (msg 2800, 2801, 2541, 6800). See 'How to use SUTI' 4.2 Repetitive Orders.",
       "properties": {
         "idOrderTemplate": {
           "$ref": "#/$defs/id"
         },
-        "orderTemplateAgreement": {
-          "$ref": "#/$defs/agreement"
+        "orderTemplateName": {
+          "type": "string"
         },
         "orderTemplateCalendar": {
           "$ref": "#/$defs/calendar"
         },
-        "schedules": {
+        "orderTemplateAgreement": {
+          "$ref": "#/$defs/agreement"
+        },
+        "scheduleElements": {
           "type": "array",
           "items": {
             "$ref": "#/$defs/scheduleElement"
-          }
+          },
+          "minItems": 1
         }
       },
       "required": [
         "idOrderTemplate",
         "orderTemplateCalendar",
-        "schedules"
+        "scheduleElements"
       ],
       "additionalProperties": false
     },
@@ -2670,7 +3420,26 @@
       "type": "object",
       "properties": {
         "validPeriod": {
-          "$ref": "#/$defs/period"
+          "type": "object",
+          "properties": {
+            "validFrom": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "validTo": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "weekType": {
+              "type": "string",
+              "enum": [
+                "all",
+                "odd",
+                "even"
+              ]
+            }
+          },
+          "additionalProperties": false
         },
         "validWeekdays": {
           "$ref": "#/$defs/weekdays"
@@ -2688,20 +3457,6 @@
             "type": "string",
             "format": "date"
           }
-        }
-      },
-      "additionalProperties": false
-    },
-    "period": {
-      "type": "object",
-      "properties": {
-        "startDate": {
-          "type": "string",
-          "format": "date"
-        },
-        "endDate": {
-          "type": "string",
-          "format": "date"
         }
       },
       "additionalProperties": false
@@ -2735,26 +3490,79 @@
     },
     "scheduleElement": {
       "type": "object",
+      "description": "One scheduled element of an order template (XSD scheduleElement, redundant name prefixes dropped)",
       "properties": {
-        "idScheduleElement": {
-          "$ref": "#/$defs/id"
+        "weekday": {
+          "$ref": "#/$defs/weekdays"
         },
-        "order": {
-          "$ref": "#/$defs/order"
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "referencesTo": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/referenceToMsg"
+          }
+        },
+        "route": {
+          "$ref": "#/$defs/route"
+        },
+        "sequenceNo": {
+          "type": "integer",
+          "description": "XSD scheduleElementSequenceNbr"
+        },
+        "function": {
+          "type": "string",
+          "enum": [
+            "insert",
+            "delete",
+            "update"
+          ],
+          "description": "XSD scheduleElementFunction"
+        },
+        "response": {
+          "type": "string",
+          "description": "Return code (XSD scheduleElementResponse)"
         }
       },
       "additionalProperties": false
     },
     "scheduleElementOrderList": {
       "type": "object",
+      "description": "Confirmation of scheduled element orders (msg 2810)",
       "properties": {
-        "scheduleElements": {
+        "scheduleElementOrders": {
           "type": "array",
           "items": {
-            "$ref": "#/$defs/scheduleElement"
-          }
+            "type": "object",
+            "properties": {
+              "referencesTo": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/referenceToMsg"
+                }
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "orderListClosed": {
+                "type": "boolean",
+                "description": "True indicates that no more orders exist in the list"
+              }
+            },
+            "required": [
+              "date"
+            ],
+            "additionalProperties": false
+          },
+          "minItems": 1
         }
       },
+      "required": [
+        "scheduleElementOrders"
+      ],
       "additionalProperties": false
     },
     "actionRequest": {
@@ -2774,13 +3582,8 @@
     },
     "orderReport": {
       "type": "object",
+      "description": "Order report (msg 6001, 2531). eventReport flattened to events[] per JSON conventions.",
       "properties": {
-        "economyReports": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/economyReport"
-          }
-        },
         "events": {
           "type": "array",
           "items": {
@@ -2791,7 +3594,20 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/summaryReport"
+          },
+          "minItems": 1
+        },
+        "economyReports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/economyReport"
           }
+        },
+        "orderStatus": {
+          "$ref": "#/$defs/orderStatus"
+        },
+        "resourceReport": {
+          "$ref": "#/$defs/resource"
         }
       },
       "required": [
@@ -2801,58 +3617,95 @@
     },
     "economyReport": {
       "type": "object",
+      "description": "Economic information from the vehicle (taximeter). Not necessarily equal to the settlement between client and provider.",
       "properties": {
-        "amount": {
-          "$ref": "#/$defs/amount"
+        "payments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/payment"
+          },
+          "minItems": 1,
+          "description": "XSD formOfPayment"
         },
-        "distance": {
-          "type": "integer"
+        "subOrder": {
+          "$ref": "#/$defs/subOrder",
+          "description": "Used if the economy report is sent per suborder"
         },
-        "duration": {
-          "type": "integer"
+        "nodeSeqNo": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Used if the economy report is sent per node"
         }
       },
+      "required": [
+        "payments"
+      ],
       "additionalProperties": false
     },
     "summaryReport": {
       "type": "object",
+      "description": "Vehicle, total time and total distance of an order",
       "properties": {
-        "nodeSeqNo": {
+        "vehicle": {
+          "type": "string",
+          "description": "Vehicle that performed this order (identification in the provider system)"
+        },
+        "durationStart": {
           "type": "integer",
-          "minimum": 1
+          "description": "Duration from start of order in seconds"
         },
-        "contentSeqNo": {
+        "distanceStart": {
           "type": "integer",
-          "minimum": 1
+          "description": "Distance from start of order in meters"
         },
-        "status": {
-          "type": "string"
+        "orderEnded": {
+          "type": "boolean",
+          "description": "Indicates that this order is finished"
         },
-        "times": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/time"
-          }
+        "subOrder": {
+          "$ref": "#/$defs/subOrder"
         }
       },
       "additionalProperties": false
     },
     "deliveryNote": {
       "type": "object",
+      "description": "Delivery note (msg 6500). See 'How to use SUTI' 4.4 Delivery Note. eventReportDeliveryNote flattened to events[].",
       "properties": {
-        "idDeliveryNote": {
-          "$ref": "#/$defs/id"
+        "idReceipt": {
+          "$ref": "#/$defs/id",
+          "description": "Receipt number generated by taximeter"
         },
         "deliveryNoteType": {
-          "type": "string"
+          "type": "string",
+          "enum": [
+            "debit",
+            "credit"
+          ]
         },
-        "order": {
-          "$ref": "#/$defs/order"
+        "agreement": {
+          "$ref": "#/$defs/agreement"
         },
-        "resource": {
-          "$ref": "#/$defs/resource"
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/event"
+          }
+        },
+        "summaryReport": {
+          "$ref": "#/$defs/summaryReport"
+        },
+        "economyReports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/economyReport"
+          }
         }
       },
+      "required": [
+        "idReceipt",
+        "summaryReport"
+      ],
       "additionalProperties": false
     },
     "accounting": {
@@ -2910,7 +3763,8 @@
           "type": "array",
           "items": {
             "$ref": "#/$defs/id"
-          }
+          },
+          "minItems": 1
         },
         "orgPayment": {
           "$ref": "#/$defs/orgPayment"
@@ -2942,75 +3796,529 @@
     },
     "tour": {
       "type": "object",
+      "description": "Summary of a single mission to be accounted for (XSD accounting/tour, Tour-suffixes dropped)",
       "properties": {
-        "idTour": {
-          "$ref": "#/$defs/id"
-        },
-        "orders": {
+        "referencesTo": {
           "type": "array",
           "items": {
-            "$ref": "#/$defs/order"
+            "$ref": "#/$defs/referenceToMsg"
           }
+        },
+        "status": {
+          "$ref": "#/$defs/statusTour"
+        },
+        "subOrders": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/suborderTour"
+          }
+        },
+        "calculations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/calculationFare"
+          },
+          "description": "Base for summary economics report"
+        },
+        "summaryReport": {
+          "$ref": "#/$defs/summaryReport"
+        },
+        "economyReports": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/economyReport"
+          }
+        },
+        "resource": {
+          "$ref": "#/$defs/resource"
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/tourEvent"
+          },
+          "description": "Events not connected to a specific content (suborder)"
+        }
+      },
+      "required": [
+        "referencesTo",
+        "status"
+      ],
+      "additionalProperties": false
+    },
+    "statusTour": {
+      "type": "object",
+      "properties": {
+        "idActivity": {
+          "$ref": "#/$defs/id",
+          "description": "Indicates request for payment, accept payment, review payment etc"
+        },
+        "errors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/errorType"
+          }
+        },
+        "manualDescriptions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/manualDescription"
+          }
+        }
+      },
+      "required": [
+        "idActivity"
+      ],
+      "additionalProperties": false
+    },
+    "errorType": {
+      "type": "object",
+      "properties": {
+        "idError": {
+          "$ref": "#/$defs/id"
+        },
+        "manualDescription": {
+          "$ref": "#/$defs/manualDescription"
         }
       },
       "additionalProperties": false
     },
-    "infoRequest": {
+    "suborderTour": {
       "type": "object",
       "properties": {
-        "requestType": {
-          "type": "string"
+        "events": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/event"
+          }
         },
-        "idRequest": {
+        "idSuborderClient": {
           "$ref": "#/$defs/id"
+        },
+        "idSuborderProvider": {
+          "$ref": "#/$defs/id"
+        },
+        "summaryReport": {
+          "$ref": "#/$defs/summaryReport"
+        },
+        "economyReport": {
+          "$ref": "#/$defs/economyReport"
+        }
+      },
+      "additionalProperties": false
+    },
+    "calculationFare": {
+      "type": "object",
+      "description": "Fare calculation: either a fixed price or a taximeter amount",
+      "properties": {
+        "calculationType": {
+          "$ref": "#/$defs/id",
+          "description": "Identity of the used tariff"
+        },
+        "fixedPriceAmount": {
+          "type": "number"
+        },
+        "taximeterAmount": {
+          "type": "object",
+          "properties": {
+            "startPrice": {
+              "type": "number"
+            },
+            "distanceTotalPrice": {
+              "type": "object",
+              "properties": {
+                "distanceCount": {
+                  "type": "number"
+                },
+                "distanceUnitPrice": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "distanceCount",
+                "distanceUnitPrice"
+              ],
+              "additionalProperties": false
+            },
+            "durationTotalPrice": {
+              "type": "object",
+              "properties": {
+                "durationCount": {
+                  "type": "number"
+                },
+                "durationUnitPrice": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "durationCount",
+                "durationUnitPrice"
+              ],
+              "additionalProperties": false
+            },
+            "taximeterTotalPrice": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "startPrice",
+            "distanceTotalPrice",
+            "durationTotalPrice",
+            "taximeterTotalPrice"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "oneOf": [
+        {
+          "required": [
+            "fixedPriceAmount"
+          ]
+        },
+        {
+          "required": [
+            "taximeterAmount"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "tourEvent": {
+      "type": "object",
+      "description": "Accounting tour event not connected to a specific content (suborder)",
+      "properties": {
+        "eventVehicle": {
+          "type": "string",
+          "enum": [
+            "dispatchConfirmationSent",
+            "start",
+            "stop",
+            "acceptOrder"
+          ],
+          "description": "XSD attribute eventVehicle (numeric codes dropped, values camelCased)"
+        },
+        "time": {
+          "$ref": "#/$defs/time"
+        },
+        "geographicLocation": {
+          "$ref": "#/$defs/geographicLocation"
+        }
+      },
+      "required": [
+        "eventVehicle"
+      ],
+      "additionalProperties": false
+    },
+    "price": {
+      "type": "object",
+      "description": "Price elements (used in infoResponse 1601 and restrictions)",
+      "properties": {
+        "taxiMeter": {
+          "$ref": "#/$defs/taxiMeter"
+        },
+        "priceCalculation": {
+          "$ref": "#/$defs/priceCalculation"
+        },
+        "idCurrency": {
+          "$ref": "#/$defs/id",
+          "description": "Source (src) shall refer to ISO 4217"
+        },
+        "priceResponsible": {
+          "type": "string",
+          "enum": [
+            "client",
+            "provider"
+          ],
+          "description": "Indicates if client or provider sets the price"
+        },
+        "fixedPrice": {
+          "type": "boolean"
+        },
+        "vatIncluded": {
+          "type": "boolean"
+        },
+        "vatPercent": {
+          "type": "number"
+        },
+        "priceValue": {
+          "type": "number",
+          "description": "Price as set by priceResponsible (XSD attribute 'price'). Includes VAT if vatIncluded is true."
+        },
+        "vat": {
+          "type": "number",
+          "description": "Amount of VAT"
+        },
+        "paymentType": {
+          "type": "string",
+          "enum": [
+            "cash",
+            "card",
+            "account",
+            "ticket",
+            "document",
+            "socialServiceFee",
+            "prepaidSocialFee",
+            "claim",
+            "noShow",
+            "providerCompensation"
+          ]
+        }
+      },
+      "required": [
+        "priceResponsible",
+        "fixedPrice",
+        "vatIncluded"
+      ],
+      "additionalProperties": false
+    },
+    "taxiMeter": {
+      "type": "object",
+      "description": "The tariff that shall be used or is used in the taximeter",
+      "properties": {
+        "idTaxa": {
+          "$ref": "#/$defs/id",
+          "description": "Source (src) shall refer to the used tariff of the provider"
+        },
+        "activate": {
+          "type": "boolean",
+          "description": "True = taximeter shall be activated in vehicle"
+        }
+      },
+      "required": [
+        "idTaxa",
+        "activate"
+      ],
+      "additionalProperties": false
+    },
+    "priceCalculation": {
+      "type": "object",
+      "description": "Potential description of how the fare is constructed",
+      "properties": {
+        "idCurrency": {
+          "$ref": "#/$defs/id",
+          "description": "Source (src) shall refer to ISO 4217"
+        },
+        "vatIncluded": {
+          "type": "boolean"
+        },
+        "vatPercent": {
+          "type": "number"
+        },
+        "startFee": {
+          "type": "number"
+        },
+        "kmFee": {
+          "type": "number"
+        },
+        "minuteFee": {
+          "type": "number"
+        },
+        "formula": {
+          "type": "string",
+          "enum": [
+            "breakpoint",
+            "sumtariff"
+          ]
+        },
+        "kmFeeDistance": {
+          "type": "number"
+        },
+        "minuteFeeTime": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "idCurrency",
+        "vatIncluded",
+        "startFee",
+        "kmFee",
+        "minuteFee",
+        "formula"
+      ],
+      "additionalProperties": false
+    },
+    "orderLink": {
+      "type": "object",
+      "description": "Multiple client orders combined into a shared provider order (msg 2040). See 'How to use SUTI' 4.1.1.5.",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/id"
+          },
+          "minItems": 1,
+          "description": "Ids for the combined order"
+        },
+        "subOrderLinks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/subOrder"
+          },
+          "minItems": 1,
+          "description": "Ids for all included suborders"
+        }
+      },
+      "required": [
+        "ids",
+        "subOrderLinks"
+      ],
+      "additionalProperties": false
+    },
+    "authorizationAccept": {
+      "type": "object",
+      "description": "Answer to msg 2900 where the order is created in the provider system and the client can accept it (msg 2901). See 'How to use SUTI' 4.3 SUTI flagstops.",
+      "properties": {
+        "idAuthorization": {
+          "$ref": "#/$defs/id"
+        },
+        "process": {
+          "$ref": "#/$defs/nodeProcess"
+        },
+        "restrictions": {
+          "$ref": "#/$defs/restrictionsType"
+        },
+        "contents": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/content"
+          }
+        }
+      },
+      "required": [
+        "idAuthorization",
+        "process",
+        "restrictions",
+        "contents"
+      ],
+      "additionalProperties": false
+    },
+    "restrictionsType": {
+      "type": "object",
+      "description": "Monetary or geographical restrictions for an authorization",
+      "properties": {
+        "priceRestriction": {
+          "$ref": "#/$defs/price"
+        },
+        "addressRestrictions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/address"
+          }
+        },
+        "distance": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "priceRestriction"
+      ],
+      "additionalProperties": false
+    },
+    "infoRequest": {
+      "type": "object",
+      "description": "Request for information (15xx). Repeatable request groups per XSD infoRequest.",
+      "properties": {
+        "requests": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/infoRequestItem"
+          },
+          "minItems": 1
+        }
+      },
+      "required": [
+        "requests"
+      ],
+      "additionalProperties": false
+    },
+    "infoRequestItem": {
+      "type": "object",
+      "description": "A single info request: exactly one request item, optionally scoped by calendar and product",
+      "properties": {
+        "requestContent": {
+          "$ref": "#/$defs/id",
+          "description": "Personal id or corresponding parcel id"
+        },
+        "requestVehicle": {
+          "$ref": "#/$defs/vehicleResource"
+        },
+        "requestPrice": {
+          "$ref": "#/$defs/order",
+          "description": "Order skeleton describing the transport to price"
+        },
+        "requestCustomer": {
+          "$ref": "#/$defs/id",
+          "description": "Customer id for a specific customer, or 0 for all customers"
+        },
+        "requestOrg": {
+          "$ref": "#/$defs/organization"
+        },
+        "requestCalendar": {
+          "$ref": "#/$defs/calendar"
+        },
+        "requestProduct": {
+          "$ref": "#/$defs/product"
         }
       },
       "additionalProperties": false
     },
     "infoResponse": {
       "type": "object",
+      "description": "Response to an infoRequest (16xx)",
       "properties": {
-        "responseType": {
-          "type": "string"
-        },
         "nodes": {
           "type": "array",
           "items": {
             "$ref": "#/$defs/node"
-          }
-        }
-      },
-      "additionalProperties": false
-    },
-    "resourceReservation": {
-      "type": "object",
-      "properties": {
-        "idReservation": {
-          "$ref": "#/$defs/id"
+          },
+          "description": "XSD responseList"
         },
-        "resource": {
-          "$ref": "#/$defs/resource"
+        "prices": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/price"
+          },
+          "description": "XSD responsePrice"
         },
-        "period": {
-          "$ref": "#/$defs/period"
+        "organizations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/organization"
+          },
+          "description": "XSD responseOrg"
         }
       },
       "additionalProperties": false
     },
     "resourceAllocation": {
       "type": "object",
+      "description": "Request for allocation of a resource (msg 1920). See 'How to use SUTI' 4.1.2.4 Resource allocation.",
       "properties": {
-        "idAllocation": {
-          "$ref": "#/$defs/id"
+        "resourceOrderId": {
+          "$ref": "#/$defs/id",
+          "description": "Order number or other identifier of the task to which a resource is requested"
         },
-        "resource": {
-          "$ref": "#/$defs/resource"
+        "resourceCapacity": {
+          "$ref": "#/$defs/resource",
+          "description": "Capacity of the requested resource"
         },
-        "orders": {
+        "resourceStartTime": {
           "type": "array",
           "items": {
-            "$ref": "#/$defs/order"
-          }
+            "$ref": "#/$defs/time"
+          },
+          "description": "Start time for the requested resource"
+        },
+        "resourceEndTime": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/time"
+          },
+          "description": "End time for the requested resource"
+        },
+        "resourceAddress": {
+          "$ref": "#/$defs/address",
+          "description": "Address where the requested resource should be at resourceStartTime"
         }
       },
       "additionalProperties": false
@@ -3038,37 +4346,6 @@
         },
         "ratingComment": {
           "type": "string"
-        }
-      },
-      "additionalProperties": false
-    },
-    "resourceDispatch": {
-      "type": "object",
-      "description": "Resource dispatch information for vehicle login/logout",
-      "properties": {
-        "vehicle": {
-          "$ref": "#/$defs/vehicleResource"
-        },
-        "driver": {
-          "$ref": "#/$defs/driverResource"
-        },
-        "manualDescription": {
-          "$ref": "#/$defs/manualDescription"
-        },
-        "resourceValidation": {
-          "type": "object",
-          "properties": {
-            "validationType": {
-              "type": "string"
-            },
-            "validationMethod": {
-              "type": "string"
-            },
-            "validationTime": {
-              "$ref": "#/$defs/time"
-            }
-          },
-          "additionalProperties": false
         }
       },
       "additionalProperties": false

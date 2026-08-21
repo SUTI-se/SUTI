@@ -8,6 +8,7 @@
     {
       "type": "object",
       "properties": {
+        "$schema": { "type": "string", "format": "uri" },
         "SUTI_1100_bulkLocationRequest": {
           "$ref": "#/$defs/msgBulkLocationRequest"
         }
@@ -18,6 +19,7 @@
     {
       "type": "object",
       "properties": {
+        "$schema": { "type": "string", "format": "uri" },
         "SUTI_1111_bulkLocationResponse": {
           "$ref": "#/$defs/msgBulkLocationList"
         }
@@ -28,6 +30,7 @@
     {
       "type": "object",
       "properties": {
+        "$schema": { "type": "string", "format": "uri" },
         "SUTI_1112_bulkLocationResponse": {
           "$ref": "#/$defs/msgBulkLocationList"
         }

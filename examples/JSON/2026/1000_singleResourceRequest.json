@@ -1,0 +1,40 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "1000",
+    "msgName": "SingleResourceRequest",
+    "msgTimeStamp": "2026-01-15T08:00:00.000Z",
+    "orgSender": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+      "id": "2026011508000001",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idVehicle": [
+          {
+            "src": "SE:idVehicle",
+            "id": "ABC123",
+            "unique": true
+          }
+        ]
+      }
+    ]
+  }
+}

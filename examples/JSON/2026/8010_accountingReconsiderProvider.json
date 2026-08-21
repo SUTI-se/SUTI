@@ -1,0 +1,124 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "8010",
+    "msgName": "Accounting Reconsider Provider",
+    "msgTimeStamp": "2026-02-02T09:00:00.000Z",
+    "orgSender": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+      "id": "2026020209008010",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+          "id": "2026013123008000",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "accounting": {
+    "accountingType": "reconsider",
+    "idAccounting": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idAccounting",
+      "id": "ACC-2026-01",
+      "unique": true
+    },
+    "orgClient": {
+      "orgName": "Client name",
+      "orgCity": "Lund",
+      "ids": [
+        {
+          "src": "SE:idOrg",
+          "id": "556000-0001",
+          "unique": true
+        }
+      ]
+    },
+    "orgProvider": {
+      "orgName": "Provider name",
+      "orgCity": "Stockholm",
+      "ids": [
+        {
+          "src": "SE:idOrg",
+          "id": "556000-0002",
+          "unique": true
+        }
+      ]
+    },
+    "tours": [
+      {
+        "referencesTo": [
+          {
+            "idOrder": [
+              {
+                "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+                "id": "11183742",
+                "unique": true
+              }
+            ]
+          }
+        ],
+        "status": {
+          "idActivity": {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idActivity",
+            "id": "reviewPayment",
+            "unique": true
+          },
+          "errors": [
+            {
+              "idError": {
+                "src": "systemsupplierId_clientOwnerId_uniqueId:idError",
+                "id": "PRICE-MISMATCH",
+                "unique": true
+              },
+              "manualDescription": {
+                "manualText": "Invoiced amount exceeds agreed fixed price.",
+                "sendToInvoice": true,
+                "sendToVehicle": false,
+                "sendToOperator": true,
+                "vehicleConfirmation": false
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "economyReportAccounting": {
+      "payments": [
+        {
+          "paymentType": "account",
+          "amount": {
+            "amountInclVat": 245,
+            "amountExclVat": 231.13,
+            "amountVat": 13.87,
+            "vatPercent": 6,
+            "idCurrency": {
+              "src": "ISO:4217",
+              "id": "SEK",
+              "unique": true
+            }
+          }
+        }
+      ]
+    }
+  }
+}

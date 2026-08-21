@@ -26,26 +26,30 @@
     },
     "referencesTo": [
       {
-        "idOrder": {
-          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
-          "id": "482",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+            "id": "482",
+            "unique": true
+          }
+        ]
       },
       {
-        "idOrder": {
-          "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
-          "id": "2068608",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+            "id": "2068608",
+            "unique": true
+          }
+        ]
       }
     ]
   },
-  "event": {
-    "eventType": "passengerDropped",
-    "eventNode": {
-      "nodeSeqNo": 2,
-      "nodeType": "destination"
-    }
+  "messageTo": {
+    "manualText": "PassengerDropped event at node 2 rejected: drop-off location does not match the order destination.",
+    "sendToInvoice": false,
+    "sendToVehicle": true,
+    "sendToOperator": true,
+    "vehicleConfirmation": false
   }
 }

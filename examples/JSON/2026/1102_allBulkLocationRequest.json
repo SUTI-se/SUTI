@@ -1,0 +1,49 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "1102",
+    "msgName": "AllBulkLocationRequest",
+    "msgTimeStamp": "2026-01-15T09:00:00.000Z",
+    "orgSender": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+      "id": "2026011509001102",
+      "unique": true
+    }
+  },
+  "bulkLocationRequest": {
+    "locationListType": "1",
+    "statusFree": true,
+    "statusOccupied": true,
+    "statusBreak": true,
+    "statusNotInUse": false,
+    "bulkIntervalRequest": {
+      "timeFrom": {
+        "timeType": "scheduled",
+        "time": "2026-01-15T08:00:00Z"
+      },
+      "timeTo": {
+        "timeType": "scheduled",
+        "time": "2026-01-15T18:00:00Z"
+      },
+      "interval": {
+        "seconds": 60
+      }
+    }
+  }
+}

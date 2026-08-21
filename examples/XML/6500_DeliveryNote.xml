@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Golden fixture: XML twin of examples/JSON/2026/6500_deliveryNote.json.
+  Validates against schemas/SUTI_Message.xsd and carries the same values as the JSON example
+  (checked value-by-value, see docs/SUTI_JSON_Mapping.md section 4).
+  Known differences: none.
+-->
+<SUTI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
+  <orgSender name="Provider name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Client name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="6500" msgName="DeliveryNote">
+    <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2026011520006500" unique="true"/>
+    <msgTimeStamp>
+      <time time="2026-01-15T20:00:00.000Z"/>
+    </msgTimeStamp>
+    <referencesTo>
+      <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idOrder" id="11183742" unique="true"/>
+    </referencesTo>
+    <deliveryNote deliveryNoteType="debit">
+      <idReceipt src="systemsupplierId_providerOwnerId_uniqueId:idReceipt" id="R-2026-0004711" unique="true"/>
+      <agreementDeliveryNote>
+        <idAgreement src="systemsupplierId_clientOwnerId_uniqueId:idAgreement" id="AG-2026-001" unique="true"/>
+      </agreementDeliveryNote>
+      <summaryReportDeliveryNote vehicle="3110" durationStart="1500" distanceStart="12400" orderEnded="true"/>
+      <economyReportDeliveryNote>
+        <formOfPayment>
+          <payment paymentType="account">
+            <idCurrency src="ISO:4217" id="SEK" unique="true"/>
+            <vatAmountSpecification vatPercent="6">
+              <totalVatAmount amountInclVat="245" amountExclVat="231.13" amountVat="13.87"/>
+            </vatAmountSpecification>
+          </payment>
+        </formOfPayment>
+      </economyReportDeliveryNote>
+    </deliveryNote>
+  </msg>
+</SUTI>

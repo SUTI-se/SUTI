@@ -1,0 +1,59 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "1011",
+    "msgName": "AgreementResourceResponse",
+    "msgTimeStamp": "2026-01-15T08:00:06.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026011508000611",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+          "id": "2026011508000002",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "resourceInformation": {
+    "vehicle": {
+      "capacity": {
+        "seats": {
+          "noOfSeats": 8
+        },
+        "luggage": [
+          {
+            "luggageType": "checked",
+            "pcs": 4
+          }
+        ]
+      }
+    },
+    "resourceTime": [
+      {
+        "timeType": "scheduled",
+        "time": "2026-01-15T08:00:00Z"
+      }
+    ]
+  }
+}

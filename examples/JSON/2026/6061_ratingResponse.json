@@ -1,0 +1,60 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "6061",
+    "msgName": "RatingResponse",
+    "msgTimeStamp": "2026-01-15T19:00:00.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026011519006061",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+          "id": "2026011518596060",
+          "unique": true
+        }
+      },
+      {
+        "idVehicle": [
+          {
+            "src": "systemsupplierId_providerOwnerId_uniqueId:idVehicle",
+            "id": "3110",
+            "unique": true
+          }
+        ]
+      }
+    ]
+  },
+  "ratings": {
+    "ratings": [
+      {
+        "idRating": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idRating",
+          "id": "CLEANLINESS",
+          "unique": true
+        },
+        "ratingValue": 4.5,
+        "ratingComment": "Average over the requested period"
+      }
+    ]
+  }
+}

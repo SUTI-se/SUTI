@@ -26,26 +26,30 @@
     },
     "referencesTo": [
       {
-        "idOrder": {
-          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
-          "id": "480",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+            "id": "480",
+            "unique": true
+          }
+        ]
       },
       {
-        "idOrder": {
-          "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
-          "id": "2068244",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+            "id": "2068244",
+            "unique": true
+          }
+        ]
       }
     ]
   },
-  "event": {
-    "eventType": "pickup",
-    "eventNode": {
-      "nodeSeqNo": 1,
-      "nodeType": "pickup"
-    }
+  "messageTo": {
+    "manualText": "Pickup event at node 1 rejected: reported pickup time is outside the agreed time window.",
+    "sendToInvoice": false,
+    "sendToVehicle": true,
+    "sendToOperator": true,
+    "vehicleConfirmation": false
   }
 }

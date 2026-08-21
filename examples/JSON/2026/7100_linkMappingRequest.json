@@ -26,11 +26,13 @@
     },
     "referencesTo": [
       {
-        "idOrder": {
-          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
-          "id": "LINK-001",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+            "id": "LINK-001",
+            "unique": true
+          }
+        ]
       },
       {
         "idNode": {

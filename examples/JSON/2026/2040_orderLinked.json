@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "2040",
+    "msgName": "Order Linked",
+    "msgTimeStamp": "2026-01-15T12:00:00.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026011512002040",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idOrder": [
+          {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+            "id": "11183742",
+            "unique": true
+          }
+        ]
+      }
+    ]
+  },
+  "orderLink": {
+    "ids": [
+      {
+        "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+        "id": "3640266-0",
+        "unique": true
+      },
+      {
+        "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+        "id": "11183742",
+        "unique": true
+      }
+    ],
+    "subOrderLinks": [
+      {
+        "orderIds": [
+          {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idSuborder",
+            "id": "11183742-A",
+            "unique": true
+          },
+          {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idSuborder",
+            "id": "11183743-A",
+            "unique": true
+          }
+        ]
+      }
+    ]
+  }
+}

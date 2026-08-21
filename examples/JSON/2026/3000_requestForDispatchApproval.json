@@ -1,0 +1,70 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "3000",
+    "msgName": "Request For Dispatch Approval",
+    "msgTimeStamp": "2026-01-15T17:00:00.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026011517003000",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idOrder": [
+          {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+            "id": "11183742",
+            "unique": true
+          }
+        ]
+      }
+    ]
+  },
+  "resourceDispatch": {
+    "vehicle": {
+      "ids": [
+        {
+          "src": "systemsupplierId_providerOwnerId_uniqueId:idVehicle",
+          "id": "3110",
+          "unique": true
+        }
+      ],
+      "capacity": {
+        "seats": {
+          "noOfSeats": 4
+        }
+      },
+      "location": {
+        "typeOfCoordinate": "WGS-84",
+        "lat": 55.705,
+        "lon": 13.193,
+        "precision": 6
+      }
+    },
+    "driver": {
+      "id": {
+        "src": "SE:idDriver",
+        "id": "123456",
+        "unique": true
+      },
+      "name": "Jane Driver"
+    }
+  }
+}

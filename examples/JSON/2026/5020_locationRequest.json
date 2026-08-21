@@ -33,20 +33,36 @@
         }
       },
       {
-        "idOrder": {
-          "src": "systemprov_provsite_0001:idOrder",
-          "id": "3640266-0",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemprov_provsite_0001:idOrder",
+            "id": "3640266-0",
+            "unique": true
+          }
+        ]
       },
       {
-        "idOrder": {
-          "src": "systemclient_clientsite_0009:idOrder",
-          "id": "11183742",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemclient_clientsite_0009:idOrder",
+            "id": "11183742",
+            "unique": true
+          }
+        ]
       }
     ]
   },
-  "locationRequest": {}
+  "locationRequest": {
+    "timeFrom": {
+      "timeType": "scheduled",
+      "time": "2020-09-09T15:50:36Z"
+    },
+    "timeTo": {
+      "timeType": "scheduled",
+      "time": "2020-09-10T04:50:36Z"
+    },
+    "interval": {
+      "seconds": 60
+    }
+  }
 }

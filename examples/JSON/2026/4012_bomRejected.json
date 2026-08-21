@@ -26,26 +26,30 @@
     },
     "referencesTo": [
       {
-        "idOrder": {
-          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
-          "id": "479",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+            "id": "479",
+            "unique": true
+          }
+        ]
       },
       {
-        "idOrder": {
-          "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
-          "id": "2067907",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+            "id": "2067907",
+            "unique": true
+          }
+        ]
       }
     ]
   },
-  "event": {
-    "eventType": "noShow",
-    "eventNode": {
-      "nodeSeqNo": 1,
-      "nodeType": "pickup"
-    }
+  "messageTo": {
+    "manualText": "NoShow event at node 1 rejected: traveller was not present at the agreed pickup address.",
+    "sendToInvoice": false,
+    "sendToVehicle": true,
+    "sendToOperator": true,
+    "vehicleConfirmation": false
   }
 }

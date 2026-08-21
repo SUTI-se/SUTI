@@ -1,0 +1,59 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "1012",
+    "msgName": "AllResourceResponse",
+    "msgTimeStamp": "2026-01-15T08:00:07.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026011508000712",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+          "id": "2026011508000003",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "resourceInformation": {
+    "vehicle": {
+      "capacity": {
+        "seats": {
+          "noOfSeats": 4
+        }
+      },
+      "environmentalinfoVehicle": {
+        "fuelConsumptions": {
+          "fuelConsumption": [
+            {
+              "fuelType": "Electric",
+              "unit": "Kwh",
+              "consumption": 18.5
+            }
+          ]
+        },
+        "emptydrivingFactor": 35.0
+      }
+    }
+  }
+}

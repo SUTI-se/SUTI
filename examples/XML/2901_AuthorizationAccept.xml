@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Golden fixture: XML twin of examples/JSON/2026/2901_authorizationAccept.json.
+  Validates against schemas/SUTI_Message.xsd and carries the same values as the JSON example
+  (checked value-by-value, see docs/SUTI_JSON_Mapping.md section 4).
+  Known differences: none.
+-->
+<SUTI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
+  <orgSender name="Client name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Provider name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="2901" msgName="AuthorizationAccept">
+    <idMsg src="systemsupplierId_clientOwnerId_uniqueId:idMsg" id="2026011516012901" unique="true"/>
+    <msgTimeStamp>
+      <time time="2026-01-15T16:01:00.000Z"/>
+    </msgTimeStamp>
+    <referencesTo>
+      <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2026011516002900" unique="true"/>
+    </referencesTo>
+    <authorizationAccept>
+      <idAuthorization src="systemsupplierId_providerOwnerId_uniqueId:idAuthorization" id="AUTH-2026-0001" unique="true"/>
+      <process sendinformationDisptch="neversend" sendinformationDelay="allowsend" sendinformationArrival="alwayssend"/>
+      <restrictions distance="25000">
+        <priceRestriction priceResponsible="client" fixedPrice="true" vatIncluded="true" vatPercent="6.0" price="300.0">
+          <idCurrency src="ISO:4217" id="SEK" unique="true"/>
+        </priceRestriction>
+        <adressRestrictions>
+          <addressRestriction community="Lund">
+            <idCountry src="ISO:3166-1" id="SE" unique="true"/>
+          </addressRestriction>
+        </adressRestrictions>
+      </restrictions>
+      <contents>
+        <content contentType="traveller" name="John Doe">
+          <idContent src="systemsupplierId_clientOwnerId_uniqueId:idContentId" id="5319397" unique="true"/>
+        </content>
+      </contents>
+    </authorizationAccept>
+  </msg>
+</SUTI>

@@ -1,0 +1,245 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "8000",
+    "msgName": "Accounting Basic Provider",
+    "msgTimeStamp": "2026-01-31T23:00:00.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026013123008000",
+      "unique": true
+    }
+  },
+  "accounting": {
+    "accountingType": "basic",
+    "idAccounting": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idAccounting",
+      "id": "ACC-2026-01",
+      "unique": true
+    },
+    "orgClient": {
+      "orgName": "Client name",
+      "orgCity": "Lund",
+      "ids": [
+        {
+          "src": "SE:idOrg",
+          "id": "556000-0001",
+          "unique": true
+        },
+        {
+          "src": "EU:idVAT",
+          "id": "SE556000000101",
+          "unique": true
+        }
+      ],
+      "addressOrg": {
+        "street": "Stortorget",
+        "streetNo": 1,
+        "community": "Lund",
+        "postalNo": "22222",
+        "country": "SE"
+      },
+      "orgPayment": {
+        "nameOfBank": "Bank name",
+        "clearingNo": "1234",
+        "idPayment": [
+          {
+            "src": "SE:Bgno",
+            "id": "123-4567",
+            "unique": true
+          }
+        ]
+      }
+    },
+    "orgProvider": {
+      "orgName": "Provider name",
+      "orgCity": "Stockholm",
+      "ids": [
+        {
+          "src": "SE:idOrg",
+          "id": "556000-0002",
+          "unique": true
+        }
+      ]
+    },
+    "tours": [
+      {
+        "referencesTo": [
+          {
+            "idOrder": [
+              {
+                "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+                "id": "11183742",
+                "unique": true
+              }
+            ]
+          }
+        ],
+        "status": {
+          "idActivity": {
+            "src": "systemsupplierId_providerOwnerId_uniqueId:idActivity",
+            "id": "requestForPayment",
+            "unique": true
+          }
+        },
+        "subOrders": [
+          {
+            "idSuborderClient": {
+              "src": "systemsupplierId_clientOwnerId_uniqueId:idSuborder",
+              "id": "11183742-A",
+              "unique": true
+            },
+            "idSuborderProvider": {
+              "src": "systemsupplierId_providerOwnerId_uniqueId:idSuborder",
+              "id": "3640266-0-A",
+              "unique": true
+            },
+            "events": [
+              {
+                "eventType": "passengerInVehicle",
+                "eventNode": {
+                  "nodeSeqNo": 1,
+                  "nodeType": "pickup"
+                }
+              },
+              {
+                "eventType": "passengerDropped",
+                "eventNode": {
+                  "nodeSeqNo": 2,
+                  "nodeType": "destination"
+                }
+              }
+            ]
+          }
+        ],
+        "calculations": [
+          {
+            "calculationType": {
+              "src": "systemsupplierId_providerOwnerId_uniqueId:idTaxa",
+              "id": "TARIFF-2026-A",
+              "unique": true
+            },
+            "taximeterAmount": {
+              "startPrice": 45,
+              "distanceTotalPrice": {
+                "distanceCount": 12.4,
+                "distanceUnitPrice": 13.5
+              },
+              "durationTotalPrice": {
+                "durationCount": 25,
+                "durationUnitPrice": 1.2
+              },
+              "taximeterTotalPrice": 245
+            }
+          }
+        ],
+        "summaryReport": {
+          "vehicle": "3110",
+          "durationStart": 1500,
+          "distanceStart": 12400,
+          "orderEnded": true
+        },
+        "economyReports": [
+          {
+            "payments": [
+              {
+                "paymentType": "account",
+                "amount": {
+                  "amountInclVat": 245,
+                  "amountExclVat": 231.13,
+                  "amountVat": 13.87,
+                  "vatPercent": 6,
+                  "idCurrency": {
+                    "src": "ISO:4217",
+                    "id": "SEK",
+                    "unique": true
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "resource": {
+          "vehicle": {
+            "ids": [
+              {
+                "src": "systemsupplierId_providerOwnerId_uniqueId:idVehicle",
+                "id": "3110",
+                "unique": true
+              }
+            ]
+          },
+          "driver": {
+            "id": {
+              "src": "SE:idDriver",
+              "id": "123456",
+              "unique": true
+            }
+          }
+        },
+        "events": [
+          {
+            "eventVehicle": "start",
+            "time": {
+              "timeType": "actual",
+              "time": "2026-01-15T18:00:00Z"
+            },
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.705,
+              "lon": 13.193,
+              "precision": 6
+            }
+          },
+          {
+            "eventVehicle": "stop",
+            "time": {
+              "timeType": "actual",
+              "time": "2026-01-15T18:25:00Z"
+            },
+            "geographicLocation": {
+              "typeOfCoordinate": "WGS-84",
+              "lat": 55.704722,
+              "lon": 13.191944,
+              "precision": 6
+            }
+          }
+        ]
+      }
+    ],
+    "economyReportAccounting": {
+      "payments": [
+        {
+          "paymentType": "account",
+          "amount": {
+            "amountInclVat": 245,
+            "amountExclVat": 231.13,
+            "amountVat": 13.87,
+            "vatPercent": 6,
+            "idCurrency": {
+              "src": "ISO:4217",
+              "id": "SEK",
+              "unique": true
+            }
+          }
+        }
+      ]
+    }
+  }
+}

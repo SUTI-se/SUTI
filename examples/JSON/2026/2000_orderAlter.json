@@ -26,18 +26,22 @@
     },
     "referencesTo": [
       {
-        "idOrder": {
-          "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
-          "id": "2068608",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+            "id": "2068608",
+            "unique": true
+          }
+        ]
       },
       {
-        "idOrder": {
-          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
-          "id": "482",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+            "id": "482",
+            "unique": true
+          }
+        ]
       },
       {
         "idMsg": {
@@ -133,7 +137,7 @@
                 "payments": [
                   {
                     "amount": {
-                      "amountInclVat": 30.0
+                      "amountInclVat": 30
                     },
                     "paymentType": "prepaidSocialFee"
                   }
@@ -208,7 +212,7 @@
                 "payments": [
                   {
                     "amount": {
-                      "amountInclVat": 30.0
+                      "amountInclVat": 30
                     },
                     "paymentType": "prepaidSocialFee"
                   }

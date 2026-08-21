@@ -1,0 +1,41 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "1101",
+    "msgName": "AgreementBulkLocationRequest",
+    "msgTimeStamp": "2026-01-15T09:00:00.000Z",
+    "orgSender": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+      "id": "2026011509001101",
+      "unique": true
+    }
+  },
+  "bulkLocationRequest": {
+    "locationListType": "1",
+    "statusFree": true,
+    "statusOccupied": true,
+    "bulkLocationAgreement": {
+      "idAgreement": {
+        "src": "systemsupplierId_clientOwnerId_uniqueId:idAgreement",
+        "id": "AG-2026-001",
+        "unique": true
+      }
+    }
+  }
+}

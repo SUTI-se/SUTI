@@ -1,0 +1,38 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "1001",
+    "msgName": "AgreementResourcesRequest",
+    "msgTimeStamp": "2026-01-15T08:00:00.000Z",
+    "orgSender": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+      "id": "2026011508000002",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idAuthorization": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idAgreement",
+          "id": "AG-2026-001",
+          "unique": true
+        }
+      }
+    ]
+  }
+}

@@ -26,18 +26,22 @@
     },
     "referencesTo": [
       {
-        "idOrder": {
-          "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
-          "id": "2067907",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_providerOwnerId_uniqueId:idOrder",
+            "id": "2067907",
+            "unique": true
+          }
+        ]
       },
       {
-        "idOrder": {
-          "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
-          "id": "479",
-          "unique": true
-        }
+        "idOrder": [
+          {
+            "src": "systemsupplierId_clientOwnerId_uniqueId:idOrder",
+            "id": "479",
+            "unique": true
+          }
+        ]
       },
       {
         "idMsg": {
@@ -48,16 +52,16 @@
       }
     ]
   },
-  "event": {
+  "pickupConfirmation": {
     "eventType": "noShow",
-    "eventNode": {
+    "nodeConfirmed": {
       "nodeSeqNo": 1,
       "nodeType": "pickup",
       "addressNode": {
         "geographicLocation": {
           "typeOfCoordinate": "WGS-84",
-          "lat": 0.0,
-          "lon": 0.0,
+          "lat": 0,
+          "lon": 0,
           "precision": 6
         }
       },

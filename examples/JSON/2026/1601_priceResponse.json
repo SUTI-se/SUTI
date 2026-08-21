@@ -1,0 +1,63 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "1601",
+    "msgName": "PriceResponse",
+    "msgTimeStamp": "2026-01-15T10:00:05.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026011510001601",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+          "id": "2026011510001501",
+          "unique": true
+        }
+      },
+      {
+        "idResponse": {
+          "src": "systemsupplierId_providerOwnerId_uniqueId:idResponse",
+          "id": "a94a8fe5ccb19ba61c4c0873d391e987",
+          "unique": true
+        }
+      }
+    ]
+  },
+  "infoResponse": {
+    "prices": [
+      {
+        "priceResponsible": "provider",
+        "fixedPrice": true,
+        "vatIncluded": true,
+        "vatPercent": 6.0,
+        "priceValue": 245.0,
+        "vat": 13.87,
+        "idCurrency": {
+          "src": "ISO:4217",
+          "id": "SEK",
+          "unique": true
+        },
+        "paymentType": "account"
+      }
+    ]
+  }
+}

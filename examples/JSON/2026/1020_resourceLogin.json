@@ -46,20 +46,26 @@
         }
       ]
     },
-    "manualDescription": {
-      "manualText": "",
-      "sendToInvoice": false,
-      "sendToVehicle": false,
-      "sendToOperator": true,
-      "vehicleConfirmation": false
-    },
-    "resourceValidation": {
-      "validationType": "bky",
-      "validationMethod": "system",
-      "validationTime": {
-        "timeType": "actual",
-        "time": "2020-09-09T04:10:02Z"
+    "resourceValidation": [
+      {
+        "validationType": "bky",
+        "validationMethod": "system",
+        "validationTime": [
+          {
+            "timeType": "actual",
+            "time": "2020-09-09T04:10:02Z"
+          }
+        ]
       }
-    }
+    ],
+    "manualDescriptionResource": [
+      {
+        "manualText": "",
+        "sendToInvoice": false,
+        "sendToVehicle": false,
+        "sendToOperator": true,
+        "vehicleConfirmation": false
+      }
+    ]
   }
 }

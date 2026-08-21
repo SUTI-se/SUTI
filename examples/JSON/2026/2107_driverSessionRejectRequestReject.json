@@ -1,0 +1,54 @@
+{
+  "$schema": "../../../schemas/SUTI_Message.schema.json",
+  "msg": {
+    "msgType": "2107",
+    "msgName": "DriverSession Reject Request Reject",
+    "msgTimeStamp": "2026-01-15T12:00:00.000Z",
+    "orgSender": {
+      "name": "Provider name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_providerOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "orgReceiver": {
+      "name": "Client name",
+      "idOrg": {
+        "src": "SUTI:idLink",
+        "id": "systemsupplierId_clientOwnerId_uniqueId",
+        "unique": true
+      }
+    },
+    "idMsg": {
+      "src": "systemsupplierId_providerOwnerId_uniqueId:idMsg",
+      "id": "2026011512002107",
+      "unique": true
+    },
+    "referencesTo": [
+      {
+        "idMsg": {
+          "src": "systemsupplierId_clientOwnerId_uniqueId:idMsg",
+          "id": "2026011500002107",
+          "unique": true
+        }
+      },
+      {
+        "idDriverSession": [
+          {
+            "src": "systemsupplierId_providerOwnerId_uniqueId:idDriverSession",
+            "id": "DS-2026-0115-01",
+            "unique": true
+          }
+        ]
+      },
+      {
+        "idRejectReason": {
+          "src": "SUTI:idRejectReason",
+          "id": "9005",
+          "unique": true
+        }
+      }
+    ]
+  }
+}

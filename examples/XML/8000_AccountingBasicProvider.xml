@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Golden fixture: XML twin of examples/JSON/2026/8000_accountingBasicProvider.json.
+  Validates against schemas/SUTI_Message.xsd and carries the same values as the JSON example
+  (checked value-by-value, see docs/SUTI_JSON_Mapping.md section 4).
+  Known difference: JSON `events[].eventNode.nodeType` ("pickup", "destination") has no XSD counterpart (XSD event carries only @nodeSeqNo).
+-->
+<SUTI xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../schemas/SUTI_Message.xsd">
+  <orgSender name="Provider name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_providerOwnerId_uniqueId" unique="true"/>
+  </orgSender>
+  <orgReceiver name="Client name">
+    <idOrg src="SUTI:idLink" id="systemsupplierId_clientOwnerId_uniqueId" unique="true"/>
+  </orgReceiver>
+  <msg msgType="8000" msgName="Accounting Basic Provider">
+    <idMsg src="systemsupplierId_providerOwnerId_uniqueId:idMsg" id="2026013123008000" unique="true"/>
+    <msgTimeStamp>
+      <time time="2026-01-31T23:00:00.000Z"/>
+    </msgTimeStamp>
+    <accounting accountingType="basic">
+      <idAccounting src="systemsupplierId_providerOwnerId_uniqueId:idAccounting" id="ACC-2026-01" unique="true"/>
+      <tour>
+        <referencesToTour>
+          <idOrder src="systemsupplierId_clientOwnerId_uniqueId:idOrder" id="11183742" unique="true"/>
+        </referencesToTour>
+        <statusTour>
+          <idActivity src="systemsupplierId_providerOwnerId_uniqueId:idActivity" id="requestForPayment" unique="true"/>
+        </statusTour>
+        <suborderTour>
+          <eventSuborderTour eventType="passengerinvehicle" nodeSeqNo="1"/>
+          <eventSuborderTour eventType="passengerdropped" nodeSeqNo="2"/>
+          <idSuborderClient src="systemsupplierId_clientOwnerId_uniqueId:idSuborder" id="11183742-A" unique="true"/>
+          <idSuborderProvider src="systemsupplierId_providerOwnerId_uniqueId:idSuborder" id="3640266-0-A" unique="true"/>
+        </suborderTour>
+        <calculationsTour>
+          <calculationFare>
+            <calculationType src="systemsupplierId_providerOwnerId_uniqueId:idTaxa" id="TARIFF-2026-A" unique="true"/>
+            <taximeterAmount>
+              <startPrice>45</startPrice>
+              <distanceTotalPrice>
+                <distanceCount>12.4</distanceCount>
+                <distanceUnitPrice>13.5</distanceUnitPrice>
+              </distanceTotalPrice>
+              <durationTotalPrice>
+                <durationCount>25</durationCount>
+                <durationUnitPrice>1.2</durationUnitPrice>
+              </durationTotalPrice>
+              <taximeterTotalPrice>245</taximeterTotalPrice>
+            </taximeterAmount>
+          </calculationFare>
+        </calculationsTour>
+        <summaryReportTour vehicle="3110" durationStart="1500" distanceStart="12400" orderEnded="true"/>
+        <economyReportTour>
+          <formOfPayment>
+            <payment paymentType="account">
+              <idCurrency src="ISO:4217" id="SEK" unique="true"/>
+              <vatAmountSpecification vatPercent="6">
+                <totalVatAmount amountInclVat="245" amountExclVat="231.13" amountVat="13.87"/>
+              </vatAmountSpecification>
+            </payment>
+          </formOfPayment>
+        </economyReportTour>
+        <resourceTour>
+          <vehicle>
+            <idVehicle src="systemsupplierId_providerOwnerId_uniqueId:idVehicle" id="3110" unique="true"/>
+          </vehicle>
+          <driver>
+            <idDriver src="SE:idDriver" id="123456" unique="true"/>
+          </driver>
+        </resourceTour>
+        <eventTour eventVehicle="start">
+          <eventTourTime time="2026-01-15T18:00:00Z" timeType="actual"/>
+          <tourGeographicLocation typeOfCoordinate="WGS-84" lat="55.705" long="13.193" precision="6"/>
+        </eventTour>
+        <eventTour eventVehicle="stop">
+          <eventTourTime time="2026-01-15T18:25:00Z" timeType="actual"/>
+          <tourGeographicLocation typeOfCoordinate="WGS-84" lat="55.704722" long="13.191944" precision="6"/>
+        </eventTour>
+      </tour>
+      <economyReportAccounting>
+        <formOfPayment>
+          <payment paymentType="account">
+            <idCurrency src="ISO:4217" id="SEK" unique="true"/>
+            <vatAmountSpecification vatPercent="6">
+              <totalVatAmount amountInclVat="245" amountExclVat="231.13" amountVat="13.87"/>
+            </vatAmountSpecification>
+          </payment>
+        </formOfPayment>
+      </economyReportAccounting>
+      <orgClient orgName="Client name" orgCity="Lund">
+        <idOrg src="SE:idOrg" id="556000-0001" unique="true"/>
+        <idOrg src="EU:idVAT" id="SE556000000101" unique="true"/>
+        <orgPayment nameofBank="Bank name" ClearingNo="1234">
+          <IdPayment src="SE:Bgno" id="123-4567" unique="true"/>
+        </orgPayment>
+        <adressOrg street="Stortorget" streetNo="1" community="Lund" postalNo="22222" country="SE"/>
+      </orgClient>
+      <orgProvider orgName="Provider name" orgCity="Stockholm">
+        <idOrg src="SE:idOrg" id="556000-0002" unique="true"/>
+      </orgProvider>
+    </accounting>
+  </msg>
+</SUTI>
